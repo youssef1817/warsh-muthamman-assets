@@ -1,7 +1,7 @@
-# Dynamic Line Bands Detection for Warsh Muthamma
+# Dynamic Line Bands Detection for Warsh Muthamman
 
 ## كيف يعمل كشف الأسطر
-قمنا بإنشاء سكربت `07_detect_page_line_bands.js` الذي يستخدم مكتبة `sharp` لمعالجة صور طبعة `warsh_muthamma`.
+قمنا بإنشاء سكربت `07_detect_page_line_bands.js` الذي يستخدم مكتبة `sharp` لمعالجة صور طبعة `warsh_muthamman`.
 السكربت يقوم بالآتي:
 1. تحويل الصورة إلى تدرج الرمادي (Grayscale).
 2. إزالة الهوامش (Crop borders) للتركيز على منطقة النص (Text Region).
@@ -12,8 +12,8 @@
 
 ## أين تُحفظ Line Bands
 تُحفظ البيانات أولاً كملفات JSON لكل صفحة في المجلد:
-`databases/ayahinfo/warsh_muthamma/page_layout_json/`
-ثم يقوم المولدات (`05` و `06`) بدمج هذه الملفات وحفظها في قاعدة بيانات SQLite `quran.ar.warsh_muthamma.db` داخل جدول جديد يسمى `page_line_bands` الذي يحتوي الأعمدة: `page`, `line`, `top`, `bottom`, `center`.
+`databases/ayahinfo/warsh_muthamman/page_layout_json/`
+ثم يقوم المولدات (`05` و `06`) بدمج هذه الملفات وحفظها في قاعدة بيانات SQLite `quran.ar.warsh_muthamman.db` داخل جدول جديد يسمى `page_line_bands` الذي يحتوي الأعمدة: `page`, `line`, `top`, `bottom`, `center`.
 
 ## كيف يتم Regenerate
 لإعادة بناء البيانات بالكامل:

@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
-const pagesDir = path.join(__dirname, '../pages/warsh_muthamma_png');
-const outDir = path.join(__dirname, '../databases/ayahinfo/warsh_muthamma/page_layout_json');
+const pagesDir = path.join(__dirname, '../pages/warsh_muthamman_png');
+const outDir = path.join(__dirname, '../databases/ayahinfo/warsh_muthamman/page_layout_json');
 
 if (!fs.existsSync(outDir)) {
   fs.mkdirSync(outDir, { recursive: true });

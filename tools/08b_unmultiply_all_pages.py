@@ -116,8 +116,8 @@ def process_single_page(args):
         }
 
 def run():
-    src_dir = r"C:\Users\pc\dev\al-quran\warsh-muthamma-assets\pages\warsh_muthamma_png"
-    dest_dir = r"C:\Users\pc\dev\al-quran\warsh-muthamma-assets\pages\warsh_muthamma_png_transparent"
+    src_dir = r"C:\Users\pc\dev\al-quran\warsh-muthamman-assets\pages\warsh_muthamman_png"
+    dest_dir = r"C:\Users\pc\dev\al-quran\warsh-muthamman-assets\pages\warsh_muthamman_png_transparent"
     
     if not os.path.exists(dest_dir):
         os.makedirs(dest_dir)
@@ -184,7 +184,7 @@ def run():
         
     # Generate index JSON
     index_data = {
-        'stage': 'warsh_muthamma_png_transparent',
+        'stage': 'warsh_muthamman_png_transparent',
         'format': 'png',
         'pageCount': len(final_pages_list),
         'totalBytes': total_bytes,
@@ -192,7 +192,7 @@ def run():
         'pages': final_pages_list
     }
     
-    index_path = r"C:\Users\pc\dev\al-quran\warsh-muthamma-assets\pages\warsh_muthamma_png_transparent_index.json"
+    index_path = r"C:\Users\pc\dev\al-quran\warsh-muthamman-assets\pages\warsh_muthamman_png_transparent_index.json"
     with open(index_path, 'w', encoding='utf-8') as f:
         json.dump(index_data, f, indent=2)
         

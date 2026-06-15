@@ -1,15 +1,15 @@
 const TOTAL_PAGES = 485;
-const IMAGE_BASE_PATH = '../pages/warsh_muthamma_png/page';
+const IMAGE_BASE_PATH = '../pages/warsh_muthamman_png/page';
 const DEFAULT_LEFT_MARGIN = 0.03;
 const DEFAULT_RIGHT_MARGIN = 0.97;
 const HORIZONTAL_SNAP_THRESHOLD = 0.012;
 
 let currentPage = 1;
-let overlayEnabled = localStorage.getItem('warsh_muthamma_overlay') !== 'false'; // default true
+let overlayEnabled = localStorage.getItem('warsh_muthamman_overlay') !== 'false'; // default true
 
 
 // Theme State & Logic
-let currentTheme = localStorage.getItem('warsh_muthamma_theme') || 'auto'; // 'auto' | 'light' | 'dark'
+let currentTheme = localStorage.getItem('warsh_muthamman_theme') || 'auto'; // 'auto' | 'light' | 'dark'
 
 function applyTheme() {
     const isSystemLight = window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -45,7 +45,7 @@ function toggleTheme() {
     } else {
         currentTheme = 'auto';
     }
-    localStorage.setItem('warsh_muthamma_theme', currentTheme);
+    localStorage.setItem('warsh_muthamman_theme', currentTheme);
     applyTheme();
     
     let label = 'تلقائي (مع النظام)';
@@ -55,7 +55,7 @@ function toggleTheme() {
 }
 
 // Page Background Color Logic
-let currentPageBg = localStorage.getItem('warsh_muthamma_page_bg') || '#ffffff';
+let currentPageBg = localStorage.getItem('warsh_muthamman_page_bg') || '#ffffff';
 
 function applyPageBg(color) {
     document.documentElement.style.setProperty('--page-bg', color);
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
             const color = btn.getAttribute('data-color');
             currentPageBg = color;
-            localStorage.setItem('warsh_muthamma_page_bg', color);
+            localStorage.setItem('warsh_muthamman_page_bg', color);
             applyPageBg(color);
             showToast(`تم تغيير خلفية الصفحة`);
         });
@@ -417,13 +417,13 @@ async function saveToServer(filepath, content, onSuccessCallback) {
 
 document.getElementById('toggle-overlay-btn').addEventListener('click', () => {
     overlayEnabled = !overlayEnabled;
-    localStorage.setItem('warsh_muthamma_overlay', overlayEnabled);
+    localStorage.setItem('warsh_muthamman_overlay', overlayEnabled);
     DOM.overlay.style.display = overlayEnabled ? 'block' : 'none';
     DOM.toggleOverlayBtn.style.color = overlayEnabled ? '#FF9800' : '#4CAF50';
     if (overlayEnabled) loadOverlayData(currentPage);
 });
 
-const savedPage = localStorage.getItem('warsh_muthamma_last_page');
+const savedPage = localStorage.getItem('warsh_muthamman_last_page');
 if (savedPage) {
     let parsed = parseInt(savedPage);
     if (!isNaN(parsed) && parsed >= 1 && parsed <= TOTAL_PAGES) currentPage = parsed;
@@ -439,7 +439,7 @@ function updatePage(page) {
     if (DOM.pageText) DOM.pageText.textContent = currentPage;
     DOM.jumpInput.value = currentPage; 
     
-    localStorage.setItem('warsh_muthamma_last_page', currentPage);
+    localStorage.setItem('warsh_muthamman_last_page', currentPage);
     closeRightPanel();
     
     // Reset left panel inputs
@@ -468,8 +468,8 @@ async function loadOverlayData(page) {
 
     const pageStr = String(page).padStart(3, '0');
     const cacheBust = Date.now();
-    const layoutUrl = `../databases/ayahinfo/warsh_muthamma/page_layout_json/page_${pageStr}.json?v=${cacheBust}`;
-    const ayahUrl = `../databases/ayahinfo/warsh_muthamma/pages_json/page_${pageStr}.json?v=${cacheBust}`;
+    const layoutUrl = `../databases/ayahinfo/warsh_muthamman/page_layout_json/page_${pageStr}.json?v=${cacheBust}`;
+    const ayahUrl = `../databases/ayahinfo/warsh_muthamman/pages_json/page_${pageStr}.json?v=${cacheBust}`;
 
     try {
         const [layoutRes, ayahRes] = await Promise.all([
@@ -2135,7 +2135,7 @@ document.getElementById('save-ayah-btn').addEventListener('click', () => {
     if (currentAyahData) {
         normalizeAyahGeometry(currentAyahData);
         const pageStr = String(currentPage).padStart(3, '0');
-        const path = `databases/ayahinfo/warsh_muthamma/pages_json/page_${pageStr}.json`;
+        const path = `databases/ayahinfo/warsh_muthamman/pages_json/page_${pageStr}.json`;
         saveToServer(path, currentAyahData, () => {
             if (selectedItem) {
                 if (selectedItem.type === 'highlight') {
@@ -2211,11 +2211,11 @@ async function saveCurrentPageAll() {
     let ok = true;
     if (currentAyahData) {
         normalizeAyahGeometry(currentAyahData);
-        const ayahPath = `databases/ayahinfo/warsh_muthamma/pages_json/page_${pageStr}.json`;
+        const ayahPath = `databases/ayahinfo/warsh_muthamman/pages_json/page_${pageStr}.json`;
         ok = await saveToServer(ayahPath, currentAyahData, syncSelectionOriginalsFromCurrent) && ok;
     }
     if (currentLayoutData) {
-        const layoutPath = `databases/ayahinfo/warsh_muthamma/page_layout_json/page_${pageStr}.json`;
+        const layoutPath = `databases/ayahinfo/warsh_muthamman/page_layout_json/page_${pageStr}.json`;
         ok = await saveToServer(layoutPath, currentLayoutData, () => syncLayoutOriginalsFromCurrent(true)) && ok;
     }
 
@@ -2237,7 +2237,7 @@ async function saveCurrentPageAll() {
 document.getElementById('save-layout-btn').addEventListener('click', () => {
     if (currentLayoutData) {
         const pageStr = String(currentPage).padStart(3, '0');
-        const path = `databases/ayahinfo/warsh_muthamma/page_layout_json/page_${pageStr}.json`;
+        const path = `databases/ayahinfo/warsh_muthamman/page_layout_json/page_${pageStr}.json`;
         saveToServer(path, currentLayoutData, () => {
             // Sync originalLineBands to current layout and reset inputs to baseline
             if (currentLayoutData.lineBands) {
@@ -2775,7 +2775,7 @@ document.getElementById('save-first-last-page-btn').addEventListener('click', ()
     last.center = Math.round((last.top + last.bottom) / 2);
     
     const pageStr = String(currentPage).padStart(3, '0');
-    const path = `databases/ayahinfo/warsh_muthamma/page_layout_json/page_${pageStr}.json`;
+    const path = `databases/ayahinfo/warsh_muthamman/page_layout_json/page_${pageStr}.json`;
     saveToServer(path, currentLayoutData, () => {
         originalLineBands = JSON.parse(JSON.stringify(currentLayoutData.lineBands));
         document.getElementById('global-first-line-pad').value = 0;
@@ -2926,33 +2926,33 @@ const syncCreateNextCheckbox = document.getElementById('sync-create-next-highlig
 const renumberFollowingCheckbox = document.getElementById('renumber-following-highlights');
 const snapHighlightEdgesCheckbox = document.getElementById('snap-highlight-edges');
 if (syncCheckbox) {
-    syncCheckbox.checked = localStorage.getItem('warsh_muthamma_sync_marker') === 'true';
+    syncCheckbox.checked = localStorage.getItem('warsh_muthamman_sync_marker') === 'true';
     syncCheckbox.addEventListener('change', (e) => {
-        localStorage.setItem('warsh_muthamma_sync_marker', e.target.checked);
+        localStorage.setItem('warsh_muthamman_sync_marker', e.target.checked);
     });
 }
 if (syncNextCheckbox) {
-    syncNextCheckbox.checked = localStorage.getItem('warsh_muthamma_sync_next') === 'true';
+    syncNextCheckbox.checked = localStorage.getItem('warsh_muthamman_sync_next') === 'true';
     syncNextCheckbox.addEventListener('change', (e) => {
-        localStorage.setItem('warsh_muthamma_sync_next', e.target.checked);
+        localStorage.setItem('warsh_muthamman_sync_next', e.target.checked);
     });
 }
 if (syncCreateNextCheckbox) {
-    syncCreateNextCheckbox.checked = localStorage.getItem('warsh_muthamma_sync_create_next') === 'true';
+    syncCreateNextCheckbox.checked = localStorage.getItem('warsh_muthamman_sync_create_next') === 'true';
     syncCreateNextCheckbox.addEventListener('change', (e) => {
-        localStorage.setItem('warsh_muthamma_sync_create_next', e.target.checked);
+        localStorage.setItem('warsh_muthamman_sync_create_next', e.target.checked);
     });
 }
 if (renumberFollowingCheckbox) {
-    renumberFollowingCheckbox.checked = localStorage.getItem('warsh_muthamma_renumber_following') === 'true';
+    renumberFollowingCheckbox.checked = localStorage.getItem('warsh_muthamman_renumber_following') === 'true';
     renumberFollowingCheckbox.addEventListener('change', (e) => {
-        localStorage.setItem('warsh_muthamma_renumber_following', e.target.checked);
+        localStorage.setItem('warsh_muthamman_renumber_following', e.target.checked);
     });
 }
 if (snapHighlightEdgesCheckbox) {
-    snapHighlightEdgesCheckbox.checked = localStorage.getItem('warsh_muthamma_snap_edges') === 'true';
+    snapHighlightEdgesCheckbox.checked = localStorage.getItem('warsh_muthamman_snap_edges') === 'true';
     snapHighlightEdgesCheckbox.addEventListener('change', (e) => {
-        localStorage.setItem('warsh_muthamma_snap_edges', e.target.checked);
+        localStorage.setItem('warsh_muthamman_snap_edges', e.target.checked);
     });
 }
 
@@ -3334,11 +3334,11 @@ syncAllPagesBtn.addEventListener('click', () => {
 let isDrawingMode = false;
 let isPainting = false;
 let hasUnsavedDrawings = false;
-let brushColor = localStorage.getItem('warsh_muthamma_brush_color') || '#000000';
-let lastBrushColor = localStorage.getItem('warsh_muthamma_brush_color') || '#000000';
+let brushColor = localStorage.getItem('warsh_muthamman_brush_color') || '#000000';
+let lastBrushColor = localStorage.getItem('warsh_muthamman_brush_color') || '#000000';
 
 function saveBrushColor(color) {
-    localStorage.setItem('warsh_muthamma_brush_color', color);
+    localStorage.setItem('warsh_muthamman_brush_color', color);
 }
 let brushSize = 10;
 let brushOpacity = 100;
@@ -3390,7 +3390,7 @@ function initDrawingSystem() {
     // ربط تبديل وضع الرسم
     if (drawingModeToggle) {
         // استعادة الحالة المحفوظة من localStorage
-        const savedMode = localStorage.getItem('warsh_muthamma_drawing_mode') === 'true';
+        const savedMode = localStorage.getItem('warsh_muthamman_drawing_mode') === 'true';
         drawingModeToggle.checked = savedMode;
         isDrawingMode = savedMode;
         
@@ -3412,7 +3412,7 @@ function initDrawingSystem() {
 
         drawingModeToggle.addEventListener('change', (e) => {
             isDrawingMode = e.target.checked;
-            localStorage.setItem('warsh_muthamma_drawing_mode', isDrawingMode);
+            localStorage.setItem('warsh_muthamman_drawing_mode', isDrawingMode);
             if (isDrawingMode) {
                 drawingCanvas.style.display = 'block';
                 if (drawingControlsPanel) drawingControlsPanel.style.display = 'flex';
@@ -3437,7 +3437,7 @@ function initDrawingSystem() {
                         } else {
                             drawingModeToggle.checked = true;
                             isDrawingMode = true;
-                            localStorage.setItem('warsh_muthamma_drawing_mode', 'true');
+                            localStorage.setItem('warsh_muthamman_drawing_mode', 'true');
                         }
                     });
                 } else {
@@ -3510,7 +3510,7 @@ function initDrawingSystem() {
     if (btnDrawingGimp) {
         btnDrawingGimp.addEventListener('click', async () => {
             const pageStr = String(currentPage).padStart(3, '0');
-            const filepath = `pages/warsh_muthamma_png/page${pageStr}.png`;
+            const filepath = `pages/warsh_muthamman_png/page${pageStr}.png`;
             try {
                 const res = await fetch('/api/open-in-gimp', {
                     method: 'POST',
@@ -4046,7 +4046,7 @@ function updateCanvasCursor() {
 
 function disableDrawingModeUI() {
     isDrawingMode = false;
-    localStorage.setItem('warsh_muthamma_drawing_mode', 'false');
+    localStorage.setItem('warsh_muthamman_drawing_mode', 'false');
     drawingCanvas.style.display = 'none';
     if (drawingControlsPanel) drawingControlsPanel.style.display = 'none';
     const zoomBar = document.getElementById('zoom-bar');
@@ -4271,7 +4271,7 @@ async function saveDrawingToServer() {
     if (!drawingCanvas) return false;
     
     const pageStr = String(currentPage).padStart(3, '0');
-    const filepath = `pages/warsh_muthamma_png/page${pageStr}.png`;
+    const filepath = `pages/warsh_muthamman_png/page${pageStr}.png`;
     const image = drawingCanvas.toDataURL('image/png');
     
     try {
@@ -4288,7 +4288,7 @@ async function saveDrawingToServer() {
         
         // تحديث الصورة في المتصفح
         const cacheBust = Date.now();
-        DOM.img.src = `../pages/warsh_muthamma_png/page${pageStr}.png?v=${cacheBust}`;
+        DOM.img.src = `../pages/warsh_muthamman_png/page${pageStr}.png?v=${cacheBust}`;
         
         // إعادة تهيئة الكانفاس بالصورة الجديدة لتكون الأساس الجديد
         setTimeout(setupDrawingCanvasForCurrentImage, 100);
@@ -4304,7 +4304,7 @@ async function saveDrawingToServer() {
 // استعادة الصورة الأصلية الخام
 async function restoreOriginalImage() {
     const pageStr = String(currentPage).padStart(3, '0');
-    const filepath = `pages/warsh_muthamma_png/page${pageStr}.png`;
+    const filepath = `pages/warsh_muthamman_png/page${pageStr}.png`;
     
     try {
         const res = await fetch('/api/restore-image', {
@@ -4319,7 +4319,7 @@ async function restoreOriginalImage() {
         
         // تحديث وعرض الصورة الخام
         const cacheBust = Date.now();
-        DOM.img.src = `../pages/warsh_muthamma_png/page${pageStr}.png?v=${cacheBust}`;
+        DOM.img.src = `../pages/warsh_muthamman_png/page${pageStr}.png?v=${cacheBust}`;
         
         // إعادة تهيئة الكانفاس بالصورة الخام
         setTimeout(setupDrawingCanvasForCurrentImage, 100);
@@ -4648,13 +4648,13 @@ document.addEventListener('DOMContentLoaded', () => {
     ['left-panel', 'right-panel'].forEach(id => {
         const panel = document.getElementById(id);
         if (panel) {
-            const savedScroll = localStorage.getItem(`warsh_muthamma_${id}_scroll`);
+            const savedScroll = localStorage.getItem(`warsh_muthamman_${id}_scroll`);
             if (savedScroll) {
                 // نستخدم setTimeout لضمان تطبيق السكرول بعد تحميل المحتوى الداخلي إن وُجد
                 setTimeout(() => { panel.scrollTop = parseInt(savedScroll, 10); }, 50);
             }
             panel.addEventListener('scroll', () => {
-                localStorage.setItem(`warsh_muthamma_${id}_scroll`, panel.scrollTop);
+                localStorage.setItem(`warsh_muthamman_${id}_scroll`, panel.scrollTop);
             }, { passive: true });
         }
     });
@@ -4667,7 +4667,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const geoIcon = document.getElementById('geo-values-icon');
 
     if (geoHeader && geoContent && geoIcon) {
-        const isCollapsed = localStorage.getItem('warsh_muthamma_geo_collapsed') === 'true';
+        const isCollapsed = localStorage.getItem('warsh_muthamman_geo_collapsed') === 'true';
         if (isCollapsed) {
             geoContent.style.display = 'none';
             geoIcon.style.transform = 'rotate(-90deg)';
@@ -4678,11 +4678,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentlyCollapsed) {
                 geoContent.style.display = 'block';
                 geoIcon.style.transform = 'rotate(0deg)';
-                localStorage.setItem('warsh_muthamma_geo_collapsed', 'false');
+                localStorage.setItem('warsh_muthamman_geo_collapsed', 'false');
             } else {
                 geoContent.style.display = 'none';
                 geoIcon.style.transform = 'rotate(-90deg)';
-                localStorage.setItem('warsh_muthamma_geo_collapsed', 'true');
+                localStorage.setItem('warsh_muthamman_geo_collapsed', 'true');
             }
         });
     }

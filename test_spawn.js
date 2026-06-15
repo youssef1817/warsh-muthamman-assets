@@ -1,7 +1,7 @@
 const { spawn } = require('child_process');
 const path = require('path');
 
-const psScript = path.resolve(__dirname, 'tools', 'sync_warsh_muthamma_ayahinfo.ps1');
+const psScript = path.resolve(__dirname, 'tools', 'sync_warsh_muthamman_ayahinfo.ps1');
 const args = ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', psScript, '-Page', '1'];
 
 const syncProcess = spawn('powershell', args);

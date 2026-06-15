@@ -3,9 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const INPUT_DIR = path.resolve(__dirname, '../pages/warsh_muthamma_png');
-const OUTPUT_DIR = path.resolve(__dirname, '../pages/warsh_muthamma_png_q70');
-const INDEX_PATH = path.resolve(__dirname, '../pages/warsh_muthamma_png_q70_index.json');
+const INPUT_DIR = path.resolve(__dirname, '../pages/warsh_muthamman_png');
+const OUTPUT_DIR = path.resolve(__dirname, '../pages/warsh_muthamman_png_q70');
+const INDEX_PATH = path.resolve(__dirname, '../pages/warsh_muthamman_png_q70_index.json');
 const QUALITY = 70;
 const CONCURRENCY = 8; 
 
@@ -60,7 +60,7 @@ async function run() {
             const pageNumber = parseInt(fileName.replace('page', '').replace('.png', ''), 10);
             pages.push({
                 page: pageNumber,
-                file: `warsh_muthamma_png_q70/${fileName}`,
+                file: `warsh_muthamman_png_q70/${fileName}`,
                 bytes: info.size,
                 width: info.width,
                 height: info.height,
@@ -76,7 +76,7 @@ async function run() {
     pages.sort((a, b) => a.page - b.page);
     
     const index = {
-        stage: "warsh_muthamma_png_q70",
+        stage: "warsh_muthamman_png_q70",
         format: "png",
         pageCount: pages.length,
         totalBytes: totalOutputBytes,

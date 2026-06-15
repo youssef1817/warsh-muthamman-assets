@@ -4,7 +4,7 @@ from PIL import Image
 from collections import defaultdict
 
 def analyze():
-    folder = r"C:\Users\pc\dev\al-quran\warsh-muthamma-assets\pages\warsh_muthamma_png"
+    folder = r"C:\Users\pc\dev\al-quran\warsh-muthamman-assets\pages\warsh_muthamman_png"
     pattern = os.path.join(folder, "page*.png")
     files = glob.glob(pattern)
     files.sort()
@@ -69,7 +69,7 @@ def analyze():
     # Report results in markdown format
     report_lines = []
     report_lines.append("# Quran Pages Color Range Analysis Report")
-    report_lines.append(f"Analyzed {len(files)} pages from `warsh_muthamma_png`.")
+    report_lines.append(f"Analyzed {len(files)} pages from `warsh_muthamman_png`.")
     report_lines.append(f"Total Unique Colors: **{len(global_colors)}**")
     report_lines.append(f"Total Pixels: **{grand_total_pixels}**\n")
     
@@ -120,7 +120,7 @@ def analyze():
         
     # Write report to markdown file
     report_content = "\n".join(report_lines)
-    report_path = r"C:\Users\pc\dev\al-quran\warsh-muthamma-assets\tools\color_analysis_report.md"
+    report_path = r"C:\Users\pc\dev\al-quran\warsh-muthamman-assets\tools\color_analysis_report.md"
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(report_content)
         

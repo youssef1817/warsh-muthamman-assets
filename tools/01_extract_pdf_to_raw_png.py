@@ -62,9 +62,9 @@ def render_pdf_pages(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Step 1: extract the Warsh muthamma PDF into raw PNG pages."
+        description="Step 1: extract the Warsh muthamman PDF into raw PNG pages."
     )
-    parser.add_argument("--pdf", default="source/warsh-muthamma-source.pdf")
+    parser.add_argument("--pdf", default="source/warsh-muthamman-source.pdf")
     parser.add_argument("--out", default="pages/raw_png_from_pdf")
     parser.add_argument("--index", default="pages/raw_png_from_pdf_index.json")
     parser.add_argument("--dpi", type=int, default=300)

@@ -55,7 +55,7 @@ def run():
     pages = ['page001.png', 'page024.png']
     
     for page in pages:
-        src = os.path.join('pages', 'warsh_muthamma_png', page)
+        src = os.path.join('pages', 'warsh_muthamman_png', page)
         if not os.path.exists(src):
             print(f'File not found: {src}')
             continue

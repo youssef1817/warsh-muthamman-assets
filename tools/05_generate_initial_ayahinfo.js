@@ -4,16 +4,16 @@ const { DatabaseSync } = require('node:sqlite');
 const sharp = require('sharp');
 
 // Paths - Resolve relative to this script directory to make it portable
-// tools is at: warsh-muthamma-assets/tools
+// tools is at: warsh-muthamman-assets/tools
 const toolsDir = __dirname;
 const assetsDir = path.resolve(toolsDir, '..');
 const workspaceRoot = process.argv[2] || path.resolve(assetsDir, '..');
 
 const dbPath = path.join(workspaceRoot, 'scratch/quran.ar.warsh.db');
-const thumnPagesPath = path.join(assetsDir, 'data/thumn/warsh_muthamma_thumn_pages.json');
+const thumnPagesPath = path.join(assetsDir, 'data/thumn/warsh_muthamman_thumn_pages.json');
 
-const outputDir = path.join(assetsDir, 'databases/ayahinfo/warsh_muthamma');
-const outputDbPath = path.join(outputDir, 'quran.ar.warsh_muthamma.db');
+const outputDir = path.join(assetsDir, 'databases/ayahinfo/warsh_muthamman');
+const outputDbPath = path.join(outputDir, 'quran.ar.warsh_muthamman.db');
 const jsonOutputDir = path.join(outputDir, 'pages_json');
 
 // Ensure output directories exist
@@ -274,7 +274,7 @@ async function main() {
     const pageHeaders = [];
 
     // Load sharp image buffer for this page to detect valleys
-    const imagePath = path.join(assetsDir, 'pages/warsh_muthamma_png', `page${String(p).padStart(3, '0')}.png`);
+    const imagePath = path.join(assetsDir, 'pages/warsh_muthamman_png', `page${String(p).padStart(3, '0')}.png`);
     let imgData = null;
     let imgWidth = 1253;
     if (fs.existsSync(imagePath)) {

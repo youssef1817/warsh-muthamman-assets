@@ -16,8 +16,8 @@ def sha256_file(filepath):
     return sha.hexdigest().upper()
 
 def run():
-    src_dir = r"C:\Users\pc\dev\al-quran\warsh-muthamma-assets\pages\warsh_muthamma_png"
-    index_path = r"C:\Users\pc\dev\al-quran\warsh-muthamma-assets\pages\warsh_muthamma_png_index.json"
+    src_dir = r"C:\Users\pc\dev\al-quran\warsh-muthamman-assets\pages\warsh_muthamman_png"
+    index_path = r"C:\Users\pc\dev\al-quran\warsh-muthamman-assets\pages\warsh_muthamman_png_index.json"
     
     if not os.path.exists(src_dir):
         print(f"Error: Directory not found: {src_dir}")
@@ -49,7 +49,7 @@ def run():
             print(f"Error reading image dimensions for {filename}: {e}")
             width, height = 1188, 1929  # fallback
             
-        relative_file = os.path.join("warsh_muthamma_png", filename)
+        relative_file = os.path.join("warsh_muthamman_png", filename)
         
         pages_list.append({
             'page': page_num,
@@ -64,7 +64,7 @@ def run():
             print(f"Indexed {i+1}/{len(files)} files...")
             
     index_data = {
-        'stage': 'warsh_muthamma_png',
+        'stage': 'warsh_muthamman_png',
         'format': 'png',
         'pageCount': len(pages_list),
         'totalBytes': total_bytes,

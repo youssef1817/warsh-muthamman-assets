@@ -109,7 +109,7 @@ def build_index(output_dir: Path, index_path: Path, page_numbers: list[int]) -> 
         )
     total_bytes = sum(int(page["bytes"]) for page in pages)
     index = {
-        "stage": "warsh_muthamma_png",
+        "stage": "warsh_muthamman_png",
         "format": "png",
         "pageCount": len(pages),
         "totalBytes": total_bytes,
@@ -128,8 +128,8 @@ def main() -> None:
         description="Step 3: reduce PNG size with indexed-color 128 and produce the final page set."
     )
     parser.add_argument("--input-dir", default="pages/cropped_canvas_png")
-    parser.add_argument("--output-dir", default="pages/warsh_muthamma_png")
-    parser.add_argument("--index", default="pages/warsh_muthamma_png_index.json")
+    parser.add_argument("--output-dir", default="pages/warsh_muthamman_png")
+    parser.add_argument("--index", default="pages/warsh_muthamman_png_index.json")
     parser.add_argument("--start-page", type=int, default=DEFAULT_START_PAGE)
     parser.add_argument("--end-page", type=int, default=DEFAULT_END_PAGE)
     parser.add_argument("--workers", type=int, default=DEFAULT_WORKERS)

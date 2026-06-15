@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
-const pagesDir = path.join(__dirname, '../pages/warsh_muthamma_png');
+const pagesDir = path.join(__dirname, '../pages/warsh_muthamman_png');
 
 async function testPage(pageNum) {
   const pageStr = String(pageNum).padStart(3, '0');

@@ -38,7 +38,7 @@ const server = http.createServer((req, res) => {
                 const data = JSON.parse(body);
                 const absolutePath = path.resolve(ROOT_DIR, data.filepath);
                 
-                const allowedBase = path.resolve(ROOT_DIR, 'databases', 'ayahinfo', 'warsh_muthamma');
+                const allowedBase = path.resolve(ROOT_DIR, 'databases', 'ayahinfo', 'warsh_muthamman');
                 if (!absolutePath.startsWith(allowedBase)) {
                     res.writeHead(403);
                     return res.end(JSON.stringify({ error: 'Forbidden path' }));
@@ -63,7 +63,7 @@ const server = http.createServer((req, res) => {
                 const data = JSON.parse(body);
                 const absolutePath = path.resolve(ROOT_DIR, data.filepath);
                 
-                const allowedBase = path.resolve(ROOT_DIR, 'pages', 'warsh_muthamma_png');
+                const allowedBase = path.resolve(ROOT_DIR, 'pages', 'warsh_muthamman_png');
                 if (!absolutePath.startsWith(allowedBase)) {
                     res.writeHead(403);
                     return res.end(JSON.stringify({ error: 'Forbidden path' }));
@@ -128,7 +128,7 @@ const server = http.createServer((req, res) => {
                 const data = JSON.parse(body);
                 const absolutePath = path.resolve(ROOT_DIR, data.filepath);
                 
-                const allowedBase = path.resolve(ROOT_DIR, 'pages', 'warsh_muthamma_png');
+                const allowedBase = path.resolve(ROOT_DIR, 'pages', 'warsh_muthamman_png');
                 if (!absolutePath.startsWith(allowedBase)) {
                     res.writeHead(403);
                     return res.end(JSON.stringify({ error: 'Forbidden path' }));
@@ -167,7 +167,7 @@ const server = http.createServer((req, res) => {
                 const data = JSON.parse(body);
                 const absolutePath = path.resolve(ROOT_DIR, data.filepath);
                 
-                const allowedBase = path.resolve(ROOT_DIR, 'pages', 'warsh_muthamma_png');
+                const allowedBase = path.resolve(ROOT_DIR, 'pages', 'warsh_muthamman_png');
                 if (!absolutePath.startsWith(allowedBase)) {
                     res.writeHead(403);
                     return res.end(JSON.stringify({ error: 'Forbidden path' }));
@@ -197,7 +197,7 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             try {
                 const { padLeft, padRight } = JSON.parse(body);
-                const pagesDir = path.resolve(ROOT_DIR, 'databases', 'ayahinfo', 'warsh_muthamma', 'pages_json');
+                const pagesDir = path.resolve(ROOT_DIR, 'databases', 'ayahinfo', 'warsh_muthamman', 'pages_json');
                 
                 if (!fs.existsSync(pagesDir)) {
                     res.writeHead(404);
@@ -248,7 +248,7 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             try {
                 const { padFirstTop, padLastBottom } = JSON.parse(body);
-                const layoutDir = path.resolve(ROOT_DIR, 'databases', 'ayahinfo', 'warsh_muthamma', 'page_layout_json');
+                const layoutDir = path.resolve(ROOT_DIR, 'databases', 'ayahinfo', 'warsh_muthamman', 'page_layout_json');
                 
                 if (!fs.existsSync(layoutDir)) {
                     res.writeHead(404);
@@ -299,7 +299,7 @@ const server = http.createServer((req, res) => {
 
     if (req.url === '/api/progress' && req.method === 'GET') {
         try {
-            const progressPath = path.resolve(ROOT_DIR, 'databases', 'ayahinfo', 'warsh_muthamma', 'progress.json');
+            const progressPath = path.resolve(ROOT_DIR, 'databases', 'ayahinfo', 'warsh_muthamman', 'progress.json');
             let progress = [];
             if (fs.existsSync(progressPath)) {
                 progress = JSON.parse(fs.readFileSync(progressPath, 'utf8'));
@@ -320,7 +320,7 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             try {
                 const data = JSON.parse(body);
-                const progressPath = path.resolve(ROOT_DIR, 'databases', 'ayahinfo', 'warsh_muthamma', 'progress.json');
+                const progressPath = path.resolve(ROOT_DIR, 'databases', 'ayahinfo', 'warsh_muthamman', 'progress.json');
                 let progress = [];
                 if (fs.existsSync(progressPath)) {
                     progress = JSON.parse(fs.readFileSync(progressPath, 'utf8'));
@@ -371,7 +371,7 @@ const server = http.createServer((req, res) => {
                 const { page, skipWindows, skipAndroid } = JSON.parse(body);
                 const { spawn } = require('child_process');
                 
-                const psScript = path.resolve(ROOT_DIR, 'tools', 'sync_warsh_muthamma_ayahinfo.ps1');
+                const psScript = path.resolve(ROOT_DIR, 'tools', 'sync_warsh_muthamman_ayahinfo.ps1');
                 const args = ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', psScript];
                 
                 if (page === 'all') {

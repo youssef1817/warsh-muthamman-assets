@@ -1,5 +1,5 @@
 # Quran Pages Color Range Analysis Report
-Analyzed 485 pages from `warsh_muthamma_png`.
+Analyzed 485 pages from `warsh_muthamman_png`.
 Total Unique Colors: **11606**
 Total Pixels: **1111451220**
 

@@ -3,11 +3,11 @@ const path = require('path');
 const { DatabaseSync } = require('node:sqlite');
 
 // Paths - Resolve relative to this script directory to make it portable
-// tools is at: warsh-muthamma-assets/tools
+// tools is at: warsh-muthamman-assets/tools
 const toolsDir = __dirname;
 const assetsDir = path.resolve(toolsDir, '..');
-const outputDir = path.join(assetsDir, 'databases/ayahinfo/warsh_muthamma');
-const outputDbPath = path.join(outputDir, 'quran.ar.warsh_muthamma.db');
+const outputDir = path.join(assetsDir, 'databases/ayahinfo/warsh_muthamman');
+const outputDbPath = path.join(outputDir, 'quran.ar.warsh_muthamman.db');
 const jsonOutputDir = path.join(outputDir, 'pages_json');
 
 function main() {

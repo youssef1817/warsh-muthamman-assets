@@ -39,7 +39,7 @@ function Resolve-PageNumber([string[]]$Args) {
       }
     }
   }
-  throw "Pass a page number, for example: tools\sync_warsh_muthamma_ayahinfo.cmd -475"
+  throw "Pass a page number, for example: tools\sync_warsh_muthamman_ayahinfo.cmd -475"
 }
 
 function Resolve-WindowsQuranDataRoot {
@@ -104,7 +104,7 @@ function Invoke-AdbSync($SourceDb) {
 
   $packages = @('com.diyyourz.alquran.debug', 'com.diyyourz.alquran')
   foreach ($pkg in $packages) {
-    & $adb shell "run-as $pkg sh -c 'mkdir -p files/quran_data/databases/ayahinfo/warsh_muthamma && cp $remoteTmp files/quran_data/databases/ayahinfo/warsh_muthamma/ayahinfo.db && chmod 600 files/quran_data/databases/ayahinfo/warsh_muthamma/ayahinfo.db'"
+    & $adb shell "run-as $pkg sh -c 'mkdir -p files/quran_data/databases/ayahinfo/warsh_muthamman && cp $remoteTmp files/quran_data/databases/ayahinfo/warsh_muthamman/ayahinfo.db && chmod 600 files/quran_data/databases/ayahinfo/warsh_muthamman/ayahinfo.db'"
     if ($LASTEXITCODE -eq 0) {
       Write-Ok "Android ayahinfo.db was replaced under $pkg."
       return
@@ -122,11 +122,11 @@ if ($All) {
   $page = Resolve-PageNumber $Rest
 }
 $assetsRoot = Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')
-$dbDir = Join-Path $assetsRoot 'databases\ayahinfo\warsh_muthamma'
-$sourceDb = Join-Path $dbDir 'quran.ar.warsh_muthamma.db'
+$dbDir = Join-Path $assetsRoot 'databases\ayahinfo\warsh_muthamman'
+$sourceDb = Join-Path $dbDir 'quran.ar.warsh_muthamman.db'
 $pagesJsonDir = Join-Path $dbDir 'pages_json'
 $layoutJsonDir = Join-Path $dbDir 'page_layout_json'
-$nodeHelper = Join-Path $PSScriptRoot 'sync_warsh_muthamma_ayahinfo_page.js'
+$nodeHelper = Join-Path $PSScriptRoot 'sync_warsh_muthamman_ayahinfo_page.js'
 $rebuildHelper = Join-Path $PSScriptRoot '06_rebuild_ayahinfo.js'
 
 if (-not (Test-Path -LiteralPath $sourceDb)) {
@@ -150,7 +150,7 @@ if ($All) {
 
 if (-not $SkipWindows) {
   $windowsRoot = Resolve-WindowsQuranDataRoot
-  $windowsAyahInfoDir = Join-Path $windowsRoot 'databases\ayahinfo\warsh_muthamma'
+  $windowsAyahInfoDir = Join-Path $windowsRoot 'databases\ayahinfo\warsh_muthamman'
   New-Item -ItemType Directory -Path $windowsAyahInfoDir -Force | Out-Null
   $windowsDb = Join-Path $windowsAyahInfoDir 'ayahinfo.db'
   Copy-Item -LiteralPath $sourceDb -Destination $windowsDb -Force

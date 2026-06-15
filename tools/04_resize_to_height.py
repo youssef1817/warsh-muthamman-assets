@@ -119,7 +119,7 @@ def build_index(output_dir: Path, index_path: Path, page_numbers: list[int]) -> 
         )
     total_bytes = sum(int(page["bytes"]) for page in pages)
     index = {
-        "stage": "warsh_muthamma_png_height1929",
+        "stage": "warsh_muthamman_png_height1929",
         "format": "png",
         "pageCount": len(pages),
         "totalBytes": total_bytes,
@@ -137,9 +137,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Resize pages to a uniform height while preserving aspect ratio."
     )
-    parser.add_argument("--input-dir", default="pages/warsh_muthamma_png")
-    parser.add_argument("--output-dir", default="pages/warsh_muthamma_png_height1929")
-    parser.add_argument("--index", default="pages/warsh_muthamma_png_height1929_index.json")
+    parser.add_argument("--input-dir", default="pages/warsh_muthamman_png")
+    parser.add_argument("--output-dir", default="pages/warsh_muthamman_png_height1929")
+    parser.add_argument("--index", default="pages/warsh_muthamman_png_height1929_index.json")
     parser.add_argument("--target-height", type=int, default=DEFAULT_TARGET_HEIGHT)
     parser.add_argument("--workers", type=int, default=DEFAULT_WORKERS)
     parser.add_argument("--clean-output", action="store_true", default=True)
