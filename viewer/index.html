@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عارض ومحرر مصحف ورش المثمن</title>
+    <link rel="stylesheet" href="index.css?v=20260614-alt-pan-v1">
+</head>
+<body>
+
+    <!-- Left Panel: General Page Controls -->
+    <div id="left-panel" class="sidebar">
+        <div id="left-resizer" class="resizer-handle resizer-left"></div>
+        <!-- Integrated Page Navigator & Actions -->
+        <!-- Integrated Page Navigator & Actions -->
+        <div class="integrated-navigator-row">
+            <button id="prev-page-btn" class="icon-btn" title="الصفحة السابقة (سهم يمين)">
+                <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+            </button>
+            <div class="page-selector">
+                <span>ص</span>
+                <input type="number" id="jump-input" min="1" max="485" value="1">
+            </div>
+            <button id="next-page-btn" class="icon-btn" title="الصفحة التالية (سهم يسار)">
+                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            
+            <div class="nav-divider"></div>
+            
+            <button id="toggle-overlay-btn" class="icon-btn" title="تفعيل/تعطيل التظليل">
+                <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </button>
+            <button id="refresh-btn" class="icon-btn" title="تحديث الصورة">
+                <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+            </button>
+            <button id="help-btn" class="icon-btn" title="مساعدة واختصارات">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+            </button>
+            <button id="progress-btn" class="icon-btn" title="تتبع الإنجاز">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </button>
+            <button id="theme-toggle-btn" class="icon-btn" title="تغيير المظهر (تلقائي/داكن/فاتح)">
+                <!-- سيتم إدراجه ديناميكياً -->
+            </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>التحكم في الأسطر (الصفحة)</h3>
+        <p style="font-size: 0.85rem; color: #aaa; margin: 2px 0 4px 0;">تعديل هذه القيم يزيح جميع الأسطر في الصفحة ويحفظها مباشرة.</p>
+        
+        <div style="display: flex; gap: 8px;">
+            <div class="control-group" style="flex: 1; min-width: 0;">
+                <div class="field-header">
+                    <label style="font-size: 0.75rem; white-space: nowrap;">الأسطر:</label>
+                    <span class="left-orig-val" id="page-lines-count-orig" style="font-size: 0.65rem;">الأصلية: 15</span>
+                </div>
+                <div class="input-with-reset">
+                    <input type="number" id="lines-count-input" value="15" min="1" max="30" step="1" style="padding: 4px; min-width: 0;">
+                    <button class="reset-inline-btn" id="reset-lines-count" title="إعادة تعيين">
+                        <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                    </button>
+                    <button class="save-inline-btn saved" id="save-lines-count" title="تم الحفظ">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="control-group" style="flex: 1; min-width: 0;">
+                <div class="field-header">
+                    <label style="font-size: 0.75rem; white-space: nowrap;">إزاحة Y:</label>
+                    <span class="left-orig-val" id="global-y-offset-orig" style="font-size: 0.65rem;">الأصلية: 0</span>
+                </div>
+                <div class="input-with-reset">
+                    <input type="number" id="global-y-offset" value="0" step="1" style="padding: 4px; min-width: 0;">
+                    <button class="reset-inline-btn" id="reset-global-y-offset" title="إعادة تعيين">
+                        <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                    </button>
+                    <button class="save-inline-btn saved" id="save-global-y-offset" title="تم الحفظ">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 8px;">
+            <div class="control-group" style="flex: 1; min-width: 0;">
+                <div class="field-header">
+                    <label style="font-size: 0.75rem; white-space: nowrap;">تكبير:</label>
+                    <span class="left-orig-val" id="global-scale-orig" style="font-size: 0.65rem;">الأصلية: 1.00</span>
+                </div>
+                <div class="input-with-reset">
+                    <input type="number" id="global-scale" value="1.0" step="0.01" style="padding: 4px; min-width: 0;">
+                    <button class="reset-inline-btn" id="reset-global-scale" title="إعادة تعيين">
+                        <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                    </button>
+                    <button class="save-inline-btn saved" id="save-global-scale" title="تم الحفظ">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="control-group" style="flex: 1; min-width: 0;">
+                <div class="field-header">
+                    <label style="font-size: 0.75rem; white-space: nowrap;">الارتفاع:</label>
+                    <span class="left-orig-val" id="global-height-orig" style="font-size: 0.65rem;">الأصلية: -</span>
+                </div>
+                <div class="input-with-reset">
+                    <input type="number" id="global-height" placeholder="متغير" min="0" step="1" style="padding: 4px; font-size: 0.75rem; min-width: 0;">
+                    <button class="reset-inline-btn" id="reset-global-height" title="إعادة تعيين">
+                        <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                    </button>
+                    <button class="save-inline-btn saved" id="save-global-height" title="تم الحفظ">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <button class="btn" id="save-layout-btn" style="width: 100%; margin-top: 5px;">حفظ تخطيط الصفحة</button>
+        
+        <button class="btn" id="save-layout-btn">حفظ تخطيط الصفحة</button>
+
+        <hr style="margin: 8px 0; border: 0; border-top: 1px solid #444;">
+        <h3>إعدادات تمديد التظليل</h3>
+        <p style="font-size: 0.8rem; color: #aaa; margin: 2px 0 4px 0;">أدخل مقدار الزيادة (مثال: 0.01) لتوسيع جميع مربعات التحديد يميناً أو يساراً.</p>
+        
+        <div style="display: flex; gap: 8px; align-items: flex-end; margin-bottom: 2px;">
+            <div class="control-group" style="flex: 1; min-width: 0; max-width: 75px;">
+                <label style="white-space: nowrap; font-size: 0.7rem;">لليمين (Right):</label>
+                <input type="number" id="global-pad-right" value="0.00" step="0.001" style="width: 100%; box-sizing: border-box;">
+            </div>
+            <div class="control-group" style="flex: 1; min-width: 0; max-width: 75px;">
+                <label style="white-space: nowrap; font-size: 0.7rem;">ليسار (Left):</label>
+                <input type="number" id="global-pad-left" value="0.00" step="0.001" style="width: 100%; box-sizing: border-box;">
+            </div>
+            <button class="icon-btn" id="save-ayah-pad-btn" title="حفظ التمديد في هذه الصفحة" style="width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; background: #FF9800; border-radius: 4px; flex-shrink: 0; padding: 0;">
+                <svg viewBox="0 0 24 24" style="fill: white; width: 16px; height: 16px;"><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zM12 19c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zM6 8V5h9v3H6z"/></svg>
+            </button>
+            <button class="icon-btn" id="apply-pad-all-btn" title="تطبيق وحفظ التمديد في كل الصفحات (485 صفحة)" style="width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; background: #e91e63; border-radius: 4px; flex-shrink: 0; padding: 0;">
+                <svg viewBox="0 0 24 24" style="fill: white; width: 16px; height: 16px;"><path d="M19 1H5c-1.1 0-2 .9-2 2v14h2V3h14V1zm3 4H9c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H9V7h13v14zm-7-2c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/></svg>
+            </button>
+        </div>
+        
+        <div style="display: flex; gap: 8px; align-items: flex-end; margin-bottom: 4px;">
+            <div class="control-group" style="flex: 1; min-width: 0; max-width: 75px;">
+                <label style="white-space: nowrap; font-size: 0.7rem;">للأعلى (Top):</label>
+                <input type="number" id="global-first-line-pad" value="0" step="1" style="width: 100%; box-sizing: border-box;">
+            </div>
+            <div class="control-group" style="flex: 1; min-width: 0; max-width: 75px;">
+                <label style="white-space: nowrap; font-size: 0.7rem;">للأسفل (Bottom):</label>
+                <input type="number" id="global-last-line-pad" value="0" step="1" style="width: 100%; box-sizing: border-box;">
+            </div>
+            <button class="icon-btn" id="save-first-last-page-btn" title="حفظ التعديل في هذه الصفحة" style="width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; background: #FF9800; border-radius: 4px; flex-shrink: 0; padding: 0;">
+                <svg viewBox="0 0 24 24" style="fill: white; width: 16px; height: 16px;"><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zM12 19c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zM6 8V5h9v3H6z"/></svg>
+            </button>
+            <button class="icon-btn" id="apply-first-last-all-btn" title="تطبيق وحفظ التعديل في كل الصفحات (485 صفحة)" style="width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; background: #e91e63; border-radius: 4px; flex-shrink: 0; padding: 0;">
+                <svg viewBox="0 0 24 24" style="fill: white; width: 16px; height: 16px;"><path d="M19 1H5c-1.1 0-2 .9-2 2v14h2V3h14V1zm3 4H9c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H9V7h13v14zm-7-2c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/></svg>
+            </button>
+        </div>
+
+        <hr style="margin: 6px 0; border: 0; border-top: 1px solid #444;">
+        <h3 style="margin-bottom: 3px;">خلفية الصفحة</h3>
+        <div class="page-bg-selector" style="display: flex; gap: 8px; margin-top: 6px; margin-bottom: 6px; justify-content: space-between; padding: 0 4px;">
+            <button class="bg-color-circle" data-color="#ffffff" title="أبيض" style="background-color: #ffffff;"></button>
+            <button class="bg-color-circle" data-color="#fbf7eb" title="بيج / كريمي" style="background-color: #fbf7eb;"></button>
+            <button class="bg-color-circle" data-color="#e2edf8" title="أزرق هادئ" style="background-color: #e2edf8;"></button>
+            <button class="bg-color-circle" data-color="#1e293b" title="أزرق داكن" style="background-color: #1e293b;"></button>
+            <button class="bg-color-circle" data-color="#121212" title="أسود" style="background-color: #121212;"></button>
+        </div>
+
+        <hr style="margin: 6px 0; border: 0; border-top: 1px solid #444;">
+        <h3 style="margin-bottom: 3px;">المزامنة والتصدير</h3>
+        
+        <div style="display: flex; gap: 8px; align-items: flex-end; margin-top: 5px; margin-bottom: 5px;">
+            <div class="control-group" style="align-items: center; flex: 1;">
+                <input type="checkbox" id="sync-windows" checked style="width: auto; margin: 0; cursor: pointer;">
+                <label for="sync-windows" style="margin-bottom: 0; font-size: 0.7rem; white-space: nowrap; cursor: pointer;">Windows</label>
+            </div>
+            <div class="control-group" style="align-items: center; flex: 1;">
+                <input type="checkbox" id="sync-android" checked style="width: auto; margin: 0; cursor: pointer;">
+                <label for="sync-android" style="margin-bottom: 0; font-size: 0.7rem; white-space: nowrap; cursor: pointer;">Android</label>
+            </div>
+            <button class="icon-btn" id="sync-current-page-btn" title="مزامنة الصفحة الحالية" style="width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; background: #2196F3; border-radius: 4px; flex-shrink: 0; padding: 0;">
+                <svg viewBox="0 0 24 24" style="fill: white; width: 16px; height: 16px;"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+            </button>
+            <button class="icon-btn" id="sync-all-pages-btn" title="إعادة بناء ومزامنة كل الصفحات" style="width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; background: #673AB7; border-radius: 4px; flex-shrink: 0; padding: 0;">
+                <svg viewBox="0 0 24 24" style="fill: white; width: 16px; height: 16px;"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Right Panel: Box specific Controls -->
+    <div id="right-panel" class="sidebar">
+        <div id="right-resizer" class="resizer-handle resizer-right"></div>
+        <div class="top-action-row">
+            <button id="redo-btn" class="icon-btn" title="إرجاع (Ctrl+Y / Ctrl+Shift+Z)" disabled>
+                <svg viewBox="0 0 24 24"><path d="M11.5 8c2.65 0 5.05 1 6.9 2.6L22 7v9h-9l3.62-3.62c-1.39-1.16-3.16-1.88-5.12-1.88-3.54 0-6.55 2.31-7.6 5.5l-2.37-.78C2.92 11.03 6.85 8 11.5 8z"/></svg>
+            </button>
+            <button id="undo-btn" class="icon-btn" title="تراجع (Ctrl+Z)" disabled>
+                <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+            </button>
+            <button id="save-all-btn" class="icon-btn action-save" title="حفظ عام للصفحة الحالية (Shift+S)">
+                <svg viewBox="0 0 24 24"><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zM12 19c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zM6 8V5h9v3H6z"/></svg>
+            </button>
+        </div>
+        <h3>تعديل العنصر</h3>
+        
+        <!-- Metadata section -->
+        <div class="metadata-card" style="padding: 6px; gap: 4px;">
+            <div class="meta-row" style="margin-bottom: 2px; padding: 0 4px;"><span class="meta-label">النوع:</span> <span id="meta-type" class="meta-value">-</span></div>
+            
+            <div style="display: flex; gap: 4px;">
+                <!-- Sura -->
+                <div class="val-compare-card" id="card-meta-sura" style="flex: 1; padding: 4px; margin-bottom: 0;">
+                    <div class="compare-title" style="font-size: 0.75rem;">السورة</div>
+                    <div class="compare-row" style="flex-direction: row; justify-content: space-between; font-size: 0.7rem; padding-bottom: 2px; margin-bottom: 2px;">
+                        <div><span class="lbl">أصل:</span> <span id="meta-sura-orig" class="val-orig">-</span></div>
+                        <div><span class="lbl">حالي:</span> <span id="meta-sura-curr" class="val-curr">-</span></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="input-with-reset">
+                            <input type="number" id="meta-sura" min="1" max="114" style="text-align: center; padding-left: 40px !important;">
+                            <button class="reset-inline-btn" id="reset-meta-sura" title="إعادة تعيين">
+                                <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                            </button>
+                            <button class="save-inline-btn saved" id="save-meta-sura" title="تم الحفظ" style="left: 20px;">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ayah -->
+                <div class="val-compare-card" id="card-meta-ayah" style="flex: 1; padding: 4px; margin-bottom: 0;">
+                    <div class="compare-title" style="font-size: 0.75rem;">الآية</div>
+                    <div class="compare-row" style="flex-direction: row; justify-content: space-between; font-size: 0.7rem; padding-bottom: 2px; margin-bottom: 2px;">
+                        <div><span class="lbl">أصل:</span> <span id="meta-ayah-orig" class="val-orig">-</span></div>
+                        <div><span class="lbl">حالي:</span> <span id="meta-ayah-curr" class="val-curr">-</span></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="input-with-reset">
+                            <input type="number" id="meta-ayah" min="1" style="text-align: center; padding-left: 40px !important;">
+                            <button class="reset-inline-btn" id="reset-meta-ayah" title="إعادة تعيين">
+                                <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                            </button>
+                            <button class="save-inline-btn saved" id="save-meta-ayah" title="تم الحفظ" style="left: 20px;">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Line -->
+                <div class="val-compare-card" id="card-meta-line" style="flex: 1; padding: 4px; margin-bottom: 0;">
+                    <div class="compare-title" style="font-size: 0.75rem;">السطر</div>
+                    <div class="compare-row" style="flex-direction: row; justify-content: space-between; font-size: 0.7rem; padding-bottom: 2px; margin-bottom: 2px;">
+                        <div><span class="lbl">أصل:</span> <span id="meta-line-orig" class="val-orig">-</span></div>
+                        <div><span class="lbl">حالي:</span> <span id="meta-line-curr" class="val-curr">-</span></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="input-with-reset">
+                            <input type="number" id="meta-line" min="1" style="text-align: center; padding-left: 40px !important;">
+                            <button class="reset-inline-btn" id="reset-meta-line" title="إعادة تعيين">
+                                <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                            </button>
+                            <button class="save-inline-btn saved" id="save-meta-line" title="تم الحفظ" style="left: 20px;">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Save Status Badge and Action Buttons -->
+        <div style="display: flex; gap: 8px; align-items: center; justify-content: space-between; margin-bottom: 12px; margin-top: 5px; padding-bottom: 10px; border-bottom: 1px dashed var(--border-color-soft);">
+            <div id="save-status-badge" class="badge badge-saved" style="margin: 0; min-width: 90px; text-align: center;">تم الحفظ</div>
+            <div style="display: flex; gap: 6px; flex: 1;">
+                <button class="btn btn-danger" id="delete-highlight-btn" disabled style="flex: 1; margin: 0; padding: 6px 4px; font-size: 0.8rem;">حذف المربع</button>
+                <button class="btn" id="close-right-panel" style="flex: 1; margin: 0; padding: 6px 4px; font-size: 0.8rem; background: var(--btn-bg); border: 1px solid var(--btn-border); color: var(--text-primary);">إلغاء التحديد</button>
+            </div>
+        </div>
+        <!-- Ayah Offset Adjustment Tools -->
+        <div class="values-section" id="ayah-adjustment-section" style="margin-top: 15px; border-top: 1px dashed #444; padding-top: 12px; display: none;">
+            <h4 style="margin-bottom: 8px;">إزاحة أرقام آيات السورة الحالية في الصفحة</h4>
+            <div style="display: flex; flex-direction: row; gap: 8px; align-items: center; justify-content: space-between;">
+                <div style="font-size: 0.75rem; color: #aaa;">إزاحة بـ:</div>
+                <div style="display: flex; gap: 4px;">
+                    <button class="action-btn" id="btn-adj-ayah-minus" style="padding: 4px 10px; font-size: 0.8rem; background-color: #d32f2f; min-width: 40px; border: none; border-radius: 4px; color: white; cursor: pointer;" title="طرح 1 من أرقام الآيات">-1</button>
+                    <button class="action-btn" id="btn-adj-ayah-plus" style="padding: 4px 10px; font-size: 0.8rem; background-color: #388e3c; min-width: 40px; border: none; border-radius: 4px; color: white; cursor: pointer;" title="إضافة 1 إلى أرقام الآيات">+1</button>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row; gap: 10px; margin-top: 8px; align-items: center; justify-content: center;">
+                <label style="font-size: 0.75rem; color: #ccc; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                    <input type="radio" name="adj-scope" id="adj-scope-all" checked style="cursor: pointer;"> كل الصفحة
+                </label>
+                <label style="font-size: 0.75rem; color: #ccc; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                    <input type="radio" name="adj-scope" id="adj-scope-from" style="cursor: pointer;"> من العنصر فصاعداً
+                </label>
+            </div>
+        </div>
+
+        <!-- Values Table / Group -->
+        <div class="values-section">
+            <h4 id="geo-values-header" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                القيم الجغرافية للمربع
+                <svg id="geo-values-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="transition: transform 0.2s;">
+                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                </svg>
+            </h4>
+            <div id="geo-values-content">
+                <div id="highlight-value-fields" style="display: none; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: row; gap: 8px; width: 100%;">
+                    <div class="val-compare-card" id="card-hl-left">
+                        <div class="compare-title">البداية الأفقية (Left)</div>
+                        <div class="compare-row">
+                            <div><span class="lbl">الأصلية:</span> <span id="hl-left-orig" class="val-orig">0.0000</span></div>
+                            <div><span class="lbl">الحالية:</span> <span id="hl-left-curr" class="val-curr">0.0000</span></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-with-reset">
+                                <input type="number" id="hl-left" step="0.0001" min="0" max="1">
+                                <button class="reset-inline-btn" id="reset-hl-left" title="إعادة تعيين">
+                                    <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                                </button>
+                                <button class="save-inline-btn saved" id="save-hl-left" title="تم الحفظ">
+                                    <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="val-compare-card" id="card-hl-right">
+                        <div class="compare-title">النهاية الأفقية (Right)</div>
+                        <div class="compare-row">
+                            <div><span class="lbl">الأصلية:</span> <span id="hl-right-orig" class="val-orig">0.0000</span></div>
+                            <div><span class="lbl">الحالية:</span> <span id="hl-right-curr" class="val-curr">0.0000</span></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-with-reset">
+                                <input type="number" id="hl-right" step="0.0001" min="0" max="1">
+                                <button class="reset-inline-btn" id="reset-hl-right" title="إعادة تعيين">
+                                    <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                                </button>
+                                <button class="save-inline-btn saved" id="save-hl-right" title="تم الحفظ">
+                                    <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: row; gap: 8px; width: 100%;">
+                    <div class="val-compare-card" id="card-hl-line-top">
+                        <div class="compare-title">أعلى السطر (Line Top)</div>
+                        <div class="compare-row">
+                            <div><span class="lbl">الأصلية:</span> <span id="line-top-orig" class="val-orig">-</span></div>
+                            <div><span class="lbl">الحالية:</span> <span id="line-top-curr" class="val-curr">-</span></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-with-reset">
+                                <input type="number" id="hl-line-top" step="1">
+                                <button class="reset-inline-btn" id="reset-hl-line-top" title="إعادة تعيين">
+                                    <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                                </button>
+                                <button class="save-inline-btn saved" id="save-hl-line-top" title="تم الحفظ">
+                                    <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="val-compare-card" id="card-hl-line-bottom">
+                        <div class="compare-title">أسفل السطر (Bottom)</div>
+                        <div class="compare-row">
+                            <div><span class="lbl">الأصلية:</span> <span id="line-bottom-orig" class="val-orig">-</span></div>
+                            <div><span class="lbl">الحالية:</span> <span id="line-bottom-curr" class="val-curr">-</span></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-with-reset">
+                                <input type="number" id="hl-line-bottom" step="1">
+                                <button class="reset-inline-btn" id="reset-hl-line-bottom" title="إعادة تعيين">
+                                    <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                                </button>
+                                <button class="save-inline-btn saved" id="save-hl-line-bottom" title="تم الحفظ">
+                                    <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="font-size: 0.8rem; color: #aaa; text-align: center; padding: 4px; border-top: 1px dashed rgba(255,255,255,0.06);" id="line-height-info">
+                    ارتفاع السطر المختار 🔲 الأصلي: <span id="line-height-orig" style="color: #aaa; font-weight: bold; font-family: monospace;">-</span>px | الحالي: <span id="line-height-curr" style="color: #FF9800; font-weight: bold; font-family: monospace;">-</span>px
+                </div>
+            </div>
+
+            <div id="marker-value-fields" style="display: none;">
+                <div style="display: flex; flex-direction: row; gap: 8px; width: 100%;">
+                    <div class="val-compare-card" id="card-mk-cx">
+                        <div class="compare-title">المركز الأفقي (Center X)</div>
+                        <div class="compare-row">
+                            <div><span class="lbl">الأصلية:</span> <span id="mk-cx-orig" class="val-orig">0.0000</span></div>
+                            <div><span class="lbl">الحالية:</span> <span id="mk-cx-curr" class="val-curr">0.0000</span></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-with-reset">
+                                <input type="number" id="mk-cx" step="0.0001" min="0" max="1">
+                                <button class="reset-inline-btn" id="reset-mk-cx" title="إعادة تعيين">
+                                    <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                                </button>
+                                <button class="save-inline-btn saved" id="save-mk-cx" title="تم الحفظ">
+                                    <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="val-compare-card" id="card-mk-cy">
+                        <div class="compare-title">المركز العمودي (Center Y)</div>
+                        <div class="compare-row">
+                            <div><span class="lbl">الأصلية:</span> <span id="mk-cy-orig" class="val-orig">0.0000</span></div>
+                            <div><span class="lbl">الحالية:</span> <span id="mk-cy-curr" class="val-curr">0.0000</span></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-with-reset">
+                                <input type="number" id="mk-cy" step="0.0001" min="0" max="1">
+                                <button class="reset-inline-btn" id="reset-mk-cy" title="إعادة تعيين">
+                                    <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                                </button>
+                                <button class="save-inline-btn saved" id="save-mk-cy" title="تم الحفظ">
+                                    <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: row; gap: 8px; width: 100%; margin-top: 4px;">
+                    <div class="val-compare-card" id="card-mk-line" style="flex: 1;">
+                        <div class="compare-title">رقم السطر (Line Number)</div>
+                        <div class="compare-row">
+                            <div><span class="lbl">الأصلية:</span> <span id="mk-line-orig" class="val-orig">-</span></div>
+                            <div><span class="lbl">الحالية:</span> <span id="mk-line-curr" class="val-curr">-</span></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-with-reset">
+                                <input type="number" id="mk-line" step="1" min="1">
+                                <button class="reset-inline-btn" id="reset-mk-line" title="إعادة تعيين">
+                                    <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                                </button>
+                                <button class="save-inline-btn saved" id="save-mk-line" title="تم الحفظ">
+                                    <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="val-compare-card" style="padding: 10px; flex: unset; margin-top: 4px; display: flex; flex-direction: column; gap: 8px;">
+                    <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+                        <input type="checkbox" id="sync-marker-highlight" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;">
+                        <span>🔗 محاذاة نهاية التظليل تلقائياً مع الدائرة</span>
+                    </label>
+                    <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+                        <input type="checkbox" id="sync-next-ayah-highlight" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;">
+                        <span>🔗 محاذاة بداية الآية الموالية تلقائياً مع الدائرة</span>
+                    </label>
+                    <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+                        <input type="checkbox" id="sync-create-next-highlight" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;">
+                        <span>إنشاء مربع للآية الموالية عند تحريك الدائرة في نفس السطر</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="val-compare-card numbering-actions-card">
+                <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+                    <input type="checkbox" id="prevent-overlap" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;" checked>
+                    <span>منع تداخل المربعات والأسطر أثناء السحب والتصغير/التكبير</span>
+                </label>
+                <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+                    <input type="checkbox" id="shift-following-lines" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;" checked>
+                    <span>إزاحة الأسطر التابعة عند تعديل ارتفاع السطر</span>
+                </label>
+                <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+                    <input type="checkbox" id="snap-highlight-edges" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;">
+                    <span>محاذاة مغناطيسية لحواف مربع التحديد أثناء السحب</span>
+                </label>
+                <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+                    <input type="checkbox" id="renumber-following-highlights" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;">
+                    <span>تحديث أرقام مربعات التحديد التالية عند الإنشاء أو الحذف</span>
+                </label>
+            </div>
+            </div> <!-- End of geo-values-content -->
+        </div>
+
+        <!-- Drawing Tools Section -->
+        <div class="values-section" id="drawing-tools-section" style="margin-top: 12px; border-top: 1px dashed var(--border-color); padding-top: 10px;">
+            <!-- رأس صغير للوحة الرسم مع مفتاح السويتش وبجانبه أزرار الإجراءات السريعة -->
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 6px; border-bottom: 1px dashed var(--border-color); margin-bottom: 8px;">
+                <span style="font-size: 0.85rem; color: #4CAF50; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                    <span>✏️</span>
+                    <span>أدوات الرسم</span>
+                </span>
+                
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="display: flex; gap: 4px;">
+                        <!-- زر فتح في GIMP -->
+                        <button class="icon-btn" id="btn-drawing-gimp" title="تعديل بواسطة GIMP" style="color: #fff; padding: 2px; width: 34px; height: 24px; border: 1px solid var(--btn-border); border-radius: 4px; background: #5c5c8a; display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
+                            <span style="font-size: 9px; font-weight: bold; font-family: Arial, sans-serif;">GIMP</span>
+                        </button>
+                        <!-- زر حفظ الرسم محلياً -->
+                        <button class="icon-btn action-save" id="btn-drawing-save-local" title="حفظ الرسم (Shift + S)" style="color: #4CAF50; padding: 2px; width: 24px; height: 24px; border: 1px solid var(--btn-border); border-radius: 4px; background: var(--btn-bg); display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                                <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zM12 19c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zM6 8V5h9v3H6z"/>
+                            </svg>
+                        </button>
+                        <!-- زر تراجع -->
+                        <button class="icon-btn" id="btn-drawing-undo" title="تراجع عن آخر ضربة فرشاة (Ctrl + Z)" style="color: #FF9800; padding: 2px; width: 24px; height: 24px; border: 1px solid var(--btn-border); border-radius: 4px; background: var(--btn-bg); display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                                <path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/>
+                            </svg>
+                        </button>
+                        <!-- زر مسح الكل -->
+                        <button class="icon-btn" id="btn-drawing-clear" title="مسح الرسومات غير المحفوظة" style="color: #f44336; padding: 2px; width: 24px; height: 24px; border: 1px solid var(--btn-border); border-radius: 4px; background: var(--btn-bg); display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                                <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                            </svg>
+                        </button>
+                        <!-- زر استعادة الصورة الخام -->
+                        <button class="icon-btn" id="btn-drawing-restore" title="استعادة الصورة الخام الأصلية" style="color: #e91e63; padding: 2px; width: 24px; height: 24px; border: 1px solid var(--btn-border); border-radius: 4px; background: var(--btn-bg); display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div style="width: 1px; height: 16px; background: var(--border-color); margin: 0 2px;"></div>
+                    
+                    <!-- سويتش التفعيل الحديث -->
+                    <label class="switch-container" style="position: relative; display: inline-block; width: 34px; height: 20px; cursor: pointer; margin: 0;">
+                        <input type="checkbox" id="drawing-mode-toggle" style="opacity: 0; width: 0; height: 0;">
+                        <span class="switch-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--border-color); transition: .3s; border-radius: 20px;"></span>
+                    </label>
+                </div>
+            </div>
+            
+            <div id="drawing-controls-panel" style="display: none; flex-direction: column; gap: 8px; margin-top: 4px; padding: 6px; background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border-color-soft);">
+                
+                <!-- Panel Tabs -->
+                <div class="panel-tabs">
+                    <button class="panel-tab-btn active" id="panel-tab-draw-btn">أدوات الرسم</button>
+                    <button class="panel-tab-btn" id="panel-tab-enhance-btn">تعديل وتحسين</button>
+                </div>
+
+                <!-- Tab content: Drawing -->
+                <div id="panel-tab-content-draw" style="display: flex; flex-direction: column; gap: 8px;">
+                    <!-- أدوات الرسم والألوان مدمجة -->
+                    <div class="color-palette-container" style="display: flex; align-items: center; gap: 8px; background: var(--btn-bg); padding: 6px; border-radius: 6px; border: 1px solid var(--border-color-soft); overflow-x: auto;">
+                        
+                        <!-- أداة الرسم / الممحاة -->
+                        <div class="segmented-control" style="display: flex; align-items: center; flex-shrink: 0; min-height: unset; padding: 0; margin: 0; height: 26px;">
+                            <button class="segment-btn active" id="segment-btn-brush" title="استخدم أداة القلم للرسم الحر" style="padding: 4px 8px; min-height: unset;">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                                </svg>
+                            </button>
+                            <button class="segment-btn" id="segment-btn-eraser" title="استخدم أداة الممحاة لمسح الأخطاء" style="padding: 4px 8px; min-height: unset;">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                    <path d="M16.24 3.56l4.95 4.94c.78.79.78 2.05 0 2.84L12 20.53a4.008 4.008 0 0 1-5.66 0L2.81 17c-.78-.79-.78-2.05 0-2.84L12.28 4.7c.78-.79 2.05-.79 2.83 0l1.13-1.14z"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div style="width: 1px; height: 20px; background: var(--border-color); flex-shrink: 0; margin: 0 2px;"></div>
+
+                        <!-- اختيار لون مخصص -->
+                        <button id="btn-custom-color" title="اختيار لون مخصص" style="width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--border-color); background: linear-gradient(45deg, red, orange, yellow, green, blue, purple); cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center; position: relative; flex-shrink: 0;">
+                            <input type="color" id="enhance-color-picker" style="opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;" value="#000000">
+                        </button>
+                        
+                        <div style="width: 1px; height: 16px; background: var(--border-color); margin: 0 2px; flex-shrink: 0;"></div>
+                        
+                        <!-- قائمة الألوان السريعة -->
+                        <div style="display: flex; gap: 6px; align-items: center; overflow: visible; flex: 1; padding: 3px 0;">
+                            <button class="color-dot active" id="color-dot-black" data-color="#000000" title="أسود" style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid #fff; background: #000000; cursor: pointer; padding: 0; flex-shrink: 0; box-shadow: 0 0 3px rgba(0,0,0,0.5);"></button>
+                            <button class="color-dot" id="color-dot-white" data-color="#ffffff" title="أبيض" style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid transparent; background: #ffffff; cursor: pointer; padding: 0; flex-shrink: 0;"></button>
+                            <button class="color-dot" id="color-dot-red" data-color="#f44336" title="أحمر" style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid transparent; background: #f44336; cursor: pointer; padding: 0; flex-shrink: 0;"></button>
+                            <button class="color-dot" id="color-dot-yellow" data-color="#ffeb3b" title="أصفر" style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid transparent; background: #ffeb3b; cursor: pointer; padding: 0; flex-shrink: 0;"></button>
+                            <button class="color-dot" id="color-dot-green" data-color="#4caf50" title="أخضر" style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid transparent; background: #4caf50; cursor: pointer; padding: 0; flex-shrink: 0;"></button>
+                            <button class="color-dot" id="color-dot-blue" data-color="#2196f3" title="أزرق" style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid transparent; background: #2196f3; cursor: pointer; padding: 0; flex-shrink: 0;"></button>
+                        </div>
+                    </div>
+
+                    <!-- أشرطة التحكم المضغوطة المعنونة -->
+                    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+                        <!-- حجم الفرشاة -->
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">
+                                <span>حجم الفرشاة</span>
+                                <span id="val-brush-size" style="font-family: monospace; color: var(--accent-color);">10px</span>
+                            </div>
+                            <input type="range" class="custom-range" id="brush-size" min="1" max="100" value="10" step="1">
+                        </div>
+                        
+                        <!-- الشفافية -->
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">
+                                <span>الشفافية</span>
+                                <span id="val-brush-opacity" style="font-family: monospace; color: var(--accent-color);">100%</span>
+                            </div>
+                            <input type="range" class="custom-range" id="brush-opacity" min="10" max="100" value="100" step="5">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab content: Enhance & Adjust -->
+                <div id="panel-tab-content-enhance" style="display: none; flex-direction: column; gap: 8px;">
+                    <!-- التباين (Contrast) -->
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">
+                            <span>التباين (Contrast)</span>
+                            <span id="val-enhance-contrast" style="font-family: monospace; color: var(--accent-color);">1.00</span>
+                        </div>
+                        <input type="range" class="custom-range" id="enhance-contrast" min="0.5" max="2.0" value="1.00" step="0.05">
+                    </div>
+
+                    <!-- التشبع (Saturation) -->
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">
+                            <span>التشبع (Saturation)</span>
+                            <span id="val-enhance-saturation" style="font-family: monospace; color: var(--accent-color);">1.00</span>
+                        </div>
+                        <input type="range" class="custom-range" id="enhance-saturation" min="0.5" max="2.0" value="1.00" step="0.05">
+                    </div>
+
+                    <!-- الحدة (Sharpness) -->
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">
+                            <span>الحدة (Sharpness)</span>
+                            <span id="val-enhance-sharpness" style="font-family: monospace; color: var(--accent-color);">1.00</span>
+                        </div>
+                        <input type="range" class="custom-range" id="enhance-sharpness" min="0.5" max="2.0" value="1.00" step="0.05">
+                    </div>
+
+                    <!-- قوة تبييض الخلفية (Clean Strength) -->
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">
+                            <span>تبييض الخلفية (Clean Strength)</span>
+                            <span id="val-enhance-strength" style="font-family: monospace; color: var(--accent-color);">0.00</span>
+                        </div>
+                        <input type="range" class="custom-range" id="enhance-strength" min="0.0" max="1.0" value="0.00" step="0.05">
+                    </div>
+
+                    <!-- أزرار الإجراءات للتحسين -->
+                    <div style="display: flex; gap: 6px; margin-top: 4px;">
+                        <button id="btn-apply-defaults" class="btn btn-save" style="flex: 1; padding: 5px; font-size: 0.75rem; background-color: #4CAF50; border-color: #43a047; margin-top: 0;">تطبيق القيم الافتراضية</button>
+                        <button id="btn-reset-enhance" class="btn btn-danger" style="flex: 1; padding: 5px; font-size: 0.75rem; background-color: #f44336; border-color: #d32f2f; margin-top: 0;">إعادة تعيين القيم</button>
+                    </div>
+                </div>
+
+                <!-- Zoom Control Bar -->
+                <div id="zoom-bar" title="تحكم في التكبير والتصغير">
+                    <button class="zoom-btn" id="zoom-out-btn" title="تصغير (−)">−</button>
+                    <input type="range" id="zoom-slider" min="25" max="400" value="100" step="1">
+                    <button class="zoom-btn" id="zoom-in-btn" title="تكبير (+)">+</button>
+                    <span class="zoom-divider"></span>
+                    <span id="zoom-label" title="انقر للعودة إلى 100%">100%</span>
+                    <span class="zoom-divider"></span>
+                    <button class="zoom-preset-btn" data-zoom="50" title="50%">50%</button>
+                    <button class="zoom-preset-btn" data-zoom="75" title="75%">75%</button>
+                    <button class="zoom-preset-btn" data-zoom="100" title="100%">100%</button>
+                    <button class="zoom-preset-btn" data-zoom="150" title="150%">150%</button>
+                    <button class="zoom-preset-btn" data-zoom="200" title="200%">200%</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-save" id="save-ayah-btn" style="background: #FF9800; border-color: #e68a00; margin-top: 10px;">حفظ بيانات الآيات</button>
+    </div>
+
+    <div id="image-container">
+        <div id="image-wrapper">
+            <img id="page-image" src="" alt="صفحة المصحف">
+            <canvas id="drawing-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; z-index: 50; cursor: crosshair; touch-action: none;"></canvas>
+            <div id="overlay-container"></div>
+        </div>
+    </div>
+
+    
+    <div id="toast" class="toast">تم الحفظ بنجاح</div>
+
+    <div id="help-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background: var(--bg-sidebar); backdrop-filter: blur(10px); border:1px solid var(--border-color); padding:25px; border-radius:15px; z-index:1000; width:470px; color: var(--text-primary); box-shadow: 0 10px 40px var(--shadow-color);">
+        <h3 style="margin-top:0; border-bottom:1px solid #444; padding-bottom:10px;">دليل الاختصارات</h3>
+        <ul style="line-height:2; margin-bottom:20px; padding-right:20px; font-size:15px;">
+            <li><b>Shift + S:</b> حفظ عام للصفحة الحالية، ويشمل بيانات الآيات وتخطيط الأسطر.</li>
+            <li><b>Ctrl + Z:</b> التراجع عن آخر تعديل في الصفحة الحالية.</li>
+            <li><b>Ctrl + Y / Ctrl + Shift + Z:</b> إرجاع آخر تعديل تم التراجع عنه.</li>
+            <li><b>Delete / Backspace:</b> حذف المربع المحدد.</li>
+            <li><b>Shift + D:</b> تكرار المربع المحدد (إنشاء نسخة مطابقة).</li>
+            <li><b>+ / - :</b> زيادة أو إنقاص رقم الآية.</li>
+            <li><b>Ctrl + أسهم يمين/يسار:</b> تمديد حافة المربع لتلتصق بالهامش الأيمن/الأيسر.</li>
+            <li><b>Ctrl + مسافة (Space):</b> تمديد المربع ليلتصق بالهامشين معاً.</li>
+            <li><b>تحديث أرقام اللاحقين:</b> عند إنشاء مربع يزيد أرقام مربعات نفس السورة التي بعده، وعند الحذف ينقصها بواحد.</li>
+            <li><b>المحاذاة المغناطيسية:</b> عند تفعيلها تلتقط حواف المربع للهوامش والدوائر والحدود القريبة. دبل كليك على مقبض اليسار/اليمين يمد الطرف للهامش الافتراضي.</li>
+            <li><b>الأسهم يمين/يسار:</b> تقليب الصفحات (للسابق والتالي)</li>
+            <li><b>الأسهم أعلى/أسفل:</b> الانتقال للمربع السابق/التالي</li>
+            <li><b>Shift + أسهم يمين/يسار:</b> تحريك المربع أفقياً (يميناً ويساراً)</li>
+            <li><b>Ctrl + Shift + أعلى/أسفل:</b> توسيع السطر (من الأعلى/الأسفل)</li>
+            <li><b>Ctrl + Shift + Alt + أعلى/أسفل:</b> تضييق السطر (من الأعلى/الأسفل)</li>
+            <li><b>سحب وإفلات (بالفأرة):</b> انقر على أي مربع واسحبه أفقياً أو عمودياً للعلامات.</li>
+            <li><b>Shift + سحب الدائرة:</b> تحريك الدائرة أفقياً فقط (قفل التحريك العمودي).</li>
+            <li><b>Ctrl + Shift + سحب الدائرة:</b> تحريك الدائرة عمودياً فقط (قفل التحريك الأفقي).</li>
+            <li style="border-top:1px dashed #555;margin-top:6px;padding-top:6px;"><b>مع Ctrl + عجلة الماوس (Scroll):</b> تكبير وتصغير الصورة.</li>
+            <li><b>مع الضغط المستمر على Alt + سحب:</b> تحريك الصورة (Pan) في أي اتجاه.</li>
+            <li><b>انقر على النسبة % في شريط الزوم:</b> العودة لحجم 100% الطبيعي.</li>
+        </ul>
+        <button class="btn" id="close-help-btn" style="width:100%;">إغلاق</button>
+    </div>
+    <div id="custom-modal-overlay" class="custom-modal-overlay" style="display: none;">
+        <div class="custom-modal">
+            <h3 id="custom-modal-title">تنبيه</h3>
+            <p id="custom-modal-message"></p>
+            <div class="custom-modal-actions">
+                <button id="custom-modal-cancel" class="btn" style="display: none; background: #f44336; border-color: #d32f2f;">إلغاء</button>
+                <button id="custom-modal-ok" class="btn btn-save" style="background: #4CAF50; border-color: #388E3C;">موافق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Modal -->
+    <div id="progress-modal-overlay" class="custom-modal-overlay" style="display: none;">
+        <div class="custom-modal" style="width: 650px; max-width: 95%;">
+            <h3 style="margin-bottom: 8px;">تتبع الإنجاز</h3>
+            <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 15px;">الصفحات الخضراء تم إنجازها ومزامنتها. اضغط على أي صفحة لتغيير حالتها يدوياً.</p>
+            
+            <!-- Progress Bar -->
+            <div style="margin-bottom: 20px; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 6px; font-size: 0.95rem;">
+                    <span id="progress-text-count" style="color: #ddd;">0 / 604 صفحة</span>
+                    <span id="progress-text-percent" style="font-weight: bold; color: #4CAF50;">0%</span>
+                </div>
+                <div style="width: 100%; height: 12px; background: rgba(255,255,255,0.08); border-radius: 6px; overflow: hidden; box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);">
+                    <div id="progress-bar-fill" style="width: 0%; height: 100%; background: linear-gradient(90deg, #4CAF50, #81C784); transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);"></div>
+                </div>
+            </div>
+
+            <div id="progress-grid" class="progress-grid">
+                <!-- Generated dynamically -->
+            </div>
+            <div class="custom-modal-actions" style="margin-top: 20px;">
+                <button id="close-progress-btn" class="btn">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sync Modal -->
+    <div id="sync-modal-overlay" class="custom-modal-overlay" style="display: none;">
+        <div class="custom-modal" style="width: 80%; max-width: 600px; display: flex; flex-direction: column;">
+            <h2 id="sync-modal-title" style="margin-bottom: 15px;">تأكيد المزامنة</h2>
+            <p id="sync-modal-message" style="margin-bottom: 15px; font-size: 0.95rem;">هل أنت متأكد من رغبتك في المزامنة؟</p>
+            
+            <!-- Terminal Output Area -->
+            <div id="sync-terminal-output" style="
+                flex: 1;
+                background: #1e1e1e;
+                color: #00ff00;
+                font-family: monospace;
+                padding: 10px;
+                border-radius: 4px;
+                overflow-y: auto;
+                height: 250px;
+                display: none;
+                text-align: left;
+                direction: ltr;
+                white-space: pre-wrap;
+                word-break: break-all;
+                overflow-wrap: break-word;
+                margin-bottom: 15px;
+                border: 1px solid #333;
+            "></div>
+
+            <div class="custom-modal-actions" style="display: flex; gap: 10px; justify-content: center;">
+                <button id="sync-modal-start" class="btn btn-save" style="background: #4CAF50;">بدأ</button>
+                <button id="sync-modal-cancel" class="btn btn-danger" style="background: #f44336; border-color: #d32f2f;">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=20260614-alt-pan-v1"></script>
+</body>
+</html>

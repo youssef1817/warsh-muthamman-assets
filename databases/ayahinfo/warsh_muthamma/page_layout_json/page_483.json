@@ -1,0 +1,116 @@
+{
+  "page": 483,
+  "imageWidth": 1265,
+  "imageHeight": 2040,
+  "textRegion": {
+    "top": 102,
+    "bottom": 1958,
+    "left": 151,
+    "right": 1113
+  },
+  "detectedLineCount": 9,
+  "lineBands": [
+    {
+      "line": 1,
+      "top": 258,
+      "bottom": 424,
+      "center": 341
+    },
+    {
+      "line": 2,
+      "top": 442,
+      "bottom": 538,
+      "center": 490
+    },
+    {
+      "line": 3,
+      "top": 567,
+      "bottom": 664,
+      "center": 616
+    },
+    {
+      "line": 4,
+      "top": 691,
+      "bottom": 791,
+      "center": 741
+    },
+    {
+      "line": 5,
+      "top": 1100,
+      "bottom": 1198,
+      "center": 1149
+    },
+    {
+      "line": 6,
+      "top": 1227,
+      "bottom": 1323,
+      "center": 1275
+    },
+    {
+      "line": 7,
+      "top": 1353,
+      "bottom": 1449,
+      "center": 1401
+    },
+    {
+      "line": 8,
+      "top": 1749,
+      "bottom": 1835,
+      "center": 1792
+    },
+    {
+      "line": 9,
+      "top": 1883,
+      "bottom": 2003,
+      "center": 1943
+    }
+  ],
+  "nonAyahZones": [
+    {
+      "type": "sura_header",
+      "top": 38,
+      "bottom": 200,
+      "confidence": 1
+    },
+    {
+      "type": "basmala",
+      "top": 223,
+      "bottom": 304,
+      "confidence": 1
+    },
+    {
+      "type": "sura_header",
+      "top": 809,
+      "bottom": 970,
+      "confidence": 1
+    },
+    {
+      "type": "basmala",
+      "top": 993,
+      "bottom": 1072,
+      "confidence": 1
+    },
+    {
+      "type": "sura_header",
+      "top": 1461,
+      "bottom": 1619,
+      "confidence": 1
+    },
+    {
+      "type": "basmala",
+      "top": 1634,
+      "bottom": 1714,
+      "confidence": 1
+    }
+  ],
+  "confidence": 1,
+  "manualOverride": true,
+  "method": "peak_valley_v2",
+  "debug": {
+    "rawBandCount": 9,
+    "splitBands": 9,
+    "medianHeight": 96,
+    "merged": 0,
+    "tallerThan1_6": 0
+  }
+}

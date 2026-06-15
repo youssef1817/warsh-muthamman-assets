@@ -1,0 +1,140 @@
+{
+  "page": 485,
+  "imageWidth": 1268,
+  "imageHeight": 2037,
+  "textRegion": {
+    "top": 101,
+    "bottom": 1955,
+    "left": 152,
+    "right": 1115
+  },
+  "detectedLineCount": 11,
+  "lineBands": [
+    {
+      "line": 1,
+      "top": 207,
+      "bottom": 344,
+      "center": 276
+    },
+    {
+      "line": 2,
+      "top": 379,
+      "bottom": 451,
+      "center": 415
+    },
+    {
+      "line": 3,
+      "top": 499,
+      "bottom": 536,
+      "center": 518
+    },
+    {
+      "line": 4,
+      "top": 775,
+      "bottom": 844,
+      "center": 810
+    },
+    {
+      "line": 5,
+      "top": 882,
+      "bottom": 951,
+      "center": 917
+    },
+    {
+      "line": 6,
+      "top": 1190,
+      "bottom": 1263,
+      "center": 1227
+    },
+    {
+      "line": 7,
+      "top": 1291,
+      "bottom": 1361,
+      "center": 1326
+    },
+    {
+      "line": 8,
+      "top": 1426,
+      "bottom": 1456,
+      "center": 1441
+    },
+    {
+      "line": 9,
+      "top": 1699,
+      "bottom": 1768,
+      "center": 1734
+    },
+    {
+      "line": 10,
+      "top": 1802,
+      "bottom": 1873,
+      "center": 1838
+    },
+    {
+      "line": 11,
+      "top": 1903,
+      "bottom": 2011,
+      "center": 1957
+    }
+  ],
+  "nonAyahZones": [
+    {
+      "type": "sura_header",
+      "top": 40,
+      "bottom": 173,
+      "confidence": 1
+    },
+    {
+      "type": "basmala",
+      "top": 213,
+      "bottom": 247,
+      "confidence": 1
+    },
+    {
+      "type": "sura_header",
+      "top": 544,
+      "bottom": 675,
+      "confidence": 1
+    },
+    {
+      "type": "basmala",
+      "top": 709,
+      "bottom": 744,
+      "confidence": 1
+    },
+    {
+      "type": "sura_header",
+      "top": 964,
+      "bottom": 1095,
+      "confidence": 1
+    },
+    {
+      "type": "basmala",
+      "top": 1128,
+      "bottom": 1161,
+      "confidence": 1
+    },
+    {
+      "type": "sura_header",
+      "top": 1472,
+      "bottom": 1603,
+      "confidence": 1
+    },
+    {
+      "type": "basmala",
+      "top": 1637,
+      "bottom": 1671,
+      "confidence": 1
+    }
+  ],
+  "confidence": 1,
+  "manualOverride": true,
+  "method": "peak_valley_v2",
+  "debug": {
+    "rawBandCount": 11,
+    "splitBands": 11,
+    "medianHeight": 69,
+    "merged": 0,
+    "tallerThan1_6": 0
+  }
+}

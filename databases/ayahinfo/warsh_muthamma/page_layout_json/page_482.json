@@ -1,0 +1,122 @@
+{
+  "page": 482,
+  "imageWidth": 1260,
+  "imageHeight": 2025,
+  "textRegion": {
+    "top": 101,
+    "bottom": 1944,
+    "left": 151,
+    "right": 1108
+  },
+  "detectedLineCount": 10,
+  "lineBands": [
+    {
+      "line": 1,
+      "top": 218,
+      "bottom": 368,
+      "center": 293
+    },
+    {
+      "line": 2,
+      "top": 406,
+      "bottom": 485,
+      "center": 446
+    },
+    {
+      "line": 3,
+      "top": 529,
+      "bottom": 612,
+      "center": 571
+    },
+    {
+      "line": 4,
+      "top": 646,
+      "bottom": 729,
+      "center": 688
+    },
+    {
+      "line": 5,
+      "top": 766,
+      "bottom": 850,
+      "center": 808
+    },
+    {
+      "line": 6,
+      "top": 1130,
+      "bottom": 1215,
+      "center": 1173
+    },
+    {
+      "line": 7,
+      "top": 1249,
+      "bottom": 1334,
+      "center": 1292
+    },
+    {
+      "line": 8,
+      "top": 1370,
+      "bottom": 1456,
+      "center": 1413
+    },
+    {
+      "line": 9,
+      "top": 1751,
+      "bottom": 1849,
+      "center": 1800
+    },
+    {
+      "line": 10,
+      "top": 1875,
+      "bottom": 2005,
+      "center": 1940
+    }
+  ],
+  "nonAyahZones": [
+    {
+      "type": "sura_header",
+      "top": 34,
+      "bottom": 171,
+      "confidence": 1
+    },
+    {
+      "type": "basmala",
+      "top": 185,
+      "bottom": 250,
+      "confidence": 1
+    },
+    {
+      "type": "sura_header",
+      "top": 852,
+      "bottom": 990,
+      "confidence": 1
+    },
+    {
+      "type": "basmala",
+      "top": 1019,
+      "bottom": 1087,
+      "confidence": 1
+    },
+    {
+      "type": "sura_header",
+      "top": 1465,
+      "bottom": 1613,
+      "confidence": 1
+    },
+    {
+      "type": "basmala",
+      "top": 1648,
+      "bottom": 1715,
+      "confidence": 1
+    }
+  ],
+  "confidence": 1,
+  "manualOverride": true,
+  "method": "peak_valley_v2",
+  "debug": {
+    "rawBandCount": 10,
+    "splitBands": 10,
+    "medianHeight": 85,
+    "merged": 0,
+    "tallerThan1_6": 0
+  }
+}

@@ -1,0 +1,709 @@
+0001: [BAL 0] <!DOCTYPE html>
+0002: [BAL 0] <html lang="ar" dir="rtl">
+0003: [BAL 0] <head>
+0004: [BAL 0] <meta charset="UTF-8">
+0005: [BAL 0] <meta name="viewport" content="width=device-width, initial-width=1.0">
+0006: [BAL 0] <title>عارض ومحرر مصحف ورش المثمن</title>
+0007: [BAL 0] <link rel="stylesheet" href="index.css?v=20260614-drawing-v8">
+0008: [BAL 0] </head>
+0009: [BAL 0] <body>
+0010: [BAL 0] 
+0011: [BAL 0] <!-- Left Panel: General Page Controls -->
+0012: [BAL 1] <div id="left-panel" class="sidebar">
+0013: [BAL 1] <div id="left-resizer" class="resizer-handle resizer-left"></div>
+0014: [BAL 1] <!-- Integrated Page Navigator & Actions -->
+0015: [BAL 1] <!-- Integrated Page Navigator & Actions -->
+0016: [BAL 2] <div class="integrated-navigator-row">
+0017: [BAL 2] <button id="prev-page-btn" class="icon-btn" title="الصفحة السابقة (سهم يمين)">
+0018: [BAL 2] <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+0019: [BAL 2] </button>
+0020: [BAL 3] <div class="page-selector">
+0021: [BAL 3] <span>ص</span>
+0022: [BAL 3] <input type="number" id="jump-input" min="1" max="485" value="1">
+0023: [BAL 2] </div>
+0024: [BAL 2] <button id="next-page-btn" class="icon-btn" title="الصفحة التالية (سهم يسار)">
+0025: [BAL 2] <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+0026: [BAL 2] </button>
+0027: [BAL 2] 
+0028: [BAL 2] <div class="nav-divider"></div>
+0029: [BAL 2] 
+0030: [BAL 2] <button id="toggle-overlay-btn" class="icon-btn" title="تفعيل/تعطيل التظليل">
+0031: [BAL 2] <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+0032: [BAL 2] </button>
+0033: [BAL 2] <button id="refresh-btn" class="icon-btn" title="تحديث الصورة">
+0034: [BAL 2] <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+0035: [BAL 2] </button>
+0036: [BAL 2] <button id="help-btn" class="icon-btn" title="مساعدة واختصارات">
+0037: [BAL 2] <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+0038: [BAL 2] </button>
+0039: [BAL 2] <button id="progress-btn" class="icon-btn" title="تتبع الإنجاز">
+0040: [BAL 2] <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+0041: [BAL 2] </button>
+0042: [BAL 2] <button id="theme-toggle-btn" class="icon-btn" title="تغيير المظهر (تلقائي/داكن/فاتح)">
+0043: [BAL 2] <!-- سيتم إدراجه ديناميكياً -->
+0044: [BAL 2] </button>
+0045: [BAL 1] </div>
+0046: [BAL 1] 
+0047: [BAL 1] <div class="divider"></div>
+0048: [BAL 1] 
+0049: [BAL 1] <h3>التحكم في الأسطر (الصفحة)</h3>
+0050: [BAL 1] <p style="font-size: 0.85rem; color: #aaa; margin: 2px 0 4px 0;">تعديل هذه القيم يزيح جميع الأسطر في الصفحة ويحفظها مباشرة.</p>
+0051: [BAL 1] 
+0052: [BAL 2] <div style="display: flex; gap: 8px;">
+0053: [BAL 3] <div class="control-group" style="flex: 1; min-width: 0;">
+0054: [BAL 4] <div class="field-header">
+0055: [BAL 4] <label style="font-size: 0.75rem; white-space: nowrap;">الأسطر:</label>
+0056: [BAL 4] <span class="left-orig-val" id="page-lines-count-orig" style="font-size: 0.65rem;">الأصلية: 15</span>
+0057: [BAL 3] </div>
+0058: [BAL 4] <div class="input-with-reset">
+0059: [BAL 4] <input type="number" id="lines-count-input" value="15" min="1" max="30" step="1" style="padding: 4px; min-width: 0;">
+0060: [BAL 4] <button class="reset-inline-btn" id="reset-lines-count" title="إعادة تعيين">
+0061: [BAL 4] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0062: [BAL 4] </button>
+0063: [BAL 4] <button class="save-inline-btn saved" id="save-lines-count" title="تم الحفظ">
+0064: [BAL 4] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0065: [BAL 4] </button>
+0066: [BAL 3] </div>
+0067: [BAL 2] </div>
+0068: [BAL 2] 
+0069: [BAL 3] <div class="control-group" style="flex: 1; min-width: 0;">
+0070: [BAL 4] <div class="field-header">
+0071: [BAL 4] <label style="font-size: 0.75rem; white-space: nowrap;">إزاحة Y:</label>
+0072: [BAL 4] <span class="left-orig-val" id="global-y-offset-orig" style="font-size: 0.65rem;">الأصلية: 0</span>
+0073: [BAL 3] </div>
+0074: [BAL 4] <div class="input-with-reset">
+0075: [BAL 4] <input type="number" id="global-y-offset" value="0" step="1" style="padding: 4px; min-width: 0;">
+0076: [BAL 4] <button class="reset-inline-btn" id="reset-global-y-offset" title="إعادة تعيين">
+0077: [BAL 4] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0078: [BAL 4] </button>
+0079: [BAL 4] <button class="save-inline-btn saved" id="save-global-y-offset" title="تم الحفظ">
+0080: [BAL 4] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0081: [BAL 4] </button>
+0082: [BAL 3] </div>
+0083: [BAL 2] </div>
+0084: [BAL 1] </div>
+0085: [BAL 1] 
+0086: [BAL 2] <div style="display: flex; gap: 8px;">
+0087: [BAL 3] <div class="control-group" style="flex: 1; min-width: 0;">
+0088: [BAL 4] <div class="field-header">
+0089: [BAL 4] <label style="font-size: 0.75rem; white-space: nowrap;">تكبير:</label>
+0090: [BAL 4] <span class="left-orig-val" id="global-scale-orig" style="font-size: 0.65rem;">الأصلية: 1.00</span>
+0091: [BAL 3] </div>
+0092: [BAL 4] <div class="input-with-reset">
+0093: [BAL 4] <input type="number" id="global-scale" value="1.0" step="0.01" style="padding: 4px; min-width: 0;">
+0094: [BAL 4] <button class="reset-inline-btn" id="reset-global-scale" title="إعادة تعيين">
+0095: [BAL 4] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0096: [BAL 4] </button>
+0097: [BAL 4] <button class="save-inline-btn saved" id="save-global-scale" title="تم الحفظ">
+0098: [BAL 4] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0099: [BAL 4] </button>
+0100: [BAL 3] </div>
+0101: [BAL 2] </div>
+0102: [BAL 2] 
+0103: [BAL 3] <div class="control-group" style="flex: 1; min-width: 0;">
+0104: [BAL 4] <div class="field-header">
+0105: [BAL 4] <label style="font-size: 0.75rem; white-space: nowrap;">الارتفاع:</label>
+0106: [BAL 4] <span class="left-orig-val" id="global-height-orig" style="font-size: 0.65rem;">الأصلية: -</span>
+0107: [BAL 3] </div>
+0108: [BAL 4] <div class="input-with-reset">
+0109: [BAL 4] <input type="number" id="global-height" placeholder="متغير" min="0" step="1" style="padding: 4px; font-size: 0.75rem; min-width: 0;">
+0110: [BAL 4] <button class="reset-inline-btn" id="reset-global-height" title="إعادة تعيين">
+0111: [BAL 4] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0112: [BAL 4] </button>
+0113: [BAL 4] <button class="save-inline-btn saved" id="save-global-height" title="تم الحفظ">
+0114: [BAL 4] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0115: [BAL 4] </button>
+0116: [BAL 3] </div>
+0117: [BAL 2] </div>
+0118: [BAL 1] </div>
+0119: [BAL 1] 
+0120: [BAL 1] <button class="btn" id="save-layout-btn" style="width: 100%; margin-top: 5px;">حفظ تخطيط الصفحة</button>
+0121: [BAL 1] 
+0122: [BAL 1] <button class="btn" id="save-layout-btn">حفظ تخطيط الصفحة</button>
+0123: [BAL 1] 
+0124: [BAL 1] <hr style="margin: 8px 0; border: 0; border-top: 1px solid #444;">
+0125: [BAL 1] <h3>إعدادات تمديد التظليل</h3>
+0126: [BAL 1] <p style="font-size: 0.8rem; color: #aaa; margin: 2px 0 4px 0;">أدخل مقدار الزيادة (مثال: 0.01) لتوسيع جميع مربعات التحديد يميناً أو يساراً.</p>
+0127: [BAL 1] 
+0128: [BAL 2] <div style="display: flex; gap: 8px;">
+0129: [BAL 3] <div class="control-group" style="flex: 1;">
+0130: [BAL 3] <label>لليمين (Right):</label>
+0131: [BAL 3] <input type="number" id="global-pad-right" value="0.00" step="0.001">
+0132: [BAL 2] </div>
+0133: [BAL 3] <div class="control-group" style="flex: 1;">
+0134: [BAL 3] <label>لليسار (Left):</label>
+0135: [BAL 3] <input type="number" id="global-pad-left" value="0.00" step="0.001">
+0136: [BAL 2] </div>
+0137: [BAL 1] </div>
+0138: [BAL 1] 
+0139: [BAL 2] <div style="display: flex; gap: 8px; margin-bottom: 5px;">
+0140: [BAL 2] <button class="icon-btn" id="save-ayah-pad-btn" title="حفظ التمديد في هذه الصفحة" style="flex: 1; justify-content: center; background: #FF9800; border-radius: 4px;">
+0141: [BAL 2] <svg viewBox="0 0 24 24" style="fill: white;"><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zM12 19c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zM6 8V5h9v3H6z"/></svg>
+0142: [BAL 2] </button>
+0143: [BAL 2] <button class="icon-btn" id="apply-pad-all-btn" title="تطبيق وحفظ التمديد في كل الصفحات (485 صفحة)" style="flex: 1; justify-content: center; background: #e91e63; border-radius: 4px;">
+0144: [BAL 2] <svg viewBox="0 0 24 24" style="fill: white;"><path d="M19 1H5c-1.1 0-2 .9-2 2v14h2V3h14V1zm3 4H9c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H9V7h13v14zm-7-2c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/></svg>
+0145: [BAL 2] </button>
+0146: [BAL 1] </div>
+0147: [BAL 1] 
+0148: [BAL 1] <hr style="margin: 6px 0; border: 0; border-top: 1px solid #444;">
+0149: [BAL 1] <h3 style="margin-bottom: 3px;">تعديل السطر الأول والأخير</h3>
+0150: [BAL 1] 
+0151: [BAL 2] <div style="display: flex; gap: 8px;">
+0152: [BAL 3] <div class="control-group" style="flex: 1;">
+0153: [BAL 3] <label>للأعلى (Top):</label>
+0154: [BAL 3] <input type="number" id="global-first-line-pad" value="0" step="1">
+0155: [BAL 2] </div>
+0156: [BAL 3] <div class="control-group" style="flex: 1;">
+0157: [BAL 3] <label>للأسفل (Bottom):</label>
+0158: [BAL 3] <input type="number" id="global-last-line-pad" value="0" step="1">
+0159: [BAL 2] </div>
+0160: [BAL 1] </div>
+0161: [BAL 1] 
+0162: [BAL 2] <div style="display: flex; gap: 8px; margin-bottom: 5px;">
+0163: [BAL 2] <button class="icon-btn" id="save-first-last-page-btn" title="حفظ التعديل في هذه الصفحة" style="flex: 1; justify-content: center; background: #FF9800; border-radius: 4px;">
+0164: [BAL 2] <svg viewBox="0 0 24 24" style="fill: white;"><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zM12 19c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zM6 8V5h9v3H6z"/></svg>
+0165: [BAL 2] </button>
+0166: [BAL 2] <button class="icon-btn" id="apply-first-last-all-btn" title="تطبيق وحفظ التعديل في كل الصفحات (485 صفحة)" style="flex: 1; justify-content: center; background: #e91e63; border-radius: 4px;">
+0167: [BAL 2] <svg viewBox="0 0 24 24" style="fill: white;"><path d="M19 1H5c-1.1 0-2 .9-2 2v14h2V3h14V1zm3 4H9c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H9V7h13v14zm-7-2c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/></svg>
+0168: [BAL 2] </button>
+0169: [BAL 1] </div>
+0170: [BAL 1] 
+0171: [BAL 1] <hr style="margin: 6px 0; border: 0; border-top: 1px solid #444;">
+0172: [BAL 1] <h3 style="margin-bottom: 3px;">المزامنة والتصدير</h3>
+0173: [BAL 1] 
+0174: [BAL 2] <div style="display: flex; gap: 8px;">
+0175: [BAL 3] <div class="control-group" style="align-items: center; flex: 1;">
+0176: [BAL 3] <input type="checkbox" id="sync-windows" checked style="width: auto; margin-left: 8px;">
+0177: [BAL 3] <label for="sync-windows" style="margin-bottom: 0; font-size: 0.75rem;">للـ Windows</label>
+0178: [BAL 2] </div>
+0179: [BAL 3] <div class="control-group" style="align-items: center; flex: 1;">
+0180: [BAL 3] <input type="checkbox" id="sync-android" checked style="width: auto; margin-left: 8px;">
+0181: [BAL 3] <label for="sync-android" style="margin-bottom: 0; font-size: 0.75rem;">للـ Android</label>
+0182: [BAL 2] </div>
+0183: [BAL 1] </div>
+0184: [BAL 1] 
+0185: [BAL 2] <div style="display: flex; gap: 8px; margin-bottom: 5px; margin-top: 5px;">
+0186: [BAL 2] <button class="icon-btn" id="sync-current-page-btn" title="مزامنة الصفحة الحالية" style="flex: 1; justify-content: center; background: #2196F3; border-radius: 4px;">
+0187: [BAL 2] <svg viewBox="0 0 24 24" style="fill: white;"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+0188: [BAL 2] </button>
+0189: [BAL 2] <button class="icon-btn" id="sync-all-pages-btn" title="إعادة بناء ومزامنة كل الصفحات" style="flex: 1; justify-content: center; background: #673AB7; border-radius: 4px;">
+0190: [BAL 2] <svg viewBox="0 0 24 24" style="fill: white;"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+0191: [BAL 2] </button>
+0192: [BAL 1] </div>
+0193: [BAL 0] </div>
+0194: [BAL 0] 
+0195: [BAL 0] <!-- Right Panel: Box specific Controls -->
+0196: [BAL 1] <div id="right-panel" class="sidebar">
+0197: [BAL 1] <div id="right-resizer" class="resizer-handle resizer-right"></div>
+0198: [BAL 2] <div class="top-action-row">
+0199: [BAL 2] <button id="save-all-btn" class="icon-btn action-save" title="حفظ عام للصفحة الحالية (Shift+S)">
+0200: [BAL 2] <svg viewBox="0 0 24 24"><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zM12 19c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zM6 8V5h9v3H6z"/></svg>
+0201: [BAL 2] </button>
+0202: [BAL 2] <button id="undo-btn" class="icon-btn" title="تراجع (Ctrl+Z)" disabled>
+0203: [BAL 2] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0204: [BAL 2] </button>
+0205: [BAL 2] <button id="redo-btn" class="icon-btn" title="إرجاع (Ctrl+Y / Ctrl+Shift+Z)" disabled>
+0206: [BAL 2] <svg viewBox="0 0 24 24"><path d="M11.5 8c2.65 0 5.05 1 6.9 2.6L22 7v9h-9l3.62-3.62c-1.39-1.16-3.16-1.88-5.12-1.88-3.54 0-6.55 2.31-7.6 5.5l-2.37-.78C2.92 11.03 6.85 8 11.5 8z"/></svg>
+0207: [BAL 2] </button>
+0208: [BAL 1] </div>
+0209: [BAL 1] <h3>تعديل العنصر</h3>
+0210: [BAL 1] 
+0211: [BAL 1] <!-- Metadata section -->
+0212: [BAL 2] <div class="metadata-card" style="padding: 6px; gap: 4px;">
+0213: [BAL 2] <div class="meta-row" style="margin-bottom: 2px; padding: 0 4px;"><span class="meta-label">النوع:</span> <span id="meta-type" class="meta-value">-</span></div>
+0214: [BAL 2] 
+0215: [BAL 3] <div style="display: flex; gap: 4px;">
+0216: [BAL 3] <!-- Sura -->
+0217: [BAL 4] <div class="val-compare-card" id="card-meta-sura" style="flex: 1; padding: 4px; margin-bottom: 0;">
+0218: [BAL 4] <div class="compare-title" style="font-size: 0.75rem;">السورة</div>
+0219: [BAL 5] <div class="compare-row" style="flex-direction: row; justify-content: space-between; font-size: 0.7rem; padding-bottom: 2px; margin-bottom: 2px;">
+0220: [BAL 5] <div><span class="lbl">أصل:</span> <span id="meta-sura-orig" class="val-orig">-</span></div>
+0221: [BAL 5] <div><span class="lbl">حالي:</span> <span id="meta-sura-curr" class="val-curr">-</span></div>
+0222: [BAL 4] </div>
+0223: [BAL 5] <div class="control-group">
+0224: [BAL 6] <div class="input-with-reset">
+0225: [BAL 6] <input type="number" id="meta-sura" min="1" max="114" style="text-align: center; padding-left: 40px !important;">
+0226: [BAL 6] <button class="reset-inline-btn" id="reset-meta-sura" title="إعادة تعيين">
+0227: [BAL 6] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0228: [BAL 6] </button>
+0229: [BAL 6] <button class="save-inline-btn saved" id="save-meta-sura" title="تم الحفظ" style="left: 20px;">
+0230: [BAL 6] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0231: [BAL 6] </button>
+0232: [BAL 5] </div>
+0233: [BAL 4] </div>
+0234: [BAL 3] </div>
+0235: [BAL 3] 
+0236: [BAL 3] <!-- Ayah -->
+0237: [BAL 4] <div class="val-compare-card" id="card-meta-ayah" style="flex: 1; padding: 4px; margin-bottom: 0;">
+0238: [BAL 4] <div class="compare-title" style="font-size: 0.75rem;">الآية</div>
+0239: [BAL 5] <div class="compare-row" style="flex-direction: row; justify-content: space-between; font-size: 0.7rem; padding-bottom: 2px; margin-bottom: 2px;">
+0240: [BAL 5] <div><span class="lbl">أصل:</span> <span id="meta-ayah-orig" class="val-orig">-</span></div>
+0241: [BAL 5] <div><span class="lbl">حالي:</span> <span id="meta-ayah-curr" class="val-curr">-</span></div>
+0242: [BAL 4] </div>
+0243: [BAL 5] <div class="control-group">
+0244: [BAL 6] <div class="input-with-reset">
+0245: [BAL 6] <input type="number" id="meta-ayah" min="1" style="text-align: center; padding-left: 40px !important;">
+0246: [BAL 6] <button class="reset-inline-btn" id="reset-meta-ayah" title="إعادة تعيين">
+0247: [BAL 6] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0248: [BAL 6] </button>
+0249: [BAL 6] <button class="save-inline-btn saved" id="save-meta-ayah" title="تم الحفظ" style="left: 20px;">
+0250: [BAL 6] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0251: [BAL 6] </button>
+0252: [BAL 5] </div>
+0253: [BAL 4] </div>
+0254: [BAL 3] </div>
+0255: [BAL 3] 
+0256: [BAL 3] <!-- Line -->
+0257: [BAL 4] <div class="val-compare-card" id="card-meta-line" style="flex: 1; padding: 4px; margin-bottom: 0;">
+0258: [BAL 4] <div class="compare-title" style="font-size: 0.75rem;">السطر</div>
+0259: [BAL 5] <div class="compare-row" style="flex-direction: row; justify-content: space-between; font-size: 0.7rem; padding-bottom: 2px; margin-bottom: 2px;">
+0260: [BAL 5] <div><span class="lbl">أصل:</span> <span id="meta-line-orig" class="val-orig">-</span></div>
+0261: [BAL 5] <div><span class="lbl">حالي:</span> <span id="meta-line-curr" class="val-curr">-</span></div>
+0262: [BAL 4] </div>
+0263: [BAL 5] <div class="control-group">
+0264: [BAL 6] <div class="input-with-reset">
+0265: [BAL 6] <input type="number" id="meta-line" min="1" style="text-align: center; padding-left: 40px !important;">
+0266: [BAL 6] <button class="reset-inline-btn" id="reset-meta-line" title="إعادة تعيين">
+0267: [BAL 6] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0268: [BAL 6] </button>
+0269: [BAL 6] <button class="save-inline-btn saved" id="save-meta-line" title="تم الحفظ" style="left: 20px;">
+0270: [BAL 6] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0271: [BAL 6] </button>
+0272: [BAL 5] </div>
+0273: [BAL 4] </div>
+0274: [BAL 3] </div>
+0275: [BAL 2] </div>
+0276: [BAL 1] </div>
+0277: [BAL 1] 
+0278: [BAL 1] <!-- Save Status Badge -->
+0279: [BAL 1] <div id="save-status-badge" class="badge badge-saved">تم الحفظ</div>
+0280: [BAL 1] 
+0281: [BAL 1] <!-- Ayah Offset Adjustment Tools -->
+0282: [BAL 2] <div class="values-section" id="ayah-adjustment-section" style="margin-top: 15px; border-top: 1px dashed #444; padding-top: 12px; display: none;">
+0283: [BAL 2] <h4 style="margin-bottom: 8px;">إزاحة أرقام آيات السورة الحالية في الصفحة</h4>
+0284: [BAL 3] <div style="display: flex; flex-direction: row; gap: 8px; align-items: center; justify-content: space-between;">
+0285: [BAL 3] <div style="font-size: 0.75rem; color: #aaa;">إزاحة بـ:</div>
+0286: [BAL 4] <div style="display: flex; gap: 4px;">
+0287: [BAL 4] <button class="action-btn" id="btn-adj-ayah-minus" style="padding: 4px 10px; font-size: 0.8rem; background-color: #d32f2f; min-width: 40px; border: none; border-radius: 4px; color: white; cursor: pointer;" title="طرح 1 من أرقام الآيات">-1</button>
+0288: [BAL 4] <button class="action-btn" id="btn-adj-ayah-plus" style="padding: 4px 10px; font-size: 0.8rem; background-color: #388e3c; min-width: 40px; border: none; border-radius: 4px; color: white; cursor: pointer;" title="إضافة 1 إلى أرقام الآيات">+1</button>
+0289: [BAL 3] </div>
+0290: [BAL 2] </div>
+0291: [BAL 3] <div style="display: flex; flex-direction: row; gap: 10px; margin-top: 8px; align-items: center; justify-content: center;">
+0292: [BAL 3] <label style="font-size: 0.75rem; color: #ccc; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+0293: [BAL 3] <input type="radio" name="adj-scope" id="adj-scope-all" checked style="cursor: pointer;"> كل الصفحة
+0294: [BAL 3] </label>
+0295: [BAL 3] <label style="font-size: 0.75rem; color: #ccc; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+0296: [BAL 3] <input type="radio" name="adj-scope" id="adj-scope-from" style="cursor: pointer;"> من العنصر فصاعداً
+0297: [BAL 3] </label>
+0298: [BAL 2] </div>
+0299: [BAL 1] </div>
+0300: [BAL 1] 
+0301: [BAL 1] <!-- Values Table / Group -->
+0302: [BAL 2] <div class="values-section">
+0303: [BAL 2] <h4>القيم الجغرافية للمربع</h4>
+0304: [BAL 2] 
+0305: [BAL 3] <div id="highlight-value-fields" style="display: none; flex-direction: column; gap: 8px;">
+0306: [BAL 4] <div style="display: flex; flex-direction: row; gap: 8px; width: 100%;">
+0307: [BAL 5] <div class="val-compare-card" id="card-hl-left">
+0308: [BAL 5] <div class="compare-title">البداية الأفقية (Left)</div>
+0309: [BAL 6] <div class="compare-row">
+0310: [BAL 6] <div><span class="lbl">الأصلية:</span> <span id="hl-left-orig" class="val-orig">0.0000</span></div>
+0311: [BAL 6] <div><span class="lbl">الحالية:</span> <span id="hl-left-curr" class="val-curr">0.0000</span></div>
+0312: [BAL 5] </div>
+0313: [BAL 6] <div class="control-group">
+0314: [BAL 7] <div class="input-with-reset">
+0315: [BAL 7] <input type="number" id="hl-left" step="0.0001" min="0" max="1">
+0316: [BAL 7] <button class="reset-inline-btn" id="reset-hl-left" title="إعادة تعيين">
+0317: [BAL 7] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0318: [BAL 7] </button>
+0319: [BAL 7] <button class="save-inline-btn saved" id="save-hl-left" title="تم الحفظ">
+0320: [BAL 7] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0321: [BAL 7] </button>
+0322: [BAL 6] </div>
+0323: [BAL 5] </div>
+0324: [BAL 4] </div>
+0325: [BAL 4] 
+0326: [BAL 5] <div class="val-compare-card" id="card-hl-right">
+0327: [BAL 5] <div class="compare-title">النهاية الأفقية (Right)</div>
+0328: [BAL 6] <div class="compare-row">
+0329: [BAL 6] <div><span class="lbl">الأصلية:</span> <span id="hl-right-orig" class="val-orig">0.0000</span></div>
+0330: [BAL 6] <div><span class="lbl">الحالية:</span> <span id="hl-right-curr" class="val-curr">0.0000</span></div>
+0331: [BAL 5] </div>
+0332: [BAL 6] <div class="control-group">
+0333: [BAL 7] <div class="input-with-reset">
+0334: [BAL 7] <input type="number" id="hl-right" step="0.0001" min="0" max="1">
+0335: [BAL 7] <button class="reset-inline-btn" id="reset-hl-right" title="إعادة تعيين">
+0336: [BAL 7] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0337: [BAL 7] </button>
+0338: [BAL 7] <button class="save-inline-btn saved" id="save-hl-right" title="تم الحفظ">
+0339: [BAL 7] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0340: [BAL 7] </button>
+0341: [BAL 6] </div>
+0342: [BAL 5] </div>
+0343: [BAL 4] </div>
+0344: [BAL 3] </div>
+0345: [BAL 3] 
+0346: [BAL 4] <div style="display: flex; flex-direction: row; gap: 8px; width: 100%;">
+0347: [BAL 5] <div class="val-compare-card" id="card-hl-line-top">
+0348: [BAL 5] <div class="compare-title">أعلى السطر (Line Top)</div>
+0349: [BAL 6] <div class="compare-row">
+0350: [BAL 6] <div><span class="lbl">الأصلية:</span> <span id="line-top-orig" class="val-orig">-</span></div>
+0351: [BAL 6] <div><span class="lbl">الحالية:</span> <span id="line-top-curr" class="val-curr">-</span></div>
+0352: [BAL 5] </div>
+0353: [BAL 6] <div class="control-group">
+0354: [BAL 7] <div class="input-with-reset">
+0355: [BAL 7] <input type="number" id="hl-line-top" step="1">
+0356: [BAL 7] <button class="reset-inline-btn" id="reset-hl-line-top" title="إعادة تعيين">
+0357: [BAL 7] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0358: [BAL 7] </button>
+0359: [BAL 7] <button class="save-inline-btn saved" id="save-hl-line-top" title="تم الحفظ">
+0360: [BAL 7] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0361: [BAL 7] </button>
+0362: [BAL 6] </div>
+0363: [BAL 5] </div>
+0364: [BAL 4] </div>
+0365: [BAL 4] 
+0366: [BAL 5] <div class="val-compare-card" id="card-hl-line-bottom">
+0367: [BAL 5] <div class="compare-title">أسفل السطر (Bottom)</div>
+0368: [BAL 6] <div class="compare-row">
+0369: [BAL 6] <div><span class="lbl">الأصلية:</span> <span id="line-bottom-orig" class="val-orig">-</span></div>
+0370: [BAL 6] <div><span class="lbl">الحالية:</span> <span id="line-bottom-curr" class="val-curr">-</span></div>
+0371: [BAL 5] </div>
+0372: [BAL 6] <div class="control-group">
+0373: [BAL 7] <div class="input-with-reset">
+0374: [BAL 7] <input type="number" id="hl-line-bottom" step="1">
+0375: [BAL 7] <button class="reset-inline-btn" id="reset-hl-line-bottom" title="إعادة تعيين">
+0376: [BAL 7] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0377: [BAL 7] </button>
+0378: [BAL 7] <button class="save-inline-btn saved" id="save-hl-line-bottom" title="تم الحفظ">
+0379: [BAL 7] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0380: [BAL 7] </button>
+0381: [BAL 6] </div>
+0382: [BAL 5] </div>
+0383: [BAL 4] </div>
+0384: [BAL 3] </div>
+0385: [BAL 4] <div style="font-size: 0.8rem; color: #aaa; text-align: center; padding: 4px; border-top: 1px dashed rgba(255,255,255,0.06);" id="line-height-info">
+0386: [BAL 4] ارتفاع السطر المختار 🔲 الأصلي: <span id="line-height-orig" style="color: #aaa; font-weight: bold; font-family: monospace;">-</span>px | الحالي: <span id="line-height-curr" style="color: #FF9800; font-weight: bold; font-family: monospace;">-</span>px
+0387: [BAL 3] </div>
+0388: [BAL 2] </div>
+0389: [BAL 2] 
+0390: [BAL 3] <div id="marker-value-fields" style="display: none;">
+0391: [BAL 4] <div style="display: flex; flex-direction: row; gap: 8px; width: 100%;">
+0392: [BAL 5] <div class="val-compare-card" id="card-mk-cx">
+0393: [BAL 5] <div class="compare-title">المركز الأفقي (Center X)</div>
+0394: [BAL 6] <div class="compare-row">
+0395: [BAL 6] <div><span class="lbl">الأصلية:</span> <span id="mk-cx-orig" class="val-orig">0.0000</span></div>
+0396: [BAL 6] <div><span class="lbl">الحالية:</span> <span id="mk-cx-curr" class="val-curr">0.0000</span></div>
+0397: [BAL 5] </div>
+0398: [BAL 6] <div class="control-group">
+0399: [BAL 7] <div class="input-with-reset">
+0400: [BAL 7] <input type="number" id="mk-cx" step="0.0001" min="0" max="1">
+0401: [BAL 7] <button class="reset-inline-btn" id="reset-mk-cx" title="إعادة تعيين">
+0402: [BAL 7] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0403: [BAL 7] </button>
+0404: [BAL 7] <button class="save-inline-btn saved" id="save-mk-cx" title="تم الحفظ">
+0405: [BAL 7] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0406: [BAL 7] </button>
+0407: [BAL 6] </div>
+0408: [BAL 5] </div>
+0409: [BAL 4] </div>
+0410: [BAL 4] 
+0411: [BAL 5] <div class="val-compare-card" id="card-mk-cy">
+0412: [BAL 5] <div class="compare-title">المركز العمودي (Center Y)</div>
+0413: [BAL 6] <div class="compare-row">
+0414: [BAL 6] <div><span class="lbl">الأصلية:</span> <span id="mk-cy-orig" class="val-orig">0.0000</span></div>
+0415: [BAL 6] <div><span class="lbl">الحالية:</span> <span id="mk-cy-curr" class="val-curr">0.0000</span></div>
+0416: [BAL 5] </div>
+0417: [BAL 6] <div class="control-group">
+0418: [BAL 7] <div class="input-with-reset">
+0419: [BAL 7] <input type="number" id="mk-cy" step="0.0001" min="0" max="1">
+0420: [BAL 7] <button class="reset-inline-btn" id="reset-mk-cy" title="إعادة تعيين">
+0421: [BAL 7] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0422: [BAL 7] </button>
+0423: [BAL 7] <button class="save-inline-btn saved" id="save-mk-cy" title="تم الحفظ">
+0424: [BAL 7] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0425: [BAL 7] </button>
+0426: [BAL 6] </div>
+0427: [BAL 5] </div>
+0428: [BAL 4] </div>
+0429: [BAL 3] </div>
+0430: [BAL 4] <div style="display: flex; flex-direction: row; gap: 8px; width: 100%; margin-top: 4px;">
+0431: [BAL 5] <div class="val-compare-card" id="card-mk-line" style="flex: 1;">
+0432: [BAL 5] <div class="compare-title">رقم السطر (Line Number)</div>
+0433: [BAL 6] <div class="compare-row">
+0434: [BAL 6] <div><span class="lbl">الأصلية:</span> <span id="mk-line-orig" class="val-orig">-</span></div>
+0435: [BAL 6] <div><span class="lbl">الحالية:</span> <span id="mk-line-curr" class="val-curr">-</span></div>
+0436: [BAL 5] </div>
+0437: [BAL 6] <div class="control-group">
+0438: [BAL 7] <div class="input-with-reset">
+0439: [BAL 7] <input type="number" id="mk-line" step="1" min="1">
+0440: [BAL 7] <button class="reset-inline-btn" id="reset-mk-line" title="إعادة تعيين">
+0441: [BAL 7] <svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+0442: [BAL 7] </button>
+0443: [BAL 7] <button class="save-inline-btn saved" id="save-mk-line" title="تم الحفظ">
+0444: [BAL 7] <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+0445: [BAL 7] </button>
+0446: [BAL 6] </div>
+0447: [BAL 5] </div>
+0448: [BAL 4] </div>
+0449: [BAL 3] </div>
+0450: [BAL 4] <div class="val-compare-card" style="padding: 10px; flex: unset; margin-top: 4px; display: flex; flex-direction: column; gap: 8px;">
+0451: [BAL 4] <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+0452: [BAL 4] <input type="checkbox" id="sync-marker-highlight" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;">
+0453: [BAL 4] <span>🔗 محاذاة نهاية التظليل تلقائياً مع الدائرة</span>
+0454: [BAL 4] </label>
+0455: [BAL 4] <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+0456: [BAL 4] <input type="checkbox" id="sync-next-ayah-highlight" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;">
+0457: [BAL 4] <span>🔗 محاذاة بداية الآية الموالية تلقائياً مع الدائرة</span>
+0458: [BAL 4] </label>
+0459: [BAL 4] <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+0460: [BAL 4] <input type="checkbox" id="sync-create-next-highlight" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;">
+0461: [BAL 4] <span>إنشاء مربع للآية الموالية عند تحريك الدائرة في نفس السطر</span>
+0462: [BAL 4] </label>
+0463: [BAL 3] </div>
+0464: [BAL 2] </div>
+0465: [BAL 1] </div>
+0466: [BAL 1] 
+0467: [BAL 2] <div class="val-compare-card numbering-actions-card">
+0468: [BAL 2] <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+0469: [BAL 2] <input type="checkbox" id="prevent-overlap" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;" checked>
+0470: [BAL 2] <span>منع تداخل المربعات والأسطر أثناء السحب والتصغير/التكبير</span>
+0471: [BAL 2] </label>
+0472: [BAL 2] <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+0473: [BAL 2] <input type="checkbox" id="shift-following-lines" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;" checked>
+0474: [BAL 2] <span>إزاحة الأسطر التابعة عند تعديل ارتفاع السطر</span>
+0475: [BAL 2] </label>
+0476: [BAL 2] <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+0477: [BAL 2] <input type="checkbox" id="snap-highlight-edges" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;">
+0478: [BAL 2] <span>محاذاة مغناطيسية لحواف مربع التحديد أثناء السحب</span>
+0479: [BAL 2] </label>
+0480: [BAL 2] <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:#4CAF50; font-weight:bold;">
+0481: [BAL 2] <input type="checkbox" id="renumber-following-highlights" style="width: 16px; height: 16px; accent-color: #FF9800; cursor: pointer;">
+0482: [BAL 2] <span>تحديث أرقام مربعات التحديد التالية عند الإنشاء أو الحذف</span>
+0483: [BAL 2] </label>
+0484: [BAL 1] </div>
+0485: [BAL 1] 
+0486: [BAL 1] <!-- Drawing Tools Section -->
+0487: [BAL 2] <div class="values-section" id="drawing-tools-section" style="margin-top: 12px; border-top: 1px dashed var(--border-color); padding-top: 10px;">
+0488: [BAL 2] <!-- رأس صغير للوحة الرسم مع مفتاح السويتش وبجانبه أزرار الإجراءات السريعة -->
+0489: [BAL 3] <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 6px; border-bottom: 1px dashed var(--border-color); margin-bottom: 8px;">
+0490: [BAL 3] <span style="font-size: 0.85rem; color: #4CAF50; font-weight: bold; display: flex; align-items: center; gap: 6px;">
+0491: [BAL 3] <span>✏️</span>
+0492: [BAL 3] <span>أدوات الرسم</span>
+0493: [BAL 3] </span>
+0494: [BAL 3] 
+0495: [BAL 4] <div style="display: flex; align-items: center; gap: 8px;">
+0496: [BAL 5] <div style="display: flex; gap: 4px;">
+0497: [BAL 5] <!-- زر تراجع -->
+0498: [BAL 5] <button class="icon-btn" id="btn-drawing-undo" title="تراجع عن آخر ضربة فرشاة (Ctrl + Z)" style="color: #FF9800; padding: 2px; width: 24px; height: 24px; border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
+0499: [BAL 5] <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+0500: [BAL 5] <path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/>
+0501: [BAL 5] </svg>
+0502: [BAL 5] </button>
+0503: [BAL 5] <!-- زر مسح الكل -->
+0504: [BAL 5] <button class="icon-btn" id="btn-drawing-clear" title="مسح الرسومات غير المحفوظة" style="color: #f44336; padding: 2px; width: 24px; height: 24px; border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
+0505: [BAL 5] <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+0506: [BAL 5] <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+0507: [BAL 5] </svg>
+0508: [BAL 5] </button>
+0509: [BAL 5] <!-- زر استعادة الصورة الخام -->
+0510: [BAL 5] <button class="icon-btn" id="btn-drawing-restore" title="استعادة الصورة الخام الأصلية" style="color: #e91e63; padding: 2px; width: 24px; height: 24px; border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
+0511: [BAL 5] <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+0512: [BAL 5] <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+0513: [BAL 5] </svg>
+0514: [BAL 5] </button>
+0515: [BAL 4] </div>
+0516: [BAL 4] 
+0517: [BAL 4] <div style="width: 1px; height: 16px; background: var(--border-color); margin: 0 2px;"></div>
+0518: [BAL 4] 
+0519: [BAL 4] <!-- سويتش التفعيل الحديث -->
+0520: [BAL 4] <label class="switch-container" style="position: relative; display: inline-block; width: 34px; height: 20px; cursor: pointer; margin: 0;">
+0521: [BAL 4] <input type="checkbox" id="drawing-mode-toggle" style="opacity: 0; width: 0; height: 0;">
+0522: [BAL 4] <span class="switch-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--border-color); transition: .3s; border-radius: 20px;"></span>
+0523: [BAL 4] </label>
+0524: [BAL 3] </div>
+0525: [BAL 2] </div>
+0526: [BAL 2] 
+0527: [BAL 3] <div id="drawing-controls-panel" style="display: none; flex-direction: column; gap: 8px; margin-top: 4px; padding: 6px; background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border-color-soft);">
+0528: [BAL 3] 
+0529: [BAL 3] <!-- Segmented Control (قلم / ممحاة) -->
+0530: [BAL 4] <div class="segmented-control">
+0531: [BAL 4] <button class="segment-btn active" id="segment-btn-brush" title="أداة القلم للرسم والكتابة">
+0532: [BAL 4] <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+0533: [BAL 4] <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+0534: [BAL 4] </svg>
+0535: [BAL 4] <span>قلم</span>
+0536: [BAL 4] </button>
+0537: [BAL 4] <button class="segment-btn" id="segment-btn-eraser" title="أداة الممحاة للمسح وإزالة الشوائب">
+0538: [BAL 4] <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+0539: [BAL 4] <path d="M16.24 3.56l4.95 4.94c.78.79.78 2.05 0 2.84L12 20.53a4.008 4.008 0 0 1-5.66 0L2.81 17c-.78-.79-.78-2.05 0-2.84L12.28 4.7c.78-.79 2.05-.79 2.83 0l1.13-1.14z"/>
+0540: [BAL 4] </svg>
+0541: [BAL 4] <span>ممحاة</span>
+0542: [BAL 4] </button>
+0543: [BAL 3] </div>
+0544: [BAL 3] 
+0545: [BAL 3] <!-- لوحة الألوان والـ Color Picker -->
+0546: [BAL 4] <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 2px;">
+0547: [BAL 5] <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: bold; display: flex; align-items: center; gap: 4px;">
+0548: [BAL 5] <span>🎨</span>
+0549: [BAL 5] <span>اللون</span>
+0550: [BAL 4] </div>
+0551: [BAL 5] <div class="color-palette-container" style="display: flex; align-items: center; gap: 8px; background: var(--btn-bg); padding: 6px; border-radius: 6px; border: 1px solid var(--border-color-soft);">
+0552: [BAL 5] <!-- منتقي الألوان المتقدم -->
+0553: [BAL 5] <button id="btn-custom-color" title="منتقي الألوان المتقدم" style="width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--border-color); background: linear-gradient(45deg, red, orange, yellow, green, blue, purple); cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center; position: relative; flex-shrink: 0;">
+0554: [BAL 5] <input type="color" id="enhance-color-picker" style="opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;" value="#000000">
+0555: [BAL 5] </button>
+0556: [BAL 5] 
+0557: [BAL 5] <div style="width: 1px; height: 16px; background: var(--border-color); margin: 0 2px;"></div>
+0558: [BAL 5] 
+0559: [BAL 5] <!-- الألوان السريعة المحدثة -->
+0560: [BAL 6] <div style="display: flex; gap: 6px; align-items: center; overflow: visible; flex: 1; padding: 3px 0;">
+0561: [BAL 6] <button class="color-dot active" id="color-dot-black" data-color="#000000" title="أسود" style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid #fff; background: #000000; cursor: pointer; padding: 0; flex-shrink: 0; box-shadow: 0 0 3px rgba(0,0,0,0.5);"></button>
+0562: [BAL 6] <button class="color-dot" id="color-dot-white" data-color="#ffffff" title="أبيض" style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid transparent; background: #ffffff; cursor: pointer; padding: 0; flex-shrink: 0;"></button>
+0563: [BAL 6] <button class="color-dot" id="color-dot-red" data-color="#f44336" title="أحمر" style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid transparent; background: #f44336; cursor: pointer; padding: 0; flex-shrink: 0;"></button>
+0564: [BAL 6] <button class="color-dot" id="color-dot-yellow" data-color="#ffeb3b" title="أصفر" style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid transparent; background: #ffeb3b; cursor: pointer; padding: 0; flex-shrink: 0;"></button>
+0565: [BAL 6] <button class="color-dot" id="color-dot-green" data-color="#4caf50" title="أخضر" style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid transparent; background: #4caf50; cursor: pointer; padding: 0; flex-shrink: 0;"></button>
+0566: [BAL 6] <button class="color-dot" id="color-dot-blue" data-color="#2196f3" title="أزرق" style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid transparent; background: #2196f3; cursor: pointer; padding: 0; flex-shrink: 0;"></button>
+0567: [BAL 5] </div>
+0568: [BAL 4] </div>
+0569: [BAL 3] </div>
+0570: [BAL 3] 
+0571: [BAL 3] <!-- أشرطة التحكم المضغوطة المعنونة -->
+0572: [BAL 4] <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+0573: [BAL 4] <!-- حجم الفرشاة -->
+0574: [BAL 5] <div style="display: flex; flex-direction: column; gap: 4px;">
+0575: [BAL 6] <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">
+0576: [BAL 6] <span>حجم الفرشاة</span>
+0577: [BAL 6] <span id="val-brush-size" style="font-family: monospace; color: var(--accent-color);">10px</span>
+0578: [BAL 5] </div>
+0579: [BAL 5] <input type="range" class="custom-range" id="brush-size" min="1" max="100" value="10" step="1">
+0580: [BAL 4] </div>
+0581: [BAL 4] 
+0582: [BAL 4] <!-- الشفافية -->
+0583: [BAL 5] <div style="display: flex; flex-direction: column; gap: 4px;">
+0584: [BAL 6] <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">
+0585: [BAL 6] <span>الشفافية</span>
+0586: [BAL 6] <span id="val-brush-opacity" style="font-family: monospace; color: var(--accent-color);">100%</span>
+0587: [BAL 5] </div>
+0588: [BAL 5] <input type="range" class="custom-range" id="brush-opacity" min="10" max="100" value="100" step="5">
+0589: [BAL 4] </div>
+0590: [BAL 3] </div>
+0591: [BAL 2] </div>
+0592: [BAL 1] </div>
+0593: [BAL 1] 
+0594: [BAL 1] <button class="btn btn-save" id="save-ayah-btn" style="background: #FF9800; border-color: #e68a00; margin-top: 10px;">حفظ بيانات الآيات</button>
+0595: [BAL 2] <div style="display: flex; gap: 8px; margin-top: 10px; width: 100%;">
+0596: [BAL 2] <button class="btn btn-danger" id="delete-highlight-btn" disabled style="flex: 1; margin: 0; padding: 8px 4px; font-size: 0.85rem;">حذف المربع</button>
+0597: [BAL 2] <button class="btn" id="close-right-panel" style="flex: 1; margin: 0; padding: 8px 4px; font-size: 0.85rem; background: var(--btn-bg); border: 1px solid var(--btn-border); color: var(--text-primary);">إلغاء التحديد</button>
+0598: [BAL 1] </div>
+0599: [BAL 0] </div>
+0600: [BAL 0] 
+0601: [BAL 1] <div id="image-container">
+0602: [BAL 2] <div id="image-wrapper">
+0603: [BAL 2] <img id="page-image" src="" alt="صفحة المصحف">
+0604: [BAL 2] <canvas id="drawing-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; z-index: 50; cursor: crosshair; touch-action: none;"></canvas>
+0605: [BAL 2] <div id="overlay-container"></div>
+0606: [BAL 1] </div>
+0607: [BAL 0] </div>
+0608: [BAL 0] 
+0609: [BAL 0] 
+0610: [BAL 0] <div id="toast" class="toast">تم الحفظ بنجاح</div>
+0611: [BAL 0] 
+0612: [BAL 1] <div id="help-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background: var(--bg-sidebar); backdrop-filter: blur(10px); border:1px solid var(--border-color); padding:25px; border-radius:15px; z-index:1000; width:470px; color: var(--text-primary); box-shadow: 0 10px 40px var(--shadow-color);">
+0613: [BAL 1] <h3 style="margin-top:0; border-bottom:1px solid #444; padding-bottom:10px;">دليل الاختصارات</h3>
+0614: [BAL 1] <ul style="line-height:2; margin-bottom:20px; padding-right:20px; font-size:15px;">
+0615: [BAL 1] <li><b>Shift + S:</b> حفظ عام للصفحة الحالية، ويشمل بيانات الآيات وتخطيط الأسطر.</li>
+0616: [BAL 1] <li><b>Ctrl + Z:</b> التراجع عن آخر تعديل في الصفحة الحالية.</li>
+0617: [BAL 1] <li><b>Ctrl + Y / Ctrl + Shift + Z:</b> إرجاع آخر تعديل تم التراجع عنه.</li>
+0618: [BAL 1] <li><b>Delete / Backspace:</b> حذف المربع المحدد.</li>
+0619: [BAL 1] <li><b>Shift + D:</b> تكرار المربع المحدد (إنشاء نسخة مطابقة).</li>
+0620: [BAL 1] <li><b>+ / - :</b> زيادة أو إنقاص رقم الآية.</li>
+0621: [BAL 1] <li><b>Ctrl + أسهم يمين/يسار:</b> تمديد حافة المربع لتلتصق بالهامش الأيمن/الأيسر.</li>
+0622: [BAL 1] <li><b>Ctrl + مسافة (Space):</b> تمديد المربع ليلتصق بالهامشين معاً.</li>
+0623: [BAL 1] <li><b>تحديث أرقام اللاحقين:</b> عند إنشاء مربع يزيد أرقام مربعات نفس السورة التي بعده، وعند الحذف ينقصها بواحد.</li>
+0624: [BAL 1] <li><b>المحاذاة المغناطيسية:</b> عند تفعيلها تلتقط حواف المربع للهوامش والدوائر والحدود القريبة. دبل كليك على مقبض اليسار/اليمين يمد الطرف للهامش الافتراضي.</li>
+0625: [BAL 1] <li><b>الأسهم يمين/يسار:</b> تقليب الصفحات (للسابق والتالي)</li>
+0626: [BAL 1] <li><b>الأسهم أعلى/أسفل:</b> الانتقال للمربع السابق/التالي</li>
+0627: [BAL 1] <li><b>Shift + أسهم يمين/يسار:</b> تحريك المربع أفقياً (يميناً ويساراً)</li>
+0628: [BAL 1] <li><b>Ctrl + Shift + أعلى/أسفل:</b> توسيع السطر (من الأعلى/الأسفل)</li>
+0629: [BAL 1] <li><b>Ctrl + Shift + Alt + أعلى/أسفل:</b> تضييق السطر (من الأعلى/الأسفل)</li>
+0630: [BAL 1] <li><b>سحب وإفلات (بالفأرة):</b> انقر على أي مربع واسحبه أفقياً أو عمودياً للعلامات.</li>
+0631: [BAL 1] <li><b>Shift + سحب الدائرة:</b> تحريك الدائرة أفقياً فقط (قفل التحريك العمودي).</li>
+0632: [BAL 1] <li><b>Ctrl + Shift + سحب الدائرة:</b> تحريك الدائرة عمودياً فقط (قفل التحريك الأفقي).</li>
+0633: [BAL 1] </ul>
+0634: [BAL 1] <button class="btn" id="close-help-btn" style="width:100%;">إغلاق</button>
+0635: [BAL 0] </div>
+0636: [BAL 1] <div id="custom-modal-overlay" class="custom-modal-overlay" style="display: none;">
+0637: [BAL 2] <div class="custom-modal">
+0638: [BAL 2] <h3 id="custom-modal-title">تنبيه</h3>
+0639: [BAL 2] <p id="custom-modal-message"></p>
+0640: [BAL 3] <div class="custom-modal-actions">
+0641: [BAL 3] <button id="custom-modal-cancel" class="btn" style="display: none; background: #f44336; border-color: #d32f2f;">إلغاء</button>
+0642: [BAL 3] <button id="custom-modal-ok" class="btn btn-save" style="background: #4CAF50; border-color: #388E3C;">موافق</button>
+0643: [BAL 2] </div>
+0644: [BAL 1] </div>
+0645: [BAL 0] </div>
+0646: [BAL 0] 
+0647: [BAL 0] <!-- Progress Modal -->
+0648: [BAL 1] <div id="progress-modal-overlay" class="custom-modal-overlay" style="display: none;">
+0649: [BAL 2] <div class="custom-modal" style="width: 650px; max-width: 95%;">
+0650: [BAL 2] <h3 style="margin-bottom: 8px;">تتبع الإنجاز</h3>
+0651: [BAL 2] <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 15px;">الصفحات الخضراء تم إنجازها ومزامنتها. اضغط على أي صفحة لتغيير حالتها يدوياً.</p>
+0652: [BAL 2] 
+0653: [BAL 2] <!-- Progress Bar -->
+0654: [BAL 3] <div style="margin-bottom: 20px; width: 100%; display: flex; flex-direction: column; align-items: center;">
+0655: [BAL 4] <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 6px; font-size: 0.95rem;">
+0656: [BAL 4] <span id="progress-text-count" style="color: #ddd;">0 / 604 صفحة</span>
+0657: [BAL 4] <span id="progress-text-percent" style="font-weight: bold; color: #4CAF50;">0%</span>
+0658: [BAL 3] </div>
+0659: [BAL 4] <div style="width: 100%; height: 12px; background: rgba(255,255,255,0.08); border-radius: 6px; overflow: hidden; box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);">
+0660: [BAL 4] <div id="progress-bar-fill" style="width: 0%; height: 100%; background: linear-gradient(90deg, #4CAF50, #81C784); transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);"></div>
+0661: [BAL 3] </div>
+0662: [BAL 2] </div>
+0663: [BAL 2] 
+0664: [BAL 3] <div id="progress-grid" class="progress-grid">
+0665: [BAL 3] <!-- Generated dynamically -->
+0666: [BAL 2] </div>
+0667: [BAL 3] <div class="custom-modal-actions" style="margin-top: 20px;">
+0668: [BAL 3] <button id="close-progress-btn" class="btn">إغلاق</button>
+0669: [BAL 2] </div>
+0670: [BAL 1] </div>
+0671: [BAL 0] </div>
+0672: [BAL 0] 
+0673: [BAL 0] <!-- Sync Modal -->
+0674: [BAL 1] <div id="sync-modal-overlay" class="custom-modal-overlay" style="display: none;">
+0675: [BAL 2] <div class="custom-modal" style="width: 80%; max-width: 600px; display: flex; flex-direction: column;">
+0676: [BAL 2] <h2 id="sync-modal-title" style="margin-bottom: 15px;">تأكيد المزامنة</h2>
+0677: [BAL 2] <p id="sync-modal-message" style="margin-bottom: 15px; font-size: 0.95rem;">هل أنت متأكد من رغبتك في المزامنة؟</p>
+0678: [BAL 2] 
+0679: [BAL 2] <!-- Terminal Output Area -->
+0680: [BAL 3] <div id="sync-terminal-output" style="
+0681: [BAL 3] flex: 1;
+0682: [BAL 3] background: #1e1e1e;
+0683: [BAL 3] color: #00ff00;
+0684: [BAL 3] font-family: monospace;
+0685: [BAL 3] padding: 10px;
+0686: [BAL 3] border-radius: 4px;
+0687: [BAL 3] overflow-y: auto;
+0688: [BAL 3] height: 250px;
+0689: [BAL 3] display: none;
+0690: [BAL 3] text-align: left;
+0691: [BAL 3] direction: ltr;
+0692: [BAL 3] white-space: pre-wrap;
+0693: [BAL 3] word-break: break-all;
+0694: [BAL 3] overflow-wrap: break-word;
+0695: [BAL 3] margin-bottom: 15px;
+0696: [BAL 3] border: 1px solid #333;
+0697: [BAL 2] "></div>
+0698: [BAL 2] 
+0699: [BAL 3] <div class="custom-modal-actions" style="display: flex; gap: 10px; justify-content: center;">
+0700: [BAL 3] <button id="sync-modal-start" class="btn btn-save" style="background: #4CAF50;">بدأ</button>
+0701: [BAL 3] <button id="sync-modal-cancel" class="btn btn-danger" style="background: #f44336; border-color: #d32f2f;">إلغاء</button>
+0702: [BAL 2] </div>
+0703: [BAL 1] </div>
+0704: [BAL 0] </div>
+0705: [BAL 0] 
+0706: [BAL 0] <script src="app.js?v=20260614-drawing-v8"></script>
+0707: [BAL 0] </body>
+0708: [BAL 0] </html>
+0709: [BAL 0] 

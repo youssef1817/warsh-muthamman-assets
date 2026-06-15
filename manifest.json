@@ -1,0 +1,46 @@
+{
+  "id": "warsh_muthamma",
+  "title": "مصحف ورش المثمن",
+  "riwaya": "warsh",
+  "contentType": "image",
+  "pageCount": 485,
+  "source": {
+    "file": "source/warsh-muthamma-source.pdf",
+    "bytes": 46474247,
+    "sha256": "1F9DAD7377AFE1395F0DBC3CEBFD50DFD9A600989067E6BE0F689EDE9F1B204A"
+  },
+  "pages": {
+    "status": "indexed_128_optimized",
+    "primaryFormat": "png",
+    "dpi": 300,
+    "directory": "pages/warsh_muthamma_png/",
+    "filePattern": "page%03d.png",
+    "deliveryMode": "individual_raw_pages",
+    "firstPage": 1,
+    "lastPage": 485,
+    "count": 485,
+    "totalBytes": 206595256,
+    "index": "pages/warsh_muthamma_png_index.json"
+  },
+  "thumnMapping": {
+    "file": "data/thumn/warsh_muthamma_thumn_pages.json",
+    "zip": "data/thumn/warsh_muthamma_thumn_pages.zip",
+    "entries": 480,
+    "sha256": "7CD2E60710E8791E22A3C9C47772898DA8BF4E4C0C478EB0E14A715EE6A64A78",
+    "zipSha256": "2C7560D555DDBE4D802B96542FF628A643E126ED2428E66ECD9B6D1F193B785A"
+  },
+  "ayahInfo": {
+    "status": "initial_sqlite_ready",
+    "directory": "databases/ayahinfo/warsh_muthamma/",
+    "database": "databases/ayahinfo/warsh_muthamma/quran.ar.warsh_muthamma.db",
+    "zip": "databases/ayahinfo/warsh_muthamma/ayahinfo_muthamma.zip",
+    "note": "بيانات تحديد الآيات أولية وقابلة للتحسين لاحقا، لكنها صالحة للتكامل الأولي داخل التطبيق."
+  },
+  "integration": {
+    "storageDirectoryName": "warsh_muthamma",
+    "recommendedImagesBaseUrl": "https://raw.githubusercontent.com/youssef1817/warsh-muthamma-assets/main/pages/warsh_muthamma_png/",
+    "recommendedPageDownloadMode": "individual_pages",
+    "recommendedPageDownloadConcurrency": 8,
+    "recommendedAyahInfoBaseUrl": "https://raw.githubusercontent.com/youssef1817/warsh-muthamma-assets/main/databases/ayahinfo/warsh_muthamma/"
+  }
+}

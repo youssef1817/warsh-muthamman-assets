@@ -1,0 +1,134 @@
+{
+  "page": 150,
+  "imageWidth": 1269,
+  "imageHeight": 2061,
+  "textRegion": {
+    "top": 103,
+    "bottom": 1978,
+    "left": 152,
+    "right": 1116
+  },
+  "detectedLineCount": 16,
+  "lineBands": [
+    {
+      "line": 1,
+      "top": 38,
+      "bottom": 150,
+      "center": 94
+    },
+    {
+      "line": 2,
+      "top": 150,
+      "bottom": 259,
+      "center": 205
+    },
+    {
+      "line": 3,
+      "top": 259,
+      "bottom": 373,
+      "center": 316
+    },
+    {
+      "line": 4,
+      "top": 373,
+      "bottom": 476,
+      "center": 425
+    },
+    {
+      "line": 5,
+      "top": 476,
+      "bottom": 578,
+      "center": 527
+    },
+    {
+      "line": 6,
+      "top": 578,
+      "bottom": 688,
+      "center": 633
+    },
+    {
+      "line": 7,
+      "top": 688,
+      "bottom": 795,
+      "center": 742
+    },
+    {
+      "line": 8,
+      "top": 795,
+      "bottom": 903,
+      "center": 849
+    },
+    {
+      "line": 9,
+      "top": 903,
+      "bottom": 1010,
+      "center": 957
+    },
+    {
+      "line": 10,
+      "top": 1010,
+      "bottom": 1122,
+      "center": 1301
+    },
+    {
+      "line": 11,
+      "top": 1236,
+      "bottom": 1346,
+      "center": 1399
+    },
+    {
+      "line": 12,
+      "top": 1346,
+      "bottom": 1454,
+      "center": 1400
+    },
+    {
+      "line": 13,
+      "top": 1454,
+      "bottom": 1558,
+      "center": 1506
+    },
+    {
+      "line": 14,
+      "top": 1558,
+      "bottom": 1666,
+      "center": 1612
+    },
+    {
+      "line": 15,
+      "top": 1666,
+      "bottom": 1772,
+      "center": 1719
+    },
+    {
+      "line": 16,
+      "top": 1772,
+      "bottom": 1889,
+      "center": 1841
+    },
+    {
+      "line": 17,
+      "top": 1889,
+      "bottom": 2027,
+      "center": 1958
+    }
+  ],
+  "nonAyahZones": [
+    {
+      "type": "sura_header",
+      "top": 1010,
+      "bottom": 1257,
+      "confidence": 0.95
+    }
+  ],
+  "confidence": 0.85,
+  "manualOverride": false,
+  "method": "peak_valley_v2",
+  "debug": {
+    "rawBandCount": 17,
+    "splitBands": 16,
+    "medianHeight": 107,
+    "merged": 0,
+    "tallerThan1_6": 0
+  }
+}
