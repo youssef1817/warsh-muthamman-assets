@@ -177,7 +177,7 @@
       "sura": 18,
       "ayah": 28,
       "left": 0.4082454688461801,
-      "right": 0.9700000000000001,
+      "right": 0.97,
       "confidence": 0.85,
       "source": "text_proportional_renumbered"
     },
@@ -206,8 +206,8 @@
       "line": 14,
       "sura": 18,
       "ayah": 29,
-      "left": 0.03,
-      "right": 0.9700000000000001,
+      "left": 0.029999999999999888,
+      "right": 0.97,
       "confidence": 0.85,
       "source": "text_proportional_renumbered"
     },

@@ -12,104 +12,104 @@
   "lineBands": [
     {
       "line": 1,
-      "top": 37,
-      "bottom": 161,
-      "center": 99
+      "top": 58,
+      "bottom": 182,
+      "center": 120
     },
     {
       "line": 2,
-      "top": 161,
-      "bottom": 269,
-      "center": 215
+      "top": 182,
+      "bottom": 290,
+      "center": 236
     },
     {
       "line": 3,
-      "top": 269,
-      "bottom": 382,
-      "center": 326
+      "top": 290,
+      "bottom": 403,
+      "center": 347
     },
     {
       "line": 4,
-      "top": 382,
-      "bottom": 495,
-      "center": 439
+      "top": 403,
+      "bottom": 516,
+      "center": 460
     },
     {
       "line": 5,
-      "top": 495,
-      "bottom": 610,
-      "center": 553
+      "top": 516,
+      "bottom": 631,
+      "center": 574
     },
     {
       "line": 6,
-      "top": 610,
-      "bottom": 729,
-      "center": 670
+      "top": 631,
+      "bottom": 750,
+      "center": 691
     },
     {
       "line": 7,
-      "top": 729,
-      "bottom": 834,
-      "center": 782
+      "top": 750,
+      "bottom": 855,
+      "center": 803
     },
     {
       "line": 8,
-      "top": 834,
-      "bottom": 951,
-      "center": 893
+      "top": 855,
+      "bottom": 972,
+      "center": 914
     },
     {
       "line": 9,
-      "top": 951,
-      "bottom": 1070,
-      "center": 1011
+      "top": 972,
+      "bottom": 1091,
+      "center": 1032
     },
     {
       "line": 10,
-      "top": 1070,
-      "bottom": 1182,
-      "center": 1126
+      "top": 1091,
+      "bottom": 1203,
+      "center": 1147
     },
     {
       "line": 11,
-      "top": 1182,
-      "bottom": 1287,
-      "center": 1235
+      "top": 1203,
+      "bottom": 1308,
+      "center": 1256
     },
     {
       "line": 12,
-      "top": 1287,
-      "bottom": 1404,
-      "center": 1346
+      "top": 1308,
+      "bottom": 1425,
+      "center": 1367
     },
     {
       "line": 13,
-      "top": 1404,
-      "bottom": 1518,
-      "center": 1461
+      "top": 1425,
+      "bottom": 1539,
+      "center": 1482
     },
     {
       "line": 14,
-      "top": 1518,
-      "bottom": 1632,
-      "center": 1575
+      "top": 1539,
+      "bottom": 1653,
+      "center": 1596
     },
     {
       "line": 15,
-      "top": 1632,
-      "bottom": 1747,
-      "center": 1690
+      "top": 1653,
+      "bottom": 1768,
+      "center": 1711
     },
     {
       "line": 16,
-      "top": 1747,
-      "bottom": 1862,
-      "center": 1805
+      "top": 1768,
+      "bottom": 1883,
+      "center": 1826
     },
     {
       "line": 17,
-      "top": 1862,
-      "bottom": 2007,
+      "top": 1883,
+      "bottom": 1981,
       "center": 1935
     }
   ],

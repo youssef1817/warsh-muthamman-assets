@@ -103,20 +103,20 @@
     {
       "line": 16,
       "top": 1664,
-      "bottom": 1768,
+      "bottom": 1780,
       "center": 1716
     },
     {
       "line": 17,
-      "top": 1768,
-      "bottom": 1874,
-      "center": 1821
+      "top": 1780,
+      "bottom": 1886,
+      "center": 1833
     },
     {
       "line": 18,
-      "top": 1874,
-      "bottom": 2011,
-      "center": 1943
+      "top": 1886,
+      "bottom": 2023,
+      "center": 1955
     }
   ],
   "nonAyahZones": [],

@@ -12,55 +12,55 @@
   "lineBands": [
     {
       "line": 1,
-      "top": 36,
-      "bottom": 169,
-      "center": 103
+      "top": 57,
+      "bottom": 190,
+      "center": 124
     },
     {
       "line": 2,
-      "top": 169,
-      "bottom": 284,
-      "center": 227
+      "top": 190,
+      "bottom": 305,
+      "center": 248
     },
     {
       "line": 3,
-      "top": 284,
-      "bottom": 406,
-      "center": 345
+      "top": 305,
+      "bottom": 427,
+      "center": 366
     },
     {
       "line": 4,
-      "top": 406,
-      "bottom": 526,
-      "center": 466
+      "top": 427,
+      "bottom": 547,
+      "center": 487
     },
     {
       "line": 5,
-      "top": 526,
-      "bottom": 648,
-      "center": 587
+      "top": 547,
+      "bottom": 669,
+      "center": 608
     },
     {
       "line": 6,
-      "top": 648,
-      "bottom": 770,
-      "center": 709
+      "top": 669,
+      "bottom": 791,
+      "center": 730
     },
     {
       "line": 7,
-      "top": 770,
-      "bottom": 884,
-      "center": 827
+      "top": 791,
+      "bottom": 905,
+      "center": 848
     },
     {
       "line": 8,
-      "top": 884,
-      "bottom": 1007,
-      "center": 946
+      "top": 905,
+      "bottom": 1028,
+      "center": 967
     },
     {
       "line": 9,
-      "top": 1007,
+      "top": 1028,
       "bottom": 1129,
       "center": 1068
     },

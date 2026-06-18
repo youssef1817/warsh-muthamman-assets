@@ -6,8 +6,8 @@
       "line": 1,
       "sura": 12,
       "ayah": 88,
-      "left": 0.03,
-      "right": 0.9700000000000001,
+      "left": 0.029999999999999888,
+      "right": 0.97,
       "confidence": 0.85,
       "source": "text_proportional"
     },
@@ -266,8 +266,8 @@
       "line": 16,
       "sura": 12,
       "ayah": 100,
-      "left": 0.03,
-      "right": 0.9700000000000001,
+      "left": 0.029999999999999888,
+      "right": 0.97,
       "confidence": 0.85,
       "source": "text_proportional"
     },

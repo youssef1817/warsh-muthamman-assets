@@ -106,7 +106,7 @@
       "line": 9,
       "sura": 6,
       "ayah": 123,
-      "left": 0.36260000000000003,
+      "left": 0.5204082791504118,
       "right": 0.9700000000000001,
       "confidence": 0.95,
       "source": "visual_valley_renumbered"
@@ -117,7 +117,7 @@
       "sura": 6,
       "ayah": 124,
       "left": 0.03,
-      "right": 0.4626,
+      "right": 0.5204082791504118,
       "confidence": 0.95,
       "source": "visual_valley_renumbered"
     },
@@ -146,7 +146,7 @@
       "line": 12,
       "sura": 6,
       "ayah": 124,
-      "left": 0.1508,
+      "left": 0.509398700964456,
       "right": 0.9700000000000001,
       "confidence": 0.95,
       "source": "visual_valley_renumbered"
@@ -157,7 +157,7 @@
       "sura": 6,
       "ayah": 125,
       "left": 0.03,
-      "right": 0.2508,
+      "right": 0.509398700964456,
       "confidence": 0.95,
       "source": "visual_valley_renumbered"
     },
@@ -186,7 +186,7 @@
       "line": 15,
       "sura": 6,
       "ayah": 125,
-      "left": 0.17209999999999998,
+      "left": 0.17179332466406588,
       "right": 0.9700000000000001,
       "confidence": 0.95,
       "source": "visual_valley_renumbered"
@@ -197,7 +197,7 @@
       "sura": 6,
       "ayah": 126,
       "left": 0.03,
-      "right": 0.2721,
+      "right": 0.17179332466406588,
       "confidence": 0.95,
       "source": "visual_valley_renumbered"
     },
@@ -242,24 +242,24 @@
       "sura": 6,
       "ayah": 123,
       "line": 9,
-      "center_x": 0.3817,
-      "center_y": 0.5
+      "center_x": 0.5204082791504118,
+      "center_y": 0.6770192808556837
     },
     {
       "page": 116,
       "sura": 6,
       "ayah": 124,
       "line": 12,
-      "center_x": 0.1728,
-      "center_y": 0.5
+      "center_x": 0.509398700964456,
+      "center_y": 0.6300323981674611
     },
     {
       "page": 116,
       "sura": 6,
       "ayah": 125,
       "line": 15,
-      "center_x": 0.1496,
-      "center_y": 0.5
+      "center_x": 0.17179332466406588,
+      "center_y": 0.691852082950849
     },
     {
       "page": 116,
