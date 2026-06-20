@@ -12,7 +12,7 @@
   "lineBands": [
     {
       "line": 1,
-      "top": 36,
+      "top": 53,
       "bottom": 145,
       "center": 91
     },
@@ -115,7 +115,7 @@
     {
       "line": 18,
       "top": 1872,
-      "bottom": 1997,
+      "bottom": 1972,
       "center": 1935
     }
   ],

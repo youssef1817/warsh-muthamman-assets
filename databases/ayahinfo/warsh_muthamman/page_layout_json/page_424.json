@@ -48,8 +48,8 @@
     },
     {
       "line": 7,
-      "top": 991,
-      "bottom": 1072,
+      "top": 729,
+      "bottom": 850,
       "center": 1032
     },
     {
@@ -91,14 +91,14 @@
     {
       "line": 14,
       "top": 1750,
-      "bottom": 1879,
+      "bottom": 1869,
       "center": 1815
     },
     {
       "line": 15,
-      "top": 1879,
-      "bottom": 2009,
-      "center": 1944
+      "top": 1869,
+      "bottom": 1999,
+      "center": 1934
     }
   ],
   "nonAyahZones": [
