@@ -12,62 +12,62 @@
   "lineBands": [
     {
       "line": 1,
-      "top": 37,
-      "bottom": 147,
-      "center": 92
+      "top": 54,
+      "bottom": 164,
+      "center": 109
     },
     {
       "line": 2,
-      "top": 147,
-      "bottom": 248,
-      "center": 198
+      "top": 164,
+      "bottom": 265,
+      "center": 215
     },
     {
       "line": 3,
-      "top": 248,
-      "bottom": 364,
-      "center": 306
+      "top": 265,
+      "bottom": 381,
+      "center": 323
     },
     {
       "line": 4,
-      "top": 364,
-      "bottom": 464,
-      "center": 414
+      "top": 381,
+      "bottom": 481,
+      "center": 431
     },
     {
       "line": 5,
-      "top": 464,
-      "bottom": 575,
-      "center": 520
+      "top": 481,
+      "bottom": 592,
+      "center": 537
     },
     {
       "line": 6,
-      "top": 575,
-      "bottom": 684,
-      "center": 630
+      "top": 592,
+      "bottom": 701,
+      "center": 647
     },
     {
       "line": 7,
-      "top": 684,
-      "bottom": 788,
-      "center": 736
+      "top": 701,
+      "bottom": 805,
+      "center": 753
     },
     {
       "line": 8,
-      "top": 788,
-      "bottom": 894,
-      "center": 841
+      "top": 805,
+      "bottom": 911,
+      "center": 858
     },
     {
       "line": 9,
-      "top": 894,
+      "top": 911,
       "bottom": 1023,
       "center": 959
     },
     {
       "line": 10,
-      "top": 1023,
-      "bottom": 1151,
+      "top": 1246,
+      "bottom": 1337,
       "center": 1087
     },
     {
@@ -91,20 +91,20 @@
     {
       "line": 14,
       "top": 1659,
-      "bottom": 1770,
+      "bottom": 1781,
       "center": 1715
     },
     {
       "line": 15,
-      "top": 1770,
-      "bottom": 1872,
-      "center": 1821
+      "top": 1781,
+      "bottom": 1883,
+      "center": 1832
     },
     {
       "line": 16,
-      "top": 1872,
-      "bottom": 2001,
-      "center": 1937
+      "top": 1883,
+      "bottom": 1989,
+      "center": 1948
     }
   ],
   "nonAyahZones": [

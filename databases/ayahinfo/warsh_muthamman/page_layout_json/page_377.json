@@ -12,25 +12,25 @@
   "lineBands": [
     {
       "line": 1,
-      "top": 36,
-      "bottom": 160,
-      "center": 98
+      "top": 40,
+      "bottom": 164,
+      "center": 102
     },
     {
       "line": 2,
-      "top": 160,
-      "bottom": 281,
-      "center": 221
+      "top": 164,
+      "bottom": 285,
+      "center": 225
     },
     {
       "line": 3,
-      "top": 281,
-      "bottom": 400,
-      "center": 341
+      "top": 285,
+      "bottom": 404,
+      "center": 345
     },
     {
       "line": 4,
-      "top": 400,
+      "top": 404,
       "bottom": 526,
       "center": 463
     },
@@ -103,7 +103,7 @@
     {
       "line": 16,
       "top": 1850,
-      "bottom": 1991,
+      "bottom": 1974,
       "center": 1921
     }
   ],

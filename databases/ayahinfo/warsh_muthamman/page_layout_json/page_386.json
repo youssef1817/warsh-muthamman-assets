@@ -12,99 +12,99 @@
   "lineBands": [
     {
       "line": 1,
-      "top": 36,
-      "bottom": 151,
+      "top": 62,
+      "bottom": 175,
       "center": 94
     },
     {
       "line": 2,
-      "top": 151,
-      "bottom": 272,
-      "center": 212
+      "top": 175,
+      "bottom": 283,
+      "center": 236
     },
     {
       "line": 3,
-      "top": 272,
-      "bottom": 384,
-      "center": 328
+      "top": 283,
+      "bottom": 395,
+      "center": 339
     },
     {
       "line": 4,
-      "top": 384,
-      "bottom": 507,
-      "center": 446
+      "top": 395,
+      "bottom": 518,
+      "center": 457
     },
     {
       "line": 5,
-      "top": 507,
-      "bottom": 625,
-      "center": 566
+      "top": 518,
+      "bottom": 638,
+      "center": 577
     },
     {
       "line": 6,
-      "top": 625,
-      "bottom": 750,
-      "center": 688
+      "top": 638,
+      "bottom": 763,
+      "center": 701
     },
     {
       "line": 7,
-      "top": 750,
-      "bottom": 873,
-      "center": 812
+      "top": 763,
+      "bottom": 886,
+      "center": 825
     },
     {
       "line": 8,
-      "top": 873,
-      "bottom": 991,
-      "center": 932
+      "top": 886,
+      "bottom": 993,
+      "center": 945
     },
     {
       "line": 9,
-      "top": 991,
-      "bottom": 1107,
-      "center": 1049
+      "top": 993,
+      "bottom": 1118,
+      "center": 1051
     },
     {
       "line": 10,
-      "top": 1107,
-      "bottom": 1226,
-      "center": 1167
+      "top": 1118,
+      "bottom": 1237,
+      "center": 1178
     },
     {
       "line": 11,
-      "top": 1226,
-      "bottom": 1357,
-      "center": 1292
+      "top": 1237,
+      "bottom": 1349,
+      "center": 1303
     },
     {
       "line": 12,
-      "top": 1357,
-      "bottom": 1475,
-      "center": 1416
+      "top": 1349,
+      "bottom": 1467,
+      "center": 1408
     },
     {
       "line": 13,
-      "top": 1475,
-      "bottom": 1594,
-      "center": 1535
+      "top": 1467,
+      "bottom": 1586,
+      "center": 1527
     },
     {
       "line": 14,
-      "top": 1594,
-      "bottom": 1715,
-      "center": 1655
+      "top": 1586,
+      "bottom": 1707,
+      "center": 1647
     },
     {
       "line": 15,
-      "top": 1715,
-      "bottom": 1847,
-      "center": 1781
+      "top": 1707,
+      "bottom": 1839,
+      "center": 1773
     },
     {
       "line": 16,
-      "top": 1847,
-      "bottom": 1980,
-      "center": 1914
+      "top": 1839,
+      "bottom": 1948,
+      "center": 1906
     }
   ],
   "nonAyahZones": [],
