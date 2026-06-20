@@ -12,93 +12,93 @@
   "lineBands": [
     {
       "line": 1,
-      "top": 35,
-      "bottom": 156,
-      "center": 96
+      "top": 38,
+      "bottom": 159,
+      "center": 99
     },
     {
       "line": 2,
-      "top": 156,
-      "bottom": 269,
-      "center": 213
+      "top": 159,
+      "bottom": 272,
+      "center": 216
     },
     {
       "line": 3,
-      "top": 269,
-      "bottom": 379,
-      "center": 324
+      "top": 272,
+      "bottom": 382,
+      "center": 327
     },
     {
       "line": 4,
-      "top": 379,
-      "bottom": 495,
-      "center": 437
+      "top": 382,
+      "bottom": 498,
+      "center": 440
     },
     {
       "line": 5,
-      "top": 495,
-      "bottom": 604,
-      "center": 550
+      "top": 498,
+      "bottom": 607,
+      "center": 553
     },
     {
       "line": 6,
-      "top": 604,
-      "bottom": 710,
-      "center": 657
+      "top": 607,
+      "bottom": 713,
+      "center": 660
     },
     {
       "line": 7,
-      "top": 710,
-      "bottom": 813,
-      "center": 762
+      "top": 713,
+      "bottom": 816,
+      "center": 765
     },
     {
       "line": 8,
-      "top": 813,
-      "bottom": 917,
-      "center": 865
+      "top": 816,
+      "bottom": 920,
+      "center": 868
     },
     {
       "line": 9,
-      "top": 917,
-      "bottom": 1029,
-      "center": 973
+      "top": 920,
+      "bottom": 1032,
+      "center": 976
     },
     {
       "line": 10,
-      "top": 1029,
-      "bottom": 1122,
-      "center": 1076
+      "top": 1032,
+      "bottom": 1125,
+      "center": 1079
     },
     {
       "line": 11,
-      "top": 1122,
-      "bottom": 1292,
-      "center": 1207
+      "top": 1387,
+      "bottom": 1493,
+      "center": 1440
     },
     {
       "line": 12,
-      "top": 1501,
-      "bottom": 1619,
-      "center": 1560
+      "top": 1493,
+      "bottom": 1611,
+      "center": 1552
     },
     {
       "line": 13,
-      "top": 1619,
-      "bottom": 1731,
-      "center": 1675
+      "top": 1611,
+      "bottom": 1723,
+      "center": 1667
     },
     {
       "line": 14,
-      "top": 1731,
-      "bottom": 1848,
-      "center": 1790
+      "top": 1723,
+      "bottom": 1828,
+      "center": 1779
     },
     {
       "line": 15,
-      "top": 1848,
-      "bottom": 1977,
-      "center": 1913
+      "top": 1828,
+      "bottom": 1944,
+      "center": 1893
     }
   ],
   "nonAyahZones": [

@@ -85,32 +85,32 @@
     {
       "line": 13,
       "top": 1407,
-      "bottom": 1519,
+      "bottom": 1510,
       "center": 1463
     },
     {
       "line": 14,
-      "top": 1519,
-      "bottom": 1627,
-      "center": 1573
+      "top": 1510,
+      "bottom": 1618,
+      "center": 1564
     },
     {
       "line": 15,
-      "top": 1627,
-      "bottom": 1741,
-      "center": 1684
+      "top": 1618,
+      "bottom": 1732,
+      "center": 1675
     },
     {
       "line": 16,
-      "top": 1741,
-      "bottom": 1860,
-      "center": 1801
+      "top": 1732,
+      "bottom": 1851,
+      "center": 1792
     },
     {
       "line": 17,
-      "top": 1860,
-      "bottom": 1994,
-      "center": 1927
+      "top": 1851,
+      "bottom": 1985,
+      "center": 1918
     }
   ],
   "nonAyahZones": [],

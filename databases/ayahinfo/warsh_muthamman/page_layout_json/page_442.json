@@ -12,7 +12,7 @@
   "lineBands": [
     {
       "line": 1,
-      "top": 179,
+      "top": 258,
       "bottom": 344,
       "center": 262
     },
@@ -91,26 +91,26 @@
     {
       "line": 14,
       "top": 1557,
-      "bottom": 1669,
+      "bottom": 1663,
       "center": 1613
     },
     {
       "line": 15,
-      "top": 1669,
-      "bottom": 1760,
-      "center": 1715
+      "top": 1663,
+      "bottom": 1754,
+      "center": 1709
     },
     {
       "line": 16,
-      "top": 1760,
-      "bottom": 1862,
-      "center": 1811
+      "top": 1754,
+      "bottom": 1856,
+      "center": 1805
     },
     {
       "line": 17,
-      "top": 1862,
-      "bottom": 1985,
-      "center": 1924
+      "top": 1856,
+      "bottom": 1979,
+      "center": 1918
     }
   ],
   "nonAyahZones": [

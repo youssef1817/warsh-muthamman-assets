@@ -12,81 +12,87 @@
   "lineBands": [
     {
       "line": 1,
-      "top": 220,
-      "bottom": 360,
+      "top": 275,
+      "bottom": 364,
       "center": 290
     },
     {
       "line": 2,
-      "top": 360,
-      "bottom": 466,
+      "top": 364,
+      "bottom": 485,
       "center": 413
     },
     {
       "line": 3,
-      "top": 466,
-      "bottom": 572,
+      "top": 485,
+      "bottom": 580,
       "center": 519
     },
     {
       "line": 4,
-      "top": 572,
-      "bottom": 687,
+      "top": 580,
+      "bottom": 700,
       "center": 630
     },
     {
       "line": 5,
-      "top": 687,
-      "bottom": 788,
+      "top": 700,
+      "bottom": 802,
       "center": 738
     },
     {
       "line": 6,
-      "top": 788,
-      "bottom": 897,
+      "top": 802,
+      "bottom": 915,
       "center": 843
     },
     {
       "line": 7,
-      "top": 897,
+      "top": 915,
       "bottom": 1013,
       "center": 955
     },
     {
       "line": 8,
-      "top": 1266,
-      "bottom": 1432,
+      "top": 1013,
+      "bottom": 1121,
       "center": 1349
     },
     {
       "line": 9,
-      "top": 1432,
-      "bottom": 1550,
+      "top": 1330,
+      "bottom": 1441,
       "center": 1491
     },
     {
       "line": 10,
-      "top": 1550,
-      "bottom": 1660,
-      "center": 1605
+      "top": 1441,
+      "bottom": 1551,
+      "center": 1496
     },
     {
       "line": 11,
-      "top": 1660,
-      "bottom": 1759,
-      "center": 1710
+      "top": 1551,
+      "bottom": 1650,
+      "center": 1601
     },
     {
       "line": 12,
-      "top": 1759,
-      "bottom": 1865,
-      "center": 1812
+      "top": 1650,
+      "bottom": 1766,
+      "center": 1703
     },
     {
       "line": 13,
-      "top": 1865,
-      "bottom": 1988,
-      "center": 1927
+      "top": 1766,
+      "bottom": 1876,
+      "center": 1828
+    },
+    {
+      "line": 14,
+      "top": 1876,
+      "bottom": 1986,
+      "center": 1931
     }
   ],
   "nonAyahZones": [
