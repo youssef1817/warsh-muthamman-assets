@@ -126,7 +126,7 @@
       "line": 4,
       "sura": 87,
       "ayah": 10,
-      "left": 0.03,
+      "left": 0.072364407771075,
       "right": 0.4117588841261767,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -186,7 +186,7 @@
       "line": 6,
       "sura": 87,
       "ayah": 15,
-      "left": 0.03,
+      "left": 0.07344762903249576,
       "right": 0.4377921103187292,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -236,7 +236,7 @@
       "line": 8,
       "sura": 87,
       "ayah": 19,
-      "left": 0.03,
+      "left": 0.07833473171809219,
       "right": 0.4798247646295506,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -256,7 +256,7 @@
       "line": 9,
       "sura": 88,
       "ayah": 2,
-      "left": 0.03,
+      "left": 0.06431058700224923,
       "right": 0.4779864422864063,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -286,7 +286,7 @@
       "line": 10,
       "sura": 88,
       "ayah": 5,
-      "left": 0.03,
+      "left": 0.07579848678221873,
       "right": 0.4205896710036335,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -306,7 +306,7 @@
       "line": 11,
       "sura": 88,
       "ayah": 7,
-      "left": 0.03,
+      "left": 0.07088657128934767,
       "right": 0.49152560975590004,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -336,7 +336,7 @@
       "line": 12,
       "sura": 88,
       "ayah": 10,
-      "left": 0.03,
+      "left": 0.07372232531445477,
       "right": 0.34295382076882575,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -366,7 +366,7 @@
       "line": 13,
       "sura": 88,
       "ayah": 13,
-      "left": 0.03,
+      "left": 0.07421696346573858,
       "right": 0.3632917156176635,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -396,7 +396,7 @@
       "line": 14,
       "sura": 88,
       "ayah": 16,
-      "left": 0.03,
+      "left": 0.07115578441189088,
       "right": 0.3696690359418778,
       "confidence": 0.5,
       "source": "manual_marker_sync"

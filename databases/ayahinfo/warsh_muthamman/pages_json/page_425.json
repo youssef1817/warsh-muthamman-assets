@@ -16,7 +16,7 @@
       "line": 1,
       "sura": 54,
       "ayah": 11,
-      "left": 0.03,
+      "left": 0.06844722077841991,
       "right": 0.5541538676527592,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -226,7 +226,7 @@
       "line": 9,
       "sura": 54,
       "ayah": 25,
-      "left": 0.03,
+      "left": 0.05766705898935798,
       "right": 0.7174169913019475,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -296,7 +296,7 @@
       "line": 12,
       "sura": 54,
       "ayah": 30,
-      "left": 0.03,
+      "left": 0.06338063508703917,
       "right": 0.433116,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -386,7 +386,7 @@
       "line": 16,
       "sura": 54,
       "ayah": 36,
-      "left": 0.03,
+      "left": 0.06195785467615759,
       "right": 0.6409112474158386,
       "confidence": 0.5,
       "source": "manual_marker_sync"

@@ -146,7 +146,7 @@
       "line": 5,
       "sura": 101,
       "ayah": 11,
-      "left": 0.1757877022690102,
+      "left": 0.206693214817663,
       "right": 0.44224343462661464,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -246,7 +246,7 @@
       "line": 8,
       "sura": 102,
       "ayah": 8,
-      "left": 0.03,
+      "left": 0.06506699954414696,
       "right": 0.5500487958666267,
       "confidence": 0.95,
       "source": "visual_valley"
