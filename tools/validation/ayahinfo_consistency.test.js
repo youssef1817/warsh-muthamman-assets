@@ -108,6 +108,7 @@ function getCategory(code) {
 
 test('Warsh Muthamman Ayahinfo Consistency Validation', () => {
     const issues = [];
+    const diagnostics = [];
     let pagesChecked = 0;
 
     // Helper to log issue and return the object
@@ -134,6 +135,20 @@ test('Warsh Muthamman Ayahinfo Consistency Validation', () => {
         };
         issues.push(issue);
         return issue;
+    }
+
+    function logDiagnostic(page, line, suraAyah, code, message, details) {
+        const diagnostic = {
+            page,
+            category: getCategory(code),
+            line,
+            suraAyah,
+            code,
+            message,
+            details: details || {}
+        };
+        diagnostics.push(diagnostic);
+        return diagnostic;
     }
 
     for (let pageVal = 1; pageVal <= 485; pageVal++) {
@@ -475,49 +490,33 @@ test('Warsh Muthamman Ayahinfo Consistency Validation', () => {
                 if (lineHls.length === 0) {
                     logIssue(pageVal, 'suspicious', m.line, mKey, 'MARKER_NOT_ON_HIGHLIGHT_LINE', `Marker exists on line ${m.line} for ${mKey} but highlight is on different line(s)`, { marker: m, pageHighlightsLines: pageHls.map(h => h.line) });
                 } else {
-                    // Check matches for current ayah highlight on same line
-                    // The end of this ayah highlight should line up with the marker's center_x
+                    // Diagnostic only: marker center_x is not a reliable boundary contract.
+                    // Some valid full-line/end-of-line highlights intentionally extend to the page margin.
                     const closestHl = lineHls.sort((a, b) => Math.abs(a.left - m.center_x) - Math.abs(b.left - m.center_x))[0];
-                    
-                    const isFullLine = (closestHl.left <= 0.04 && closestHl.right >= 0.96);
-                    let shouldCheckCurrent = true;
-                    if (isFullLine) {
-                        // Skip checking current boundary if it is full line and marker is close to left margin
-                        if (m.center_x <= 0.09) {
-                            shouldCheckCurrent = false;
-                        }
-                    }
-
-                    if (shouldCheckCurrent) {
-                        const delta = Math.abs(closestHl.left - m.center_x);
-                        if (delta > MARKER_MATCH_TOLERANCE) {
-                            logIssue(pageVal, 'suspicious', m.line, mKey, 'MARKER_BOUNDARY_MISMATCH', 
-                                `Marker center (${m.center_x.toFixed(4)}) is misaligned with highlight left (${closestHl.left.toFixed(4)}) by ${delta.toFixed(4)}`, 
-                                { expectedBoundary: closestHl.left, actualBoundary: m.center_x, delta, tolerance: MARKER_MATCH_TOLERANCE, marker: m, highlight: closestHl });
-                        }
+                    const delta = Math.abs(closestHl.left - m.center_x);
+                    if (delta > MARKER_MATCH_TOLERANCE) {
+                        logDiagnostic(pageVal, m.line, mKey, 'MARKER_BOUNDARY_MISMATCH',
+                            `Marker center (${m.center_x.toFixed(4)}) differs from highlight left (${closestHl.left.toFixed(4)}) by ${delta.toFixed(4)}. This is diagnostic only; do not auto-fix JSON from it.`,
+                            { expectedBoundary: closestHl.left, actualBoundary: m.center_x, delta, tolerance: MARKER_MATCH_TOLERANCE, marker: m, highlight: closestHl });
                     }
                 }
 
-                // Skip next boundary check if marker is close to left margin
-                if (m.center_x > 0.09) {
-                    let nextSura = m.sura;
-                    let nextAyah = m.ayah + 1;
-                    if (nextAyah > suraCounts[m.sura - 1]) {
-                        nextSura = m.sura + 1;
-                        nextAyah = 1;
-                    }
+                let nextSura = m.sura;
+                let nextAyah = m.ayah + 1;
+                if (nextAyah > suraCounts[m.sura - 1]) {
+                    nextSura = m.sura + 1;
+                    nextAyah = 1;
+                }
 
-                    if (nextSura <= 114) {
-                        const nextCandidates = validHighlights.filter(h => h.sura === nextSura && h.ayah === nextAyah && h.line === m.line);
-                        if (nextCandidates.length > 0) {
-                            // Pick the closest highlight for the next ayah
-                            const closestNext = nextCandidates.sort((a, b) => Math.abs(a.right - m.center_x) - Math.abs(b.right - m.center_x))[0];
-                            const deltaNext = Math.abs(closestNext.right - m.center_x);
-                            if (deltaNext > MARKER_MATCH_TOLERANCE) {
-                                logIssue(pageVal, 'suspicious', m.line, `${nextSura}:${nextAyah}`, 'MARKER_BOUNDARY_MISMATCH', 
-                                    `Marker center (${m.center_x.toFixed(4)}) is misaligned with next ayah right (${closestNext.right.toFixed(4)}) by ${deltaNext.toFixed(4)}`, 
-                                    { expectedBoundary: closestNext.right, actualBoundary: m.center_x, delta: deltaNext, tolerance: MARKER_MATCH_TOLERANCE, marker: m, highlight: closestNext });
-                            }
+                if (nextSura <= 114) {
+                    const nextCandidates = validHighlights.filter(h => h.sura === nextSura && h.ayah === nextAyah && h.line === m.line);
+                    if (nextCandidates.length > 0) {
+                        const closestNext = nextCandidates.sort((a, b) => Math.abs(a.right - m.center_x) - Math.abs(b.right - m.center_x))[0];
+                        const deltaNext = Math.abs(closestNext.right - m.center_x);
+                        if (deltaNext > MARKER_MATCH_TOLERANCE) {
+                            logDiagnostic(pageVal, m.line, `${nextSura}:${nextAyah}`, 'MARKER_BOUNDARY_MISMATCH',
+                                `Marker center (${m.center_x.toFixed(4)}) differs from next ayah right (${closestNext.right.toFixed(4)}) by ${deltaNext.toFixed(4)}. This is diagnostic only; do not auto-fix JSON from it.`,
+                                { expectedBoundary: closestNext.right, actualBoundary: m.center_x, delta: deltaNext, tolerance: MARKER_MATCH_TOLERANCE, marker: m, highlight: closestNext });
                         }
                     }
                 }
@@ -616,9 +615,8 @@ test('Warsh Muthamman Ayahinfo Consistency Validation', () => {
 
     const severityOrder = { 'fatal': 0, 'warning': 1, 'suspicious': 2 };
 
-    // Separate MARKER_BOUNDARY_MISMATCH from other issues for normal worst/root causes
-    const markerMismatches = issues.filter(x => x.code === 'MARKER_BOUNDARY_MISMATCH');
-    const nonMismatchIssues = issues.filter(x => x.code !== 'MARKER_BOUNDARY_MISMATCH');
+    const markerMismatches = diagnostics.filter(x => x.code === 'MARKER_BOUNDARY_MISMATCH');
+    const nonMismatchIssues = issues;
 
     // Deduplicate non-mismatch issues by (page, code)
     const groupedIssues = {};
@@ -686,9 +684,13 @@ test('Warsh Muthamman Ayahinfo Consistency Validation', () => {
             },
             statsByCategory,
             statsByCode,
-            topPages
+            topPages,
+            diagnostics: {
+                markerBoundaryMismatch: markerMismatches.length
+            }
         },
-        issues
+        issues,
+        diagnostics
     };
 
     fs.mkdirSync(reportDir, { recursive: true });
@@ -699,6 +701,7 @@ test('Warsh Muthamman Ayahinfo Consistency Validation', () => {
     mdContent += `**Date:** ${new Date().toISOString()}  \n`;
     mdContent += `**Pages Checked:** ${pagesChecked} / 485  \n`;
     mdContent += `**Numbering Mode:** \`${NUMBERING_MODE}\`  \n`;
+    mdContent += `**Marker Boundary Diagnostics:** ${markerMismatches.length} (not counted as issues)  \n`;
     if (NUMBERING_MODE === 'hafs_tolerant') {
         mdContent += `> **Note:** Numbering validation is app-facing Hafs/Kufi tolerant.  \n\n`;
     } else if (NUMBERING_MODE === 'warsh_diagnostic') {
@@ -830,15 +833,16 @@ test('Warsh Muthamman Ayahinfo Consistency Validation', () => {
     });
     mdContent += `\n`;
 
-    mdContent += `### Marker Boundary Diagnostics (Top 50 Worst Mismatches by Delta)\n`;
-    mdContent += `| Page | Line | Ayah | Severity | Expected Boundary | Actual Marker X | Delta | Tolerance |\n`;
+    mdContent += `### Marker Boundary Diagnostics (Top 50, Not Counted as Issues)\n`;
+    mdContent += `These rows compare marker centers against nearby highlight boundaries for visual review only. They are not safe inputs for automatic JSON edits because valid highlights may intentionally extend to line margins.\n\n`;
+    mdContent += `| Page | Line | Ayah | Type | Reference Boundary | Marker X | Delta | Tolerance |\n`;
     mdContent += `|---|---|---|---|---|---|---|---|\n`;
     markerBoundaryDiagnostics.forEach(x => {
         const expected = x.details.expectedBoundary !== undefined ? x.details.expectedBoundary.toFixed(4) : '-';
         const actual = x.details.actualBoundary !== undefined ? x.details.actualBoundary.toFixed(4) : '-';
         const deltaVal = x.details.delta !== undefined ? x.details.delta.toFixed(4) : '-';
         const tol = x.details.tolerance !== undefined ? x.details.tolerance.toFixed(4) : '-';
-        mdContent += `| Page ${x.page} | ${x.line} | ${x.suraAyah} | <span style="color:blue">suspicious</span> | ${expected} | ${actual} | **${deltaVal}** | ${tol} |\n`;
+        mdContent += `| Page ${x.page} | ${x.line} | ${x.suraAyah} | Diagnostic | ${expected} | ${actual} | **${deltaVal}** | ${tol} |\n`;
     });
 
     fs.writeFileSync(reportMdPath, mdContent, 'utf8');
@@ -852,7 +856,7 @@ test('Warsh Muthamman Ayahinfo Consistency Validation', () => {
     console.log(`  * Numbering (Warsh Range) Fatal: ${fatalNumberingOnly}`);
     console.log(`- Warning Issues: ${warningCount}`);
     console.log(`- Suspicious Issues: ${suspiciousCount}`);
-    console.log(`  * Filtered Boundary Mismatches: ${markerMismatches.length}`);
+    console.log(`- Marker Boundary Diagnostics (not issues): ${markerMismatches.length}`);
     console.log(`--------------------------------------`);
     console.log(`📁 Reports Written:`);
     console.log(`- JSON: ${reportJsonPath}`);
