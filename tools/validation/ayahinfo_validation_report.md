@@ -1,6 +1,6 @@
 # Quran Ayahinfo Validation Report (Warsh Muthamman)
 
-**Date:** 2026-06-21T12:36:55.666Z  
+**Date:** 2026-06-21T12:40:55.914Z  
 **Pages Checked:** 485 / 485  
 **Numbering Mode:** `hafs_tolerant`  
 
@@ -8,16 +8,16 @@
 | Severity | Count |
 |---|---|
 | <span style="color:red">🔴 Fatal</span> | **0** |
-| <span style="color:orange">🟡 Warning</span> | **37** |
+| <span style="color:orange">🟡 Warning</span> | **7** |
 | <span style="color:blue">🔵 Suspicious</span> | **454** |
-| **Total Issues** | **491** |
+| **Total Issues** | **461** |
 
 ### Stats by Category & Severity
 | Category | Fatal | Warning | Suspicious | Total |
 |---|---|---|---|---|
 | `structural` | 0 | 0 | 0 | **0** |
 | `numbering` | 0 | 7 | 0 | **7** |
-| `layout` | 0 | 30 | 1 | **31** |
+| `layout` | 0 | 0 | 1 | **1** |
 | `geometry` | 0 | 0 | 452 | **452** |
 | `ordering` | 0 | 0 | 1 | **1** |
 | `other` | 0 | 0 | 0 | **0** |
@@ -29,7 +29,6 @@
 ## Stats by Issue Code
 | Code | Category | Severity | Count |
 |---|---|---|---|
-| `LINE_COUNT_MISMATCH` | `layout` | <span style="color:orange">warning</span> | 30 |
 | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 6 |
 | `MARKER_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 1 |
 | `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 427 |
@@ -44,67 +43,37 @@
 |---|---|
 | Page 68 | 16 |
 | Page 483 | 10 |
-| Page 475 | 8 |
-| Page 468 | 7 |
+| Page 475 | 7 |
 | Page 484 | 7 |
 | Page 299 | 6 |
-| Page 358 | 6 |
 | Page 359 | 6 |
-| Page 422 | 6 |
-| Page 452 | 6 |
-| Page 463 | 6 |
 | Page 466 | 6 |
-| Page 469 | 6 |
+| Page 468 | 6 |
 | Page 477 | 6 |
-| Page 479 | 6 |
 | Page 161 | 5 |
 | Page 211 | 5 |
 | Page 214 | 5 |
+| Page 358 | 5 |
 | Page 362 | 5 |
 | Page 398 | 5 |
 | Page 420 | 5 |
+| Page 422 | 5 |
 | Page 428 | 5 |
 | Page 430 | 5 |
 | Page 431 | 5 |
-| Page 471 | 5 |
+| Page 452 | 5 |
+| Page 463 | 5 |
+| Page 469 | 5 |
+| Page 479 | 5 |
+| Page 485 | 5 |
 
 ## Major Root Causes (Deduplicated, Excluding Mismatch Geometry)
 | Page | Category | Code | Severity | Ayah | Line | Count | Description |
 |---|---|---|---|---|---|---|---|
-| Page 27 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (17) does not match lineBands count (18) |
-| Page 62 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (16) |
-| Page 150 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
-| Page 156 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (14) |
-| Page 215 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
-| Page 263 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (18) does not match lineBands count (19) |
-| Page 282 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (17) does not match lineBands count (15) |
-| Page 285 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (17) does not match lineBands count (15) |
-| Page 287 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (17) does not match lineBands count (16) |
-| Page 289 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (17) does not match lineBands count (16) |
-| Page 324 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
-| Page 334 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (14) |
 | Page 334 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 32:31 | 14 | 1 | Highlight ayah (31) is out of range for sura (max 30) |
-| Page 335 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (17) |
-| Page 349 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (17) does not match lineBands count (16) |
 | Page 353 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 35:46 | 11 | 2 | Highlight ayah (46) is out of range for sura (max 45) |
-| Page 358 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (14) |
-| Page 368 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (16) |
 | Page 382 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 40:86 | 9 | 1 | Highlight ayah (86) is out of range for sura (max 85) |
-| Page 422 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (15) |
-| Page 429 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
-| Page 438 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (18) |
-| Page 440 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (16) |
-| Page 445 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (14) |
 | Page 450 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 66:25 | 13 | 1 | Highlight ayah (25) is out of range for sura (max 12) |
-| Page 452 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
-| Page 457 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (15) |
-| Page 463 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (16) |
-| Page 468 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
-| Page 469 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (16) |
-| Page 471 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (13) |
-| Page 475 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (13) does not match lineBands count (14) |
-| Page 476 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
-| Page 479 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (10) does not match lineBands count (9) |
 | Page 483 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 106:5 | 9 | 1 | Highlight ayah (5) is out of range for sura (max 4) |
 | Page 483 | `numbering` | `MARKER_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 106:5 | 9 | 1 | Marker ayah (5) is out of range for sura (max 4) |
 | Page 2 | `layout` | `LAYOUT_VERTICAL_OVERLAP` | <span style="color:blue">suspicious</span> | - | 3 | 1 | Minor vertical overlap with previous line band by 5px |
@@ -147,36 +116,6 @@
 ## Section 3: Layout Issues
 | Page | Line | Ayah | Severity | Code | Message |
 |---|---|---|---|---|---|
-| Page 27 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (17) does not match lineBands count (18) |
-| Page 62 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (16) |
-| Page 150 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (17) |
-| Page 156 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (14) |
-| Page 215 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (17) |
-| Page 263 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (18) does not match lineBands count (19) |
-| Page 282 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (17) does not match lineBands count (15) |
-| Page 285 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (17) does not match lineBands count (15) |
-| Page 287 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (17) does not match lineBands count (16) |
-| Page 289 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (17) does not match lineBands count (16) |
-| Page 324 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (17) |
-| Page 334 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (14) |
-| Page 335 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (17) |
-| Page 349 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (17) does not match lineBands count (16) |
-| Page 358 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (14) |
-| Page 368 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (16) |
-| Page 422 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (15) |
-| Page 429 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (17) |
-| Page 438 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (18) |
-| Page 440 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (16) |
-| Page 445 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (14) |
-| Page 452 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (17) |
-| Page 457 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (15) |
-| Page 463 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (16) |
-| Page 468 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (17) |
-| Page 469 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (16) |
-| Page 471 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (13) |
-| Page 475 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (13) does not match lineBands count (14) |
-| Page 476 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (17) |
-| Page 479 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (10) does not match lineBands count (9) |
 | Page 2 | 3 | - | <span style="color:blue">suspicious</span> | `LAYOUT_VERTICAL_OVERLAP` | Minor vertical overlap with previous line band by 5px |
 
 ## Section 4: Ordering Issues

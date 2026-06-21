@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "timestamp": "2026-06-21T12:36:55.662Z",
+    "timestamp": "2026-06-21T12:40:55.911Z",
     "pagesChecked": 485,
     "numberingMode": "hafs_tolerant",
     "stats": {
-      "totalIssues": 491,
+      "totalIssues": 461,
       "fatal": 0,
-      "warning": 37,
+      "warning": 7,
       "suspicious": 454,
       "fatalNoNumbering": 0,
       "fatalNumberingOnly": 0
@@ -24,7 +24,7 @@
       },
       "layout": {
         "fatal": 0,
-        "warning": 30,
+        "warning": 0,
         "suspicious": 1
       },
       "geometry": {
@@ -46,7 +46,6 @@
     "statsByCode": {
       "MARKER_BOUNDARY_MISMATCH": 427,
       "LAYOUT_VERTICAL_OVERLAP": 1,
-      "LINE_COUNT_MISMATCH": 30,
       "SAME_LINE_OVERLAP": 19,
       "SAME_LINE_GAP": 2,
       "HIGHLIGHT_AYAH_OUT_OF_RANGE": 6,
@@ -65,10 +64,6 @@
       },
       {
         "page": 475,
-        "count": 8
-      },
-      {
-        "page": 468,
         "count": 7
       },
       {
@@ -80,23 +75,7 @@
         "count": 6
       },
       {
-        "page": 358,
-        "count": 6
-      },
-      {
         "page": 359,
-        "count": 6
-      },
-      {
-        "page": 422,
-        "count": 6
-      },
-      {
-        "page": 452,
-        "count": 6
-      },
-      {
-        "page": 463,
         "count": 6
       },
       {
@@ -104,15 +83,11 @@
         "count": 6
       },
       {
-        "page": 469,
+        "page": 468,
         "count": 6
       },
       {
         "page": 477,
-        "count": 6
-      },
-      {
-        "page": 479,
         "count": 6
       },
       {
@@ -128,6 +103,10 @@
         "count": 5
       },
       {
+        "page": 358,
+        "count": 5
+      },
+      {
         "page": 362,
         "count": 5
       },
@@ -137,6 +116,10 @@
       },
       {
         "page": 420,
+        "count": 5
+      },
+      {
+        "page": 422,
         "count": 5
       },
       {
@@ -152,168 +135,28 @@
         "count": 5
       },
       {
-        "page": 471,
+        "page": 452,
+        "count": 5
+      },
+      {
+        "page": 463,
+        "count": 5
+      },
+      {
+        "page": 469,
+        "count": 5
+      },
+      {
+        "page": 479,
+        "count": 5
+      },
+      {
+        "page": 485,
         "count": 5
       }
     ]
   },
   "issues": [
-    {
-      "page": 27,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (17) does not match lineBands count (18)",
-      "details": {
-        "detected": 17,
-        "bands": 18
-      }
-    },
-    {
-      "page": 62,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (15) does not match lineBands count (16)",
-      "details": {
-        "detected": 15,
-        "bands": 16
-      }
-    },
-    {
-      "page": 150,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (16) does not match lineBands count (17)",
-      "details": {
-        "detected": 16,
-        "bands": 17
-      }
-    },
-    {
-      "page": 156,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (15) does not match lineBands count (14)",
-      "details": {
-        "detected": 15,
-        "bands": 14
-      }
-    },
-    {
-      "page": 215,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (16) does not match lineBands count (17)",
-      "details": {
-        "detected": 16,
-        "bands": 17
-      }
-    },
-    {
-      "page": 263,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (18) does not match lineBands count (19)",
-      "details": {
-        "detected": 18,
-        "bands": 19
-      }
-    },
-    {
-      "page": 282,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (17) does not match lineBands count (15)",
-      "details": {
-        "detected": 17,
-        "bands": 15
-      }
-    },
-    {
-      "page": 285,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (17) does not match lineBands count (15)",
-      "details": {
-        "detected": 17,
-        "bands": 15
-      }
-    },
-    {
-      "page": 287,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (17) does not match lineBands count (16)",
-      "details": {
-        "detected": 17,
-        "bands": 16
-      }
-    },
-    {
-      "page": 289,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (17) does not match lineBands count (16)",
-      "details": {
-        "detected": 17,
-        "bands": 16
-      }
-    },
-    {
-      "page": 324,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (16) does not match lineBands count (17)",
-      "details": {
-        "detected": 16,
-        "bands": 17
-      }
-    },
-    {
-      "page": 334,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (15) does not match lineBands count (14)",
-      "details": {
-        "detected": 15,
-        "bands": 14
-      }
-    },
     {
       "page": 334,
       "severity": "warning",
@@ -333,32 +176,6 @@
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
-      }
-    },
-    {
-      "page": 335,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (15) does not match lineBands count (17)",
-      "details": {
-        "detected": 15,
-        "bands": 17
-      }
-    },
-    {
-      "page": 349,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (17) does not match lineBands count (16)",
-      "details": {
-        "detected": 17,
-        "bands": 16
       }
     },
     {
@@ -404,32 +221,6 @@
       }
     },
     {
-      "page": 358,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (15) does not match lineBands count (14)",
-      "details": {
-        "detected": 15,
-        "bands": 14
-      }
-    },
-    {
-      "page": 368,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (15) does not match lineBands count (16)",
-      "details": {
-        "detected": 15,
-        "bands": 16
-      }
-    },
-    {
       "page": 382,
       "severity": "warning",
       "category": "numbering",
@@ -451,71 +242,6 @@
       }
     },
     {
-      "page": 422,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (16) does not match lineBands count (15)",
-      "details": {
-        "detected": 16,
-        "bands": 15
-      }
-    },
-    {
-      "page": 429,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (16) does not match lineBands count (17)",
-      "details": {
-        "detected": 16,
-        "bands": 17
-      }
-    },
-    {
-      "page": 438,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (15) does not match lineBands count (18)",
-      "details": {
-        "detected": 15,
-        "bands": 18
-      }
-    },
-    {
-      "page": 440,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (15) does not match lineBands count (16)",
-      "details": {
-        "detected": 15,
-        "bands": 16
-      }
-    },
-    {
-      "page": 445,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (15) does not match lineBands count (14)",
-      "details": {
-        "detected": 15,
-        "bands": 14
-      }
-    },
-    {
       "page": 450,
       "severity": "warning",
       "category": "numbering",
@@ -534,123 +260,6 @@
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
-      }
-    },
-    {
-      "page": 452,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (16) does not match lineBands count (17)",
-      "details": {
-        "detected": 16,
-        "bands": 17
-      }
-    },
-    {
-      "page": 457,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (16) does not match lineBands count (15)",
-      "details": {
-        "detected": 16,
-        "bands": 15
-      }
-    },
-    {
-      "page": 463,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (15) does not match lineBands count (16)",
-      "details": {
-        "detected": 15,
-        "bands": 16
-      }
-    },
-    {
-      "page": 468,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (16) does not match lineBands count (17)",
-      "details": {
-        "detected": 16,
-        "bands": 17
-      }
-    },
-    {
-      "page": 469,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (15) does not match lineBands count (16)",
-      "details": {
-        "detected": 15,
-        "bands": 16
-      }
-    },
-    {
-      "page": 471,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (16) does not match lineBands count (13)",
-      "details": {
-        "detected": 16,
-        "bands": 13
-      }
-    },
-    {
-      "page": 475,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (13) does not match lineBands count (14)",
-      "details": {
-        "detected": 13,
-        "bands": 14
-      }
-    },
-    {
-      "page": 476,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (16) does not match lineBands count (17)",
-      "details": {
-        "detected": 16,
-        "bands": 17
-      }
-    },
-    {
-      "page": 479,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (10) does not match lineBands count (9)",
-      "details": {
-        "detected": 10,
-        "bands": 9
       }
     },
     {
