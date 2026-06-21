@@ -1,6 +1,6 @@
 # Quran Ayahinfo Validation Report (Warsh Muthamman)
 
-**Date:** 2026-06-21T14:27:05.250Z  
+**Date:** 2026-06-21T14:39:36.514Z  
 **Pages Checked:** 485 / 485  
 **Numbering Mode:** `hafs_tolerant`  
 > **Note:** Numbering validation is app-facing Hafs/Kufi tolerant.  
@@ -10,8 +10,8 @@
 |---|---|
 | <span style="color:red">🔴 Fatal</span> | **0** |
 | <span style="color:orange">🟡 Warning</span> | **0** |
-| <span style="color:blue">🔵 Suspicious</span> | **401** |
-| **Total Issues** | **401** |
+| <span style="color:blue">🔵 Suspicious</span> | **404** |
+| **Total Issues** | **404** |
 
 ### Stats by Category & Severity
 | Category | Fatal | Warning | Suspicious | Total |
@@ -19,7 +19,7 @@
 | `structural` | 0 | 0 | 0 | **0** |
 | `numbering` | 0 | 0 | 0 | **0** |
 | `layout` | 0 | 0 | 0 | **0** |
-| `geometry` | 0 | 0 | 401 | **401** |
+| `geometry` | 0 | 0 | 404 | **404** |
 | `ordering` | 0 | 0 | 0 | **0** |
 | `other` | 0 | 0 | 0 | **0** |
 
@@ -30,13 +30,13 @@
 ## Stats by Issue Code
 | Code | Category | Severity | Count |
 |---|---|---|---|
-| `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 401 |
+| `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 404 |
 
 ## Top 25 Pages with Most Issues
 | Page | Issues Count |
 |---|---|
-| Page 475 | 7 |
-| Page 484 | 7 |
+| Page 475 | 9 |
+| Page 484 | 8 |
 | Page 299 | 6 |
 | Page 359 | 6 |
 | Page 466 | 6 |

@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "timestamp": "2026-06-21T14:27:05.246Z",
+    "timestamp": "2026-06-21T14:39:36.507Z",
     "pagesChecked": 485,
     "numberingMode": "hafs_tolerant",
     "stats": {
-      "totalIssues": 401,
+      "totalIssues": 404,
       "fatal": 0,
       "warning": 0,
-      "suspicious": 401,
+      "suspicious": 404,
       "fatalNoNumbering": 0,
       "fatalNumberingOnly": 0
     },
@@ -30,7 +30,7 @@
       "geometry": {
         "fatal": 0,
         "warning": 0,
-        "suspicious": 401
+        "suspicious": 404
       },
       "ordering": {
         "fatal": 0,
@@ -44,16 +44,16 @@
       }
     },
     "statsByCode": {
-      "MARKER_BOUNDARY_MISMATCH": 401
+      "MARKER_BOUNDARY_MISMATCH": 404
     },
     "topPages": [
       {
         "page": 475,
-        "count": 7
+        "count": 9
       },
       {
         "page": 484,
-        "count": 7
+        "count": 8
       },
       {
         "page": 299,
@@ -4137,7 +4137,7 @@
           "sura": 26,
           "ayah": 114,
           "left": 0.03,
-          "right": 0.4163501303630614,
+          "right": 0.4132677241597189,
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
@@ -4170,7 +4170,7 @@
           "sura": 26,
           "ayah": 116,
           "left": 0.03,
-          "right": 0.7155490862003298,
+          "right": 0.7134941800872922,
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
@@ -5853,7 +5853,7 @@
           "sura": 37,
           "ayah": 48,
           "left": 0.03,
-          "right": 0.6252057438861089,
+          "right": 0.6262332439764138,
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
@@ -5886,7 +5886,7 @@
           "sura": 37,
           "ayah": 50,
           "left": 0.03,
-          "right": 0.6494721392892381,
+          "right": 0.6474172331762005,
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
@@ -11803,6 +11803,72 @@
       "page": 475,
       "severity": "suspicious",
       "category": "geometry",
+      "line": 6,
+      "suraAyah": "87:15",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0734) is misaligned with highlight left (0.0300) by 0.0434",
+      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.07344762903249576,
+        "delta": 0.04344762903249576,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 475,
+          "sura": 87,
+          "ayah": 15,
+          "line": 6,
+          "center_x": 0.07344762903249576,
+          "center_y": 0.5097846327042957
+        },
+        "highlight": {
+          "page": 475,
+          "line": 6,
+          "sura": 87,
+          "ayah": 15,
+          "left": 0.03,
+          "right": 0.4377921103187292,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
+      }
+    },
+    {
+      "page": 475,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 8,
+      "suraAyah": "87:19",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0783) is misaligned with highlight left (0.0300) by 0.0483",
+      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.07833473171809219,
+        "delta": 0.04833473171809219,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 475,
+          "sura": 87,
+          "ayah": 19,
+          "line": 8,
+          "center_x": 0.07833473171809219,
+          "center_y": 0.4692866564741962
+        },
+        "highlight": {
+          "page": 475,
+          "line": 8,
+          "sura": 87,
+          "ayah": 19,
+          "left": 0.03,
+          "right": 0.4798247646295506,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
+      }
+    },
+    {
+      "page": 475,
+      "severity": "suspicious",
+      "category": "geometry",
       "line": 9,
       "suraAyah": "88:2",
       "code": "MARKER_BOUNDARY_MISMATCH",
@@ -13048,6 +13114,39 @@
           "ayah": 7,
           "left": 0.03,
           "right": 0.4008347889797261,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
+      }
+    },
+    {
+      "page": 484,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 4,
+      "suraAyah": "108:2",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0830) is misaligned with highlight left (0.0300) by 0.0530",
+      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.08299499392157728,
+        "delta": 0.05299499392157728,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 484,
+          "sura": 108,
+          "ayah": 2,
+          "line": 4,
+          "center_x": 0.08299499392157728,
+          "center_y": 0.454305735928391
+        },
+        "highlight": {
+          "page": 484,
+          "line": 4,
+          "sura": 108,
+          "ayah": 2,
+          "left": 0.03,
+          "right": 0.5078971728618717,
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
