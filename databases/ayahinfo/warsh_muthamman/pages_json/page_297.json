@@ -36,7 +36,7 @@
       "line": 2,
       "sura": 26,
       "ayah": 52,
-      "left": 0.07162853293423255,
+      "left": 0.03,
       "right": 0.7311435665480641,
       "confidence": 0.95,
       "source": "visual_valley"
@@ -446,7 +446,7 @@
       "line": 16,
       "sura": 26,
       "ayah": 81,
-      "left": 0.08,
+      "left": 0.03,
       "right": 0.488548175588257,
       "confidence": 0.95,
       "source": "visual_valley"

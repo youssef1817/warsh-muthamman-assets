@@ -46,7 +46,7 @@
       "line": 3,
       "sura": 2,
       "ayah": 3,
-      "left": 0.13389752502641286,
+      "left": 0.03,
       "right": 0.97,
       "confidence": 0.5,
       "source": "manual_marker_sync"
@@ -86,7 +86,7 @@
       "line": 6,
       "sura": 2,
       "ayah": 5,
-      "left": 0.11712069357542566,
+      "left": 0.03,
       "right": 0.97,
       "confidence": 0.5,
       "source": "manual_marker_sync"
