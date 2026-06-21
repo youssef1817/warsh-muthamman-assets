@@ -1,41 +1,41 @@
 {
   "metadata": {
-    "timestamp": "2026-06-21T12:10:05.195Z",
+    "timestamp": "2026-06-21T12:27:42.060Z",
     "pagesChecked": 485,
     "numberingMode": "hafs_tolerant",
     "stats": {
-      "totalIssues": 660,
-      "fatal": 109,
-      "warning": 60,
-      "suspicious": 491,
-      "fatalNoNumbering": 109,
+      "totalIssues": 561,
+      "fatal": 49,
+      "warning": 43,
+      "suspicious": 469,
+      "fatalNoNumbering": 49,
       "fatalNumberingOnly": 0
     },
     "statsByCategory": {
       "structural": {
-        "fatal": 48,
+        "fatal": 0,
         "warning": 0,
         "suspicious": 0
       },
       "numbering": {
         "fatal": 0,
-        "warning": 8,
+        "warning": 7,
         "suspicious": 0
       },
       "layout": {
         "fatal": 49,
-        "warning": 34,
+        "warning": 33,
         "suspicious": 1
       },
       "geometry": {
-        "fatal": 12,
-        "warning": 16,
-        "suspicious": 482
+        "fatal": 0,
+        "warning": 1,
+        "suspicious": 467
       },
       "ordering": {
         "fatal": 0,
         "warning": 2,
-        "suspicious": 8
+        "suspicious": 1
       },
       "other": {
         "fatal": 0,
@@ -45,34 +45,19 @@
     },
     "statsByCode": {
       "LAYOUT_ORDER_INVALID": 52,
-      "MARKER_BOUNDARY_MISMATCH": 429,
+      "MARKER_BOUNDARY_MISMATCH": 434,
       "LAYOUT_VERTICAL_OVERLAP": 1,
-      "MARKER_NOT_ON_HIGHLIGHT_LINE": 33,
+      "MARKER_NOT_ON_HIGHLIGHT_LINE": 12,
       "DUPLICATE_MARKER_AYAH": 2,
-      "ORPHAN_HIGHLIGHT_NO_MARKER": 16,
-      "LINE_COUNT_MISMATCH": 31,
-      "SAME_LINE_OVERLAP": 18,
+      "ORPHAN_HIGHLIGHT_NO_MARKER": 1,
+      "LINE_COUNT_MISMATCH": 30,
+      "SAME_LINE_OVERLAP": 19,
       "SAME_LINE_GAP": 2,
-      "HIGHLIGHT_AYAH_OUT_OF_RANGE": 7,
-      "HIGHLIGHT_LINE_OUT_OF_RANGE": 25,
-      "MARKER_LINE_OUT_OF_RANGE": 23,
-      "HIGHLIGHT_ORDER_JUMP": 8,
-      "MARKER_NO_HIGHLIGHT": 12,
+      "HIGHLIGHT_AYAH_OUT_OF_RANGE": 6,
+      "HIGHLIGHT_ORDER_JUMP": 1,
       "MARKER_AYAH_OUT_OF_RANGE": 1
     },
     "topPages": [
-      {
-        "page": 362,
-        "count": 37
-      },
-      {
-        "page": 471,
-        "count": 23
-      },
-      {
-        "page": 361,
-        "count": 22
-      },
       {
         "page": 3,
         "count": 16
@@ -82,24 +67,8 @@
         "count": 16
       },
       {
-        "page": 479,
-        "count": 14
-      },
-      {
         "page": 483,
-        "count": 14
-      },
-      {
-        "page": 422,
-        "count": 13
-      },
-      {
-        "page": 358,
         "count": 11
-      },
-      {
-        "page": 457,
-        "count": 10
       },
       {
         "page": 475,
@@ -114,7 +83,23 @@
         "count": 8
       },
       {
+        "page": 479,
+        "count": 8
+      },
+      {
+        "page": 358,
+        "count": 7
+      },
+      {
+        "page": 422,
+        "count": 7
+      },
+      {
         "page": 463,
+        "count": 7
+      },
+      {
+        "page": 471,
         "count": 7
       },
       {
@@ -159,6 +144,18 @@
       },
       {
         "page": 214,
+        "count": 5
+      },
+      {
+        "page": 353,
+        "count": 5
+      },
+      {
+        "page": 362,
+        "count": 5
+      },
+      {
+        "page": 398,
         "count": 5
       }
     ]
@@ -450,46 +447,6 @@
       }
     },
     {
-      "page": 349,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "35:18",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (17) is outside layout bands (1..16)",
-      "details": {
-        "highlight": {
-          "page": 349,
-          "line": 17,
-          "sura": 35,
-          "ayah": 18,
-          "left": 0.03,
-          "right": 0.9700000000000001,
-          "confidence": 0.85,
-          "source": "text_proportional_renumbered"
-        }
-      }
-    },
-    {
-      "page": 349,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "35:7",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (17) is outside layout bands (1..16)",
-      "details": {
-        "marker": {
-          "page": 349,
-          "sura": 35,
-          "ayah": 7,
-          "line": 17,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
       "page": 353,
       "severity": "fatal",
       "category": "layout",
@@ -517,314 +474,6 @@
         "center": 749,
         "bottom": 901,
         "errorAmount": 32
-      }
-    },
-    {
-      "page": 358,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 15,
-      "suraAyah": "37:54",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (15) is outside layout bands (1..14)",
-      "details": {
-        "highlight": {
-          "page": 358,
-          "line": 15,
-          "sura": 37,
-          "ayah": 54,
-          "left": 0.5316,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 358,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 15,
-      "suraAyah": "37:55",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (15) is outside layout bands (1..14)",
-      "details": {
-        "highlight": {
-          "page": 358,
-          "line": 15,
-          "sura": 37,
-          "ayah": 55,
-          "left": 0.03,
-          "right": 0.6316,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 358,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 15,
-      "suraAyah": "37:20",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (15) is outside layout bands (1..14)",
-      "details": {
-        "marker": {
-          "page": 358,
-          "sura": 37,
-          "ayah": 20,
-          "line": 15,
-          "center_x": 0.5991,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 358,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 15,
-      "suraAyah": "37:21",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (15) is outside layout bands (1..14)",
-      "details": {
-        "marker": {
-          "page": 358,
-          "sura": 37,
-          "ayah": 21,
-          "line": 15,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 361,
-      "severity": "fatal",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "37:104",
-      "code": "MARKER_NO_HIGHLIGHT",
-      "message": "Marker exists for 37:104 but no highlight found on page",
-      "details": {
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 104,
-          "line": 11,
-          "center_x": 0.46627736494819927,
-          "center_y": 0.6673324280245142
-        }
-      }
-    },
-    {
-      "page": 361,
-      "severity": "fatal",
-      "category": "geometry",
-      "line": 12,
-      "suraAyah": "37:105",
-      "code": "MARKER_NO_HIGHLIGHT",
-      "message": "Marker exists for 37:105 but no highlight found on page",
-      "details": {
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 105,
-          "line": 12,
-          "center_x": 0.7975687715836212,
-          "center_y": 0.6167836448961577
-        }
-      }
-    },
-    {
-      "page": 361,
-      "severity": "fatal",
-      "category": "geometry",
-      "line": 12,
-      "suraAyah": "37:106",
-      "code": "MARKER_NO_HIGHLIGHT",
-      "message": "Marker exists for 37:106 but no highlight found on page",
-      "details": {
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 106,
-          "line": 12,
-          "center_x": 0.4526934022394108,
-          "center_y": 0.6459805584860856
-        }
-      }
-    },
-    {
-      "page": 361,
-      "severity": "fatal",
-      "category": "geometry",
-      "line": 12,
-      "suraAyah": "37:107",
-      "code": "MARKER_NO_HIGHLIGHT",
-      "message": "Marker exists for 37:107 but no highlight found on page",
-      "details": {
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 107,
-          "line": 12,
-          "center_x": 0.1418931832097048,
-          "center_y": 0.6309052788541507
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "fatal",
-      "category": "geometry",
-      "line": 7,
-      "suraAyah": "37:124",
-      "code": "MARKER_NO_HIGHLIGHT",
-      "message": "Marker exists for 37:124 but no highlight found on page",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 124,
-          "line": 7,
-          "center_x": 0.5722946366903939,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "fatal",
-      "category": "geometry",
-      "line": 8,
-      "suraAyah": "37:125",
-      "code": "MARKER_NO_HIGHLIGHT",
-      "message": "Marker exists for 37:125 but no highlight found on page",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 125,
-          "line": 8,
-          "center_x": 0.7722841003594333,
-          "center_y": 0.3955231857344472
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "fatal",
-      "category": "geometry",
-      "line": 8,
-      "suraAyah": "37:126",
-      "code": "MARKER_NO_HIGHLIGHT",
-      "message": "Marker exists for 37:126 but no highlight found on page",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 126,
-          "line": 8,
-          "center_x": 0.08086801043061526,
-          "center_y": 0.4825874633206863
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "fatal",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "37:127",
-      "code": "MARKER_NO_HIGHLIGHT",
-      "message": "Marker exists for 37:127 but no highlight found on page",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 127,
-          "line": 9,
-          "center_x": 0.5461206920854182,
-          "center_y": 0.5335813207386764
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "fatal",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "37:128",
-      "code": "MARKER_NO_HIGHLIGHT",
-      "message": "Marker exists for 37:128 but no highlight found on page",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 128,
-          "line": 9,
-          "center_x": 0.07313633261241104,
-          "center_y": 0.5839548391010163
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "fatal",
-      "category": "geometry",
-      "line": 10,
-      "suraAyah": "37:129",
-      "code": "MARKER_NO_HIGHLIGHT",
-      "message": "Marker exists for 37:129 but no highlight found on page",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 129,
-          "line": 10,
-          "center_x": 0.5859928313746564,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "fatal",
-      "category": "geometry",
-      "line": 12,
-      "suraAyah": "37:134",
-      "code": "MARKER_NO_HIGHLIGHT",
-      "message": "Marker exists for 37:134 but no highlight found on page",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 134,
-          "line": 12,
-          "center_x": 0.2274559117097752,
-          "center_y": 0.3992545005296445
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "fatal",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "37:137",
-      "code": "MARKER_NO_HIGHLIGHT",
-      "message": "Marker exists for 37:137 but no highlight found on page",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 137,
-          "line": 14,
-          "center_x": 0.7647632179857636,
-          "center_y": 0.48432799960326633
-        }
       }
     },
     {
@@ -918,126 +567,6 @@
       }
     },
     {
-      "page": 422,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "53:52",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (16) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 422,
-          "line": 16,
-          "sura": 53,
-          "ayah": 52,
-          "left": 0.6075999999999999,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 422,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "53:53",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (16) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 422,
-          "line": 16,
-          "sura": 53,
-          "ayah": 53,
-          "left": 0.3815,
-          "right": 0.7076,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 422,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "53:54",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (16) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 422,
-          "line": 16,
-          "sura": 53,
-          "ayah": 54,
-          "left": 0.03,
-          "right": 0.4815,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 422,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "53:23",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (16) is outside layout bands (1..15)",
-      "details": {
-        "marker": {
-          "page": 422,
-          "sura": 53,
-          "ayah": 23,
-          "line": 16,
-          "center_x": 0.6685,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 422,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "53:24",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (16) is outside layout bands (1..15)",
-      "details": {
-        "marker": {
-          "page": 422,
-          "sura": 53,
-          "ayah": 24,
-          "line": 16,
-          "center_x": 0.3822,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 422,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "53:25",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (16) is outside layout bands (1..15)",
-      "details": {
-        "marker": {
-          "page": 422,
-          "sura": 53,
-          "ayah": 25,
-          "line": 16,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
       "page": 424,
       "severity": "fatal",
       "category": "layout",
@@ -1113,46 +642,6 @@
       }
     },
     {
-      "page": 445,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 15,
-      "suraAyah": "64:28",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (15) is outside layout bands (1..14)",
-      "details": {
-        "highlight": {
-          "page": 445,
-          "line": 15,
-          "sura": 64,
-          "ayah": 28,
-          "left": 0.03,
-          "right": 0.9700000000000001,
-          "confidence": 0.85,
-          "source": "text_proportional_renumbered"
-        }
-      }
-    },
-    {
-      "page": 445,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 15,
-      "suraAyah": "64:6",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (15) is outside layout bands (1..14)",
-      "details": {
-        "marker": {
-          "page": 445,
-          "sura": 64,
-          "ayah": 6,
-          "line": 15,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
       "page": 454,
       "severity": "fatal",
       "category": "layout",
@@ -1180,126 +669,6 @@
         "center": 714,
         "bottom": 865,
         "errorAmount": 31
-      }
-    },
-    {
-      "page": 457,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "71:12",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (16) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 457,
-          "line": 16,
-          "sura": 71,
-          "ayah": 12,
-          "left": 0.7363,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 457,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "71:13",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (16) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 457,
-          "line": 16,
-          "sura": 71,
-          "ayah": 13,
-          "left": 0.313,
-          "right": 0.8363,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 457,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "71:14",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (16) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 457,
-          "line": 16,
-          "sura": 71,
-          "ayah": 14,
-          "left": 0.03,
-          "right": 0.413,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 457,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "71:12",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (16) is outside layout bands (1..15)",
-      "details": {
-        "marker": {
-          "page": 457,
-          "sura": 71,
-          "ayah": 12,
-          "line": 16,
-          "center_x": 0.7645,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 457,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "71:13",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (16) is outside layout bands (1..15)",
-      "details": {
-        "marker": {
-          "page": 457,
-          "sura": 71,
-          "ayah": 13,
-          "line": 16,
-          "center_x": 0.3471,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 457,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "71:14",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (16) is outside layout bands (1..15)",
-      "details": {
-        "marker": {
-          "page": 457,
-          "sura": 71,
-          "ayah": 14,
-          "line": 16,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
       }
     },
     {
@@ -1423,328 +792,6 @@
       }
     },
     {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 14,
-      "suraAyah": "83:7",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (14) is outside layout bands (1..13)",
-      "details": {
-        "highlight": {
-          "page": 471,
-          "line": 14,
-          "sura": 83,
-          "ayah": 7,
-          "left": 0.8019,
-          "right": 0.9700000000000001,
-          "confidence": 0.85,
-          "source": "text_proportional"
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 14,
-      "suraAyah": "83:8",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (14) is outside layout bands (1..13)",
-      "details": {
-        "highlight": {
-          "page": 471,
-          "line": 14,
-          "sura": 83,
-          "ayah": 8,
-          "left": 0.4611,
-          "right": 0.9019,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 14,
-      "suraAyah": "83:9",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (14) is outside layout bands (1..13)",
-      "details": {
-        "highlight": {
-          "page": 471,
-          "line": 14,
-          "sura": 83,
-          "ayah": 9,
-          "left": 0.3299,
-          "right": 0.5611,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 14,
-      "suraAyah": "83:10",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (14) is outside layout bands (1..13)",
-      "details": {
-        "highlight": {
-          "page": 471,
-          "line": 14,
-          "sura": 83,
-          "ayah": 10,
-          "left": 0.03,
-          "right": 0.4299,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 14,
-      "suraAyah": "83:7",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (14) is outside layout bands (1..13)",
-      "details": {
-        "marker": {
-          "page": 471,
-          "sura": 83,
-          "ayah": 7,
-          "line": 14,
-          "center_x": 0.8519,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 14,
-      "suraAyah": "83:8",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (14) is outside layout bands (1..13)",
-      "details": {
-        "marker": {
-          "page": 471,
-          "sura": 83,
-          "ayah": 8,
-          "line": 14,
-          "center_x": 0.5431,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 14,
-      "suraAyah": "83:9",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (14) is outside layout bands (1..13)",
-      "details": {
-        "marker": {
-          "page": 471,
-          "sura": 83,
-          "ayah": 9,
-          "line": 14,
-          "center_x": 0.3615,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 15,
-      "suraAyah": "83:10",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (15) is outside layout bands (1..13)",
-      "details": {
-        "highlight": {
-          "page": 471,
-          "line": 15,
-          "sura": 83,
-          "ayah": 10,
-          "left": 0.7675,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 15,
-      "suraAyah": "83:11",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (15) is outside layout bands (1..13)",
-      "details": {
-        "highlight": {
-          "page": 471,
-          "line": 15,
-          "sura": 83,
-          "ayah": 11,
-          "left": 0.4239,
-          "right": 0.8675,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 15,
-      "suraAyah": "83:12",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (15) is outside layout bands (1..13)",
-      "details": {
-        "highlight": {
-          "page": 471,
-          "line": 15,
-          "sura": 83,
-          "ayah": 12,
-          "left": 0.03,
-          "right": 0.5239,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 15,
-      "suraAyah": "83:10",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (15) is outside layout bands (1..13)",
-      "details": {
-        "marker": {
-          "page": 471,
-          "sura": 83,
-          "ayah": 10,
-          "line": 15,
-          "center_x": 0.8746,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 15,
-      "suraAyah": "83:11",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (15) is outside layout bands (1..13)",
-      "details": {
-        "marker": {
-          "page": 471,
-          "sura": 83,
-          "ayah": 11,
-          "line": 15,
-          "center_x": 0.4569,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "83:12",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (16) is outside layout bands (1..13)",
-      "details": {
-        "highlight": {
-          "page": 471,
-          "line": 16,
-          "sura": 83,
-          "ayah": 12,
-          "left": 0.7636,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "83:13",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (16) is outside layout bands (1..13)",
-      "details": {
-        "highlight": {
-          "page": 471,
-          "line": 16,
-          "sura": 83,
-          "ayah": 13,
-          "left": 0.03,
-          "right": 0.8636,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "83:12",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (16) is outside layout bands (1..13)",
-      "details": {
-        "marker": {
-          "page": 471,
-          "sura": 83,
-          "ayah": 12,
-          "line": 16,
-          "center_x": 0.7883,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "83:13",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (16) is outside layout bands (1..13)",
-      "details": {
-        "marker": {
-          "page": 471,
-          "sura": 83,
-          "ayah": 13,
-          "line": 16,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
       "page": 475,
       "severity": "fatal",
       "category": "layout",
@@ -1820,126 +867,6 @@
       }
     },
     {
-      "page": 479,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 10,
-      "suraAyah": "96:3",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (10) is outside layout bands (1..9)",
-      "details": {
-        "highlight": {
-          "page": 479,
-          "line": 10,
-          "sura": 96,
-          "ayah": 3,
-          "left": 0.6640999999999999,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 479,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 10,
-      "suraAyah": "96:4",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (10) is outside layout bands (1..9)",
-      "details": {
-        "highlight": {
-          "page": 479,
-          "line": 10,
-          "sura": 96,
-          "ayah": 4,
-          "left": 0.431,
-          "right": 0.7641,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 479,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 10,
-      "suraAyah": "96:5",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (10) is outside layout bands (1..9)",
-      "details": {
-        "highlight": {
-          "page": 479,
-          "line": 10,
-          "sura": 96,
-          "ayah": 5,
-          "left": 0.03,
-          "right": 0.531,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 479,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 10,
-      "suraAyah": "96:3",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (10) is outside layout bands (1..9)",
-      "details": {
-        "marker": {
-          "page": 479,
-          "sura": 96,
-          "ayah": 3,
-          "line": 10,
-          "center_x": 0.7399,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 479,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 10,
-      "suraAyah": "96:4",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (10) is outside layout bands (1..9)",
-      "details": {
-        "marker": {
-          "page": 479,
-          "sura": 96,
-          "ayah": 4,
-          "line": 10,
-          "center_x": 0.4724,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 479,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 10,
-      "suraAyah": "96:5",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (10) is outside layout bands (1..9)",
-      "details": {
-        "marker": {
-          "page": 479,
-          "sura": 96,
-          "ayah": 5,
-          "line": 10,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
       "page": 481,
       "severity": "fatal",
       "category": "layout",
@@ -1967,126 +894,6 @@
         "center": 341,
         "bottom": 501,
         "errorAmount": 32
-      }
-    },
-    {
-      "page": 483,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 9,
-      "suraAyah": "106:3",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (9) is outside layout bands (1..8)",
-      "details": {
-        "highlight": {
-          "page": 483,
-          "line": 9,
-          "sura": 106,
-          "ayah": 3,
-          "left": 0.5720999999999999,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 483,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 9,
-      "suraAyah": "106:4",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (9) is outside layout bands (1..8)",
-      "details": {
-        "highlight": {
-          "page": 483,
-          "line": 9,
-          "sura": 106,
-          "ayah": 4,
-          "left": 0.267,
-          "right": 0.6721,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 483,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 9,
-      "suraAyah": "106:5",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (9) is outside layout bands (1..8)",
-      "details": {
-        "highlight": {
-          "page": 483,
-          "line": 9,
-          "sura": 106,
-          "ayah": 5,
-          "left": 0.03,
-          "right": 0.367,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 483,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 9,
-      "suraAyah": "106:3",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (9) is outside layout bands (1..8)",
-      "details": {
-        "marker": {
-          "page": 483,
-          "sura": 106,
-          "ayah": 3,
-          "line": 9,
-          "center_x": 0.6238,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 483,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 9,
-      "suraAyah": "106:4",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (9) is outside layout bands (1..8)",
-      "details": {
-        "marker": {
-          "page": 483,
-          "sura": 106,
-          "ayah": 4,
-          "line": 9,
-          "center_x": 0.308,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 483,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 9,
-      "suraAyah": "106:5",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (9) is outside layout bands (1..8)",
-      "details": {
-        "marker": {
-          "page": 483,
-          "sura": 106,
-          "ayah": 5,
-          "line": 9,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
       }
     },
     {
@@ -2407,321 +1214,6 @@
       }
     },
     {
-      "page": 361,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "37:114",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.730) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 361,
-          "line": 13,
-          "sura": 37,
-          "ayah": 114,
-          "left": 0.7303284315755164,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 361,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "37:116",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.474) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 361,
-          "line": 13,
-          "sura": 37,
-          "ayah": 116,
-          "left": 0.4738828659084502,
-          "right": 0.7303284315755164,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 361,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "37:117",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.106) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 361,
-          "line": 13,
-          "sura": 37,
-          "ayah": 117,
-          "left": 0.10618426190623009,
-          "right": 0.4738828659084502,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 361,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "37:118",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.699) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 361,
-          "line": 14,
-          "sura": 37,
-          "ayah": 118,
-          "left": 0.6990301842536472,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 361,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "37:120",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.152) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 361,
-          "line": 14,
-          "sura": 37,
-          "ayah": 120,
-          "left": 0.15155804496440906,
-          "right": 0.6990301842536472,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 12,
-      "suraAyah": "37:145",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.227) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 362,
-          "line": 12,
-          "sura": 37,
-          "ayah": 145,
-          "left": 0.2274559117097752,
-          "right": 0.7065542966822891,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "37:147",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.744) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 362,
-          "line": 13,
-          "sura": 37,
-          "ayah": 147,
-          "left": 0.7435737543167242,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "37:148",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.391) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 362,
-          "line": 13,
-          "sura": 37,
-          "ayah": 148,
-          "left": 0.39129288401226303,
-          "right": 0.7435737543167242,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "37:150",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.765) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 362,
-          "line": 14,
-          "sura": 37,
-          "ayah": 150,
-          "left": 0.7647632179857636,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "37:151",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.342) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 362,
-          "line": 14,
-          "sura": 37,
-          "ayah": 151,
-          "left": 0.3423578546761576,
-          "right": 0.7647632179857636,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "37:153",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.777) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 362,
-          "line": 15,
-          "sura": 37,
-          "ayah": 153,
-          "left": 0.7772859056751709,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "37:154",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.287) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 362,
-          "line": 15,
-          "sura": 37,
-          "ayah": 154,
-          "left": 0.2870542966822891,
-          "right": 0.7772859056751709,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 16,
-      "suraAyah": "37:156",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.704) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 362,
-          "line": 16,
-          "sura": 37,
-          "ayah": 156,
-          "left": 0.7036860433258157,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 16,
-      "suraAyah": "37:157",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.231) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 362,
-          "line": 16,
-          "sura": 37,
-          "ayah": 157,
-          "left": 0.23070161502748607,
-          "right": 0.7036860433258157,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 362,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 17,
-      "suraAyah": "37:160",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.625) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 362,
-          "line": 17,
-          "sura": 37,
-          "ayah": 160,
-          "left": 0.6252210726619212,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
       "page": 368,
       "severity": "warning",
       "category": "layout",
@@ -2848,27 +1340,6 @@
       "details": {
         "detected": 15,
         "bands": 14
-      }
-    },
-    {
-      "page": 445,
-      "severity": "warning",
-      "category": "numbering",
-      "line": 15,
-      "suraAyah": "64:28",
-      "code": "HIGHLIGHT_AYAH_OUT_OF_RANGE",
-      "message": "Highlight ayah (28) is out of range for sura (max 18)",
-      "details": {
-        "highlight": {
-          "page": 445,
-          "line": 15,
-          "sura": 64,
-          "ayah": 28,
-          "left": 0.03,
-          "right": 0.9700000000000001,
-          "confidence": 0.85,
-          "source": "text_proportional_renumbered"
-        }
       }
     },
     {
@@ -3022,19 +1493,6 @@
       "details": {
         "detected": 10,
         "bands": 9
-      }
-    },
-    {
-      "page": 483,
-      "severity": "warning",
-      "category": "layout",
-      "line": null,
-      "suraAyah": null,
-      "code": "LINE_COUNT_MISMATCH",
-      "message": "detectedLineCount (9) does not match lineBands count (8)",
-      "details": {
-        "detected": 9,
-        "bands": 8
       }
     },
     {
@@ -10585,258 +9043,10 @@
           "sura": 37,
           "ayah": 92,
           "left": 0.03,
-          "right": 0.35053122841637885,
+          "right": 0.34752420419573843,
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
-      }
-    },
-    {
-      "page": 361,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 6,
-      "suraAyah": "37:95",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 6 for 37:95 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 95,
-          "line": 6,
-          "center_x": 0.9347315162714074,
-          "center_y": 0.5343859061011453
-        },
-        "pageHighlightsLines": [
-          5
-        ]
-      }
-    },
-    {
-      "page": 361,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 6,
-      "suraAyah": "37:96",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.9347) is misaligned with next ayah right (0.9700) by 0.0353",
-      "details": {
-        "expectedBoundary": 0.97,
-        "actualBoundary": 0.9347315162714074,
-        "delta": 0.03526848372859259,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 95,
-          "line": 6,
-          "center_x": 0.9347315162714074,
-          "center_y": 0.5343859061011453
-        },
-        "highlight": {
-          "page": 361,
-          "line": 6,
-          "sura": 37,
-          "ayah": 96,
-          "left": 0.5514346487596025,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 361,
-      "severity": "suspicious",
-      "category": "ordering",
-      "line": 11,
-      "suraAyah": "37:108",
-      "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 37:103 to 37:108",
-      "details": {
-        "prev": "37:103",
-        "curr": "37:108"
-      }
-    },
-    {
-      "page": 361,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "37:103",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 11 for 37:103 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 103,
-          "line": 11,
-          "center_x": 0.7799494515998309,
-          "center_y": 0.6533876334741009
-        },
-        "pageHighlightsLines": [
-          10
-        ]
-      }
-    },
-    {
-      "page": 361,
-      "severity": "suspicious",
-      "category": "ordering",
-      "line": 13,
-      "suraAyah": "37:116",
-      "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 37:114 to 37:116",
-      "details": {
-        "prev": "37:114",
-        "curr": "37:116"
-      }
-    },
-    {
-      "page": 361,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "37:108",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 13 for 37:108 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 108,
-          "line": 13,
-          "center_x": 0.7303284315755164,
-          "center_y": 0.633467531876695
-        },
-        "pageHighlightsLines": [
-          11
-        ]
-      }
-    },
-    {
-      "page": 361,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "37:109",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 13 for 37:109 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 109,
-          "line": 13,
-          "center_x": 0.4738828659084502,
-          "center_y": 0.6186387112472479
-        },
-        "pageHighlightsLines": [
-          11
-        ]
-      }
-    },
-    {
-      "page": 361,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "37:110",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 13 for 37:110 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 110,
-          "line": 13,
-          "center_x": 0.10618426190623009,
-          "center_y": 0.6141847081236183
-        },
-        "pageHighlightsLines": [
-          11
-        ]
-      }
-    },
-    {
-      "page": 361,
-      "severity": "suspicious",
-      "category": "ordering",
-      "line": 14,
-      "suraAyah": "37:120",
-      "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 37:118 to 37:120",
-      "details": {
-        "prev": "37:118",
-        "curr": "37:120"
-      }
-    },
-    {
-      "page": 361,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "37:111",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 14 for 37:111 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 111,
-          "line": 14,
-          "center_x": 0.6990301842536472,
-          "center_y": 0.602989795881518
-        },
-        "pageHighlightsLines": [
-          12
-        ]
-      }
-    },
-    {
-      "page": 361,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "37:112",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 14 for 37:112 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 112,
-          "line": 14,
-          "center_x": 0.15155804496440906,
-          "center_y": 0.6618420699647994
-        },
-        "pageHighlightsLines": [
-          12
-        ]
-      }
-    },
-    {
-      "page": 361,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "37:113",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 15 for 37:113 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 361,
-          "sura": 37,
-          "ayah": 113,
-          "line": 15,
-          "center_x": 0.06346134384470364,
-          "center_y": 0.6437333878136472
-        },
-        "pageHighlightsLines": [
-          12
-        ]
       }
     },
     {
@@ -10866,7 +9076,7 @@
           "sura": 37,
           "ayah": 118,
           "left": 0.03,
-          "right": 0.6197775552364507,
+          "right": 0.6147658787910822,
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
@@ -10908,317 +9118,67 @@
     {
       "page": 362,
       "severity": "suspicious",
-      "category": "ordering",
-      "line": 7,
-      "suraAyah": "37:130",
-      "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 37:123 to 37:130",
+      "category": "geometry",
+      "line": 8,
+      "suraAyah": "37:126",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0809) is misaligned with highlight left (0.0300) by 0.0509",
       "details": {
-        "prev": "37:123",
-        "curr": "37:130"
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.08086801043061526,
+        "delta": 0.05086801043061526,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 362,
+          "sura": 37,
+          "ayah": 126,
+          "line": 8,
+          "center_x": 0.08086801043061526,
+          "center_y": 0.4825874633206863
+        },
+        "highlight": {
+          "page": 362,
+          "line": 8,
+          "sura": 37,
+          "ayah": 126,
+          "left": 0.03,
+          "right": 0.7793005207966264,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
       }
     },
     {
       "page": 362,
       "severity": "suspicious",
-      "category": "ordering",
+      "category": "geometry",
       "line": 9,
-      "suraAyah": "37:135",
-      "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 37:133 to 37:135",
+      "suraAyah": "37:128",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0731) is misaligned with highlight left (0.0300) by 0.0431",
       "details": {
-        "prev": "37:133",
-        "curr": "37:135"
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "ordering",
-      "line": 10,
-      "suraAyah": "37:138",
-      "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 37:136 to 37:138",
-      "details": {
-        "prev": "37:136",
-        "curr": "37:138"
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 10,
-      "suraAyah": "37:130",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 10 for 37:130 but highlight is on different line(s)",
-      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.07313633261241104,
+        "delta": 0.04313633261241104,
+        "tolerance": 0.025,
         "marker": {
           "page": 362,
           "sura": 37,
-          "ayah": 130,
-          "line": 10,
-          "center_x": 0.21972605539502432,
-          "center_y": 0.5318737959553539
+          "ayah": 128,
+          "line": 9,
+          "center_x": 0.07313633261241104,
+          "center_y": 0.5839548391010163
         },
-        "pageHighlightsLines": [
-          7
-        ]
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "37:131",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 11 for 37:131 but highlight is on different line(s)",
-      "details": {
-        "marker": {
+        "highlight": {
           "page": 362,
+          "line": 9,
           "sura": 37,
-          "ayah": 131,
-          "line": 11,
-          "center_x": 0.6664278607107619,
-          "center_y": 0.5348250733586274
-        },
-        "pageHighlightsLines": [
-          7
-        ]
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "37:132",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 11 for 37:132 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 132,
-          "line": 11,
-          "center_x": 0.23243497669849883,
-          "center_y": 0.46517492664137267
-        },
-        "pageHighlightsLines": [
-          8
-        ]
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 12,
-      "suraAyah": "37:133",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 12 for 37:133 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 133,
-          "line": 12,
-          "center_x": 0.7065542966822891,
-          "center_y": 0.5
-        },
-        "pageHighlightsLines": [
-          8
-        ]
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "37:135",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 13 for 37:135 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 135,
-          "line": 13,
-          "center_x": 0.7435737543167242,
-          "center_y": 0.5
-        },
-        "pageHighlightsLines": [
-          9
-        ]
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "37:136",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 13 for 37:136 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 136,
-          "line": 13,
-          "center_x": 0.39129288401226303,
-          "center_y": 0.5327060348606427
-        },
-        "pageHighlightsLines": [
-          9
-        ]
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "37:138",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 14 for 37:138 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 138,
-          "line": 14,
-          "center_x": 0.3423578546761576,
-          "center_y": 0.5
-        },
-        "pageHighlightsLines": [
-          10
-        ]
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "37:139",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 15 for 37:139 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 139,
-          "line": 15,
-          "center_x": 0.7772859056751709,
-          "center_y": 0.4827464215815776
-        },
-        "pageHighlightsLines": [
-          10
-        ]
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "37:140",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 15 for 37:140 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 140,
-          "line": 15,
-          "center_x": 0.2870542966822891,
-          "center_y": 0.5
-        },
-        "pageHighlightsLines": [
-          10
-        ]
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 16,
-      "suraAyah": "37:141",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 16 for 37:141 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 141,
-          "line": 16,
-          "center_x": 0.7036860433258157,
-          "center_y": 0.44358252029660206
-        },
-        "pageHighlightsLines": [
-          11
-        ]
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 16,
-      "suraAyah": "37:142",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 16 for 37:142 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 142,
-          "line": 16,
-          "center_x": 0.23070161502748607,
-          "center_y": 0.5
-        },
-        "pageHighlightsLines": [
-          11
-        ]
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "ordering",
-      "line": 17,
-      "suraAyah": "37:160",
-      "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 37:158 to 37:160",
-      "details": {
-        "prev": "37:158",
-        "curr": "37:160"
-      }
-    },
-    {
-      "page": 362,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 17,
-      "suraAyah": "37:143",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 17 for 37:143 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 362,
-          "sura": 37,
-          "ayah": 143,
-          "line": 17,
-          "center_x": 0.6252210726619212,
-          "center_y": 0.5
-        },
-        "pageHighlightsLines": [
-          11
-        ]
+          "ayah": 128,
+          "left": 0.03,
+          "right": 0.545118,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
       }
     },
     {
@@ -11227,9 +9187,13 @@
       "category": "geometry",
       "line": 17,
       "suraAyah": "37:144",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 17 for 37:144 but highlight is on different line(s)",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0680) is misaligned with highlight left (0.0300) by 0.0380",
       "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.06797188017566425,
+        "delta": 0.03797188017566425,
+        "tolerance": 0.025,
         "marker": {
           "page": 362,
           "sura": 37,
@@ -11238,9 +9202,16 @@
           "center_x": 0.06797188017566425,
           "center_y": 0.5291572100404365
         },
-        "pageHighlightsLines": [
-          12
-        ]
+        "highlight": {
+          "page": 362,
+          "line": 17,
+          "sura": 37,
+          "ayah": 144,
+          "left": 0.03,
+          "right": 0.6292304688784739,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
       }
     },
     {
@@ -18346,6 +16317,138 @@
           "ayah": 5,
           "left": 0.03,
           "right": 0.6266157093523151,
+          "confidence": 0.95,
+          "source": "visual_valley"
+        }
+      }
+    },
+    {
+      "page": 483,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 9,
+      "suraAyah": "106:3 -> 106:4",
+      "code": "SAME_LINE_OVERLAP",
+      "message": "Horizontal overlap on same line by 0.1000",
+      "details": {
+        "prev": {
+          "page": 483,
+          "line": 9,
+          "sura": 106,
+          "ayah": 3,
+          "left": 0.5720999999999999,
+          "right": 0.9700000000000001,
+          "confidence": 0.95,
+          "source": "visual_valley"
+        },
+        "next": {
+          "page": 483,
+          "line": 9,
+          "sura": 106,
+          "ayah": 4,
+          "left": 0.267,
+          "right": 0.6721,
+          "confidence": 0.95,
+          "source": "visual_valley"
+        },
+        "boundaryDelta": -0.10000000000000009,
+        "tolerance": 0.01
+      }
+    },
+    {
+      "page": 483,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 9,
+      "suraAyah": "106:3",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.6238) is misaligned with highlight left (0.5721) by 0.0517",
+      "details": {
+        "expectedBoundary": 0.5720999999999999,
+        "actualBoundary": 0.6238,
+        "delta": 0.05170000000000008,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 483,
+          "sura": 106,
+          "ayah": 3,
+          "line": 9,
+          "center_x": 0.6238,
+          "center_y": 0.5
+        },
+        "highlight": {
+          "page": 483,
+          "line": 9,
+          "sura": 106,
+          "ayah": 3,
+          "left": 0.5720999999999999,
+          "right": 0.9700000000000001,
+          "confidence": 0.95,
+          "source": "visual_valley"
+        }
+      }
+    },
+    {
+      "page": 483,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 9,
+      "suraAyah": "106:4",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.6238) is misaligned with next ayah right (0.6721) by 0.0483",
+      "details": {
+        "expectedBoundary": 0.6721,
+        "actualBoundary": 0.6238,
+        "delta": 0.04830000000000001,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 483,
+          "sura": 106,
+          "ayah": 3,
+          "line": 9,
+          "center_x": 0.6238,
+          "center_y": 0.5
+        },
+        "highlight": {
+          "page": 483,
+          "line": 9,
+          "sura": 106,
+          "ayah": 4,
+          "left": 0.267,
+          "right": 0.6721,
+          "confidence": 0.95,
+          "source": "visual_valley"
+        }
+      }
+    },
+    {
+      "page": 483,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 9,
+      "suraAyah": "106:4",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.3080) is misaligned with highlight left (0.2670) by 0.0410",
+      "details": {
+        "expectedBoundary": 0.267,
+        "actualBoundary": 0.308,
+        "delta": 0.04099999999999998,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 483,
+          "sura": 106,
+          "ayah": 4,
+          "line": 9,
+          "center_x": 0.308,
+          "center_y": 0.5
+        },
+        "highlight": {
+          "page": 483,
+          "line": 9,
+          "sura": 106,
+          "ayah": 4,
+          "left": 0.267,
+          "right": 0.6721,
           "confidence": 0.95,
           "source": "visual_valley"
         }

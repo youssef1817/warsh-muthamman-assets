@@ -190,16 +190,6 @@
       "right": 0.9700000704639157,
       "confidence": 0.5,
       "source": "manual_marker_sync"
-    },
-    {
-      "page": 445,
-      "line": 15,
-      "sura": 64,
-      "ayah": 28,
-      "left": 0.03,
-      "right": 0.9700000000000001,
-      "confidence": 0.85,
-      "source": "text_proportional_renumbered"
     }
   ],
   "ayah_markers": [
@@ -274,14 +264,6 @@
       "line": 14,
       "center_x": 0.07232792953608427,
       "center_y": 0.4389228967274903
-    },
-    {
-      "page": 445,
-      "sura": 64,
-      "ayah": 6,
-      "line": 15,
-      "center_x": 0.08,
-      "center_y": 0.5
     }
   ],
   "sura_headers": [
