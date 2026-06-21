@@ -1,65 +1,62 @@
 # Quran Ayahinfo Validation Report (Warsh Muthamman)
 
-**Date:** 2026-06-21T11:37:01.743Z  
+**Date:** 2026-06-21T12:10:05.198Z  
 **Pages Checked:** 485 / 485  
 **Numbering Mode:** `hafs_tolerant`  
 
 ## Summary Stats
 | Severity | Count |
 |---|---|
-| <span style="color:red">🔴 Fatal</span> | **130** |
-| <span style="color:orange">🟡 Warning</span> | **85** |
-| <span style="color:blue">🔵 Suspicious</span> | **547** |
-| **Total Issues** | **762** |
+| <span style="color:red">🔴 Fatal</span> | **109** |
+| <span style="color:orange">🟡 Warning</span> | **60** |
+| <span style="color:blue">🔵 Suspicious</span> | **491** |
+| **Total Issues** | **660** |
 
 ### Stats by Category & Severity
 | Category | Fatal | Warning | Suspicious | Total |
 |---|---|---|---|---|
 | `structural` | 48 | 0 | 0 | **48** |
-| `numbering` | 0 | 32 | 0 | **32** |
+| `numbering` | 0 | 8 | 0 | **8** |
 | `layout` | 49 | 34 | 1 | **84** |
-| `geometry` | 33 | 17 | 521 | **571** |
-| `ordering` | 0 | 2 | 25 | **27** |
+| `geometry` | 12 | 16 | 482 | **510** |
+| `ordering` | 0 | 2 | 8 | **10** |
 | `other` | 0 | 0 | 0 | **0** |
 
 ### Fatal Breakdown
-- Fatal Issues (Excluding Numbering): **130**  
+- Fatal Issues (Excluding Numbering): **109**  
 - Fatal Numbering Issues Only: **0**  
 
 ## Stats by Issue Code
 | Code | Category | Severity | Count |
 |---|---|---|---|
 | `LAYOUT_ORDER_INVALID` | `layout` | <span style="color:red">fatal</span> | 52 |
-| `MARKER_NO_HIGHLIGHT` | `geometry` | <span style="color:red">fatal</span> | 33 |
 | `HIGHLIGHT_LINE_OUT_OF_RANGE` | `structural` | <span style="color:red">fatal</span> | 25 |
 | `MARKER_LINE_OUT_OF_RANGE` | `structural` | <span style="color:red">fatal</span> | 23 |
+| `MARKER_NO_HIGHLIGHT` | `geometry` | <span style="color:red">fatal</span> | 12 |
 | `LINE_COUNT_MISMATCH` | `layout` | <span style="color:orange">warning</span> | 31 |
-| `HIGHLIGHT_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 31 |
-| `ORPHAN_HIGHLIGHT_NO_MARKER` | `geometry` | <span style="color:orange">warning</span> | 17 |
+| `ORPHAN_HIGHLIGHT_NO_MARKER` | `geometry` | <span style="color:orange">warning</span> | 16 |
+| `HIGHLIGHT_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 7 |
 | `DUPLICATE_MARKER_AYAH` | `ordering` | <span style="color:orange">warning</span> | 2 |
 | `MARKER_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 1 |
-| `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 426 |
-| `MARKER_NOT_ON_HIGHLIGHT_LINE` | `geometry` | <span style="color:blue">suspicious</span> | 75 |
-| `HIGHLIGHT_ORDER_JUMP` | `ordering` | <span style="color:blue">suspicious</span> | 25 |
+| `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 429 |
+| `MARKER_NOT_ON_HIGHLIGHT_LINE` | `geometry` | <span style="color:blue">suspicious</span> | 33 |
 | `SAME_LINE_OVERLAP` | `geometry` | <span style="color:blue">suspicious</span> | 18 |
+| `HIGHLIGHT_ORDER_JUMP` | `ordering` | <span style="color:blue">suspicious</span> | 8 |
 | `SAME_LINE_GAP` | `geometry` | <span style="color:blue">suspicious</span> | 2 |
 | `LAYOUT_VERTICAL_OVERLAP` | `layout` | <span style="color:blue">suspicious</span> | 1 |
 
 ## Top 25 Pages with Most Issues
 | Page | Issues Count |
 |---|---|
-| Page 363 | 68 |
-| Page 362 | 44 |
-| Page 361 | 27 |
+| Page 362 | 37 |
 | Page 471 | 23 |
+| Page 361 | 22 |
 | Page 3 | 16 |
 | Page 68 | 16 |
 | Page 479 | 14 |
 | Page 483 | 14 |
 | Page 422 | 13 |
-| Page 358 | 12 |
-| Page 452 | 12 |
-| Page 299 | 10 |
+| Page 358 | 11 |
 | Page 457 | 10 |
 | Page 475 | 10 |
 | Page 468 | 8 |
@@ -67,12 +64,15 @@
 | Page 463 | 7 |
 | Page 477 | 7 |
 | Page 484 | 7 |
+| Page 299 | 6 |
 | Page 359 | 6 |
 | Page 420 | 6 |
+| Page 452 | 6 |
 | Page 466 | 6 |
 | Page 1 | 5 |
 | Page 161 | 5 |
 | Page 211 | 5 |
+| Page 214 | 5 |
 
 ## Major Root Causes (Deduplicated, Excluding Mismatch Geometry)
 | Page | Category | Code | Severity | Ayah | Line | Count | Description |
@@ -80,7 +80,6 @@
 | Page 1 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (511) is outside top-bottom (277-504) by 7px |
 | Page 41 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 13 | 1 | Line vertical bounds invalid: center (1644) is outside top-bottom (1347-1455) by 189px |
 | Page 62 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 7 | 2 | Line vertical bounds invalid: center (996) is outside top-bottom (656-761) by 235px |
-| Page 69 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 4:45 | 19 | 1 | Marker exists for 4:45 but no highlight found on page |
 | Page 86 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (1088) is outside top-bottom (800-896) by 192px |
 | Page 122 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 14 | 1 | Line vertical bounds invalid: center (1533) is outside top-bottom (1654-1768) by 121px |
 | Page 142 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 10 | 1 | Line vertical bounds invalid: center (1147) is outside top-bottom (1308-1421) by 161px |
@@ -88,9 +87,7 @@
 | Page 156 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (104) is outside top-bottom (116-242) by 12px |
 | Page 200 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 3 | 1 | Line vertical bounds invalid: center (644) is outside top-bottom (307-439) by 205px |
 | Page 215 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (379) is outside top-bottom (257-365) by 14px |
-| Page 226 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 16:128 | 14 | 1 | Marker exists for 16:128 but no highlight found on page |
 | Page 289 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 5 | 1 | Line vertical bounds invalid: center (550) is outside top-bottom (710-804) by 160px |
-| Page 299 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 26:130 | 10 | 1 | Marker exists for 26:130 but no highlight found on page |
 | Page 320 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (100) is outside top-bottom (109-243) by 9px |
 | Page 324 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 12 | 1 | Line vertical bounds invalid: center (1555) is outside top-bottom (1417-1517) by 38px |
 | Page 329 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (1094) is outside top-bottom (804-912) by 182px |
@@ -103,19 +100,11 @@
 | Page 358 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 5 | 1 | Line vertical bounds invalid: center (749) is outside top-bottom (781-901) by 32px |
 | Page 358 | `structural` | `HIGHLIGHT_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 37:54 | 15 | 2 | Highlight line (15) is outside layout bands (1..14) |
 | Page 358 | `structural` | `MARKER_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 37:20 | 15 | 2 | Marker line (15) is outside layout bands (1..14) |
-| Page 358 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 37:21 | 14 | 1 | Marker exists for 37:21 but no highlight found on page |
-| Page 361 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 37:101 | 8 | 3 | Marker exists for 37:101 but no highlight found on page |
-| Page 362 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 37:118 | 3 | 5 | Marker exists for 37:118 but no highlight found on page |
-| Page 363 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 37:147 | 2 | 12 | Marker exists for 37:147 but no highlight found on page |
+| Page 361 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 37:104 | 11 | 4 | Marker exists for 37:104 but no highlight found on page |
+| Page 362 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 37:124 | 7 | 8 | Marker exists for 37:124 but no highlight found on page |
 | Page 382 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 10 | 1 | Line vertical bounds invalid: center (1087) is outside top-bottom (1246-1337) by 159px |
 | Page 387 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 14 | 1 | Line vertical bounds invalid: center (1597) is outside top-bottom (1737-1863) by 140px |
-| Page 387 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 42:4 | 15 | 1 | Marker exists for 42:4 but no highlight found on page |
-| Page 389 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 42:19 | 18 | 1 | Marker exists for 42:19 but no highlight found on page |
 | Page 393 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 7 | 1 | Line vertical bounds invalid: center (826) is outside top-bottom (971-1076) by 145px |
-| Page 398 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 43:89 | 4 | 1 | Marker exists for 43:89 but no highlight found on page |
-| Page 399 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 44:47 | 12 | 1 | Marker exists for 44:47 but no highlight found on page |
-| Page 406 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 47:5 | 13 | 1 | Marker exists for 47:5 but no highlight found on page |
-| Page 408 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 47:32 | 17 | 1 | Marker exists for 47:32 but no highlight found on page |
 | Page 415 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 9 | 1 | Line vertical bounds invalid: center (1026) is outside top-bottom (1184-1291) by 158px |
 | Page 420 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 4 | 1 | Line vertical bounds invalid: center (658) is outside top-bottom (381-483) by 175px |
 | Page 422 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 6 | 1 | Line vertical bounds invalid: center (810) is outside top-bottom (854-964) by 44px |
@@ -128,9 +117,7 @@
 | Page 445 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 6 | 1 | Line vertical bounds invalid: center (874) is outside top-bottom (904-1022) by 30px |
 | Page 445 | `structural` | `HIGHLIGHT_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 64:28 | 15 | 1 | Highlight line (15) is outside layout bands (1..14) |
 | Page 445 | `structural` | `MARKER_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 64:6 | 15 | 1 | Marker line (15) is outside layout bands (1..14) |
-| Page 452 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 67:22 | 4 | 1 | Marker exists for 67:22 but no highlight found on page |
 | Page 454 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 5 | 1 | Line vertical bounds invalid: center (575) is outside top-bottom (705-818) by 130px |
-| Page 456 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 70:28 | 11 | 1 | Marker exists for 70:28 but no highlight found on page |
 | Page 457 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 5 | 1 | Line vertical bounds invalid: center (714) is outside top-bottom (745-865) by 31px |
 | Page 457 | `structural` | `HIGHLIGHT_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 71:12 | 16 | 3 | Highlight line (16) is outside layout bands (1..15) |
 | Page 457 | `structural` | `MARKER_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 71:12 | 16 | 3 | Marker line (16) is outside layout bands (1..15) |
@@ -142,7 +129,6 @@
 | Page 471 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 2 | Line vertical bounds invalid: center (115) is outside top-bottom (277-378) by 162px |
 | Page 471 | `structural` | `HIGHLIGHT_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 83:7 | 14 | 9 | Highlight line (14) is outside layout bands (1..13) |
 | Page 471 | `structural` | `MARKER_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 83:7 | 14 | 7 | Marker line (14) is outside layout bands (1..13) |
-| Page 473 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 84:24 | 4 | 1 | Marker exists for 84:24 but no highlight found on page |
 | Page 475 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 2 | Line vertical bounds invalid: center (1349) is outside top-bottom (1013-1121) by 228px |
 | Page 477 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (1124) is outside top-bottom (1304-1396) by 180px |
 | Page 479 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 4 | 2 | Line vertical bounds invalid: center (917) is outside top-bottom (945-1081) by 28px |
@@ -174,11 +160,9 @@
 | Page 358 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (14) |
 | Page 361 | `geometry` | `ORPHAN_HIGHLIGHT_NO_MARKER` | <span style="color:orange">warning</span> | 37:114 | 13 | 5 | Highlight ends before left margin (0.730) but no marker circle found on page |
 | Page 362 | `geometry` | `ORPHAN_HIGHLIGHT_NO_MARKER` | <span style="color:orange">warning</span> | 37:145 | 12 | 10 | Highlight ends before left margin (0.227) but no marker circle found on page |
-| Page 363 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 37:184 | 11 | 24 | Highlight ayah (184) is out of range for sura (max 182) |
 | Page 368 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (16) |
 | Page 382 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 40:86 | 9 | 1 | Highlight ayah (86) is out of range for sura (max 85) |
 | Page 403 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:orange">warning</span> | - | 1 | 1 | Line vertical bounds slightly off: center (270) is outside top-bottom (275-357) by 5px |
-| Page 408 | `geometry` | `ORPHAN_HIGHLIGHT_NO_MARKER` | <span style="color:orange">warning</span> | 47:33 | 16 | 1 | Highlight ends before left margin (0.936) but no marker circle found on page |
 | Page 422 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (15) |
 | Page 429 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
 | Page 438 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (18) |
@@ -212,33 +196,19 @@
 | Page 211 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 15:16 -> 15:17 | 12 | 1 | Horizontal overlap on same line by 0.1000 |
 | Page 214 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 15:82 -> 15:82 | 4 | 1 | Horizontal overlap on same line by 0.1290 |
 | Page 214 | `geometry` | `SAME_LINE_GAP` | <span style="color:blue">suspicious</span> | 15:82 -> 15:83 | 4 | 1 | Horizontal gap on same line by 0.0954 |
-| Page 299 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 26:131 | 10 | 1 | Ayah forward jump: from 26:129 to 26:131 |
-| Page 299 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 26:131 | 11 | 1 | Marker exists on line 11 for 26:131 but highlight is on different line(s) |
 | Page 300 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 26:151 -> 26:151 | 3 | 1 | Horizontal overlap on same line by 0.0786 |
 | Page 353 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 35:45 | 12 | 1 | Marker exists on line 12 for 35:45 but highlight is on different line(s) |
 | Page 354 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 36:9 -> 36:10 | 3 | 1 | Horizontal overlap on same line by 0.1000 |
-| Page 361 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 37:104 | 8 | 3 | Ayah forward jump: from 37:100 to 37:104 |
-| Page 361 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 37:95 | 6 | 12 | Marker exists on line 6 for 37:95 but highlight is on different line(s) |
-| Page 362 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 37:119 | 3 | 6 | Ayah forward jump: from 37:117 to 37:119 |
-| Page 362 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 37:117 | 3 | 23 | Marker exists on line 3 for 37:117 but highlight is on different line(s) |
-| Page 363 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 37:148 | 2 | 6 | Ayah forward jump: from 37:146 to 37:148 |
-| Page 363 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 37:148 | 3 | 24 | Marker exists on line 3 for 37:148 but highlight is on different line(s) |
+| Page 361 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 37:108 | 11 | 3 | Ayah forward jump: from 37:103 to 37:108 |
+| Page 361 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 37:95 | 6 | 8 | Marker exists on line 6 for 37:95 but highlight is on different line(s) |
+| Page 362 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 37:130 | 7 | 4 | Ayah forward jump: from 37:123 to 37:130 |
+| Page 362 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 37:130 | 10 | 13 | Marker exists on line 10 for 37:130 but highlight is on different line(s) |
 | Page 368 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 39:10 | 16 | 1 | Ayah forward jump: from 39:7 to 39:10 |
 | Page 368 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 39:7 -> 39:10 | 16 | 1 | Horizontal overlap on same line by 0.9400 |
 | Page 382 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 40:85 | 9 | 1 | Marker exists on line 9 for 40:85 but highlight is on different line(s) |
-| Page 387 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 42:5 | 15 | 1 | Ayah forward jump: from 42:3 to 42:5 |
-| Page 389 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 42:20 | 18 | 1 | Ayah forward jump: from 42:18 to 42:20 |
-| Page 399 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 44:48 | 12 | 1 | Ayah forward jump: from 44:46 to 44:48 |
-| Page 406 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 47:6 | 13 | 1 | Ayah forward jump: from 47:4 to 47:6 |
 | Page 407 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 47:17 -> 47:18 | 13 | 1 | Horizontal overlap on same line by 0.1000 |
-| Page 408 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 47:33 | 16 | 1 | Ayah forward jump: from 47:31 to 47:33 |
-| Page 408 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 47:31 | 16 | 1 | Marker exists on line 16 for 47:31 but highlight is on different line(s) |
 | Page 416 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 50:14 | 6 | 1 | Marker exists on line 6 for 50:14 but highlight is on different line(s) |
 | Page 420 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 51:59 | 4 | 1 | Marker exists on line 4 for 51:59 but highlight is on different line(s) |
-| Page 452 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 67:23 | 4 | 1 | Ayah forward jump: from 67:21 to 67:23 |
-| Page 452 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 67:23 | 5 | 2 | Marker exists on line 5 for 67:23 but highlight is on different line(s) |
-| Page 456 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 70:29 | 11 | 1 | Ayah forward jump: from 70:27 to 70:29 |
-| Page 473 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 84:25 | 4 | 1 | Ayah forward jump: from 84:23 to 84:25 |
 
 ## Section 1: Structural Issues
 | Page | Line | Ayah | Severity | Code | Message |
@@ -298,30 +268,6 @@
 | Page 334 | 14 | 32:31 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (31) is out of range for sura (max 30) |
 | Page 353 | 11 | 35:46 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (46) is out of range for sura (max 45) |
 | Page 353 | 12 | 35:46 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (46) is out of range for sura (max 45) |
-| Page 363 | 11 | 37:184 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (184) is out of range for sura (max 182) |
-| Page 363 | 11 | 37:185 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (185) is out of range for sura (max 182) |
-| Page 363 | 11 | 37:186 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (186) is out of range for sura (max 182) |
-| Page 363 | 12 | 37:187 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (187) is out of range for sura (max 182) |
-| Page 363 | 12 | 37:188 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (188) is out of range for sura (max 182) |
-| Page 363 | 12 | 37:189 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (189) is out of range for sura (max 182) |
-| Page 363 | 12 | 37:190 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (190) is out of range for sura (max 182) |
-| Page 363 | 13 | 37:191 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (191) is out of range for sura (max 182) |
-| Page 363 | 13 | 37:192 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (192) is out of range for sura (max 182) |
-| Page 363 | 13 | 37:193 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (193) is out of range for sura (max 182) |
-| Page 363 | 14 | 37:194 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (194) is out of range for sura (max 182) |
-| Page 363 | 14 | 37:195 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (195) is out of range for sura (max 182) |
-| Page 363 | 14 | 37:196 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (196) is out of range for sura (max 182) |
-| Page 363 | 14 | 37:197 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (197) is out of range for sura (max 182) |
-| Page 363 | 15 | 37:197 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (197) is out of range for sura (max 182) |
-| Page 363 | 15 | 37:199 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (199) is out of range for sura (max 182) |
-| Page 363 | 15 | 37:200 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (200) is out of range for sura (max 182) |
-| Page 363 | 16 | 37:200 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (200) is out of range for sura (max 182) |
-| Page 363 | 16 | 37:201 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (201) is out of range for sura (max 182) |
-| Page 363 | 16 | 37:202 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (202) is out of range for sura (max 182) |
-| Page 363 | 16 | 37:203 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (203) is out of range for sura (max 182) |
-| Page 363 | 17 | 37:203 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (203) is out of range for sura (max 182) |
-| Page 363 | 17 | 37:204 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (204) is out of range for sura (max 182) |
-| Page 363 | 17 | 37:205 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (205) is out of range for sura (max 182) |
 | Page 382 | 9 | 40:86 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (86) is out of range for sura (max 85) |
 | Page 445 | 15 | 64:28 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (28) is out of range for sura (max 18) |
 | Page 450 | 13 | 66:25 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (25) is out of range for sura (max 12) |
@@ -421,69 +367,31 @@
 |---|---|---|---|---|---|
 | Page 3 | 6 | 2:8 | <span style="color:orange">warning</span> | `DUPLICATE_MARKER_AYAH` | Multiple markers (2 times) found on page for same ayah 2:8 |
 | Page 4 | 3 | 2:18 | <span style="color:orange">warning</span> | `DUPLICATE_MARKER_AYAH` | Multiple markers (2 times) found on page for same ayah 2:18 |
-| Page 299 | 10 | 26:131 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 26:129 to 26:131 |
-| Page 361 | 8 | 37:104 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:100 to 37:104 |
+| Page 361 | 11 | 37:108 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:103 to 37:108 |
 | Page 361 | 13 | 37:116 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:114 to 37:116 |
 | Page 361 | 14 | 37:120 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:118 to 37:120 |
-| Page 362 | 3 | 37:119 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:117 to 37:119 |
-| Page 362 | 4 | 37:122 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:120 to 37:122 |
-| Page 362 | 7 | 37:130 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:128 to 37:130 |
+| Page 362 | 7 | 37:130 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:123 to 37:130 |
 | Page 362 | 9 | 37:135 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:133 to 37:135 |
 | Page 362 | 10 | 37:138 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:136 to 37:138 |
 | Page 362 | 17 | 37:160 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:158 to 37:160 |
-| Page 363 | 2 | 37:148 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:146 to 37:148 |
-| Page 363 | 5 | 37:156 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:154 to 37:156 |
-| Page 363 | 6 | 37:162 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:159 to 37:162 |
-| Page 363 | 6 | 37:165 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:162 to 37:165 |
-| Page 363 | 7 | 37:170 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:166 to 37:170 |
-| Page 363 | 9 | 37:178 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 37:174 to 37:178 |
 | Page 368 | 16 | 39:10 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 39:7 to 39:10 |
-| Page 387 | 15 | 42:5 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 42:3 to 42:5 |
-| Page 389 | 18 | 42:20 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 42:18 to 42:20 |
-| Page 399 | 12 | 44:48 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 44:46 to 44:48 |
-| Page 406 | 13 | 47:6 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 47:4 to 47:6 |
-| Page 408 | 16 | 47:33 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 47:31 to 47:33 |
-| Page 452 | 4 | 67:23 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 67:21 to 67:23 |
-| Page 456 | 11 | 70:29 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 70:27 to 70:29 |
-| Page 473 | 4 | 84:25 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 84:23 to 84:25 |
 
 ## Section 5: Geometry Issues & Diagnostics
 ### Same-Line Gaps, Overlaps and Bindings (Excluding Boundary Mismatch)
 | Page | Line | Ayah | Severity | Code | Message |
 |---|---|---|---|---|---|
-| Page 69 | 19 | 4:45 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 4:45 but no highlight found on page |
-| Page 226 | 14 | 16:128 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 16:128 but no highlight found on page |
-| Page 299 | 10 | 26:130 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 26:130 but no highlight found on page |
-| Page 358 | 14 | 37:21 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:21 but no highlight found on page |
-| Page 361 | 8 | 37:101 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:101 but no highlight found on page |
-| Page 361 | 10 | 37:102 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:102 but no highlight found on page |
-| Page 361 | 11 | 37:103 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:103 but no highlight found on page |
-| Page 362 | 3 | 37:118 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:118 but no highlight found on page |
-| Page 362 | 5 | 37:121 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:121 but no highlight found on page |
+| Page 361 | 11 | 37:104 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:104 but no highlight found on page |
+| Page 361 | 12 | 37:105 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:105 but no highlight found on page |
+| Page 361 | 12 | 37:106 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:106 but no highlight found on page |
+| Page 361 | 12 | 37:107 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:107 but no highlight found on page |
+| Page 362 | 7 | 37:124 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:124 but no highlight found on page |
+| Page 362 | 8 | 37:125 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:125 but no highlight found on page |
+| Page 362 | 8 | 37:126 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:126 but no highlight found on page |
+| Page 362 | 9 | 37:127 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:127 but no highlight found on page |
+| Page 362 | 9 | 37:128 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:128 but no highlight found on page |
 | Page 362 | 10 | 37:129 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:129 but no highlight found on page |
 | Page 362 | 12 | 37:134 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:134 but no highlight found on page |
 | Page 362 | 14 | 37:137 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:137 but no highlight found on page |
-| Page 363 | 2 | 37:147 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:147 but no highlight found on page |
-| Page 363 | 6 | 37:155 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:155 but no highlight found on page |
-| Page 363 | 9 | 37:160 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:160 but no highlight found on page |
-| Page 363 | 9 | 37:161 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:161 but no highlight found on page |
-| Page 363 | 10 | 37:163 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:163 but no highlight found on page |
-| Page 363 | 10 | 37:164 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:164 but no highlight found on page |
-| Page 363 | 11 | 37:167 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:167 but no highlight found on page |
-| Page 363 | 12 | 37:168 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:168 but no highlight found on page |
-| Page 363 | 12 | 37:169 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:169 but no highlight found on page |
-| Page 363 | 14 | 37:175 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:175 but no highlight found on page |
-| Page 363 | 15 | 37:176 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:176 but no highlight found on page |
-| Page 363 | 15 | 37:177 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:177 but no highlight found on page |
-| Page 387 | 15 | 42:4 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 42:4 but no highlight found on page |
-| Page 389 | 18 | 42:19 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 42:19 but no highlight found on page |
-| Page 398 | 4 | 43:89 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 43:89 but no highlight found on page |
-| Page 399 | 12 | 44:47 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 44:47 but no highlight found on page |
-| Page 406 | 13 | 47:5 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 47:5 but no highlight found on page |
-| Page 408 | 17 | 47:32 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 47:32 but no highlight found on page |
-| Page 452 | 4 | 67:22 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 67:22 but no highlight found on page |
-| Page 456 | 11 | 70:28 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 70:28 but no highlight found on page |
-| Page 473 | 4 | 84:24 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 84:24 but no highlight found on page |
 | Page 4 | 2 | 2:17 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.143) but no marker circle found on page |
 | Page 361 | 13 | 37:114 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.730) but no marker circle found on page |
 | Page 361 | 13 | 37:116 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.474) but no marker circle found on page |
@@ -500,7 +408,6 @@
 | Page 362 | 16 | 37:156 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.704) but no marker circle found on page |
 | Page 362 | 16 | 37:157 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.231) but no marker circle found on page |
 | Page 362 | 17 | 37:160 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.625) but no marker circle found on page |
-| Page 408 | 16 | 47:33 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.936) but no marker circle found on page |
 | Page 3 | 6 | 2:8 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 2:8 but highlight is on different line(s) |
 | Page 3 | 7 | 2:9 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 7 for 2:9 but highlight is on different line(s) |
 | Page 3 | 8 | 2:10 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 8 for 2:10 but highlight is on different line(s) |
@@ -525,32 +432,17 @@
 | Page 211 | 12 | 15:16 -> 15:17 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
 | Page 214 | 4 | 15:82 -> 15:82 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1290 |
 | Page 214 | 4 | 15:82 -> 15:83 | <span style="color:blue">suspicious</span> | `SAME_LINE_GAP` | Horizontal gap on same line by 0.0954 |
-| Page 299 | 11 | 26:131 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 11 for 26:131 but highlight is on different line(s) |
 | Page 300 | 3 | 26:151 -> 26:151 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.0786 |
 | Page 353 | 12 | 35:45 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 12 for 35:45 but highlight is on different line(s) |
 | Page 354 | 3 | 36:9 -> 36:10 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
 | Page 361 | 6 | 37:95 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 37:95 but highlight is on different line(s) |
-| Page 361 | 8 | 37:99 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 8 for 37:99 but highlight is on different line(s) |
-| Page 361 | 11 | 37:104 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 11 for 37:104 but highlight is on different line(s) |
-| Page 361 | 12 | 37:105 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 12 for 37:105 but highlight is on different line(s) |
-| Page 361 | 12 | 37:106 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 12 for 37:106 but highlight is on different line(s) |
-| Page 361 | 12 | 37:107 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 12 for 37:107 but highlight is on different line(s) |
+| Page 361 | 11 | 37:103 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 11 for 37:103 but highlight is on different line(s) |
 | Page 361 | 13 | 37:108 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 13 for 37:108 but highlight is on different line(s) |
 | Page 361 | 13 | 37:109 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 13 for 37:109 but highlight is on different line(s) |
 | Page 361 | 13 | 37:110 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 13 for 37:110 but highlight is on different line(s) |
 | Page 361 | 14 | 37:111 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 14 for 37:111 but highlight is on different line(s) |
 | Page 361 | 14 | 37:112 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 14 for 37:112 but highlight is on different line(s) |
 | Page 361 | 15 | 37:113 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 15 for 37:113 but highlight is on different line(s) |
-| Page 362 | 3 | 37:117 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 3 for 37:117 but highlight is on different line(s) |
-| Page 362 | 4 | 37:119 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 4 for 37:119 but highlight is on different line(s) |
-| Page 362 | 5 | 37:120 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 5 for 37:120 but highlight is on different line(s) |
-| Page 362 | 6 | 37:122 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 37:122 but highlight is on different line(s) |
-| Page 362 | 6 | 37:123 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 37:123 but highlight is on different line(s) |
-| Page 362 | 7 | 37:124 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 7 for 37:124 but highlight is on different line(s) |
-| Page 362 | 8 | 37:125 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 8 for 37:125 but highlight is on different line(s) |
-| Page 362 | 8 | 37:126 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 8 for 37:126 but highlight is on different line(s) |
-| Page 362 | 9 | 37:127 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 9 for 37:127 but highlight is on different line(s) |
-| Page 362 | 9 | 37:128 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 9 for 37:128 but highlight is on different line(s) |
 | Page 362 | 10 | 37:130 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 10 for 37:130 but highlight is on different line(s) |
 | Page 362 | 11 | 37:131 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 11 for 37:131 but highlight is on different line(s) |
 | Page 362 | 11 | 37:132 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 11 for 37:132 but highlight is on different line(s) |
@@ -564,38 +456,11 @@
 | Page 362 | 16 | 37:142 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 16 for 37:142 but highlight is on different line(s) |
 | Page 362 | 17 | 37:143 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 17 for 37:143 but highlight is on different line(s) |
 | Page 362 | 17 | 37:144 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 17 for 37:144 but highlight is on different line(s) |
-| Page 363 | 3 | 37:148 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 3 for 37:148 but highlight is on different line(s) |
-| Page 363 | 3 | 37:149 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 3 for 37:149 but highlight is on different line(s) |
-| Page 363 | 4 | 37:150 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 4 for 37:150 but highlight is on different line(s) |
-| Page 363 | 5 | 37:151 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 5 for 37:151 but highlight is on different line(s) |
-| Page 363 | 5 | 37:152 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 5 for 37:152 but highlight is on different line(s) |
-| Page 363 | 6 | 37:153 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 37:153 but highlight is on different line(s) |
-| Page 363 | 6 | 37:154 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 37:154 but highlight is on different line(s) |
-| Page 363 | 7 | 37:156 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 7 for 37:156 but highlight is on different line(s) |
-| Page 363 | 7 | 37:157 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 7 for 37:157 but highlight is on different line(s) |
-| Page 363 | 8 | 37:158 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 8 for 37:158 but highlight is on different line(s) |
-| Page 363 | 8 | 37:159 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 8 for 37:159 but highlight is on different line(s) |
-| Page 363 | 9 | 37:162 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 9 for 37:162 but highlight is on different line(s) |
-| Page 363 | 10 | 37:165 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 10 for 37:165 but highlight is on different line(s) |
-| Page 363 | 11 | 37:166 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 11 for 37:166 but highlight is on different line(s) |
-| Page 363 | 12 | 37:170 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 12 for 37:170 but highlight is on different line(s) |
-| Page 363 | 13 | 37:171 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 13 for 37:171 but highlight is on different line(s) |
-| Page 363 | 13 | 37:172 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 13 for 37:172 but highlight is on different line(s) |
-| Page 363 | 14 | 37:173 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 14 for 37:173 but highlight is on different line(s) |
-| Page 363 | 14 | 37:174 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 14 for 37:174 but highlight is on different line(s) |
-| Page 363 | 16 | 37:178 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 16 for 37:178 but highlight is on different line(s) |
-| Page 363 | 16 | 37:179 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 16 for 37:179 but highlight is on different line(s) |
-| Page 363 | 17 | 37:180 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 17 for 37:180 but highlight is on different line(s) |
-| Page 363 | 17 | 37:181 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 17 for 37:181 but highlight is on different line(s) |
-| Page 363 | 17 | 37:182 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 17 for 37:182 but highlight is on different line(s) |
 | Page 368 | 16 | 39:7 -> 39:10 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.9400 |
 | Page 382 | 9 | 40:85 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 9 for 40:85 but highlight is on different line(s) |
 | Page 407 | 13 | 47:17 -> 47:18 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
-| Page 408 | 16 | 47:31 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 16 for 47:31 but highlight is on different line(s) |
 | Page 416 | 6 | 50:14 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 50:14 but highlight is on different line(s) |
 | Page 420 | 4 | 51:59 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 4 for 51:59 but highlight is on different line(s) |
-| Page 452 | 5 | 67:23 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 5 for 67:23 but highlight is on different line(s) |
-| Page 452 | 6 | 67:24 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 67:24 but highlight is on different line(s) |
 
 ### Marker Boundary Diagnostics (Top 50 Worst Mismatches by Delta)
 | Page | Line | Ayah | Severity | Expected Boundary | Actual Marker X | Delta | Tolerance |
@@ -604,22 +469,13 @@
 | Page 416 | 6 | 50:15 | <span style="color:blue">suspicious</span> | 0.9301 | 0.0705 | **0.8596** | 0.0250 |
 | Page 420 | 4 | 51:60 | <span style="color:blue">suspicious</span> | 0.9304 | 0.0782 | **0.8522** | 0.0250 |
 | Page 32 | 3 | 2:235 | <span style="color:blue">suspicious</span> | 0.0300 | 0.8295 | **0.7995** | 0.0250 |
-| Page 69 | 19 | 4:44 | <span style="color:blue">suspicious</span> | 0.0300 | 0.8122 | **0.7822** | 0.0250 |
-| Page 363 | 3 | 37:150 | <span style="color:blue">suspicious</span> | 0.9700 | 0.1950 | **0.7750** | 0.0250 |
-| Page 452 | 5 | 67:24 | <span style="color:blue">suspicious</span> | 0.9700 | 0.1982 | **0.7718** | 0.0250 |
 | Page 3 | 9 | 2:12 | <span style="color:blue">suspicious</span> | 0.9700 | 0.2278 | **0.7422** | 0.0250 |
 | Page 3 | 11 | 2:13 | <span style="color:blue">suspicious</span> | 0.9724 | 0.2737 | **0.6987** | 0.0250 |
 | Page 3 | 7 | 2:10 | <span style="color:blue">suspicious</span> | 0.9700 | 0.2978 | **0.6722** | 0.0250 |
-| Page 358 | 14 | 37:20 | <span style="color:blue">suspicious</span> | 0.0300 | 0.6709 | **0.6409** | 0.0250 |
-| Page 452 | 6 | 67:25 | <span style="color:blue">suspicious</span> | 0.5839 | 0.0606 | **0.5233** | 0.0250 |
 | Page 3 | 13 | 2:14 | <span style="color:blue">suspicious</span> | 0.9700 | 0.4693 | **0.5007** | 0.0250 |
 | Page 3 | 14 | 2:15 | <span style="color:blue">suspicious</span> | 0.9700 | 0.5796 | **0.3904** | 0.0250 |
-| Page 452 | 6 | 67:25 | <span style="color:blue">suspicious</span> | 0.9700 | 0.5839 | **0.3861** | 0.0250 |
-| Page 361 | 8 | 37:100 | <span style="color:blue">suspicious</span> | 0.8292 | 0.4605 | **0.3687** | 0.0250 |
 | Page 3 | 6 | 2:9 | <span style="color:blue">suspicious</span> | 0.9700 | 0.7018 | **0.2682** | 0.0250 |
 | Page 1 | 7 | 1:7 | <span style="color:blue">suspicious</span> | 0.0300 | 0.2592 | **0.2292** | 0.0250 |
-| Page 299 | 11 | 26:132 | <span style="color:blue">suspicious</span> | 0.9700 | 0.8148 | **0.1552** | 0.0250 |
-| Page 361 | 8 | 37:100 | <span style="color:blue">suspicious</span> | 0.9700 | 0.8292 | **0.1408** | 0.0250 |
 | Page 68 | 3 | 4:29 | <span style="color:blue">suspicious</span> | 0.3966 | 0.5235 | **0.1269** | 0.0250 |
 | Page 304 | 16 | 27:26 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1539 | **0.1239** | 0.0250 |
 | Page 4 | 2 | 2:18 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1430 | **0.1130** | 0.0250 |
@@ -650,3 +506,12 @@
 | Page 326 | 16 | 30:29 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0990 | **0.0690** | 0.0250 |
 | Page 140 | 15 | 7:187 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0978 | **0.0678** | 0.0250 |
 | Page 337 | 12 | 33:22 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0972 | **0.0672** | 0.0250 |
+| Page 335 | 16 | 33:7 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0969 | **0.0669** | 0.0250 |
+| Page 214 | 17 | 15:99 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0967 | **0.0667** | 0.0250 |
+| Page 1 | 3 | 1:4 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0965 | **0.0665** | 0.0250 |
+| Page 332 | 16 | 32:10 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0949 | **0.0649** | 0.0250 |
+| Page 232 | 10 | 17:66 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0932 | **0.0632** | 0.0250 |
+| Page 46 | 17 | 3:51 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0926 | **0.0626** | 0.0250 |
+| Page 239 | 18 | 18:41 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0920 | **0.0620** | 0.0250 |
+| Page 103 | 5 | 5:113 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0917 | **0.0617** | 0.0250 |
+| Page 133 | 1 | 7:117 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0917 | **0.0617** | 0.0250 |
