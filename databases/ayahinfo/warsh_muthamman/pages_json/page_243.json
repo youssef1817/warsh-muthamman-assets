@@ -275,7 +275,7 @@
       "page": 243,
       "line": 18,
       "sura": 18,
-      "ayah": 85,
+      "ayah": 86,
       "left": 0.03,
       "right": 0.97,
       "confidence": 0.5,
@@ -285,7 +285,7 @@
       "page": 243,
       "line": 17,
       "sura": 18,
-      "ayah": 85,
+      "ayah": 86,
       "left": 0.03,
       "right": 0.97,
       "confidence": 0.5,
@@ -384,10 +384,10 @@
     {
       "page": 243,
       "sura": 18,
-      "ayah": 85,
+      "ayah": 86,
       "line": 18,
-      "center_x": 0.08000005496212943,
-      "center_y": 0.37890501440851254
+      "center_x": 0.06496495680070156,
+      "center_y": 0.45551855411000663
     }
   ],
   "sura_headers": []

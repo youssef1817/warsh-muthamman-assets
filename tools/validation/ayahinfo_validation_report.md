@@ -1,29 +1,29 @@
 # Quran Ayahinfo Validation Report (Warsh Muthamman)
 
-**Date:** 2026-06-20T23:29:57.346Z  
+**Date:** 2026-06-20T23:33:55.271Z  
 **Pages Checked:** 485 / 485  
 **Numbering Mode:** `hafs_tolerant`  
 
 ## Summary Stats
 | Severity | Count |
 |---|---|
-| <span style="color:red">🔴 Fatal</span> | **233** |
-| <span style="color:orange">🟡 Warning</span> | **159** |
-| <span style="color:blue">🔵 Suspicious</span> | **597** |
-| **Total Issues** | **989** |
+| <span style="color:red">🔴 Fatal</span> | **206** |
+| <span style="color:orange">🟡 Warning</span> | **88** |
+| <span style="color:blue">🔵 Suspicious</span> | **608** |
+| **Total Issues** | **902** |
 
 ### Stats by Category & Severity
 | Category | Fatal | Warning | Suspicious | Total |
 |---|---|---|---|---|
-| `structural` | 77 | 0 | 0 | **77** |
+| `structural` | 48 | 0 | 0 | **48** |
 | `numbering` | 0 | 32 | 0 | **32** |
 | `layout` | 50 | 34 | 1 | **85** |
-| `geometry` | 35 | 89 | 547 | **671** |
-| `ordering` | 71 | 4 | 49 | **124** |
+| `geometry` | 36 | 17 | 558 | **611** |
+| `ordering` | 72 | 5 | 49 | **126** |
 | `other` | 0 | 0 | 0 | **0** |
 
 ### Fatal Breakdown
-- Fatal Issues (Excluding Numbering): **233**  
+- Fatal Issues (Excluding Numbering): **206**  
 - Fatal Numbering Issues Only: **0**  
 
 ## Stats by Issue Code
@@ -31,18 +31,18 @@
 |---|---|---|---|
 | `LAYOUT_ORDER_INVALID` | `layout` | <span style="color:red">fatal</span> | 53 |
 | `HIGHLIGHT_ORDER_OSCILLATION` | `ordering` | <span style="color:red">fatal</span> | 42 |
-| `HIGHLIGHT_LINE_OUT_OF_RANGE` | `structural` | <span style="color:red">fatal</span> | 37 |
-| `MARKER_NO_HIGHLIGHT` | `geometry` | <span style="color:red">fatal</span> | 35 |
-| `MARKER_LINE_OUT_OF_RANGE` | `structural` | <span style="color:red">fatal</span> | 33 |
+| `MARKER_NO_HIGHLIGHT` | `geometry` | <span style="color:red">fatal</span> | 36 |
 | `HIGHLIGHT_ORDER_REGRESSION` | `ordering` | <span style="color:red">fatal</span> | 29 |
-| `PAGE_FIELD_MISMATCH` | `structural` | <span style="color:red">fatal</span> | 7 |
-| `ORPHAN_HIGHLIGHT_NO_MARKER` | `geometry` | <span style="color:orange">warning</span> | 89 |
+| `HIGHLIGHT_LINE_OUT_OF_RANGE` | `structural` | <span style="color:red">fatal</span> | 25 |
+| `MARKER_LINE_OUT_OF_RANGE` | `structural` | <span style="color:red">fatal</span> | 23 |
+| `MARKER_ORDER_REGRESSION` | `ordering` | <span style="color:red">fatal</span> | 1 |
 | `LINE_COUNT_MISMATCH` | `layout` | <span style="color:orange">warning</span> | 31 |
 | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 31 |
-| `DUPLICATE_MARKER_AYAH` | `ordering` | <span style="color:orange">warning</span> | 4 |
+| `ORPHAN_HIGHLIGHT_NO_MARKER` | `geometry` | <span style="color:orange">warning</span> | 17 |
+| `DUPLICATE_MARKER_AYAH` | `ordering` | <span style="color:orange">warning</span> | 5 |
 | `MARKER_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 1 |
-| `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 428 |
-| `MARKER_NOT_ON_HIGHLIGHT_LINE` | `geometry` | <span style="color:blue">suspicious</span> | 82 |
+| `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 437 |
+| `MARKER_NOT_ON_HIGHLIGHT_LINE` | `geometry` | <span style="color:blue">suspicious</span> | 84 |
 | `HIGHLIGHT_ORDER_JUMP` | `ordering` | <span style="color:blue">suspicious</span> | 49 |
 | `SAME_LINE_OVERLAP` | `geometry` | <span style="color:blue">suspicious</span> | 30 |
 | `SAME_LINE_GAP` | `geometry` | <span style="color:blue">suspicious</span> | 7 |
@@ -53,29 +53,29 @@
 |---|---|
 | Page 363 | 68 |
 | Page 362 | 44 |
-| Page 299 | 29 |
 | Page 361 | 27 |
-| Page 282 | 26 |
 | Page 471 | 23 |
+| Page 282 | 17 |
 | Page 3 | 16 |
 | Page 68 | 16 |
-| Page 285 | 15 |
-| Page 289 | 15 |
-| Page 291 | 14 |
 | Page 479 | 14 |
 | Page 483 | 14 |
 | Page 422 | 13 |
 | Page 430 | 13 |
-| Page 287 | 12 |
 | Page 358 | 12 |
 | Page 452 | 12 |
 | Page 428 | 11 |
 | Page 466 | 11 |
 | Page 472 | 11 |
+| Page 299 | 10 |
 | Page 364 | 10 |
 | Page 431 | 10 |
-| Page 438 | 10 |
 | Page 457 | 10 |
+| Page 467 | 10 |
+| Page 475 | 10 |
+| Page 345 | 9 |
+| Page 474 | 9 |
+| Page 468 | 8 |
 
 ## Major Root Causes (Deduplicated, Excluding Mismatch Geometry)
 | Page | Category | Code | Severity | Ayah | Line | Count | Description |
@@ -96,23 +96,11 @@
 | Page 243 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 18:85 | 17 | 1 | Ayah regression inside sura: from 18:86 back to 18:85 |
 | Page 244 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 18:89 | 4 | 2 | Ayah reappeared in reading order after transitioning to other ayahs |
 | Page 244 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 18:89 | 4 | 1 | Ayah regression inside sura: from 18:90 back to 18:89 |
-| Page 282 | `structural` | `PAGE_FIELD_MISMATCH` | <span style="color:red">fatal</span> | - | - | 1 | Page field mismatch: data page is 280, layout page is 280, but file is page_282.json (Suppressed 17 derived highlights/markers errors due to page mismatch) |
-| Page 282 | `structural` | `HIGHLIGHT_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 23:112 | 16 | 4 | Highlight line (16) is outside layout bands (1..15) |
-| Page 282 | `structural` | `MARKER_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 23:112 | 16 | 3 | Marker line (16) is outside layout bands (1..15) |
-| Page 282 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 23:12 | 7 | 4 | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 282 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 23:12 | 7 | 4 | Ayah regression inside sura: from 23:14 back to 23:12 |
-| Page 285 | `structural` | `PAGE_FIELD_MISMATCH` | <span style="color:red">fatal</span> | - | - | 1 | Page field mismatch: data page is 280, layout page is 280, but file is page_285.json (Suppressed 15 derived highlights/markers errors due to page mismatch) |
-| Page 285 | `structural` | `HIGHLIGHT_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 23:112 | 16 | 4 | Highlight line (16) is outside layout bands (1..15) |
-| Page 285 | `structural` | `MARKER_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 23:112 | 16 | 3 | Marker line (16) is outside layout bands (1..15) |
-| Page 287 | `structural` | `PAGE_FIELD_MISMATCH` | <span style="color:red">fatal</span> | - | - | 1 | Page field mismatch: data page is 280, layout page is 280, but file is page_287.json (Suppressed 11 derived highlights/markers errors due to page mismatch) |
-| Page 287 | `structural` | `HIGHLIGHT_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 23:113 | 17 | 2 | Highlight line (17) is outside layout bands (1..16) |
-| Page 287 | `structural` | `MARKER_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 23:113 | 17 | 2 | Marker line (17) is outside layout bands (1..16) |
-| Page 289 | `structural` | `PAGE_FIELD_MISMATCH` | <span style="color:red">fatal</span> | - | - | 1 | Page field mismatch: data page is 280, layout page is 280, but file is page_289.json (Suppressed 15 derived highlights/markers errors due to page mismatch) |
+| Page 282 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 24:12 | 7 | 4 | Ayah reappeared in reading order after transitioning to other ayahs |
+| Page 282 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 24:12 | 7 | 4 | Ayah regression inside sura: from 24:14 back to 24:12 |
+| Page 282 | `ordering` | `MARKER_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 24:18 | 15 | 1 | Marker order regression: from 24:19 back to 24:18 |
 | Page 289 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 5 | 1 | Line vertical bounds invalid: center (550) is outside top-bottom (710-804) by 160px |
-| Page 289 | `structural` | `HIGHLIGHT_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 23:113 | 17 | 2 | Highlight line (17) is outside layout bands (1..16) |
-| Page 289 | `structural` | `MARKER_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 23:113 | 17 | 2 | Marker line (17) is outside layout bands (1..16) |
-| Page 291 | `structural` | `PAGE_FIELD_MISMATCH` | <span style="color:red">fatal</span> | - | - | 1 | Page field mismatch: data page is 280, layout page is 280, but file is page_291.json (Suppressed 14 derived highlights/markers errors due to page mismatch) |
-| Page 299 | `structural` | `PAGE_FIELD_MISMATCH` | <span style="color:red">fatal</span> | - | - | 1 | Page field mismatch: data page is 280, layout page is 280, but file is page_299.json (Suppressed 35 derived highlights/markers errors due to page mismatch) |
+| Page 299 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 26:130 | 10 | 1 | Marker exists for 26:130 but no highlight found on page |
 | Page 302 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 11 | 1 | Line vertical bounds invalid: center (1383) is outside top-bottom (1516-1627) by 133px |
 | Page 302 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 26:227 | 10 | 1 | Sura regression: from 27:1 back to 26:227 |
 | Page 302 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 27:1 | 11 | 1 | Ayah reappeared in reading order after transitioning to other ayahs |
@@ -183,7 +171,6 @@
 | Page 435 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 58:5 | 9 | 1 | Ayah regression inside sura: from 58:6 back to 58:5 |
 | Page 435 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 58:6 | 10 | 1 | Ayah reappeared in reading order after transitioning to other ayahs |
 | Page 437 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 14 | 1 | Line vertical bounds invalid: center (1421) is outside top-bottom (1568-1659) by 147px |
-| Page 438 | `structural` | `PAGE_FIELD_MISMATCH` | <span style="color:red">fatal</span> | - | - | 1 | Page field mismatch: data page is 393, layout page is 393, but file is page_438.json (Suppressed 10 derived highlights/markers errors due to page mismatch) |
 | Page 438 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (1044) is outside top-bottom (806-919) by 125px |
 | Page 445 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 6 | 1 | Line vertical bounds invalid: center (874) is outside top-bottom (904-1022) by 30px |
 | Page 445 | `structural` | `HIGHLIGHT_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 64:28 | 15 | 1 | Highlight line (15) is outside layout bands (1..14) |
@@ -235,15 +222,10 @@
 | Page 244 | `ordering` | `DUPLICATE_MARKER_AYAH` | <span style="color:orange">warning</span> | 18:100 | 16 | 1 | Multiple markers (2 times) found on page for same ayah 18:100 |
 | Page 263 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (18) does not match lineBands count (19) |
 | Page 282 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (17) does not match lineBands count (15) |
-| Page 282 | `geometry` | `ORPHAN_HIGHLIGHT_NO_MARKER` | <span style="color:orange">warning</span> | 23:11 | 3 | 5 | Highlight ends before left margin (0.513) but no marker circle found on page |
+| Page 282 | `ordering` | `DUPLICATE_MARKER_AYAH` | <span style="color:orange">warning</span> | 24:18 | 15 | 1 | Multiple markers (2 times) found on page for same ayah 24:18 |
 | Page 285 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (17) does not match lineBands count (15) |
-| Page 285 | `geometry` | `ORPHAN_HIGHLIGHT_NO_MARKER` | <span style="color:orange">warning</span> | 23:35 | 5 | 6 | Highlight ends before left margin (0.854) but no marker circle found on page |
 | Page 287 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (17) does not match lineBands count (16) |
-| Page 287 | `geometry` | `ORPHAN_HIGHLIGHT_NO_MARKER` | <span style="color:orange">warning</span> | 23:53 | 2 | 6 | Highlight ends before left margin (0.471) but no marker circle found on page |
 | Page 289 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (17) does not match lineBands count (16) |
-| Page 289 | `geometry` | `ORPHAN_HIGHLIGHT_NO_MARKER` | <span style="color:orange">warning</span> | 24:63 | 3 | 8 | Highlight ends before left margin (0.627) but no marker circle found on page |
-| Page 291 | `geometry` | `ORPHAN_HIGHLIGHT_NO_MARKER` | <span style="color:orange">warning</span> | 25:21 | 3 | 13 | Highlight ends before left margin (0.923) but no marker circle found on page |
-| Page 299 | `geometry` | `ORPHAN_HIGHLIGHT_NO_MARKER` | <span style="color:orange">warning</span> | 26:111 | 1 | 27 | Highlight ends before left margin (0.475) but no marker circle found on page |
 | Page 324 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
 | Page 334 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (14) |
 | Page 334 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 32:31 | 14 | 1 | Highlight ayah (31) is out of range for sura (max 30) |
@@ -261,7 +243,6 @@
 | Page 422 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (15) |
 | Page 429 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
 | Page 438 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (18) |
-| Page 438 | `geometry` | `ORPHAN_HIGHLIGHT_NO_MARKER` | <span style="color:orange">warning</span> | 43:2 | 2 | 7 | Highlight ends before left margin (0.608) but no marker circle found on page |
 | Page 440 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (16) |
 | Page 443 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:orange">warning</span> | - | 1 | 1 | Line vertical bounds slightly off: center (276) is outside top-bottom (279-360) by 3px |
 | Page 445 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (14) |
@@ -292,9 +273,11 @@
 | Page 211 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 15:16 -> 15:17 | 12 | 1 | Horizontal overlap on same line by 0.1000 |
 | Page 214 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 15:82 -> 15:82 | 4 | 1 | Horizontal overlap on same line by 0.1290 |
 | Page 214 | `geometry` | `SAME_LINE_GAP` | <span style="color:blue">suspicious</span> | 15:82 -> 15:83 | 4 | 1 | Horizontal gap on same line by 0.0954 |
-| Page 282 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 23:15 | 8 | 3 | Ayah forward jump: from 23:12 to 23:15 |
-| Page 282 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 23:17 -> 23:16 | 11 | 1 | Horizontal overlap on same line by 0.8975 |
+| Page 282 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 24:15 | 8 | 3 | Ayah forward jump: from 24:12 to 24:15 |
+| Page 282 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 24:17 -> 24:16 | 11 | 1 | Horizontal overlap on same line by 0.8975 |
+| Page 282 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 24:14 | 7 | 1 | Marker exists on line 7 for 24:14 but highlight is on different line(s) |
 | Page 299 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 26:131 | 10 | 1 | Ayah forward jump: from 26:129 to 26:131 |
+| Page 299 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 26:131 | 11 | 1 | Marker exists on line 11 for 26:131 but highlight is on different line(s) |
 | Page 300 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 26:151 -> 26:151 | 3 | 1 | Horizontal overlap on same line by 0.0786 |
 | Page 345 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 34:16 | 9 | 2 | Ayah forward jump: from 34:14 to 34:16 |
 | Page 345 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 34:16 | 15 | 1 | Marker exists on line 15 for 34:16 but highlight is on different line(s) |
@@ -361,34 +344,6 @@
 ## Section 1: Structural Issues
 | Page | Line | Ayah | Severity | Code | Message |
 |---|---|---|---|---|---|
-| Page 282 | - | - | <span style="color:red">fatal</span> | `PAGE_FIELD_MISMATCH` | Page field mismatch: data page is 280, layout page is 280, but file is page_282.json (Suppressed 17 derived highlights/markers errors due to page mismatch) |
-| Page 282 | 16 | 23:112 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (16) is outside layout bands (1..15) |
-| Page 282 | 16 | 23:113 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (16) is outside layout bands (1..15) |
-| Page 282 | 16 | 23:112 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (16) is outside layout bands (1..15) |
-| Page 282 | 17 | 23:113 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (17) is outside layout bands (1..15) |
-| Page 282 | 17 | 23:114 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (17) is outside layout bands (1..15) |
-| Page 282 | 17 | 23:113 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (17) is outside layout bands (1..15) |
-| Page 282 | 17 | 23:114 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (17) is outside layout bands (1..15) |
-| Page 285 | - | - | <span style="color:red">fatal</span> | `PAGE_FIELD_MISMATCH` | Page field mismatch: data page is 280, layout page is 280, but file is page_285.json (Suppressed 15 derived highlights/markers errors due to page mismatch) |
-| Page 285 | 16 | 23:112 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (16) is outside layout bands (1..15) |
-| Page 285 | 16 | 23:113 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (16) is outside layout bands (1..15) |
-| Page 285 | 16 | 23:112 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (16) is outside layout bands (1..15) |
-| Page 285 | 17 | 23:113 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (17) is outside layout bands (1..15) |
-| Page 285 | 17 | 23:114 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (17) is outside layout bands (1..15) |
-| Page 285 | 17 | 23:113 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (17) is outside layout bands (1..15) |
-| Page 285 | 17 | 23:114 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (17) is outside layout bands (1..15) |
-| Page 287 | - | - | <span style="color:red">fatal</span> | `PAGE_FIELD_MISMATCH` | Page field mismatch: data page is 280, layout page is 280, but file is page_287.json (Suppressed 11 derived highlights/markers errors due to page mismatch) |
-| Page 287 | 17 | 23:113 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (17) is outside layout bands (1..16) |
-| Page 287 | 17 | 23:114 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (17) is outside layout bands (1..16) |
-| Page 287 | 17 | 23:113 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (17) is outside layout bands (1..16) |
-| Page 287 | 17 | 23:114 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (17) is outside layout bands (1..16) |
-| Page 289 | - | - | <span style="color:red">fatal</span> | `PAGE_FIELD_MISMATCH` | Page field mismatch: data page is 280, layout page is 280, but file is page_289.json (Suppressed 15 derived highlights/markers errors due to page mismatch) |
-| Page 289 | 17 | 23:113 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (17) is outside layout bands (1..16) |
-| Page 289 | 17 | 23:114 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (17) is outside layout bands (1..16) |
-| Page 289 | 17 | 23:113 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (17) is outside layout bands (1..16) |
-| Page 289 | 17 | 23:114 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (17) is outside layout bands (1..16) |
-| Page 291 | - | - | <span style="color:red">fatal</span> | `PAGE_FIELD_MISMATCH` | Page field mismatch: data page is 280, layout page is 280, but file is page_291.json (Suppressed 14 derived highlights/markers errors due to page mismatch) |
-| Page 299 | - | - | <span style="color:red">fatal</span> | `PAGE_FIELD_MISMATCH` | Page field mismatch: data page is 280, layout page is 280, but file is page_299.json (Suppressed 35 derived highlights/markers errors due to page mismatch) |
 | Page 349 | 17 | 35:18 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (17) is outside layout bands (1..16) |
 | Page 349 | 17 | 35:7 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (17) is outside layout bands (1..16) |
 | Page 358 | 15 | 37:54 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (15) is outside layout bands (1..14) |
@@ -401,7 +356,6 @@
 | Page 422 | 16 | 53:23 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (16) is outside layout bands (1..15) |
 | Page 422 | 16 | 53:24 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (16) is outside layout bands (1..15) |
 | Page 422 | 16 | 53:25 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (16) is outside layout bands (1..15) |
-| Page 438 | - | - | <span style="color:red">fatal</span> | `PAGE_FIELD_MISMATCH` | Page field mismatch: data page is 393, layout page is 393, but file is page_438.json (Suppressed 10 derived highlights/markers errors due to page mismatch) |
 | Page 445 | 15 | 64:28 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (15) is outside layout bands (1..14) |
 | Page 445 | 15 | 64:6 | <span style="color:red">fatal</span> | `MARKER_LINE_OUT_OF_RANGE` | Marker line (15) is outside layout bands (1..14) |
 | Page 457 | 16 | 71:12 | <span style="color:red">fatal</span> | `HIGHLIGHT_LINE_OUT_OF_RANGE` | Highlight line (16) is outside layout bands (1..15) |
@@ -572,14 +526,15 @@
 | Page 244 | 4 | 18:89 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
 | Page 244 | 4 | 18:89 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 18:90 back to 18:89 |
 | Page 244 | 5 | 18:90 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 282 | 7 | 23:12 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 282 | 7 | 23:12 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 23:14 back to 23:12 |
-| Page 282 | 11 | 23:15 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 282 | 11 | 23:15 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 23:16 back to 23:15 |
-| Page 282 | 11 | 23:16 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 282 | 11 | 23:16 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 23:17 back to 23:16 |
-| Page 282 | 15 | 23:18 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 282 | 15 | 23:18 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 23:20 back to 23:18 |
+| Page 282 | 7 | 24:12 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
+| Page 282 | 7 | 24:12 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 24:14 back to 24:12 |
+| Page 282 | 11 | 24:15 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
+| Page 282 | 11 | 24:15 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 24:16 back to 24:15 |
+| Page 282 | 11 | 24:16 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
+| Page 282 | 11 | 24:16 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 24:17 back to 24:16 |
+| Page 282 | 15 | 24:18 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
+| Page 282 | 15 | 24:18 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 24:20 back to 24:18 |
+| Page 282 | 15 | 24:18 | <span style="color:red">fatal</span> | `MARKER_ORDER_REGRESSION` | Marker order regression: from 24:19 back to 24:18 |
 | Page 302 | 10 | 26:227 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Sura regression: from 27:1 back to 26:227 |
 | Page 302 | 11 | 27:1 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
 | Page 344 | 6 | 34:3 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
@@ -642,9 +597,10 @@
 | Page 4 | 3 | 2:18 | <span style="color:orange">warning</span> | `DUPLICATE_MARKER_AYAH` | Multiple markers (2 times) found on page for same ayah 2:18 |
 | Page 243 | 18 | 18:85 | <span style="color:orange">warning</span> | `DUPLICATE_MARKER_AYAH` | Multiple markers (2 times) found on page for same ayah 18:85 |
 | Page 244 | 16 | 18:100 | <span style="color:orange">warning</span> | `DUPLICATE_MARKER_AYAH` | Multiple markers (2 times) found on page for same ayah 18:100 |
-| Page 282 | 8 | 23:15 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 23:12 to 23:15 |
-| Page 282 | 11 | 23:17 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 23:15 to 23:17 |
-| Page 282 | 12 | 23:18 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 23:16 to 23:18 |
+| Page 282 | 15 | 24:18 | <span style="color:orange">warning</span> | `DUPLICATE_MARKER_AYAH` | Multiple markers (2 times) found on page for same ayah 24:18 |
+| Page 282 | 8 | 24:15 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 24:12 to 24:15 |
+| Page 282 | 11 | 24:17 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 24:15 to 24:17 |
+| Page 282 | 12 | 24:18 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 24:16 to 24:18 |
 | Page 299 | 10 | 26:131 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 26:129 to 26:131 |
 | Page 345 | 9 | 34:16 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 34:14 to 34:16 |
 | Page 345 | 11 | 34:16 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 34:14 to 34:16 |
@@ -698,6 +654,7 @@
 |---|---|---|---|---|---|
 | Page 69 | 19 | 4:45 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 4:45 but no highlight found on page |
 | Page 226 | 14 | 16:128 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 16:128 but no highlight found on page |
+| Page 299 | 10 | 26:130 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 26:130 but no highlight found on page |
 | Page 345 | 13 | 34:15 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 34:15 but no highlight found on page |
 | Page 358 | 14 | 37:21 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:21 but no highlight found on page |
 | Page 361 | 8 | 37:101 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 37:101 but no highlight found on page |
@@ -732,71 +689,6 @@
 | Page 467 | 2 | 78:5 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 78:5 but no highlight found on page |
 | Page 473 | 4 | 84:24 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 84:24 but no highlight found on page |
 | Page 4 | 2 | 2:17 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.143) but no marker circle found on page |
-| Page 282 | 3 | 23:11 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.513) but no marker circle found on page |
-| Page 282 | 6 | 23:13 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.567) but no marker circle found on page |
-| Page 282 | 11 | 23:15 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.928) but no marker circle found on page |
-| Page 282 | 11 | 23:16 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.922) but no marker circle found on page |
-| Page 282 | 14 | 23:19 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.182) but no marker circle found on page |
-| Page 285 | 5 | 23:35 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.854) but no marker circle found on page |
-| Page 285 | 6 | 23:36 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.693) but no marker circle found on page |
-| Page 285 | 9 | 23:38 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.825) but no marker circle found on page |
-| Page 285 | 11 | 23:39 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.706) but no marker circle found on page |
-| Page 285 | 13 | 23:40 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.372) but no marker circle found on page |
-| Page 285 | 15 | 23:41 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.710) but no marker circle found on page |
-| Page 287 | 2 | 23:53 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.471) but no marker circle found on page |
-| Page 287 | 4 | 23:54 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.521) but no marker circle found on page |
-| Page 287 | 8 | 23:55 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.728) but no marker circle found on page |
-| Page 287 | 9 | 23:56 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.679) but no marker circle found on page |
-| Page 287 | 10 | 23:57 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.521) but no marker circle found on page |
-| Page 287 | 15 | 23:58 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.925) but no marker circle found on page |
-| Page 289 | 3 | 24:63 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.627) but no marker circle found on page |
-| Page 289 | 5 | 25:1 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.178) but no marker circle found on page |
-| Page 289 | 7 | 25:2 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.543) but no marker circle found on page |
-| Page 289 | 9 | 25:3 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.620) but no marker circle found on page |
-| Page 289 | 10 | 25:4 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.272) but no marker circle found on page |
-| Page 289 | 11 | 25:5 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.101) but no marker circle found on page |
-| Page 289 | 13 | 25:6 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.935) but no marker circle found on page |
-| Page 289 | 14 | 25:7 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.516) but no marker circle found on page |
-| Page 291 | 3 | 25:21 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.923) but no marker circle found on page |
-| Page 291 | 4 | 25:22 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.719) but no marker circle found on page |
-| Page 291 | 5 | 25:23 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.717) but no marker circle found on page |
-| Page 291 | 6 | 25:24 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.687) but no marker circle found on page |
-| Page 291 | 7 | 25:25 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.816) but no marker circle found on page |
-| Page 291 | 8 | 25:26 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.670) but no marker circle found on page |
-| Page 291 | 9 | 25:27 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.397) but no marker circle found on page |
-| Page 291 | 10 | 25:28 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.723) but no marker circle found on page |
-| Page 291 | 11 | 25:29 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.499) but no marker circle found on page |
-| Page 291 | 12 | 25:30 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.436) but no marker circle found on page |
-| Page 291 | 13 | 25:31 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.152) but no marker circle found on page |
-| Page 291 | 15 | 25:32 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.538) but no marker circle found on page |
-| Page 291 | 16 | 25:33 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.589) but no marker circle found on page |
-| Page 299 | 1 | 26:111 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.475) but no marker circle found on page |
-| Page 299 | 2 | 26:112 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.935) but no marker circle found on page |
-| Page 299 | 2 | 26:113 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.416) but no marker circle found on page |
-| Page 299 | 3 | 26:115 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.716) but no marker circle found on page |
-| Page 299 | 4 | 26:117 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.645) but no marker circle found on page |
-| Page 299 | 5 | 26:118 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.827) but no marker circle found on page |
-| Page 299 | 5 | 26:119 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.325) but no marker circle found on page |
-| Page 299 | 6 | 26:120 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.935) but no marker circle found on page |
-| Page 299 | 6 | 26:121 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.343) but no marker circle found on page |
-| Page 299 | 7 | 26:122 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.825) but no marker circle found on page |
-| Page 299 | 7 | 26:123 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.526) but no marker circle found on page |
-| Page 299 | 8 | 26:125 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.708) but no marker circle found on page |
-| Page 299 | 8 | 26:126 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.424) but no marker circle found on page |
-| Page 299 | 9 | 26:127 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.607) but no marker circle found on page |
-| Page 299 | 9 | 26:128 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.198) but no marker circle found on page |
-| Page 299 | 10 | 26:129 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.633) but no marker circle found on page |
-| Page 299 | 11 | 26:132 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.374) but no marker circle found on page |
-| Page 299 | 12 | 26:134 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.728) but no marker circle found on page |
-| Page 299 | 12 | 26:135 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.194) but no marker circle found on page |
-| Page 299 | 13 | 26:136 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.431) but no marker circle found on page |
-| Page 299 | 14 | 26:138 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.749) but no marker circle found on page |
-| Page 299 | 15 | 26:139 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.849) but no marker circle found on page |
-| Page 299 | 15 | 26:140 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.448) but no marker circle found on page |
-| Page 299 | 15 | 26:141 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.102) but no marker circle found on page |
-| Page 299 | 16 | 26:142 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.514) but no marker circle found on page |
-| Page 299 | 16 | 26:143 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.195) but no marker circle found on page |
-| Page 299 | 17 | 26:144 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.819) but no marker circle found on page |
 | Page 361 | 13 | 37:114 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.730) but no marker circle found on page |
 | Page 361 | 13 | 37:116 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.474) but no marker circle found on page |
 | Page 361 | 13 | 37:117 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.106) but no marker circle found on page |
@@ -813,13 +705,6 @@
 | Page 362 | 16 | 37:157 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.231) but no marker circle found on page |
 | Page 362 | 17 | 37:160 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.625) but no marker circle found on page |
 | Page 408 | 16 | 47:33 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.936) but no marker circle found on page |
-| Page 438 | 2 | 43:2 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.608) but no marker circle found on page |
-| Page 438 | 3 | 43:3 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.444) but no marker circle found on page |
-| Page 438 | 4 | 43:4 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.393) but no marker circle found on page |
-| Page 438 | 7 | 43:6 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.096) but no marker circle found on page |
-| Page 438 | 11 | 43:7 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.809) but no marker circle found on page |
-| Page 438 | 13 | 43:8 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.786) but no marker circle found on page |
-| Page 438 | 16 | 43:9 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.731) but no marker circle found on page |
 | Page 3 | 6 | 2:8 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 2:8 but highlight is on different line(s) |
 | Page 3 | 7 | 2:9 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 7 for 2:9 but highlight is on different line(s) |
 | Page 3 | 8 | 2:10 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 8 for 2:10 but highlight is on different line(s) |
@@ -844,7 +729,9 @@
 | Page 211 | 12 | 15:16 -> 15:17 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
 | Page 214 | 4 | 15:82 -> 15:82 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1290 |
 | Page 214 | 4 | 15:82 -> 15:83 | <span style="color:blue">suspicious</span> | `SAME_LINE_GAP` | Horizontal gap on same line by 0.0954 |
-| Page 282 | 11 | 23:17 -> 23:16 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.8975 |
+| Page 282 | 7 | 24:14 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 7 for 24:14 but highlight is on different line(s) |
+| Page 282 | 11 | 24:17 -> 24:16 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.8975 |
+| Page 299 | 11 | 26:131 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 11 for 26:131 but highlight is on different line(s) |
 | Page 300 | 3 | 26:151 -> 26:151 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.0786 |
 | Page 345 | 15 | 34:16 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 15 for 34:16 but highlight is on different line(s) |
 | Page 353 | 12 | 35:45 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 12 for 35:45 but highlight is on different line(s) |
@@ -966,6 +853,7 @@
 | Page 3 | 6 | 2:9 | <span style="color:blue">suspicious</span> | 0.9700 | 0.7018 | **0.2682** | 0.0250 |
 | Page 1 | 7 | 1:7 | <span style="color:blue">suspicious</span> | 0.0300 | 0.2592 | **0.2292** | 0.0250 |
 | Page 401 | 3 | 45:16 | <span style="color:blue">suspicious</span> | 0.9700 | 0.7770 | **0.1930** | 0.0250 |
+| Page 299 | 11 | 26:132 | <span style="color:blue">suspicious</span> | 0.9700 | 0.8148 | **0.1552** | 0.0250 |
 | Page 466 | 4 | 77:23 | <span style="color:blue">suspicious</span> | 0.9700 | 0.8282 | **0.1418** | 0.0250 |
 | Page 361 | 8 | 37:100 | <span style="color:blue">suspicious</span> | 0.9700 | 0.8292 | **0.1408** | 0.0250 |
 | Page 423 | 6 | 53:30 | <span style="color:blue">suspicious</span> | 0.9700 | 0.8346 | **0.1354** | 0.0250 |
@@ -992,4 +880,3 @@
 | Page 337 | 16 | 33:24 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1082 | **0.0782** | 0.0250 |
 | Page 68 | 4 | 4:31 | <span style="color:blue">suspicious</span> | 0.3331 | 0.2572 | **0.0759** | 0.0250 |
 | Page 336 | 16 | 33:17 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1054 | **0.0754** | 0.0250 |
-| Page 326 | 6 | 30:24 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1018 | **0.0718** | 0.0250 |

@@ -1,19 +1,19 @@
 {
   "metadata": {
-    "timestamp": "2026-06-20T23:29:57.342Z",
+    "timestamp": "2026-06-20T23:33:55.267Z",
     "pagesChecked": 485,
     "numberingMode": "hafs_tolerant",
     "stats": {
-      "totalIssues": 989,
-      "fatal": 233,
-      "warning": 159,
-      "suspicious": 597,
-      "fatalNoNumbering": 233,
+      "totalIssues": 902,
+      "fatal": 206,
+      "warning": 88,
+      "suspicious": 608,
+      "fatalNoNumbering": 206,
       "fatalNumberingOnly": 0
     },
     "statsByCategory": {
       "structural": {
-        "fatal": 77,
+        "fatal": 48,
         "warning": 0,
         "suspicious": 0
       },
@@ -28,13 +28,13 @@
         "suspicious": 1
       },
       "geometry": {
-        "fatal": 35,
-        "warning": 89,
-        "suspicious": 547
+        "fatal": 36,
+        "warning": 17,
+        "suspicious": 558
       },
       "ordering": {
-        "fatal": 71,
-        "warning": 4,
+        "fatal": 72,
+        "warning": 5,
         "suspicious": 49
       },
       "other": {
@@ -45,22 +45,22 @@
     },
     "statsByCode": {
       "LAYOUT_ORDER_INVALID": 53,
-      "MARKER_BOUNDARY_MISMATCH": 428,
+      "MARKER_BOUNDARY_MISMATCH": 437,
       "LAYOUT_VERTICAL_OVERLAP": 1,
-      "MARKER_NOT_ON_HIGHLIGHT_LINE": 82,
-      "DUPLICATE_MARKER_AYAH": 4,
-      "ORPHAN_HIGHLIGHT_NO_MARKER": 89,
+      "MARKER_NOT_ON_HIGHLIGHT_LINE": 84,
+      "DUPLICATE_MARKER_AYAH": 5,
+      "ORPHAN_HIGHLIGHT_NO_MARKER": 17,
       "LINE_COUNT_MISMATCH": 31,
       "SAME_LINE_OVERLAP": 30,
-      "MARKER_NO_HIGHLIGHT": 35,
+      "MARKER_NO_HIGHLIGHT": 36,
       "SAME_LINE_GAP": 7,
       "HIGHLIGHT_ORDER_OSCILLATION": 42,
       "HIGHLIGHT_ORDER_REGRESSION": 29,
-      "PAGE_FIELD_MISMATCH": 7,
-      "HIGHLIGHT_LINE_OUT_OF_RANGE": 37,
-      "MARKER_LINE_OUT_OF_RANGE": 33,
       "HIGHLIGHT_ORDER_JUMP": 49,
+      "MARKER_ORDER_REGRESSION": 1,
       "HIGHLIGHT_AYAH_OUT_OF_RANGE": 31,
+      "HIGHLIGHT_LINE_OUT_OF_RANGE": 25,
+      "MARKER_LINE_OUT_OF_RANGE": 23,
       "MARKER_AYAH_OUT_OF_RANGE": 1
     },
     "topPages": [
@@ -73,20 +73,16 @@
         "count": 44
       },
       {
-        "page": 299,
-        "count": 29
-      },
-      {
         "page": 361,
         "count": 27
       },
       {
-        "page": 282,
-        "count": 26
-      },
-      {
         "page": 471,
         "count": 23
+      },
+      {
+        "page": 282,
+        "count": 17
       },
       {
         "page": 3,
@@ -95,18 +91,6 @@
       {
         "page": 68,
         "count": 16
-      },
-      {
-        "page": 285,
-        "count": 15
-      },
-      {
-        "page": 289,
-        "count": 15
-      },
-      {
-        "page": 291,
-        "count": 14
       },
       {
         "page": 479,
@@ -123,10 +107,6 @@
       {
         "page": 430,
         "count": 13
-      },
-      {
-        "page": 287,
-        "count": 12
       },
       {
         "page": 358,
@@ -149,6 +129,10 @@
         "count": 11
       },
       {
+        "page": 299,
+        "count": 10
+      },
+      {
         "page": 364,
         "count": 10
       },
@@ -157,12 +141,28 @@
         "count": 10
       },
       {
-        "page": 438,
+        "page": 457,
         "count": 10
       },
       {
-        "page": 457,
+        "page": 467,
         "count": 10
+      },
+      {
+        "page": 475,
+        "count": 10
+      },
+      {
+        "page": 345,
+        "count": 9
+      },
+      {
+        "page": 474,
+        "count": 9
+      },
+      {
+        "page": 468,
+        "count": 8
       }
     ]
   },
@@ -453,16 +453,14 @@
     {
       "page": 282,
       "severity": "fatal",
-      "category": "structural",
-      "line": null,
-      "suraAyah": null,
-      "code": "PAGE_FIELD_MISMATCH",
-      "message": "Page field mismatch: data page is 280, layout page is 280, but file is page_282.json (Suppressed 17 derived highlights/markers errors due to page mismatch)",
+      "category": "ordering",
+      "line": 7,
+      "suraAyah": "24:12",
+      "code": "HIGHLIGHT_ORDER_OSCILLATION",
+      "message": "Ayah reappeared in reading order after transitioning to other ayahs",
       "details": {
-        "dataPage": 280,
-        "layoutPage": 280,
-        "file": "page_282.json",
-        "suppressedDerivedCount": 17
+        "current": "24:12",
+        "previous": "24:14"
       }
     },
     {
@@ -470,25 +468,25 @@
       "severity": "fatal",
       "category": "ordering",
       "line": 7,
-      "suraAyah": "23:12",
+      "suraAyah": "24:12",
+      "code": "HIGHLIGHT_ORDER_REGRESSION",
+      "message": "Ayah regression inside sura: from 24:14 back to 24:12",
+      "details": {
+        "prev": "24:14",
+        "curr": "24:12"
+      }
+    },
+    {
+      "page": 282,
+      "severity": "fatal",
+      "category": "ordering",
+      "line": 11,
+      "suraAyah": "24:15",
       "code": "HIGHLIGHT_ORDER_OSCILLATION",
       "message": "Ayah reappeared in reading order after transitioning to other ayahs",
       "details": {
-        "current": "23:12",
-        "previous": "23:14"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 7,
-      "suraAyah": "23:12",
-      "code": "HIGHLIGHT_ORDER_REGRESSION",
-      "message": "Ayah regression inside sura: from 23:14 back to 23:12",
-      "details": {
-        "prev": "23:14",
-        "curr": "23:12"
+        "current": "24:15",
+        "previous": "24:16"
       }
     },
     {
@@ -496,12 +494,25 @@
       "severity": "fatal",
       "category": "ordering",
       "line": 11,
-      "suraAyah": "23:15",
+      "suraAyah": "24:15",
+      "code": "HIGHLIGHT_ORDER_REGRESSION",
+      "message": "Ayah regression inside sura: from 24:16 back to 24:15",
+      "details": {
+        "prev": "24:16",
+        "curr": "24:15"
+      }
+    },
+    {
+      "page": 282,
+      "severity": "fatal",
+      "category": "ordering",
+      "line": 11,
+      "suraAyah": "24:16",
       "code": "HIGHLIGHT_ORDER_OSCILLATION",
       "message": "Ayah reappeared in reading order after transitioning to other ayahs",
       "details": {
-        "current": "23:15",
-        "previous": "23:16"
+        "current": "24:16",
+        "previous": "24:17"
       }
     },
     {
@@ -509,38 +520,12 @@
       "severity": "fatal",
       "category": "ordering",
       "line": 11,
-      "suraAyah": "23:15",
+      "suraAyah": "24:16",
       "code": "HIGHLIGHT_ORDER_REGRESSION",
-      "message": "Ayah regression inside sura: from 23:16 back to 23:15",
+      "message": "Ayah regression inside sura: from 24:17 back to 24:16",
       "details": {
-        "prev": "23:16",
-        "curr": "23:15"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 11,
-      "suraAyah": "23:16",
-      "code": "HIGHLIGHT_ORDER_OSCILLATION",
-      "message": "Ayah reappeared in reading order after transitioning to other ayahs",
-      "details": {
-        "current": "23:16",
-        "previous": "23:17"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 11,
-      "suraAyah": "23:16",
-      "code": "HIGHLIGHT_ORDER_REGRESSION",
-      "message": "Ayah regression inside sura: from 23:17 back to 23:16",
-      "details": {
-        "prev": "23:17",
-        "curr": "23:16"
+        "prev": "24:17",
+        "curr": "24:16"
       }
     },
     {
@@ -548,12 +533,12 @@
       "severity": "fatal",
       "category": "ordering",
       "line": 15,
-      "suraAyah": "23:18",
+      "suraAyah": "24:18",
       "code": "HIGHLIGHT_ORDER_OSCILLATION",
       "message": "Ayah reappeared in reading order after transitioning to other ayahs",
       "details": {
-        "current": "23:18",
-        "previous": "23:20"
+        "current": "24:18",
+        "previous": "24:20"
       }
     },
     {
@@ -561,419 +546,25 @@
       "severity": "fatal",
       "category": "ordering",
       "line": 15,
-      "suraAyah": "23:18",
+      "suraAyah": "24:18",
       "code": "HIGHLIGHT_ORDER_REGRESSION",
-      "message": "Ayah regression inside sura: from 23:20 back to 23:18",
+      "message": "Ayah regression inside sura: from 24:20 back to 24:18",
       "details": {
-        "prev": "23:20",
-        "curr": "23:18"
+        "prev": "24:20",
+        "curr": "24:18"
       }
     },
     {
       "page": 282,
       "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "23:112",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (16) is outside layout bands (1..15)",
+      "category": "ordering",
+      "line": 15,
+      "suraAyah": "24:18",
+      "code": "MARKER_ORDER_REGRESSION",
+      "message": "Marker order regression: from 24:19 back to 24:18",
       "details": {
-        "highlight": {
-          "page": 280,
-          "line": 16,
-          "sura": 23,
-          "ayah": 112,
-          "left": 0.48739352521702783,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "23:113",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (16) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 280,
-          "line": 16,
-          "sura": 23,
-          "ayah": 113,
-          "left": 0.03,
-          "right": 0.48739352521702783,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "23:112",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (16) is outside layout bands (1..15)",
-      "details": {
-        "marker": {
-          "page": 280,
-          "sura": 23,
-          "ayah": 112,
-          "line": 16,
-          "center_x": 0.48739352521702783,
-          "center_y": 0.5172136342729986
-        }
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:113",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (17) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 280,
-          "line": 17,
-          "sura": 23,
-          "ayah": 113,
-          "left": 0.8021915985808163,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:114",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (17) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 280,
-          "line": 17,
-          "sura": 23,
-          "ayah": 114,
-          "left": 0.03,
-          "right": 0.8021915985808163,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:113",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (17) is outside layout bands (1..15)",
-      "details": {
-        "marker": {
-          "page": 280,
-          "sura": 23,
-          "ayah": 113,
-          "line": 17,
-          "center_x": 0.8021915985808163,
-          "center_y": 0.42986935157333495
-        }
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:114",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (17) is outside layout bands (1..15)",
-      "details": {
-        "marker": {
-          "page": 280,
-          "sura": 23,
-          "ayah": 114,
-          "line": 17,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 285,
-      "severity": "fatal",
-      "category": "structural",
-      "line": null,
-      "suraAyah": null,
-      "code": "PAGE_FIELD_MISMATCH",
-      "message": "Page field mismatch: data page is 280, layout page is 280, but file is page_285.json (Suppressed 15 derived highlights/markers errors due to page mismatch)",
-      "details": {
-        "dataPage": 280,
-        "layoutPage": 280,
-        "file": "page_285.json",
-        "suppressedDerivedCount": 15
-      }
-    },
-    {
-      "page": 285,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "23:112",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (16) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 280,
-          "line": 16,
-          "sura": 23,
-          "ayah": 112,
-          "left": 0.48739352521702783,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 285,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "23:113",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (16) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 280,
-          "line": 16,
-          "sura": 23,
-          "ayah": 113,
-          "left": 0.03,
-          "right": 0.48739352521702783,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 285,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 16,
-      "suraAyah": "23:112",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (16) is outside layout bands (1..15)",
-      "details": {
-        "marker": {
-          "page": 280,
-          "sura": 23,
-          "ayah": 112,
-          "line": 16,
-          "center_x": 0.48739352521702783,
-          "center_y": 0.5172136342729986
-        }
-      }
-    },
-    {
-      "page": 285,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:113",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (17) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 280,
-          "line": 17,
-          "sura": 23,
-          "ayah": 113,
-          "left": 0.8021915985808163,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 285,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:114",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (17) is outside layout bands (1..15)",
-      "details": {
-        "highlight": {
-          "page": 280,
-          "line": 17,
-          "sura": 23,
-          "ayah": 114,
-          "left": 0.03,
-          "right": 0.8021915985808163,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 285,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:113",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (17) is outside layout bands (1..15)",
-      "details": {
-        "marker": {
-          "page": 280,
-          "sura": 23,
-          "ayah": 113,
-          "line": 17,
-          "center_x": 0.8021915985808163,
-          "center_y": 0.42986935157333495
-        }
-      }
-    },
-    {
-      "page": 285,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:114",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (17) is outside layout bands (1..15)",
-      "details": {
-        "marker": {
-          "page": 280,
-          "sura": 23,
-          "ayah": 114,
-          "line": 17,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 287,
-      "severity": "fatal",
-      "category": "structural",
-      "line": null,
-      "suraAyah": null,
-      "code": "PAGE_FIELD_MISMATCH",
-      "message": "Page field mismatch: data page is 280, layout page is 280, but file is page_287.json (Suppressed 11 derived highlights/markers errors due to page mismatch)",
-      "details": {
-        "dataPage": 280,
-        "layoutPage": 280,
-        "file": "page_287.json",
-        "suppressedDerivedCount": 11
-      }
-    },
-    {
-      "page": 287,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:113",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (17) is outside layout bands (1..16)",
-      "details": {
-        "highlight": {
-          "page": 280,
-          "line": 17,
-          "sura": 23,
-          "ayah": 113,
-          "left": 0.8021915985808163,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 287,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:114",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (17) is outside layout bands (1..16)",
-      "details": {
-        "highlight": {
-          "page": 280,
-          "line": 17,
-          "sura": 23,
-          "ayah": 114,
-          "left": 0.03,
-          "right": 0.8021915985808163,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 287,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:113",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (17) is outside layout bands (1..16)",
-      "details": {
-        "marker": {
-          "page": 280,
-          "sura": 23,
-          "ayah": 113,
-          "line": 17,
-          "center_x": 0.8021915985808163,
-          "center_y": 0.42986935157333495
-        }
-      }
-    },
-    {
-      "page": 287,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:114",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (17) is outside layout bands (1..16)",
-      "details": {
-        "marker": {
-          "page": 280,
-          "sura": 23,
-          "ayah": 114,
-          "line": 17,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 289,
-      "severity": "fatal",
-      "category": "structural",
-      "line": null,
-      "suraAyah": null,
-      "code": "PAGE_FIELD_MISMATCH",
-      "message": "Page field mismatch: data page is 280, layout page is 280, but file is page_289.json (Suppressed 15 derived highlights/markers errors due to page mismatch)",
-      "details": {
-        "dataPage": 280,
-        "layoutPage": 280,
-        "file": "page_289.json",
-        "suppressedDerivedCount": 15
+        "prev": "24:19",
+        "curr": "24:18"
       }
     },
     {
@@ -992,113 +583,22 @@
       }
     },
     {
-      "page": 289,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:113",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (17) is outside layout bands (1..16)",
-      "details": {
-        "highlight": {
-          "page": 280,
-          "line": 17,
-          "sura": 23,
-          "ayah": 113,
-          "left": 0.8021915985808163,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 289,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:114",
-      "code": "HIGHLIGHT_LINE_OUT_OF_RANGE",
-      "message": "Highlight line (17) is outside layout bands (1..16)",
-      "details": {
-        "highlight": {
-          "page": 280,
-          "line": 17,
-          "sura": 23,
-          "ayah": 114,
-          "left": 0.03,
-          "right": 0.8021915985808163,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 289,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:113",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (17) is outside layout bands (1..16)",
-      "details": {
-        "marker": {
-          "page": 280,
-          "sura": 23,
-          "ayah": 113,
-          "line": 17,
-          "center_x": 0.8021915985808163,
-          "center_y": 0.42986935157333495
-        }
-      }
-    },
-    {
-      "page": 289,
-      "severity": "fatal",
-      "category": "structural",
-      "line": 17,
-      "suraAyah": "23:114",
-      "code": "MARKER_LINE_OUT_OF_RANGE",
-      "message": "Marker line (17) is outside layout bands (1..16)",
-      "details": {
-        "marker": {
-          "page": 280,
-          "sura": 23,
-          "ayah": 114,
-          "line": 17,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "fatal",
-      "category": "structural",
-      "line": null,
-      "suraAyah": null,
-      "code": "PAGE_FIELD_MISMATCH",
-      "message": "Page field mismatch: data page is 280, layout page is 280, but file is page_291.json (Suppressed 14 derived highlights/markers errors due to page mismatch)",
-      "details": {
-        "dataPage": 280,
-        "layoutPage": 280,
-        "file": "page_291.json",
-        "suppressedDerivedCount": 14
-      }
-    },
-    {
       "page": 299,
       "severity": "fatal",
-      "category": "structural",
-      "line": null,
-      "suraAyah": null,
-      "code": "PAGE_FIELD_MISMATCH",
-      "message": "Page field mismatch: data page is 280, layout page is 280, but file is page_299.json (Suppressed 35 derived highlights/markers errors due to page mismatch)",
+      "category": "geometry",
+      "line": 10,
+      "suraAyah": "26:130",
+      "code": "MARKER_NO_HIGHLIGHT",
+      "message": "Marker exists for 26:130 but no highlight found on page",
       "details": {
-        "dataPage": 280,
-        "layoutPage": 280,
-        "file": "page_299.json",
-        "suppressedDerivedCount": 35
+        "marker": {
+          "page": 299,
+          "sura": 26,
+          "ayah": 130,
+          "line": 10,
+          "center_x": 0.19082345146567603,
+          "center_y": 0.5350639306289685
+        }
       }
     },
     {
@@ -2789,21 +2289,6 @@
     {
       "page": 438,
       "severity": "fatal",
-      "category": "structural",
-      "line": null,
-      "suraAyah": null,
-      "code": "PAGE_FIELD_MISMATCH",
-      "message": "Page field mismatch: data page is 393, layout page is 393, but file is page_438.json (Suppressed 10 derived highlights/markers errors due to page mismatch)",
-      "details": {
-        "dataPage": 393,
-        "layoutPage": 393,
-        "file": "page_438.json",
-        "suppressedDerivedCount": 10
-      }
-    },
-    {
-      "page": 438,
-      "severity": "fatal",
       "category": "layout",
       "line": 8,
       "suraAyah": null,
@@ -4205,105 +3690,19 @@
     {
       "page": 282,
       "severity": "warning",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "23:11",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.513) but no marker circle found on page",
+      "category": "ordering",
+      "line": 15,
+      "suraAyah": "24:18",
+      "code": "DUPLICATE_MARKER_AYAH",
+      "message": "Multiple markers (2 times) found on page for same ayah 24:18",
       "details": {
-        "lastHighlight": {
+        "marker": {
           "page": 282,
-          "line": 3,
-          "sura": 23,
-          "ayah": 11,
-          "left": 0.5125745383551679,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 282,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 6,
-      "suraAyah": "23:13",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.567) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 282,
-          "line": 6,
-          "sura": 23,
-          "ayah": 13,
-          "left": 0.5667011808026624,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 282,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "23:15",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.928) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 282,
-          "line": 11,
-          "sura": 23,
-          "ayah": 15,
-          "left": 0.9275440184541881,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 282,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "23:16",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.922) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 282,
-          "line": 11,
-          "sura": 23,
-          "ayah": 16,
-          "left": 0.9215440184541881,
-          "right": 0.9275440184541881,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 282,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "23:19",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.182) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 282,
-          "line": 14,
-          "sura": 23,
-          "ayah": 19,
-          "left": 0.18180189702649763,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
+          "sura": 24,
+          "ayah": 18,
+          "line": 15,
+          "center_x": 0.0720455359148971,
+          "center_y": 0.5210972761700202
         }
       }
     },
@@ -4321,132 +3720,6 @@
       }
     },
     {
-      "page": 285,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 5,
-      "suraAyah": "23:35",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.854) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 285,
-          "line": 5,
-          "sura": 23,
-          "ayah": 35,
-          "left": 0.8543883163922115,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 285,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 6,
-      "suraAyah": "23:36",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.693) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 285,
-          "line": 6,
-          "sura": 23,
-          "ayah": 36,
-          "left": 0.6934908861752412,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 285,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "23:38",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.825) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 285,
-          "line": 9,
-          "sura": 23,
-          "ayah": 38,
-          "left": 0.8249239972915126,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 285,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "23:39",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.706) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 285,
-          "line": 11,
-          "sura": 23,
-          "ayah": 39,
-          "left": 0.706061,
-          "right": 0.970000463620109,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 285,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "23:40",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.372) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 285,
-          "line": 13,
-          "sura": 23,
-          "ayah": 40,
-          "left": 0.3724132760422062,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 285,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "23:41",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.710) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 285,
-          "line": 15,
-          "sura": 23,
-          "ayah": 41,
-          "left": 0.7101454201307354,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
       "page": 287,
       "severity": "warning",
       "category": "layout",
@@ -4460,132 +3733,6 @@
       }
     },
     {
-      "page": 287,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 2,
-      "suraAyah": "23:53",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.471) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 287,
-          "line": 2,
-          "sura": 23,
-          "ayah": 53,
-          "left": 0.4713544714388759,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 287,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 4,
-      "suraAyah": "23:54",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.521) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 287,
-          "line": 4,
-          "sura": 23,
-          "ayah": 54,
-          "left": 0.5209703710794426,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 287,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 8,
-      "suraAyah": "23:55",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.728) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 287,
-          "line": 8,
-          "sura": 23,
-          "ayah": 55,
-          "left": 0.7284550423036303,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 287,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "23:56",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.679) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 287,
-          "line": 9,
-          "sura": 23,
-          "ayah": 56,
-          "left": 0.6788391426630637,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 287,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 10,
-      "suraAyah": "23:57",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.521) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 287,
-          "line": 10,
-          "sura": 23,
-          "ayah": 57,
-          "left": 0.5209703710794426,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 287,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "23:58",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.925) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 287,
-          "line": 15,
-          "sura": 23,
-          "ayah": 58,
-          "left": 0.9254152205226732,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
       "page": 289,
       "severity": "warning",
       "category": "layout",
@@ -4596,1014 +3743,6 @@
       "details": {
         "detected": 17,
         "bands": 16
-      }
-    },
-    {
-      "page": 289,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "24:63",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.627) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 289,
-          "line": 3,
-          "sura": 24,
-          "ayah": 63,
-          "left": 0.6271947040010284,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 289,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 5,
-      "suraAyah": "25:1",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.178) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 289,
-          "line": 5,
-          "sura": 25,
-          "ayah": 1,
-          "left": 0.17764456007351412,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 289,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 7,
-      "suraAyah": "25:2",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.543) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 289,
-          "line": 7,
-          "sura": 25,
-          "ayah": 2,
-          "left": 0.5429980028813229,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 289,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "25:3",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.620) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 289,
-          "line": 9,
-          "sura": 25,
-          "ayah": 3,
-          "left": 0.6196771205076532,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 289,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 10,
-      "suraAyah": "25:4",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.272) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 289,
-          "line": 10,
-          "sura": 25,
-          "ayah": 4,
-          "left": 0.2723658230236868,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 289,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "25:5",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.101) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 289,
-          "line": 11,
-          "sura": 25,
-          "ayah": 5,
-          "left": 0.10096544244718386,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 289,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "25:6",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.935) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 289,
-          "line": 13,
-          "sura": 25,
-          "ayah": 6,
-          "left": 0.9354146636748955,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 289,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "25:7",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.516) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 289,
-          "line": 14,
-          "sura": 25,
-          "ayah": 7,
-          "left": 0.5159347848955593,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "25:21",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.923) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 3,
-          "sura": 25,
-          "ayah": 21,
-          "left": 0.9230336197738724,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 4,
-      "suraAyah": "25:22",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.719) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 4,
-          "sura": 25,
-          "ayah": 22,
-          "left": 0.7185560645374216,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 5,
-      "suraAyah": "25:23",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.717) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 5,
-          "sura": 25,
-          "ayah": 23,
-          "left": 0.7170525065435531,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 6,
-      "suraAyah": "25:24",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.687) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 6,
-          "sura": 25,
-          "ayah": 24,
-          "left": 0.6869821725700526,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 7,
-      "suraAyah": "25:25",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.816) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 7,
-          "sura": 25,
-          "ayah": 25,
-          "left": 0.8162841681740416,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 8,
-      "suraAyah": "25:26",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.670) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 8,
-          "sura": 25,
-          "ayah": 26,
-          "left": 0.6704434475894339,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "25:27",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.397) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 9,
-          "sura": 25,
-          "ayah": 27,
-          "left": 0.3968042893947055,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 10,
-      "suraAyah": "25:28",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.723) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 10,
-          "sura": 25,
-          "ayah": 28,
-          "left": 0.7230663255670926,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "25:29",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.499) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 11,
-          "sura": 25,
-          "ayah": 29,
-          "left": 0.49904306701293094,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 12,
-      "suraAyah": "25:30",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.436) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 12,
-          "sura": 25,
-          "ayah": 30,
-          "left": 0.43589555837948246,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "25:31",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.152) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 13,
-          "sura": 25,
-          "ayah": 31,
-          "left": 0.151731700703642,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "25:32",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.538) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 15,
-          "sura": 25,
-          "ayah": 32,
-          "left": 0.5381342671723854,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 291,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 16,
-      "suraAyah": "25:33",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.589) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 291,
-          "line": 16,
-          "sura": 25,
-          "ayah": 33,
-          "left": 0.5892537248068206,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 1,
-      "suraAyah": "26:111",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.475) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 1,
-          "sura": 26,
-          "ayah": 111,
-          "left": 0.474987,
-          "right": 0.9700000349850957,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 2,
-      "suraAyah": "26:112",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.935) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 2,
-          "sura": 26,
-          "ayah": 112,
-          "left": 0.9350616707728858,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 2,
-      "suraAyah": "26:113",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.416) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 2,
-          "sura": 26,
-          "ayah": 113,
-          "left": 0.4163501303630614,
-          "right": 0.9350616707728858,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "26:115",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.716) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 3,
-          "sura": 26,
-          "ayah": 115,
-          "left": 0.7155490862003298,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 4,
-      "suraAyah": "26:117",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.645) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 4,
-          "sura": 26,
-          "ayah": 117,
-          "left": 0.6448840628988285,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 5,
-      "suraAyah": "26:118",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.827) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 5,
-          "sura": 26,
-          "ayah": 118,
-          "left": 0.8268089364804763,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 5,
-      "suraAyah": "26:119",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.325) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 5,
-          "sura": 26,
-          "ayah": 119,
-          "left": 0.3246358457499809,
-          "right": 0.8268089364804763,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 6,
-      "suraAyah": "26:120",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.935) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 6,
-          "sura": 26,
-          "ayah": 120,
-          "left": 0.9350616707728859,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 6,
-      "suraAyah": "26:121",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.343) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 6,
-          "sura": 26,
-          "ayah": 121,
-          "left": 0.3426781287244682,
-          "right": 0.9350616707728859,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 7,
-      "suraAyah": "26:122",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.825) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 7,
-          "sura": 26,
-          "ayah": 122,
-          "left": 0.825305378486608,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 7,
-      "suraAyah": "26:123",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.526) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 7,
-          "sura": 26,
-          "ayah": 123,
-          "left": 0.5261064226493396,
-          "right": 0.825305378486608,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 8,
-      "suraAyah": "26:125",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.708) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 8,
-          "sura": 26,
-          "ayah": 125,
-          "left": 0.7080315027069547,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 8,
-      "suraAyah": "26:126",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.424) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 8,
-          "sura": 26,
-          "ayah": 126,
-          "left": 0.4238677138564367,
-          "right": 0.7080315027069547,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "26:127",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.607) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 9,
-          "sura": 26,
-          "ayah": 127,
-          "left": 0.6072962830825976,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "26:128",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.198) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 9,
-          "sura": 26,
-          "ayah": 128,
-          "left": 0.19834089730840643,
-          "right": 0.6072962830825976,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 10,
-      "suraAyah": "26:129",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.633) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 10,
-          "sura": 26,
-          "ayah": 129,
-          "left": 0.6328558742491703,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "26:132",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.374) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 11,
-          "sura": 26,
-          "ayah": 132,
-          "left": 0.37425188304119245,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 12,
-      "suraAyah": "26:134",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.728) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 12,
-          "sura": 26,
-          "ayah": 134,
-          "left": 0.7275769995486983,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 12,
-      "suraAyah": "26:135",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.194) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 12,
-          "sura": 26,
-          "ayah": 135,
-          "left": 0.19383015450147856,
-          "right": 0.7275769995486983,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "26:136",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.431) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 13,
-          "sura": 26,
-          "ayah": 136,
-          "left": 0.4313851596991669,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "26:138",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.749) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 14,
-          "sura": 26,
-          "ayah": 138,
-          "left": 0.7486262608602776,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "26:139",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.849) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 15,
-          "sura": 26,
-          "ayah": 139,
-          "left": 0.8493616181352793,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "26:140",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.448) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 15,
-          "sura": 26,
-          "ayah": 140,
-          "left": 0.4479237470291408,
-          "right": 0.8493616181352793,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "26:141",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.102) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 15,
-          "sura": 26,
-          "ayah": 141,
-          "left": 0.10211600753904282,
-          "right": 0.4479237470291408,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 16,
-      "suraAyah": "26:142",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.514) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 16,
-          "sura": 26,
-          "ayah": 142,
-          "left": 0.5140783028250037,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 16,
-      "suraAyah": "26:143",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.195) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 16,
-          "sura": 26,
-          "ayah": 143,
-          "left": 0.19533371249534692,
-          "right": 0.5140783028250037,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 299,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 17,
-      "suraAyah": "26:144",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.819) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 299,
-          "line": 17,
-          "sura": 26,
-          "ayah": 144,
-          "left": 0.8192912841617788,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
       }
     },
     {
@@ -6660,153 +4799,6 @@
       "details": {
         "detected": 15,
         "bands": 18
-      }
-    },
-    {
-      "page": 438,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 2,
-      "suraAyah": "43:2",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.608) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 438,
-          "line": 2,
-          "sura": 43,
-          "ayah": 2,
-          "left": 0.607807115987737,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 438,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "43:3",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.444) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 438,
-          "line": 3,
-          "sura": 43,
-          "ayah": 3,
-          "left": 0.4442974335312566,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 438,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 4,
-      "suraAyah": "43:4",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.393) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 438,
-          "line": 4,
-          "sura": 43,
-          "ayah": 4,
-          "left": 0.39284100359433366,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 438,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 7,
-      "suraAyah": "43:6",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.096) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 438,
-          "line": 7,
-          "sura": 43,
-          "ayah": 6,
-          "left": 0.09598514452216506,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 438,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "43:7",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.809) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 438,
-          "line": 11,
-          "sura": 43,
-          "ayah": 7,
-          "left": 0.809041,
-          "right": 0.9700000891271408,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 438,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "43:8",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.786) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 438,
-          "line": 13,
-          "sura": 43,
-          "ayah": 8,
-          "left": 0.7858766487243639,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 438,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 16,
-      "suraAyah": "43:9",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.731) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 438,
-          "line": 16,
-          "sura": 43,
-          "ayah": 9,
-          "left": 0.7310207896521954,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
       }
     },
     {
@@ -12196,14 +10188,36 @@
     {
       "page": 282,
       "severity": "suspicious",
+      "category": "geometry",
+      "line": 7,
+      "suraAyah": "24:14",
+      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
+      "message": "Marker exists on line 7 for 24:14 but highlight is on different line(s)",
+      "details": {
+        "marker": {
+          "page": 282,
+          "sura": 24,
+          "ayah": 14,
+          "line": 7,
+          "center_x": 0.07054211557167353,
+          "center_y": 0.5689236228949969
+        },
+        "pageHighlightsLines": [
+          6
+        ]
+      }
+    },
+    {
+      "page": 282,
+      "severity": "suspicious",
       "category": "ordering",
       "line": 8,
-      "suraAyah": "23:15",
+      "suraAyah": "24:15",
       "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 23:12 to 23:15",
+      "message": "Ayah forward jump: from 24:12 to 24:15",
       "details": {
-        "prev": "23:12",
-        "curr": "23:15"
+        "prev": "24:12",
+        "curr": "24:15"
       }
     },
     {
@@ -12211,12 +10225,12 @@
       "severity": "suspicious",
       "category": "ordering",
       "line": 11,
-      "suraAyah": "23:17",
+      "suraAyah": "24:17",
       "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 23:15 to 23:17",
+      "message": "Ayah forward jump: from 24:15 to 24:17",
       "details": {
-        "prev": "23:15",
-        "curr": "23:17"
+        "prev": "24:15",
+        "curr": "24:17"
       }
     },
     {
@@ -12224,14 +10238,14 @@
       "severity": "suspicious",
       "category": "geometry",
       "line": 11,
-      "suraAyah": "23:17 -> 23:16",
+      "suraAyah": "24:17 -> 24:16",
       "code": "SAME_LINE_OVERLAP",
       "message": "Horizontal overlap on same line by 0.8975",
       "details": {
         "prev": {
           "page": 282,
           "line": 11,
-          "sura": 23,
+          "sura": 24,
           "ayah": 17,
           "left": 0.03,
           "right": 0.9275440184541881,
@@ -12241,7 +10255,7 @@
         "next": {
           "page": 282,
           "line": 11,
-          "sura": 23,
+          "sura": 24,
           "ayah": 16,
           "left": 0.9215440184541881,
           "right": 0.9275440184541881,
@@ -12255,14 +10269,80 @@
     {
       "page": 282,
       "severity": "suspicious",
+      "category": "geometry",
+      "line": 11,
+      "suraAyah": "24:17",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0766) is misaligned with highlight left (0.0300) by 0.0466",
+      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.07655607224585773,
+        "delta": 0.04655607224585773,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 282,
+          "sura": 24,
+          "ayah": 17,
+          "line": 11,
+          "center_x": 0.07655607224585773,
+          "center_y": 0.5089232768457094
+        },
+        "highlight": {
+          "page": 282,
+          "line": 11,
+          "sura": 24,
+          "ayah": 17,
+          "left": 0.03,
+          "right": 0.9275440184541881,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
+      }
+    },
+    {
+      "page": 282,
+      "severity": "suspicious",
       "category": "ordering",
       "line": 12,
-      "suraAyah": "23:18",
+      "suraAyah": "24:18",
       "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 23:16 to 23:18",
+      "message": "Ayah forward jump: from 24:16 to 24:18",
       "details": {
-        "prev": "23:16",
-        "curr": "23:18"
+        "prev": "24:16",
+        "curr": "24:18"
+      }
+    },
+    {
+      "page": 285,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 15,
+      "suraAyah": "24:42",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0630) is misaligned with highlight left (0.0300) by 0.0330",
+      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.06297837749001456,
+        "delta": 0.03297837749001456,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 285,
+          "sura": 24,
+          "ayah": 42,
+          "line": 15,
+          "center_x": 0.06297837749001456,
+          "center_y": 0.486179341359914
+        },
+        "highlight": {
+          "page": 285,
+          "line": 15,
+          "sura": 24,
+          "ayah": 42,
+          "left": 0.03,
+          "right": 0.7101454201307354,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
       }
     },
     {
@@ -12631,6 +10711,105 @@
     {
       "page": 299,
       "severity": "suspicious",
+      "category": "geometry",
+      "line": 2,
+      "suraAyah": "26:114",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0645) is misaligned with highlight left (0.0300) by 0.0345",
+      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.06452829654813436,
+        "delta": 0.03452829654813436,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 299,
+          "sura": 26,
+          "ayah": 114,
+          "line": 2,
+          "center_x": 0.06452829654813436,
+          "center_y": 0.6311621430063497
+        },
+        "highlight": {
+          "page": 299,
+          "line": 2,
+          "sura": 26,
+          "ayah": 114,
+          "left": 0.03,
+          "right": 0.4163501303630614,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
+      }
+    },
+    {
+      "page": 299,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 3,
+      "suraAyah": "26:116",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0690) is misaligned with highlight left (0.0300) by 0.0390",
+      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.06903883287909496,
+        "delta": 0.03903883287909496,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 299,
+          "sura": 26,
+          "ayah": 116,
+          "line": 3,
+          "center_x": 0.06903883287909496,
+          "center_y": 0.6558818864225826
+        },
+        "highlight": {
+          "page": 299,
+          "line": 3,
+          "sura": 26,
+          "ayah": 116,
+          "left": 0.03,
+          "right": 0.7155490862003298,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
+      }
+    },
+    {
+      "page": 299,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 7,
+      "suraAyah": "26:124",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0630) is misaligned with highlight left (0.0300) by 0.0330",
+      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.06302473855426594,
+        "delta": 0.03302473855426594,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 299,
+          "sura": 26,
+          "ayah": 124,
+          "line": 7,
+          "center_x": 0.06302473855426594,
+          "center_y": 0.6640073861337458
+        },
+        "highlight": {
+          "page": 299,
+          "line": 7,
+          "sura": 26,
+          "ayah": 124,
+          "left": 0.03,
+          "right": 0.5261064226493396,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
+      }
+    },
+    {
+      "page": 299,
+      "severity": "suspicious",
       "category": "ordering",
       "line": 10,
       "suraAyah": "26:131",
@@ -12639,6 +10818,160 @@
       "details": {
         "prev": "26:129",
         "curr": "26:131"
+      }
+    },
+    {
+      "page": 299,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 11,
+      "suraAyah": "26:133",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0645) is misaligned with highlight left (0.0300) by 0.0345",
+      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.06452809007216714,
+        "delta": 0.034528090072167145,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 299,
+          "sura": 26,
+          "ayah": 133,
+          "line": 11,
+          "center_x": 0.06452809007216714,
+          "center_y": 0.6114028970847398
+        },
+        "highlight": {
+          "page": 299,
+          "line": 11,
+          "sura": 26,
+          "ayah": 133,
+          "left": 0.03,
+          "right": 0.37425188304119245,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
+      }
+    },
+    {
+      "page": 299,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 11,
+      "suraAyah": "26:131",
+      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
+      "message": "Marker exists on line 11 for 26:131 but highlight is on different line(s)",
+      "details": {
+        "marker": {
+          "page": 299,
+          "sura": 26,
+          "ayah": 131,
+          "line": 11,
+          "center_x": 0.8147808854814631,
+          "center_y": 0.5425461606060501
+        },
+        "pageHighlightsLines": [
+          10
+        ]
+      }
+    },
+    {
+      "page": 299,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 11,
+      "suraAyah": "26:132",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.8148) is misaligned with next ayah right (0.9700) by 0.1552",
+      "details": {
+        "expectedBoundary": 0.97,
+        "actualBoundary": 0.8147808854814631,
+        "delta": 0.15521911451853687,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 299,
+          "sura": 26,
+          "ayah": 131,
+          "line": 11,
+          "center_x": 0.8147808854814631,
+          "center_y": 0.5425461606060501
+        },
+        "highlight": {
+          "page": 299,
+          "line": 11,
+          "sura": 26,
+          "ayah": 132,
+          "left": 0.37425188304119245,
+          "right": 0.97,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
+      }
+    },
+    {
+      "page": 299,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 13,
+      "suraAyah": "26:137",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0630) is misaligned with highlight left (0.0300) by 0.0330",
+      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.06302466972894352,
+        "delta": 0.03302466972894352,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 299,
+          "sura": 26,
+          "ayah": 137,
+          "line": 13,
+          "center_x": 0.06302466972894352,
+          "center_y": 0.6057494480375547
+        },
+        "highlight": {
+          "page": 299,
+          "line": 13,
+          "sura": 26,
+          "ayah": 137,
+          "left": 0.03,
+          "right": 0.4313851596991669,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
+      }
+    },
+    {
+      "page": 299,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 17,
+      "suraAyah": "26:145",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0720) is misaligned with highlight left (0.0300) by 0.0420",
+      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.07204581121618703,
+        "delta": 0.04204581121618703,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 299,
+          "sura": 26,
+          "ayah": 145,
+          "line": 17,
+          "center_x": 0.07204581121618703,
+          "center_y": 0.49499372291471544
+        },
+        "highlight": {
+          "page": 299,
+          "line": 17,
+          "sura": 26,
+          "ayah": 145,
+          "left": 0.03,
+          "right": 0.8192912841617788,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
       }
     },
     {
