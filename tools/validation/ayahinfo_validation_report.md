@@ -1,6 +1,6 @@
 # Quran Ayahinfo Validation Report (Warsh Muthamman)
 
-**Date:** 2026-06-21T13:24:06.378Z  
+**Date:** 2026-06-21T13:35:46.321Z  
 **Pages Checked:** 485 / 485  
 **Numbering Mode:** `hafs_tolerant`  
 > **Note:** Numbering validation is app-facing Hafs/Kufi tolerant.  
@@ -9,17 +9,17 @@
 | Severity | Count |
 |---|---|
 | <span style="color:red">🔴 Fatal</span> | **0** |
-| <span style="color:orange">🟡 Warning</span> | **7** |
-| <span style="color:blue">🔵 Suspicious</span> | **454** |
-| **Total Issues** | **461** |
+| <span style="color:orange">🟡 Warning</span> | **4** |
+| <span style="color:blue">🔵 Suspicious</span> | **444** |
+| **Total Issues** | **448** |
 
 ### Stats by Category & Severity
 | Category | Fatal | Warning | Suspicious | Total |
 |---|---|---|---|---|
 | `structural` | 0 | 0 | 0 | **0** |
-| `numbering` | 0 | 7 | 0 | **7** |
+| `numbering` | 0 | 4 | 0 | **4** |
 | `layout` | 0 | 0 | 1 | **1** |
-| `geometry` | 0 | 0 | 452 | **452** |
+| `geometry` | 0 | 0 | 442 | **442** |
 | `ordering` | 0 | 0 | 1 | **1** |
 | `other` | 0 | 0 | 0 | **0** |
 
@@ -30,12 +30,10 @@
 ## Stats by Issue Code
 | Code | Category | Severity | Count |
 |---|---|---|---|
-| `HIGHLIGHT_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 6 |
+| `HIGHLIGHT_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 3 |
 | `MARKER_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 1 |
-| `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 427 |
-| `SAME_LINE_OVERLAP` | `geometry` | <span style="color:blue">suspicious</span> | 19 |
-| `MARKER_NOT_ON_HIGHLIGHT_LINE` | `geometry` | <span style="color:blue">suspicious</span> | 4 |
-| `SAME_LINE_GAP` | `geometry` | <span style="color:blue">suspicious</span> | 2 |
+| `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 425 |
+| `SAME_LINE_OVERLAP` | `geometry` | <span style="color:blue">suspicious</span> | 17 |
 | `LAYOUT_VERTICAL_OVERLAP` | `layout` | <span style="color:blue">suspicious</span> | 1 |
 | `HIGHLIGHT_ORDER_JUMP` | `ordering` | <span style="color:blue">suspicious</span> | 1 |
 
@@ -53,11 +51,9 @@
 | Page 477 | 6 |
 | Page 161 | 5 |
 | Page 211 | 5 |
-| Page 214 | 5 |
 | Page 358 | 5 |
 | Page 362 | 5 |
 | Page 398 | 5 |
-| Page 420 | 5 |
 | Page 422 | 5 |
 | Page 428 | 5 |
 | Page 430 | 5 |
@@ -67,13 +63,13 @@
 | Page 469 | 5 |
 | Page 479 | 5 |
 | Page 485 | 5 |
+| Page 1 | 4 |
+| Page 212 | 4 |
 
 ## Major Root Causes (Deduplicated, Excluding Mismatch Geometry)
 | Page | Category | Code | Severity | Ayah | Line | Count | Description |
 |---|---|---|---|---|---|---|---|
 | Page 334 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 32:31 | 14 | 1 | Highlight ayah (31) is out of range for sura (max 30) |
-| Page 353 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 35:46 | 11 | 2 | Highlight ayah (46) is out of range for sura (max 45) |
-| Page 382 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 40:86 | 9 | 1 | Highlight ayah (86) is out of range for sura (max 85) |
 | Page 450 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 66:25 | 13 | 1 | Highlight ayah (25) is out of range for sura (max 12) |
 | Page 483 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 106:5 | 9 | 1 | Highlight ayah (5) is out of range for sura (max 4) |
 | Page 483 | `numbering` | `MARKER_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 106:5 | 9 | 1 | Marker ayah (5) is out of range for sura (max 4) |
@@ -83,20 +79,12 @@
 | Page 68 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 4:29 -> 4:30 | 3 | 6 | Horizontal overlap on same line by 0.1000 |
 | Page 154 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 9:28 -> 9:29 | 4 | 1 | Horizontal overlap on same line by 0.1000 |
 | Page 161 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 9:77 -> 9:78 | 4 | 2 | Horizontal overlap on same line by 0.1000 |
-| Page 210 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 14:50 -> 14:50 | 15 | 1 | Horizontal overlap on same line by 0.1943 |
-| Page 210 | `geometry` | `SAME_LINE_GAP` | <span style="color:blue">suspicious</span> | 14:50 -> 14:51 | 15 | 1 | Horizontal gap on same line by 0.1160 |
 | Page 211 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 15:16 -> 15:17 | 12 | 1 | Horizontal overlap on same line by 0.1000 |
-| Page 214 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 15:82 -> 15:82 | 4 | 1 | Horizontal overlap on same line by 0.1290 |
-| Page 214 | `geometry` | `SAME_LINE_GAP` | <span style="color:blue">suspicious</span> | 15:82 -> 15:83 | 4 | 1 | Horizontal gap on same line by 0.0954 |
 | Page 300 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 26:151 -> 26:151 | 3 | 1 | Horizontal overlap on same line by 0.0786 |
-| Page 353 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 35:45 | 12 | 1 | Marker exists on line 12 for 35:45 but highlight is on different line(s) |
 | Page 354 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 36:9 -> 36:10 | 3 | 1 | Horizontal overlap on same line by 0.1000 |
 | Page 368 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 39:10 | 16 | 1 | Ayah forward jump: from 39:7 to 39:10 |
 | Page 368 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 39:7 -> 39:10 | 16 | 1 | Horizontal overlap on same line by 0.9400 |
-| Page 382 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 40:85 | 9 | 1 | Marker exists on line 9 for 40:85 but highlight is on different line(s) |
 | Page 407 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 47:17 -> 47:18 | 13 | 1 | Horizontal overlap on same line by 0.1000 |
-| Page 416 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 50:14 | 6 | 1 | Marker exists on line 6 for 50:14 but highlight is on different line(s) |
-| Page 420 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 51:59 | 4 | 1 | Marker exists on line 4 for 51:59 but highlight is on different line(s) |
 | Page 483 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 106:3 -> 106:4 | 9 | 1 | Horizontal overlap on same line by 0.1000 |
 
 ## Section 1: Structural Issues
@@ -107,9 +95,6 @@
 | Page | Line | Ayah | Severity | Code | Message |
 |---|---|---|---|---|---|
 | Page 334 | 14 | 32:31 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (31) is out of range for sura (max 30) |
-| Page 353 | 11 | 35:46 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (46) is out of range for sura (max 45) |
-| Page 353 | 12 | 35:46 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (46) is out of range for sura (max 45) |
-| Page 382 | 9 | 40:86 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (86) is out of range for sura (max 85) |
 | Page 450 | 13 | 66:25 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (25) is out of range for sura (max 12) |
 | Page 483 | 9 | 106:5 | <span style="color:orange">warning</span> | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | Highlight ayah (5) is out of range for sura (max 4) |
 | Page 483 | 9 | 106:5 | <span style="color:orange">warning</span> | `MARKER_AYAH_OUT_OF_RANGE` | Marker ayah (5) is out of range for sura (max 4) |
@@ -139,26 +124,16 @@
 | Page 154 | 4 | 9:28 -> 9:29 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
 | Page 161 | 4 | 9:77 -> 9:78 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
 | Page 161 | 5 | 9:78 -> 9:79 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
-| Page 210 | 15 | 14:50 -> 14:50 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1943 |
-| Page 210 | 15 | 14:50 -> 14:51 | <span style="color:blue">suspicious</span> | `SAME_LINE_GAP` | Horizontal gap on same line by 0.1160 |
 | Page 211 | 12 | 15:16 -> 15:17 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
-| Page 214 | 4 | 15:82 -> 15:82 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1290 |
-| Page 214 | 4 | 15:82 -> 15:83 | <span style="color:blue">suspicious</span> | `SAME_LINE_GAP` | Horizontal gap on same line by 0.0954 |
 | Page 300 | 3 | 26:151 -> 26:151 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.0786 |
-| Page 353 | 12 | 35:45 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 12 for 35:45 but highlight is on different line(s) |
 | Page 354 | 3 | 36:9 -> 36:10 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
 | Page 368 | 16 | 39:7 -> 39:10 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.9400 |
-| Page 382 | 9 | 40:85 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 9 for 40:85 but highlight is on different line(s) |
 | Page 407 | 13 | 47:17 -> 47:18 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
-| Page 416 | 6 | 50:14 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 50:14 but highlight is on different line(s) |
-| Page 420 | 4 | 51:59 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 4 for 51:59 but highlight is on different line(s) |
 | Page 483 | 9 | 106:3 -> 106:4 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
 
 ### Marker Boundary Diagnostics (Top 50 Worst Mismatches by Delta)
 | Page | Line | Ayah | Severity | Expected Boundary | Actual Marker X | Delta | Tolerance |
 |---|---|---|---|---|---|---|---|
-| Page 416 | 6 | 50:15 | <span style="color:blue">suspicious</span> | 0.9301 | 0.0705 | **0.8596** | 0.0250 |
-| Page 420 | 4 | 51:60 | <span style="color:blue">suspicious</span> | 0.9304 | 0.0782 | **0.8522** | 0.0250 |
 | Page 32 | 3 | 2:235 | <span style="color:blue">suspicious</span> | 0.0300 | 0.8295 | **0.7995** | 0.0250 |
 | Page 1 | 7 | 1:7 | <span style="color:blue">suspicious</span> | 0.0300 | 0.2592 | **0.2292** | 0.0250 |
 | Page 68 | 3 | 4:29 | <span style="color:blue">suspicious</span> | 0.3966 | 0.5235 | **0.1269** | 0.0250 |
@@ -207,3 +182,5 @@
 | Page 483 | 7 | 105:5 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0879 | **0.0579** | 0.0250 |
 | Page 308 | 6 | 27:70 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0872 | **0.0572** | 0.0250 |
 | Page 172 | 17 | 10:48 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0872 | **0.0572** | 0.0250 |
+| Page 214 | 11 | 15:90 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0868 | **0.0568** | 0.0250 |
+| Page 68 | 8 | 4:33 | <span style="color:blue">suspicious</span> | 0.2526 | 0.1961 | **0.0565** | 0.0250 |
