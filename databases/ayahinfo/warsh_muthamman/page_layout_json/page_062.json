@@ -12,57 +12,57 @@
   "lineBands": [
     {
       "line": 1,
-      "top": 37,
-      "bottom": 151,
+      "top": 58,
+      "bottom": 172,
       "center": 94
     },
     {
       "line": 2,
-      "top": 151,
-      "bottom": 261,
-      "center": 206
+      "top": 172,
+      "bottom": 282,
+      "center": 227
     },
     {
       "line": 3,
-      "top": 261,
-      "bottom": 360,
-      "center": 311
+      "top": 282,
+      "bottom": 381,
+      "center": 332
     },
     {
       "line": 4,
-      "top": 360,
-      "bottom": 467,
-      "center": 414
+      "top": 381,
+      "bottom": 488,
+      "center": 435
     },
     {
       "line": 5,
-      "top": 467,
-      "bottom": 559,
-      "center": 513
+      "top": 488,
+      "bottom": 580,
+      "center": 534
     },
     {
       "line": 6,
-      "top": 559,
-      "bottom": 656,
-      "center": 608
+      "top": 580,
+      "bottom": 677,
+      "center": 629
     },
     {
       "line": 7,
-      "top": 656,
-      "bottom": 761,
-      "center": 709
+      "top": 677,
+      "bottom": 782,
+      "center": 730
     },
     {
       "line": 8,
-      "top": 959,
-      "bottom": 1070,
-      "center": 1015
+      "top": 980,
+      "bottom": 1091,
+      "center": 1036
     },
     {
       "line": 9,
-      "top": 1070,
+      "top": 1091,
       "bottom": 1187,
-      "center": 1129
+      "center": 1150
     },
     {
       "line": 10,
@@ -97,14 +97,14 @@
     {
       "line": 15,
       "top": 1758,
-      "bottom": 1874,
-      "center": 1824
+      "bottom": 1858,
+      "center": 1816
     },
     {
       "line": 16,
-      "top": 1874,
-      "bottom": 2006,
-      "center": 1940
+      "top": 1858,
+      "bottom": 1990,
+      "center": 1924
     }
   ],
   "nonAyahZones": [
