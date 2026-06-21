@@ -73,50 +73,50 @@
     {
       "line": 11,
       "top": 1122,
-      "bottom": 1230,
+      "bottom": 1238,
       "center": 1176
     },
     {
       "line": 12,
-      "top": 1230,
-      "bottom": 1340,
-      "center": 1285
+      "top": 1238,
+      "bottom": 1348,
+      "center": 1293
     },
     {
       "line": 13,
-      "top": 1340,
-      "bottom": 1444,
-      "center": 1392
+      "top": 1348,
+      "bottom": 1452,
+      "center": 1400
     },
     {
       "line": 14,
-      "top": 1444,
-      "bottom": 1562,
-      "center": 1503
+      "top": 1452,
+      "bottom": 1570,
+      "center": 1511
     },
     {
       "line": 15,
-      "top": 1562,
-      "bottom": 1658,
-      "center": 1610
+      "top": 1570,
+      "bottom": 1666,
+      "center": 1618
     },
     {
       "line": 16,
-      "top": 1658,
-      "bottom": 1770,
-      "center": 1714
+      "top": 1666,
+      "bottom": 1778,
+      "center": 1722
     },
     {
       "line": 17,
-      "top": 1770,
-      "bottom": 1883,
-      "center": 1827
+      "top": 1778,
+      "bottom": 1891,
+      "center": 1835
     },
     {
       "line": 18,
-      "top": 1883,
-      "bottom": 2007,
-      "center": 1957
+      "top": 1891,
+      "bottom": 2003,
+      "center": 1953
     }
   ],
   "nonAyahZones": [],
