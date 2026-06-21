@@ -55,6 +55,32 @@ const server = http.createServer((req, res) => {
         });
         return;
     }
+    if (req.url === '/api/validate-page' && req.method === 'POST') {
+        let body = '';
+        req.on('data', chunk => { body += chunk.toString(); });
+        req.on('end', () => {
+            try {
+                const data = JSON.parse(body);
+                const { pageData, layoutData, pageNumber, numberingMode } = data;
+                
+                const validator = require('../tools/validation/ayahinfo_validator_core');
+                const result = validator.validatePage({
+                    pageData,
+                    layoutData,
+                    pageNumber: parseInt(pageNumber),
+                    numberingMode: numberingMode || 'hafs_tolerant'
+                });
+                
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify(result));
+            } catch (err) {
+                console.error("Validation error:", err);
+                res.writeHead(500);
+                res.end(JSON.stringify({ error: err.message }));
+            }
+        });
+        return;
+    }
     if (req.url === '/api/open-in-gimp' && req.method === 'POST') {
         let body = '';
         req.on('data', chunk => { body += chunk.toString(); });

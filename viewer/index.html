@@ -14,34 +14,41 @@
         <!-- Integrated Page Navigator & Actions -->
         <!-- Integrated Page Navigator & Actions -->
         <div class="integrated-navigator-row">
-            <button id="prev-page-btn" class="icon-btn" title="الصفحة السابقة (سهم يمين)">
-                <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
-            </button>
-            <div class="page-selector">
-                <span>ص</span>
-                <input type="number" id="jump-input" min="1" max="485" value="1">
+            <div class="nav-line-1">
+                <button id="prev-page-btn" class="icon-btn" title="الصفحة السابقة (سهم يمين)">
+                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+                </button>
+                <div class="page-selector">
+                    <span>ص</span>
+                    <input type="number" id="jump-input" min="1" max="485" value="1">
+                </div>
+                <button id="next-page-btn" class="icon-btn" title="الصفحة التالية (سهم يسار)">
+                    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                </button>
+                
+                <div class="nav-divider"></div>
+                
+                <button id="toggle-overlay-btn" class="icon-btn" title="تفعيل/تعطيل التظليل">
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                </button>
+                <button id="refresh-btn" class="icon-btn" title="تحديث الصورة">
+                    <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+                </button>
             </div>
-            <button id="next-page-btn" class="icon-btn" title="الصفحة التالية (سهم يسار)">
-                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-            </button>
-            
-            <div class="nav-divider"></div>
-            
-            <button id="toggle-overlay-btn" class="icon-btn" title="تفعيل/تعطيل التظليل">
-                <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-            </button>
-            <button id="refresh-btn" class="icon-btn" title="تحديث الصورة">
-                <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
-            </button>
-            <button id="help-btn" class="icon-btn" title="مساعدة واختصارات">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
-            </button>
-            <button id="progress-btn" class="icon-btn" title="تتبع الإنجاز">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </button>
-            <button id="theme-toggle-btn" class="icon-btn" title="تغيير المظهر (تلقائي/داكن/فاتح)">
-                <!-- سيتم إدراجه ديناميكياً -->
-            </button>
+            <div class="nav-line-2">
+                <button id="help-btn" class="icon-btn" title="مساعدة واختصارات">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                </button>
+                <button id="progress-btn" class="icon-btn" title="تتبع الإنجاز">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </button>
+                <button id="validation-status-btn" class="icon-btn status-green" title="رادار جودة الصفحة">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM12 7c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1V8c0-.55.45-1 1-1zm1 8h-2v2h2v-2z"/></svg>
+                </button>
+                <button id="theme-toggle-btn" class="icon-btn" title="تغيير المظهر (تلقائي/داكن/فاتح)">
+                    <!-- سيتم إدراجه ديناميكياً -->
+                </button>
+            </div>
         </div>
 
         <div class="divider"></div>
@@ -782,6 +789,26 @@
                 <button id="sync-modal-start" class="btn btn-save" style="background: #4CAF50;">بدأ</button>
                 <button id="sync-modal-cancel" class="btn btn-danger" style="background: #f44336; border-color: #d32f2f;">إلغاء</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Validation Panel -->
+    <div id="validation-panel">
+        <div class="validation-header">
+            <h4>📊 رادار جودة الصفحة</h4>
+            <button id="close-validation-panel-btn" class="icon-btn" title="إغلاق اللوحة" style="color: var(--text-secondary);">
+                <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </div>
+        <div class="validation-tabs">
+            <div class="validation-tab active" data-tab="all">الكل <span class="count" id="val-count-all">0</span></div>
+            <div class="validation-tab" data-tab="fatal" style="color: #f44336;">حرجة <span class="count" id="val-count-fatal">0</span></div>
+            <div class="validation-tab" data-tab="warning" style="color: #FF9800;">تحذير <span class="count" id="val-count-warning">0</span></div>
+            <div class="validation-tab" data-tab="suspicious" style="color: #2196F3;">مريب <span class="count" id="val-count-suspicious">0</span></div>
+            <div class="validation-tab" data-tab="diagnostic" style="color: #9e9e9e;">تشخيص <span class="count" id="val-count-diagnostic">0</span></div>
+        </div>
+        <div class="validation-list" id="validation-issues-list">
+            <!-- سيتم توليد المشاكل ديناميكياً -->
         </div>
     </div>
 

@@ -509,6 +509,37 @@ async function loadOverlayData(page) {
     }
 }
 
+/**
+ * Maps validation issues/diagnostics to UI element identifiers.
+ * 
+ * - issue.target.kind === "highlight" matches highlightIndex
+ * - issue.target.kind === "marker" matches markerIndex
+ * - issue.target.kind === "line" matches line
+ * - issue.target.kind === "page" is shown in the panel only (matches nothing visually on canvas)
+ */
+function doesIssueMatchTarget(issue, kind, identifier) {
+    if (!issue || !issue.target) return false;
+    
+    if (issue.target.kind === 'highlight' && kind === 'highlight') {
+        return issue.target.highlightIndex === identifier;
+    }
+    
+    if (issue.target.kind === 'marker' && kind === 'marker') {
+        return issue.target.markerIndex === identifier;
+    }
+    
+    if (issue.target.kind === 'line' && kind === 'line') {
+        return issue.target.line === identifier;
+    }
+    
+    // Support SAME_LINE_GAP and SAME_LINE_OVERLAP highlightIndex mapping
+    if (issue.target.kind === 'line' && kind === 'highlight') {
+        return issue.target.prevHighlightIndex === identifier || issue.target.nextHighlightIndex === identifier;
+    }
+    
+    return false;
+}
+
 function renderBoxes() {
     DOM.overlay.innerHTML = '';
     if (!currentLayoutData || !currentAyahData) return;
@@ -535,6 +566,25 @@ function renderBoxes() {
                 top: top / imgHeight * 100,
                 height: (bottom - top) / imgHeight * 100
             };
+
+            // Check if this line has a layout error
+            if (typeof currentValidationIssues !== 'undefined' && currentValidationIssues.length > 0) {
+                const lineIssues = currentValidationIssues.filter(x => 
+                    doesIssueMatchTarget(x, 'line', b.line)
+                );
+                if (lineIssues.length > 0) {
+                    let maxSev = 'suspicious';
+                    if (lineIssues.some(x => x.severity === 'fatal')) maxSev = 'fatal';
+                    else if (lineIssues.some(x => x.severity === 'warning')) maxSev = 'warning';
+
+                    const bandDiv = document.createElement('div');
+                    bandDiv.className = `layout-error-band validation-${maxSev}`;
+                    bandDiv.style.top = (top / imgHeight * 100) + '%';
+                    bandDiv.style.height = ((bottom - top) / imgHeight * 100) + '%';
+                    bandDiv.title = lineIssues.map(x => x.message).join('\n');
+                    DOM.overlay.appendChild(bandDiv);
+                }
+            }
         });
     }
 
@@ -548,6 +598,20 @@ function renderBoxes() {
             if (band) {
                 const div = document.createElement('div');
                 div.className = 'highlight-box';
+                div.setAttribute('data-highlight-index', index);
+
+                // Check for validation issues on this highlight
+                if (typeof currentValidationIssues !== 'undefined' && currentValidationIssues.length > 0) {
+                    const highlightIssues = currentValidationIssues.filter(x => 
+                        doesIssueMatchTarget(x, 'highlight', index)
+                    );
+                    if (highlightIssues.length > 0) {
+                        let maxSev = 'suspicious';
+                        if (highlightIssues.some(x => x.severity === 'fatal')) maxSev = 'fatal';
+                        else if (highlightIssues.some(x => x.severity === 'warning')) maxSev = 'warning';
+                        div.classList.add(`validation-${maxSev}`);
+                    }
+                }
                 const actualLeft = Math.max(0, h.left - padLeft);
                 const actualRight = Math.min(1, h.right + padRight);
 
@@ -775,6 +839,20 @@ function renderBoxes() {
             if (band) {
                 const div = document.createElement('div');
                 div.className = 'marker-box';
+                div.setAttribute('data-marker-index', index);
+
+                // Check for validation issues on this marker
+                if (typeof currentValidationIssues !== 'undefined' && currentValidationIssues.length > 0) {
+                    const markerIssues = currentValidationIssues.filter(x => 
+                        doesIssueMatchTarget(x, 'marker', index)
+                    );
+                    if (markerIssues.length > 0) {
+                        let maxSev = 'suspicious';
+                        if (markerIssues.some(x => x.severity === 'fatal')) maxSev = 'fatal';
+                        else if (markerIssues.some(x => x.severity === 'warning')) maxSev = 'warning';
+                        div.classList.add(`validation-${maxSev}`);
+                    }
+                }
                 const cx = m.center_x * 100;
                 const cy = band.top + ((m.center_y || 0.5) * band.height);
 
@@ -1064,6 +1142,9 @@ document.addEventListener('pointerup', () => {
         }
         dragMode = 'move';
         endHistoryTransaction();
+        
+        // Trigger validation on drag end (live edit)
+        setTimeout(validateCurrentPage, 50);
     }
 });
 
@@ -3100,7 +3181,6 @@ document.getElementById('btn-adj-ayah-minus').addEventListener('click', () => ad
 document.getElementById('btn-adj-ayah-plus').addEventListener('click', () => adjustSuraAyahNumbers(1));
 
 // Init
-updatePage(currentPage);
 clearRightPanel();
 
 // ==========================================
@@ -4686,4 +4766,303 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ==========================================================================
+    // Integration of Quality Radar & Validation Panel
+    // ==========================================================================
+    const valBtn = document.getElementById('validation-status-btn');
+    const valPanel = document.getElementById('validation-panel');
+    const closeValPanelBtn = document.getElementById('close-validation-panel-btn');
+
+    if (valBtn && valPanel) {
+        valBtn.addEventListener('click', () => {
+            valPanel.classList.toggle('open');
+            if (valPanel.classList.contains('open')) {
+                validateCurrentPage();
+            }
+        });
+    }
+
+    if (closeValPanelBtn && valPanel) {
+        closeValPanelBtn.addEventListener('click', () => {
+            valPanel.classList.remove('open');
+        });
+    }
+
+    // Tab filtering listeners
+    document.querySelectorAll('.validation-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.validation-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            currentValidationActiveTab = tab.dataset.tab;
+            updateValidationListUI();
+        });
+    });
+
+    // Attach input event listeners for manual input debounce
+    [
+        'hl-left', 'hl-right', 'hl-line-top', 'hl-line-bottom',
+        'mk-cx', 'mk-cy', 'mk-line',
+        'meta-sura', 'meta-ayah', 'meta-line'
+    ].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('input', debouncedValidate);
+        }
+    });
+
+    // Hook validation to page load: intercept loadOverlayData
+    if (typeof loadOverlayData === 'function') {
+        const _origLoadOverlayData = loadOverlayData;
+        loadOverlayData = async function(page) {
+            await _origLoadOverlayData(page);
+            validateCurrentPage();
+        };
+    }
+
+    // Hook validation to saveToServer
+    if (typeof saveToServer === 'function') {
+        const _origSaveToServer = saveToServer;
+        saveToServer = async function(filepath, content, onSuccessCallback) {
+            return _origSaveToServer(filepath, content, () => {
+                validateCurrentPage();
+                if (onSuccessCallback) onSuccessCallback();
+            });
+        };
+    }
+
+    // Call updatePage to load the initial page once all listeners and hooks are registered
+    updatePage(currentPage);
 });
+
+let currentValidationRequestController = null;
+let currentValidationIssues = [];
+let currentValidationDiagnostics = [];
+let currentValidationActiveTab = 'all';
+let validationDebounceTimer = null;
+
+async function validateCurrentPage() {
+    if (!currentAyahData || !currentLayoutData) return;
+
+    const requestPage = currentPage;
+    if (currentValidationRequestController) {
+        currentValidationRequestController.abort();
+    }
+    currentValidationRequestController = new AbortController();
+    const signal = currentValidationRequestController.signal;
+
+    try {
+        const response = await fetch('/api/validate-page', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                pageData: currentAyahData,
+                layoutData: currentLayoutData,
+                pageNumber: currentPage,
+                numberingMode: 'hafs_tolerant'
+            }),
+            signal
+        });
+
+        if (!response.ok) throw new Error('Validation API failed');
+        const result = await response.json();
+
+        if (signal.aborted || currentPage !== requestPage) return;
+
+        currentValidationIssues = result.issues || [];
+        currentValidationDiagnostics = result.diagnostics || [];
+
+        // Redraw boxes to apply overlay classes (validation-fatal, validation-warning, etc.)
+        // This is safe because renderBoxes preserves selectedItem state
+        renderBoxes();
+        
+        // Update UI panels
+        updateValidationStatusUI();
+        updateValidationListUI();
+
+    } catch (err) {
+        if (err.name === 'AbortError') return;
+        console.error("Validation error:", err);
+    }
+}
+
+function debouncedValidate() {
+    if (validationDebounceTimer) clearTimeout(validationDebounceTimer);
+    validationDebounceTimer = setTimeout(() => {
+        validateCurrentPage();
+    }, 300);
+}
+
+function updateValidationStatusUI() {
+    const btn = document.getElementById('validation-status-btn');
+    if (!btn) return;
+
+    const fatalCount = currentValidationIssues.filter(x => x.severity === 'fatal').length;
+    const warningCount = currentValidationIssues.filter(x => x.severity === 'warning').length;
+    const suspiciousCount = currentValidationIssues.filter(x => x.severity === 'suspicious').length;
+    const diagnosticCount = currentValidationDiagnostics.length;
+
+    btn.className = 'icon-btn'; // reset class
+    
+    let titleMsg = '';
+    if (fatalCount > 0) {
+        btn.classList.add('status-red');
+        titleMsg = `رادار الجودة: يوجد ${fatalCount} أخطاء حرجة!`;
+    } else if (warningCount > 0) {
+        btn.classList.add('status-yellow');
+        titleMsg = `رادار الجودة: يوجد ${warningCount} تحذيرات.`;
+    } else if (suspiciousCount > 0) {
+        btn.classList.add('status-blue');
+        titleMsg = `رادار الجودة: يوجد ${suspiciousCount} حالات مريبة.`;
+    } else {
+        btn.classList.add('status-green');
+        titleMsg = `رادار الجودة: لا توجد مشاكل.`;
+    }
+
+    if (diagnosticCount > 0) {
+        titleMsg += ` (${diagnosticCount} تشخيصات متوفرة)`;
+    }
+    btn.title = titleMsg;
+}
+
+function updateValidationListUI() {
+    const listEl = document.getElementById('validation-issues-list');
+    if (!listEl) return;
+
+    listEl.innerHTML = '';
+
+    const fatalCount = currentValidationIssues.filter(x => x.severity === 'fatal').length;
+    const warningCount = currentValidationIssues.filter(x => x.severity === 'warning').length;
+    const suspiciousCount = currentValidationIssues.filter(x => x.severity === 'suspicious').length;
+    const diagnosticCount = currentValidationDiagnostics.length;
+
+    // Update tab counters
+    document.getElementById('val-count-all').textContent = fatalCount + warningCount + suspiciousCount;
+    document.getElementById('val-count-fatal').textContent = fatalCount;
+    document.getElementById('val-count-warning').textContent = warningCount;
+    document.getElementById('val-count-suspicious').textContent = suspiciousCount;
+    document.getElementById('val-count-diagnostic').textContent = diagnosticCount;
+
+    // Filter issues based on active tab
+    let itemsToDisplay = [];
+    if (currentValidationActiveTab === 'all') {
+        itemsToDisplay = currentValidationIssues;
+    } else if (currentValidationActiveTab === 'diagnostic') {
+        itemsToDisplay = currentValidationDiagnostics.map(x => ({ ...x, severity: 'diagnostic' }));
+    } else {
+        itemsToDisplay = currentValidationIssues.filter(x => x.severity === currentValidationActiveTab);
+    }
+
+    if (itemsToDisplay.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'validation-empty';
+        empty.textContent = currentValidationActiveTab === 'diagnostic' 
+            ? 'لا توجد تشخيصات حدود للعلامات في هذه الصفحة.'
+            : 'لا توجد مشاكل في هذا التبويب.';
+        listEl.appendChild(empty);
+        return;
+    }
+
+    itemsToDisplay.forEach(item => {
+        const card = document.createElement('div');
+        card.className = `validation-card ${item.severity}`;
+        
+        let targetText = '-';
+        if (item.target) {
+            if (item.target.kind === 'highlight') {
+                targetText = `تظليل [س:${item.target.sura} آ:${item.target.ayah}]`;
+            } else if (item.target.kind === 'marker') {
+                targetText = `علامة [س:${item.target.sura} آ:${item.target.ayah}]`;
+            } else if (item.target.kind === 'line') {
+                targetText = `سطر ${item.target.line}`;
+            } else {
+                targetText = `صفحة`;
+            }
+        }
+
+        const header = document.createElement('div');
+        header.className = 'validation-card-header';
+        
+        const code = document.createElement('span');
+        code.className = 'validation-card-code';
+        code.textContent = item.code;
+
+        const target = document.createElement('span');
+        target.className = 'validation-card-target';
+        target.textContent = targetText;
+
+        header.appendChild(code);
+        header.appendChild(target);
+
+        const msg = document.createElement('div');
+        msg.className = 'validation-card-msg';
+        msg.textContent = item.message;
+
+        card.appendChild(header);
+        card.appendChild(msg);
+
+        if (item.severity === 'diagnostic') {
+            const note = document.createElement('div');
+            note.className = 'validation-card-diagnostic-note';
+            note.textContent = 'للمراجعة البصرية فقط، ليس مدخلاً للإصلاح الآلي';
+            card.appendChild(note);
+        }
+
+        const action = document.createElement('span');
+        action.className = 'validation-card-action';
+        action.textContent = 'وميض مؤقت للعنصر 🎯';
+        card.appendChild(action);
+
+        card.addEventListener('click', (e) => {
+            e.stopPropagation();
+            flashValidationTarget(item);
+        });
+
+        listEl.appendChild(card);
+    });
+}
+
+function flashValidationTarget(item) {
+    if (!item || !item.target) return;
+    const target = item.target;
+
+    let el = null;
+    let color = '#2196F3';
+    if (item.severity === 'fatal') color = '#f44336';
+    else if (item.severity === 'warning') color = '#FF9800';
+
+    if (target.kind === 'highlight' && target.highlightIndex !== undefined) {
+        el = DOM.overlay.querySelector(`[data-highlight-index="${target.highlightIndex}"]`);
+    } else if (target.kind === 'marker' && target.markerIndex !== undefined) {
+        el = DOM.overlay.querySelector(`[data-marker-index="${target.markerIndex}"]`);
+    } else if (target.kind === 'line') {
+        // Flash both prev/next highlights if they exist
+        if (target.prevHighlightIndex !== undefined) {
+            const el1 = DOM.overlay.querySelector(`[data-highlight-index="${target.prevHighlightIndex}"]`);
+            if (el1) {
+                el1.classList.add('selected-error');
+                el1.style.color = color;
+                setTimeout(() => { el1.classList.remove('selected-error'); el1.style.color = ''; }, 3000);
+            }
+        }
+        if (target.nextHighlightIndex !== undefined) {
+            const el2 = DOM.overlay.querySelector(`[data-highlight-index="${target.nextHighlightIndex}"]`);
+            if (el2) {
+                el2.classList.add('selected-error');
+                el2.style.color = color;
+                setTimeout(() => { el2.classList.remove('selected-error'); el2.style.color = ''; }, 3000);
+            }
+        }
+        return;
+    }
+
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('selected-error');
+        el.style.color = color;
+        setTimeout(() => {
+            el.classList.remove('selected-error');
+            el.style.color = '';
+        }, 3000);
+    }
+}

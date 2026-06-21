@@ -382,14 +382,34 @@ body, html {
 
 .integrated-navigator-row {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     background: var(--btn-bg);
-    padding: 4px 6px;
+    padding: 6px;
     border-radius: 8px;
     border: 1px solid var(--btn-border);
     margin-bottom: 2px;
+    gap: 6px;
+}
+
+.nav-line-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
     gap: 4px;
+}
+
+.nav-line-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.light-theme .nav-line-2 {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .page-selector {
@@ -1269,5 +1289,254 @@ body.alt-held #image-wrapper.is-panning {
     transform: scale(1.2);
     box-shadow: 0 0 10px var(--accent-color, #FF9800);
 }
+
+/* ==========================================================================
+   Validation Radar & Issues Panel Styles
+   ========================================================================== */
+
+/* Validation Status Button styling */
+#validation-status-btn {
+    transition: all 0.3s ease;
+    position: relative;
+}
+#validation-status-btn.status-green {
+    color: #4CAF50 !important;
+}
+#validation-status-btn.status-yellow {
+    color: #FF9800 !important;
+    animation: statusPulseYellow 1.5s infinite;
+}
+#validation-status-btn.status-red {
+    color: #f44336 !important;
+    animation: statusPulseRed 1.5s infinite;
+}
+#validation-status-btn.status-blue {
+    color: #2196F3 !important;
+}
+
+@keyframes statusPulseYellow {
+    0% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(255, 152, 0, 0.4)); }
+    50% { transform: scale(1.1); filter: drop-shadow(0 0 5px rgba(255, 152, 0, 0.8)); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(255, 152, 0, 0.4)); }
+}
+@keyframes statusPulseRed {
+    0% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(244, 67, 54, 0.4)); }
+    50% { transform: scale(1.15); filter: drop-shadow(0 0 8px rgba(244, 67, 54, 0.9)); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(244, 67, 54, 0.4)); }
+}
+
+/* Floating Validation Panel */
+#validation-panel {
+    position: fixed;
+    top: 50px;
+    left: 260px;
+    width: 340px;
+    max-height: calc(100vh - 100px);
+    background: var(--bg-sidebar);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    display: none;
+    flex-direction: column;
+    z-index: 300;
+    padding: 12px;
+    box-sizing: border-box;
+}
+#validation-panel.open {
+    display: flex;
+}
+.validation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+}
+.validation-header h4 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+.validation-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+}
+.validation-tab {
+    background: var(--btn-bg);
+    border: 1px solid var(--btn-border);
+    color: var(--text-secondary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease;
+}
+.validation-tab:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+.validation-tab.active {
+    background: var(--icon-color);
+    color: white;
+    border-color: var(--icon-color);
+}
+.validation-tab span.count {
+    background: rgba(0, 0, 0, 0.35);
+    padding: 1px 5px;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: bold;
+}
+.validation-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-right: 2px;
+}
+.validation-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color-soft);
+    border-left: 4px solid var(--text-muted);
+    border-radius: 4px;
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.validation-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--border-color);
+}
+.validation-card.fatal { border-left-color: #f44336; }
+.validation-card.warning { border-left-color: #FF9800; }
+.validation-card.suspicious { border-left-color: #2196F3; }
+.validation-card.diagnostic { border-left-color: #9e9e9e; }
+
+.validation-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+}
+.validation-card-code {
+    font-weight: bold;
+    color: var(--text-primary);
+}
+.validation-card-target {
+    color: var(--text-muted);
+    font-family: monospace;
+}
+.validation-card-msg {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
+}
+.validation-card-diagnostic-note {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 1px;
+}
+.validation-empty {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: 30px 0;
+}
+
+/* Highlights and Markers Validation Overlay Classes */
+.highlight-box.validation-fatal {
+    border: 2px dashed #f44336 !important;
+}
+.highlight-box.validation-warning {
+    border: 2px dashed #FF9800 !important;
+}
+.highlight-box.validation-suspicious {
+    border: 2px dashed #2196F3 !important;
+}
+
+.marker-box.validation-fatal {
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.6) !important;
+    border-color: #f44336 !important;
+}
+.marker-box.validation-warning {
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.6) !important;
+    border-color: #FF9800 !important;
+}
+.marker-box.validation-suspicious {
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.6) !important;
+    border-color: #2196F3 !important;
+}
+
+/* Layout error band styling */
+.layout-error-band {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 5;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(244, 67, 54, 0.05),
+        rgba(244, 67, 54, 0.05) 10px,
+        rgba(244, 67, 54, 0.1) 10px,
+        rgba(244, 67, 54, 0.1) 20px
+    );
+    border-top: 1px dashed rgba(244, 67, 54, 0.3);
+    border-bottom: 1px dashed rgba(244, 67, 54, 0.3);
+}
+.layout-error-band.validation-warning {
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 152, 0, 0.05),
+        rgba(255, 152, 0, 0.05) 10px,
+        rgba(255, 152, 0, 0.1) 10px,
+        rgba(255, 152, 0, 0.1) 20px
+    );
+    border-top: 1px dashed rgba(255, 152, 0, 0.3);
+    border-bottom: 1px dashed rgba(255, 152, 0, 0.3);
+}
+.layout-error-band.validation-suspicious {
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(33, 150, 243, 0.05),
+        rgba(33, 150, 243, 0.05) 10px,
+        rgba(33, 150, 243, 0.1) 10px,
+        rgba(33, 150, 243, 0.1) 20px
+    );
+    border-top: 1px dashed rgba(33, 150, 243, 0.3);
+    border-bottom: 1px dashed rgba(33, 150, 243, 0.3);
+}
+
+/* Pulsing highlight for selected errors */
+.selected-error {
+    animation: errorPulse 1s infinite alternate !important;
+    z-index: 1000 !important;
+}
+@keyframes errorPulse {
+    0% {
+        box-shadow: 0 0 4px currentColor;
+        outline: 3px solid currentColor;
+        outline-offset: 2px;
+    }
+    100% {
+        box-shadow: 0 0 20px currentColor;
+        outline: 4px solid currentColor;
+        outline-offset: 4px;
+    }
+}
+
 
 
