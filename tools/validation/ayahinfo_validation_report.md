@@ -1,6 +1,6 @@
 # Quran Ayahinfo Validation Report (Warsh Muthamman)
 
-**Date:** 2026-06-21T12:27:42.063Z  
+**Date:** 2026-06-21T12:30:26.555Z  
 **Pages Checked:** 485 / 485  
 **Numbering Mode:** `hafs_tolerant`  
 
@@ -8,9 +8,9 @@
 | Severity | Count |
 |---|---|
 | <span style="color:red">🔴 Fatal</span> | **49** |
-| <span style="color:orange">🟡 Warning</span> | **43** |
-| <span style="color:blue">🔵 Suspicious</span> | **469** |
-| **Total Issues** | **561** |
+| <span style="color:orange">🟡 Warning</span> | **40** |
+| <span style="color:blue">🔵 Suspicious</span> | **454** |
+| **Total Issues** | **543** |
 
 ### Stats by Category & Severity
 | Category | Fatal | Warning | Suspicious | Total |
@@ -18,8 +18,8 @@
 | `structural` | 0 | 0 | 0 | **0** |
 | `numbering` | 0 | 7 | 0 | **7** |
 | `layout` | 49 | 33 | 1 | **83** |
-| `geometry` | 0 | 1 | 467 | **468** |
-| `ordering` | 0 | 2 | 1 | **3** |
+| `geometry` | 0 | 0 | 452 | **452** |
+| `ordering` | 0 | 0 | 1 | **1** |
 | `other` | 0 | 0 | 0 | **0** |
 
 ### Fatal Breakdown
@@ -32,12 +32,10 @@
 | `LAYOUT_ORDER_INVALID` | `layout` | <span style="color:red">fatal</span> | 52 |
 | `LINE_COUNT_MISMATCH` | `layout` | <span style="color:orange">warning</span> | 30 |
 | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 6 |
-| `DUPLICATE_MARKER_AYAH` | `ordering` | <span style="color:orange">warning</span> | 2 |
-| `ORPHAN_HIGHLIGHT_NO_MARKER` | `geometry` | <span style="color:orange">warning</span> | 1 |
 | `MARKER_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 1 |
-| `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 434 |
+| `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 427 |
 | `SAME_LINE_OVERLAP` | `geometry` | <span style="color:blue">suspicious</span> | 19 |
-| `MARKER_NOT_ON_HIGHLIGHT_LINE` | `geometry` | <span style="color:blue">suspicious</span> | 12 |
+| `MARKER_NOT_ON_HIGHLIGHT_LINE` | `geometry` | <span style="color:blue">suspicious</span> | 4 |
 | `SAME_LINE_GAP` | `geometry` | <span style="color:blue">suspicious</span> | 2 |
 | `LAYOUT_VERTICAL_OVERLAP` | `layout` | <span style="color:blue">suspicious</span> | 1 |
 | `HIGHLIGHT_ORDER_JUMP` | `ordering` | <span style="color:blue">suspicious</span> | 1 |
@@ -45,7 +43,6 @@
 ## Top 25 Pages with Most Issues
 | Page | Issues Count |
 |---|---|
-| Page 3 | 16 |
 | Page 68 | 16 |
 | Page 483 | 11 |
 | Page 475 | 10 |
@@ -70,6 +67,7 @@
 | Page 353 | 5 |
 | Page 362 | 5 |
 | Page 398 | 5 |
+| Page 424 | 5 |
 
 ## Major Root Causes (Deduplicated, Excluding Mismatch Geometry)
 | Page | Category | Code | Severity | Ayah | Line | Count | Description |
@@ -117,9 +115,6 @@
 | Page 479 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 4 | 2 | Line vertical bounds invalid: center (917) is outside top-bottom (945-1081) by 28px |
 | Page 481 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 11 | 1 | Line vertical bounds invalid: center (1396) is outside top-bottom (1556-1663) by 160px |
 | Page 483 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (341) is outside top-bottom (373-501) by 32px |
-| Page 3 | `ordering` | `DUPLICATE_MARKER_AYAH` | <span style="color:orange">warning</span> | 2:8 | 6 | 1 | Multiple markers (2 times) found on page for same ayah 2:8 |
-| Page 4 | `ordering` | `DUPLICATE_MARKER_AYAH` | <span style="color:orange">warning</span> | 2:18 | 3 | 1 | Multiple markers (2 times) found on page for same ayah 2:18 |
-| Page 4 | `geometry` | `ORPHAN_HIGHLIGHT_NO_MARKER` | <span style="color:orange">warning</span> | 2:17 | 2 | 1 | Highlight ends before left margin (0.143) but no marker circle found on page |
 | Page 27 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (17) does not match lineBands count (18) |
 | Page 62 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (16) |
 | Page 150 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
@@ -160,7 +155,6 @@
 | Page 483 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 106:5 | 9 | 1 | Highlight ayah (5) is out of range for sura (max 4) |
 | Page 483 | `numbering` | `MARKER_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 106:5 | 9 | 1 | Marker ayah (5) is out of range for sura (max 4) |
 | Page 2 | `layout` | `LAYOUT_VERTICAL_OVERLAP` | <span style="color:blue">suspicious</span> | - | 3 | 1 | Minor vertical overlap with previous line band by 5px |
-| Page 3 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 2:8 | 6 | 8 | Marker exists on line 6 for 2:8 but highlight is on different line(s) |
 | Page 34 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 2:251 -> 2:252 | 16 | 1 | Horizontal overlap on same line by 0.1000 |
 | Page 43 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 3:15 -> 3:16 | 3 | 1 | Horizontal overlap on same line by 0.1000 |
 | Page 68 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 4:29 -> 4:30 | 3 | 6 | Horizontal overlap on same line by 0.1000 |
@@ -287,23 +281,12 @@
 ## Section 4: Ordering Issues
 | Page | Line | Ayah | Severity | Code | Message |
 |---|---|---|---|---|---|
-| Page 3 | 6 | 2:8 | <span style="color:orange">warning</span> | `DUPLICATE_MARKER_AYAH` | Multiple markers (2 times) found on page for same ayah 2:8 |
-| Page 4 | 3 | 2:18 | <span style="color:orange">warning</span> | `DUPLICATE_MARKER_AYAH` | Multiple markers (2 times) found on page for same ayah 2:18 |
 | Page 368 | 16 | 39:10 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 39:7 to 39:10 |
 
 ## Section 5: Geometry Issues & Diagnostics
 ### Same-Line Gaps, Overlaps and Bindings (Excluding Boundary Mismatch)
 | Page | Line | Ayah | Severity | Code | Message |
 |---|---|---|---|---|---|
-| Page 4 | 2 | 2:17 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.143) but no marker circle found on page |
-| Page 3 | 6 | 2:8 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 2:8 but highlight is on different line(s) |
-| Page 3 | 7 | 2:9 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 7 for 2:9 but highlight is on different line(s) |
-| Page 3 | 8 | 2:10 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 8 for 2:10 but highlight is on different line(s) |
-| Page 3 | 9 | 2:11 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 9 for 2:11 but highlight is on different line(s) |
-| Page 3 | 11 | 2:12 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 11 for 2:12 but highlight is on different line(s) |
-| Page 3 | 13 | 2:13 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 13 for 2:13 but highlight is on different line(s) |
-| Page 3 | 14 | 2:14 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 14 for 2:14 but highlight is on different line(s) |
-| Page 3 | 15 | 2:15 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 15 for 2:15 but highlight is on different line(s) |
 | Page 34 | 16 | 2:251 -> 2:252 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
 | Page 43 | 3 | 3:15 -> 3:16 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
 | Page 68 | 3 | 4:29 -> 4:30 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
@@ -333,20 +316,12 @@
 ### Marker Boundary Diagnostics (Top 50 Worst Mismatches by Delta)
 | Page | Line | Ayah | Severity | Expected Boundary | Actual Marker X | Delta | Tolerance |
 |---|---|---|---|---|---|---|---|
-| Page 3 | 15 | 2:16 | <span style="color:blue">suspicious</span> | 0.9700 | 0.0971 | **0.8729** | 0.0250 |
 | Page 416 | 6 | 50:15 | <span style="color:blue">suspicious</span> | 0.9301 | 0.0705 | **0.8596** | 0.0250 |
 | Page 420 | 4 | 51:60 | <span style="color:blue">suspicious</span> | 0.9304 | 0.0782 | **0.8522** | 0.0250 |
 | Page 32 | 3 | 2:235 | <span style="color:blue">suspicious</span> | 0.0300 | 0.8295 | **0.7995** | 0.0250 |
-| Page 3 | 9 | 2:12 | <span style="color:blue">suspicious</span> | 0.9700 | 0.2278 | **0.7422** | 0.0250 |
-| Page 3 | 11 | 2:13 | <span style="color:blue">suspicious</span> | 0.9724 | 0.2737 | **0.6987** | 0.0250 |
-| Page 3 | 7 | 2:10 | <span style="color:blue">suspicious</span> | 0.9700 | 0.2978 | **0.6722** | 0.0250 |
-| Page 3 | 13 | 2:14 | <span style="color:blue">suspicious</span> | 0.9700 | 0.4693 | **0.5007** | 0.0250 |
-| Page 3 | 14 | 2:15 | <span style="color:blue">suspicious</span> | 0.9700 | 0.5796 | **0.3904** | 0.0250 |
-| Page 3 | 6 | 2:9 | <span style="color:blue">suspicious</span> | 0.9700 | 0.7018 | **0.2682** | 0.0250 |
 | Page 1 | 7 | 1:7 | <span style="color:blue">suspicious</span> | 0.0300 | 0.2592 | **0.2292** | 0.0250 |
 | Page 68 | 3 | 4:29 | <span style="color:blue">suspicious</span> | 0.3966 | 0.5235 | **0.1269** | 0.0250 |
 | Page 304 | 16 | 27:26 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1539 | **0.1239** | 0.0250 |
-| Page 4 | 2 | 2:18 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1430 | **0.1130** | 0.0250 |
 | Page 268 | 17 | 22:18 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1412 | **0.1112** | 0.0250 |
 | Page 2 | 3 | 2:3 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1309 | **0.1009** | 0.0250 |
 | Page 218 | 17 | 16:50 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1293 | **0.0993** | 0.0250 |
@@ -374,6 +349,7 @@
 | Page 326 | 16 | 30:29 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0990 | **0.0690** | 0.0250 |
 | Page 140 | 15 | 7:187 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0978 | **0.0678** | 0.0250 |
 | Page 337 | 12 | 33:22 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0972 | **0.0672** | 0.0250 |
+| Page 3 | 15 | 2:16 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0971 | **0.0671** | 0.0250 |
 | Page 335 | 16 | 33:7 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0969 | **0.0669** | 0.0250 |
 | Page 214 | 17 | 15:99 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0967 | **0.0667** | 0.0250 |
 | Page 1 | 3 | 1:4 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0965 | **0.0665** | 0.0250 |
@@ -383,3 +359,10 @@
 | Page 239 | 18 | 18:41 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0920 | **0.0620** | 0.0250 |
 | Page 103 | 5 | 5:113 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0917 | **0.0617** | 0.0250 |
 | Page 133 | 1 | 7:117 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0917 | **0.0617** | 0.0250 |
+| Page 290 | 15 | 25:19 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0916 | **0.0616** | 0.0250 |
+| Page 127 | 18 | 7:56 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0908 | **0.0608** | 0.0250 |
+| Page 101 | 5 | 5:99 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0903 | **0.0603** | 0.0250 |
+| Page 277 | 3 | 23:42 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0880 | **0.0580** | 0.0250 |
+| Page 483 | 7 | 105:5 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0879 | **0.0579** | 0.0250 |
+| Page 308 | 6 | 27:70 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0872 | **0.0572** | 0.0250 |
+| Page 172 | 17 | 10:48 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0872 | **0.0572** | 0.0250 |

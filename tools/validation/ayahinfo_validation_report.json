@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "timestamp": "2026-06-21T12:27:42.060Z",
+    "timestamp": "2026-06-21T12:30:26.552Z",
     "pagesChecked": 485,
     "numberingMode": "hafs_tolerant",
     "stats": {
-      "totalIssues": 561,
+      "totalIssues": 543,
       "fatal": 49,
-      "warning": 43,
-      "suspicious": 469,
+      "warning": 40,
+      "suspicious": 454,
       "fatalNoNumbering": 49,
       "fatalNumberingOnly": 0
     },
@@ -29,12 +29,12 @@
       },
       "geometry": {
         "fatal": 0,
-        "warning": 1,
-        "suspicious": 467
+        "warning": 0,
+        "suspicious": 452
       },
       "ordering": {
         "fatal": 0,
-        "warning": 2,
+        "warning": 0,
         "suspicious": 1
       },
       "other": {
@@ -45,23 +45,17 @@
     },
     "statsByCode": {
       "LAYOUT_ORDER_INVALID": 52,
-      "MARKER_BOUNDARY_MISMATCH": 434,
+      "MARKER_BOUNDARY_MISMATCH": 427,
       "LAYOUT_VERTICAL_OVERLAP": 1,
-      "MARKER_NOT_ON_HIGHLIGHT_LINE": 12,
-      "DUPLICATE_MARKER_AYAH": 2,
-      "ORPHAN_HIGHLIGHT_NO_MARKER": 1,
       "LINE_COUNT_MISMATCH": 30,
       "SAME_LINE_OVERLAP": 19,
       "SAME_LINE_GAP": 2,
       "HIGHLIGHT_AYAH_OUT_OF_RANGE": 6,
+      "MARKER_NOT_ON_HIGHLIGHT_LINE": 4,
       "HIGHLIGHT_ORDER_JUMP": 1,
       "MARKER_AYAH_OUT_OF_RANGE": 1
     },
     "topPages": [
-      {
-        "page": 3,
-        "count": 16
-      },
       {
         "page": 68,
         "count": 16
@@ -156,6 +150,10 @@
       },
       {
         "page": 398,
+        "count": 5
+      },
+      {
+        "page": 424,
         "count": 5
       }
     ]
@@ -894,65 +892,6 @@
         "center": 341,
         "bottom": 501,
         "errorAmount": 32
-      }
-    },
-    {
-      "page": 3,
-      "severity": "warning",
-      "category": "ordering",
-      "line": 6,
-      "suraAyah": "2:8",
-      "code": "DUPLICATE_MARKER_AYAH",
-      "message": "Multiple markers (2 times) found on page for same ayah 2:8",
-      "details": {
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 8,
-          "line": 6,
-          "center_x": 0.7017922102800435,
-          "center_y": 0.5
-        }
-      }
-    },
-    {
-      "page": 4,
-      "severity": "warning",
-      "category": "geometry",
-      "line": 2,
-      "suraAyah": "2:17",
-      "code": "ORPHAN_HIGHLIGHT_NO_MARKER",
-      "message": "Highlight ends before left margin (0.143) but no marker circle found on page",
-      "details": {
-        "lastHighlight": {
-          "page": 4,
-          "line": 2,
-          "sura": 2,
-          "ayah": 17,
-          "left": 0.1429999999999999,
-          "right": 0.97,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 4,
-      "severity": "warning",
-      "category": "ordering",
-      "line": 3,
-      "suraAyah": "2:18",
-      "code": "DUPLICATE_MARKER_AYAH",
-      "message": "Multiple markers (2 times) found on page for same ayah 2:18",
-      "details": {
-        "marker": {
-          "page": 4,
-          "sura": 2,
-          "ayah": 18,
-          "line": 3,
-          "center_x": 0.5467757668405409,
-          "center_y": 0.4162260705860322
-        }
       }
     },
     {
@@ -1751,402 +1690,19 @@
       "page": 3,
       "severity": "suspicious",
       "category": "geometry",
-      "line": 6,
-      "suraAyah": "2:8",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 6 for 2:8 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 8,
-          "line": 6,
-          "center_x": 0.7017922102800435,
-          "center_y": 0.5
-        },
-        "pageHighlightsLines": [
-          3,
-          4
-        ]
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 6,
-      "suraAyah": "2:9",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.7018) is misaligned with next ayah right (0.9700) by 0.2682",
-      "details": {
-        "expectedBoundary": 0.9700000000000001,
-        "actualBoundary": 0.7017922102800435,
-        "delta": 0.2682077897199566,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 8,
-          "line": 6,
-          "center_x": 0.7017922102800435,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 3,
-          "line": 6,
-          "sura": 2,
-          "ayah": 9,
-          "left": 0.7017922102800435,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 7,
-      "suraAyah": "2:9",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 7 for 2:9 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 9,
-          "line": 7,
-          "center_x": 0.297762803733913,
-          "center_y": 0.548146498153673
-        },
-        "pageHighlightsLines": [
-          5,
-          6
-        ]
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 7,
-      "suraAyah": "2:10",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.2978) is misaligned with next ayah right (0.9700) by 0.6722",
-      "details": {
-        "expectedBoundary": 0.9700000000000001,
-        "actualBoundary": 0.297762803733913,
-        "delta": 0.6722371962660871,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 9,
-          "line": 7,
-          "center_x": 0.297762803733913,
-          "center_y": 0.548146498153673
-        },
-        "highlight": {
-          "page": 3,
-          "line": 7,
-          "sura": 2,
-          "ayah": 10,
-          "left": 0.297762803733913,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 8,
-      "suraAyah": "2:10",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 8 for 2:10 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 10,
-          "line": 8,
-          "center_x": 0.08842485621225941,
-          "center_y": 0.45472318334956807
-        },
-        "pageHighlightsLines": [
-          6,
-          7
-        ]
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "2:11",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 9 for 2:11 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 11,
-          "line": 9,
-          "center_x": 0.227810028027913,
-          "center_y": 0.5
-        },
-        "pageHighlightsLines": [
-          7,
-          8
-        ]
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "2:12",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.2278) is misaligned with next ayah right (0.9700) by 0.7422",
-      "details": {
-        "expectedBoundary": 0.9700000000000001,
-        "actualBoundary": 0.227810028027913,
-        "delta": 0.742189971972087,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 11,
-          "line": 9,
-          "center_x": 0.227810028027913,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 3,
-          "line": 9,
-          "sura": 2,
-          "ayah": 12,
-          "left": 0.227810028027913,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "2:12",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 11 for 2:12 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 12,
-          "line": 11,
-          "center_x": 0.2736861728937826,
-          "center_y": 0.5722197472305091
-        },
-        "pageHighlightsLines": [
-          9
-        ]
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "2:13",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.2737) is misaligned with next ayah right (0.9724) by 0.6987",
-      "details": {
-        "expectedBoundary": 0.9724359299066522,
-        "actualBoundary": 0.2736861728937826,
-        "delta": 0.6987497570128696,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 12,
-          "line": 11,
-          "center_x": 0.2736861728937826,
-          "center_y": 0.5722197472305091
-        },
-        "highlight": {
-          "page": 3,
-          "line": 11,
-          "sura": 2,
-          "ayah": 13,
-          "left": 0.2761221028004348,
-          "right": 0.9724359299066522,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "2:13",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 13 for 2:13 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 13,
-          "line": 13,
-          "center_x": 0.46934975701286963,
-          "center_y": 0.4751501945013296
-        },
-        "pageHighlightsLines": [
-          9,
-          10,
-          11
-        ]
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "2:14",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.4693) is misaligned with next ayah right (0.9700) by 0.5007",
-      "details": {
-        "expectedBoundary": 0.9700000000000001,
-        "actualBoundary": 0.46934975701286963,
-        "delta": 0.5006502429871305,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 13,
-          "line": 13,
-          "center_x": 0.46934975701286963,
-          "center_y": 0.4751501945013296
-        },
-        "highlight": {
-          "page": 3,
-          "line": 13,
-          "sura": 2,
-          "ayah": 14,
-          "left": 0.46934975701286963,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "2:14",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 14 for 2:14 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 14,
-          "line": 14,
-          "center_x": 0.5795653364527826,
-          "center_y": 0.5244553641415487
-        },
-        "pageHighlightsLines": [
-          11,
-          12,
-          13
-        ]
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 14,
-      "suraAyah": "2:15",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.5796) is misaligned with next ayah right (0.9700) by 0.3904",
-      "details": {
-        "expectedBoundary": 0.9700000000000001,
-        "actualBoundary": 0.5795653364527826,
-        "delta": 0.39043466354721745,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 14,
-          "line": 14,
-          "center_x": 0.5795653364527826,
-          "center_y": 0.5244553641415487
-        },
-        "highlight": {
-          "page": 3,
-          "line": 14,
-          "sura": 2,
-          "ayah": 15,
-          "left": 0.5795653364527826,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "2:15",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 15 for 2:15 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 3,
-          "sura": 2,
-          "ayah": 15,
-          "line": 15,
-          "center_x": 0.09705150934656523,
-          "center_y": 0.5
-        },
-        "pageHighlightsLines": [
-          13,
-          14
-        ]
-      }
-    },
-    {
-      "page": 3,
-      "severity": "suspicious",
-      "category": "geometry",
       "line": 15,
       "suraAyah": "2:16",
       "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.0971) is misaligned with next ayah right (0.9700) by 0.8729",
+      "message": "Marker center (0.0971) is misaligned with highlight left (0.0300) by 0.0671",
       "details": {
-        "expectedBoundary": 0.9700000000000001,
+        "expectedBoundary": 0.03,
         "actualBoundary": 0.09705150934656523,
-        "delta": 0.8729484906534348,
+        "delta": 0.06705150934656523,
         "tolerance": 0.025,
         "marker": {
           "page": 3,
           "sura": 2,
-          "ayah": 15,
+          "ayah": 16,
           "line": 15,
           "center_x": 0.09705150934656523,
           "center_y": 0.5
@@ -2160,39 +1716,6 @@
           "right": 0.9700000000000001,
           "confidence": 0.85,
           "source": "text_proportional"
-        }
-      }
-    },
-    {
-      "page": 4,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 2,
-      "suraAyah": "2:18",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.1430) is misaligned with highlight left (0.0300) by 0.1130",
-      "details": {
-        "expectedBoundary": 0.03,
-        "actualBoundary": 0.1429999999999999,
-        "delta": 0.1129999999999999,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 4,
-          "sura": 2,
-          "ayah": 18,
-          "line": 2,
-          "center_x": 0.1429999999999999,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 4,
-          "line": 2,
-          "sura": 2,
-          "ayah": 18,
-          "left": 0.03,
-          "right": 0.1429999999999999,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
         }
       }
     },
