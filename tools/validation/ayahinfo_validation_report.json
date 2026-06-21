@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "timestamp": "2026-06-21T14:17:41.803Z",
+    "timestamp": "2026-06-21T14:27:05.246Z",
     "pagesChecked": 485,
     "numberingMode": "hafs_tolerant",
     "stats": {
-      "totalIssues": 402,
+      "totalIssues": 401,
       "fatal": 0,
       "warning": 0,
-      "suspicious": 402,
+      "suspicious": 401,
       "fatalNoNumbering": 0,
       "fatalNumberingOnly": 0
     },
@@ -25,7 +25,7 @@
       "layout": {
         "fatal": 0,
         "warning": 0,
-        "suspicious": 1
+        "suspicious": 0
       },
       "geometry": {
         "fatal": 0,
@@ -44,8 +44,7 @@
       }
     },
     "statsByCode": {
-      "MARKER_BOUNDARY_MISMATCH": 401,
-      "LAYOUT_VERTICAL_OVERLAP": 1
+      "MARKER_BOUNDARY_MISMATCH": 401
     },
     "topPages": [
       {
@@ -158,19 +157,19 @@
       "line": 1,
       "suraAyah": "1:1",
       "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.1230) is misaligned with highlight left (0.0300) by 0.0930",
+      "message": "Marker center (0.1095) is misaligned with highlight left (0.0300) by 0.0795",
       "details": {
         "expectedBoundary": 0.03,
-        "actualBoundary": 0.1229816230719448,
-        "delta": 0.0929816230719448,
+        "actualBoundary": 0.10945001407906298,
+        "delta": 0.07945001407906298,
         "tolerance": 0.025,
         "marker": {
           "page": 1,
           "sura": 1,
           "ayah": 1,
           "line": 1,
-          "center_x": 0.1229816230719448,
-          "center_y": 0.4314566682079709
+          "center_x": 0.10945001407906298,
+          "center_y": 0.5050994328570239
         },
         "highlight": {
           "page": 1,
@@ -179,8 +178,8 @@
           "ayah": 1,
           "left": 0.03,
           "right": 0.97,
-          "confidence": 0.85,
-          "source": "text_proportional"
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
         }
       }
     },
@@ -211,7 +210,7 @@
           "sura": 1,
           "ayah": 4,
           "left": 0.03,
-          "right": 0.6512765394891531,
+          "right": 0.6618010324942979,
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
@@ -224,19 +223,19 @@
       "line": 4,
       "suraAyah": "1:5",
       "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.1128) is misaligned with highlight left (0.0300) by 0.0828",
+      "message": "Marker center (0.1038) is misaligned with highlight left (0.0300) by 0.0738",
       "details": {
         "expectedBoundary": 0.03,
-        "actualBoundary": 0.1127744210778166,
-        "delta": 0.0827744210778166,
+        "actualBoundary": 0.1037533484158954,
+        "delta": 0.0737533484158954,
         "tolerance": 0.025,
         "marker": {
           "page": 1,
           "sura": 1,
           "ayah": 5,
           "line": 4,
-          "center_x": 0.1127744210778166,
-          "center_y": 0.49817288674945925
+          "center_x": 0.1037533484158954,
+          "center_y": 0.5428224742051975
         },
         "highlight": {
           "page": 1,
@@ -245,8 +244,8 @@
           "ayah": 5,
           "left": 0.03,
           "right": 0.97,
-          "confidence": 0.85,
-          "source": "text_proportional"
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
         }
       }
     },
@@ -257,44 +256,63 @@
       "line": 7,
       "suraAyah": "1:7",
       "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.2592) is misaligned with highlight left (0.0300) by 0.2292",
+      "message": "Marker center (0.2457) is misaligned with highlight left (0.2051) by 0.0406",
       "details": {
-        "expectedBoundary": 0.03,
-        "actualBoundary": 0.2592190923772423,
-        "delta": 0.22921909237724228,
+        "expectedBoundary": 0.20509265640571506,
+        "actualBoundary": 0.24568748338436047,
+        "delta": 0.040594826978645415,
         "tolerance": 0.025,
         "marker": {
           "page": 1,
           "sura": 1,
           "ayah": 7,
           "line": 7,
-          "center_x": 0.2592190923772423,
-          "center_y": 0.5050884764104748
+          "center_x": 0.24568748338436047,
+          "center_y": 0.49725167975962203
         },
         "highlight": {
           "page": 1,
           "line": 7,
           "sura": 1,
           "ayah": 7,
-          "left": 0.03,
-          "right": 0.97,
-          "confidence": 0.85,
-          "source": "text_proportional_renumbered"
+          "left": 0.20509265640571506,
+          "right": 0.7940890830925365,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
         }
       }
     },
     {
       "page": 2,
       "severity": "suspicious",
-      "category": "layout",
+      "category": "geometry",
       "line": 3,
-      "suraAyah": null,
-      "code": "LAYOUT_VERTICAL_OVERLAP",
-      "message": "Minor vertical overlap with previous line band by 5px",
+      "suraAyah": "2:3",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.1339) is misaligned with highlight left (0.0300) by 0.1039",
       "details": {
-        "prevBottom": 999,
-        "currTop": 994,
-        "overlap": 5
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.13389752502641286,
+        "delta": 0.10389752502641286,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 2,
+          "sura": 2,
+          "ayah": 3,
+          "line": 3,
+          "center_x": 0.13389752502641286,
+          "center_y": 0.424177794134157
+        },
+        "highlight": {
+          "page": 2,
+          "line": 3,
+          "sura": 2,
+          "ayah": 3,
+          "left": 0.03,
+          "right": 0.97,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
       }
     },
     {
@@ -459,39 +477,6 @@
           "right": 0.6943322891181251,
           "confidence": 0.95,
           "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 32,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "2:235",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.8295) is misaligned with highlight left (0.0300) by 0.7995",
-      "details": {
-        "expectedBoundary": 0.03,
-        "actualBoundary": 0.8294691691669701,
-        "delta": 0.7994691691669701,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 32,
-          "sura": 2,
-          "ayah": 235,
-          "line": 3,
-          "center_x": 0.8294691691669701,
-          "center_y": 0.5235408951612053
-        },
-        "highlight": {
-          "page": 32,
-          "line": 3,
-          "sura": 2,
-          "ayah": 235,
-          "left": 0.03,
-          "right": 0.9700000000000001,
-          "confidence": 0.85,
-          "source": "text_proportional_renumbered"
         }
       }
     },
@@ -3274,19 +3259,19 @@
       "line": 17,
       "suraAyah": "22:18",
       "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.1412) is misaligned with highlight left (0.0300) by 0.1112",
+      "message": "Marker center (0.1374) is misaligned with highlight left (0.0300) by 0.1074",
       "details": {
         "expectedBoundary": 0.03,
-        "actualBoundary": 0.14119549342335408,
-        "delta": 0.11119549342335408,
+        "actualBoundary": 0.13743672819758254,
+        "delta": 0.10743672819758254,
         "tolerance": 0.025,
         "marker": {
           "page": 268,
           "sura": 22,
           "ayah": 18,
           "line": 17,
-          "center_x": 0.14119549342335408,
-          "center_y": 0.5154144598404632
+          "center_x": 0.13743672819758254,
+          "center_y": 0.6117551964498041
         },
         "highlight": {
           "page": 268,

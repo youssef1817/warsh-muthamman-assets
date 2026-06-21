@@ -1,6 +1,6 @@
 # Quran Ayahinfo Validation Report (Warsh Muthamman)
 
-**Date:** 2026-06-21T14:17:41.807Z  
+**Date:** 2026-06-21T14:27:05.250Z  
 **Pages Checked:** 485 / 485  
 **Numbering Mode:** `hafs_tolerant`  
 > **Note:** Numbering validation is app-facing Hafs/Kufi tolerant.  
@@ -10,15 +10,15 @@
 |---|---|
 | <span style="color:red">🔴 Fatal</span> | **0** |
 | <span style="color:orange">🟡 Warning</span> | **0** |
-| <span style="color:blue">🔵 Suspicious</span> | **402** |
-| **Total Issues** | **402** |
+| <span style="color:blue">🔵 Suspicious</span> | **401** |
+| **Total Issues** | **401** |
 
 ### Stats by Category & Severity
 | Category | Fatal | Warning | Suspicious | Total |
 |---|---|---|---|---|
 | `structural` | 0 | 0 | 0 | **0** |
 | `numbering` | 0 | 0 | 0 | **0** |
-| `layout` | 0 | 0 | 1 | **1** |
+| `layout` | 0 | 0 | 0 | **0** |
 | `geometry` | 0 | 0 | 401 | **401** |
 | `ordering` | 0 | 0 | 0 | **0** |
 | `other` | 0 | 0 | 0 | **0** |
@@ -31,7 +31,6 @@
 | Code | Category | Severity | Count |
 |---|---|---|---|
 | `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 401 |
-| `LAYOUT_VERTICAL_OVERLAP` | `layout` | <span style="color:blue">suspicious</span> | 1 |
 
 ## Top 25 Pages with Most Issues
 | Page | Issues Count |
@@ -65,7 +64,6 @@
 ## Major Root Causes (Deduplicated, Excluding Mismatch Geometry)
 | Page | Category | Code | Severity | Ayah | Line | Count | Description |
 |---|---|---|---|---|---|---|---|
-| Page 2 | `layout` | `LAYOUT_VERTICAL_OVERLAP` | <span style="color:blue">suspicious</span> | - | 3 | 1 | Minor vertical overlap with previous line band by 5px |
 
 ## Section 1: Structural Issues
 | Page | Line | Ayah | Severity | Code | Message |
@@ -78,7 +76,6 @@
 ## Section 3: Layout Issues
 | Page | Line | Ayah | Severity | Code | Message |
 |---|---|---|---|---|---|
-| Page 2 | 3 | - | <span style="color:blue">suspicious</span> | `LAYOUT_VERTICAL_OVERLAP` | Minor vertical overlap with previous line band by 5px |
 
 ## Section 4: Ordering Issues
 | Page | Line | Ayah | Severity | Code | Message |
@@ -92,20 +89,19 @@
 ### Marker Boundary Diagnostics (Top 50 Worst Mismatches by Delta)
 | Page | Line | Ayah | Severity | Expected Boundary | Actual Marker X | Delta | Tolerance |
 |---|---|---|---|---|---|---|---|
-| Page 32 | 3 | 2:235 | <span style="color:blue">suspicious</span> | 0.0300 | 0.8295 | **0.7995** | 0.0250 |
-| Page 1 | 7 | 1:7 | <span style="color:blue">suspicious</span> | 0.0300 | 0.2592 | **0.2292** | 0.0250 |
 | Page 304 | 16 | 27:26 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1539 | **0.1239** | 0.0250 |
-| Page 268 | 17 | 22:18 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1412 | **0.1112** | 0.0250 |
+| Page 268 | 17 | 22:18 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1374 | **0.1074** | 0.0250 |
+| Page 2 | 3 | 2:3 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1339 | **0.1039** | 0.0250 |
 | Page 218 | 17 | 16:50 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1293 | **0.0993** | 0.0250 |
 | Page 248 | 18 | 19:58 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1292 | **0.0992** | 0.0250 |
 | Page 385 | 18 | 41:37 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1266 | **0.0966** | 0.0250 |
-| Page 1 | 1 | 1:1 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1230 | **0.0930** | 0.0250 |
 | Page 2 | 6 | 2:5 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1171 | **0.0871** | 0.0250 |
 | Page 142 | 9 | 7:206 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1139 | **0.0839** | 0.0250 |
-| Page 1 | 4 | 1:5 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1128 | **0.0828** | 0.0250 |
 | Page 293 | 17 | 25:60 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1109 | **0.0809** | 0.0250 |
+| Page 1 | 1 | 1:1 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1095 | **0.0795** | 0.0250 |
 | Page 337 | 16 | 33:24 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1082 | **0.0782** | 0.0250 |
 | Page 336 | 16 | 33:17 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1054 | **0.0754** | 0.0250 |
+| Page 1 | 4 | 1:5 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1038 | **0.0738** | 0.0250 |
 | Page 326 | 6 | 30:24 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1018 | **0.0718** | 0.0250 |
 | Page 63 | 14 | 4:10 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1013 | **0.0713** | 0.0250 |
 | Page 225 | 17 | 16:119 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1007 | **0.0707** | 0.0250 |
@@ -142,3 +138,4 @@
 | Page 242 | 11 | 18:69 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0839 | **0.0539** | 0.0250 |
 | Page 479 | 7 | 95:8 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0837 | **0.0537** | 0.0250 |
 | Page 175 | 17 | 10:82 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0836 | **0.0536** | 0.0250 |
+| Page 275 | 5 | 23:9 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0834 | **0.0534** | 0.0250 |
