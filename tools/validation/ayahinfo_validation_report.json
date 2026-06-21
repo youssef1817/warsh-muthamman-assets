@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "timestamp": "2026-06-20T23:33:55.267Z",
+    "timestamp": "2026-06-21T10:44:00.379Z",
     "pagesChecked": 485,
     "numberingMode": "hafs_tolerant",
     "stats": {
-      "totalIssues": 902,
-      "fatal": 206,
-      "warning": 88,
-      "suspicious": 608,
-      "fatalNoNumbering": 206,
+      "totalIssues": 883,
+      "fatal": 195,
+      "warning": 85,
+      "suspicious": 603,
+      "fatalNoNumbering": 195,
       "fatalNumberingOnly": 0
     },
     "statsByCategory": {
@@ -30,12 +30,12 @@
       "geometry": {
         "fatal": 36,
         "warning": 17,
-        "suspicious": 558
+        "suspicious": 556
       },
       "ordering": {
-        "fatal": 72,
-        "warning": 5,
-        "suspicious": 49
+        "fatal": 61,
+        "warning": 2,
+        "suspicious": 46
       },
       "other": {
         "fatal": 0,
@@ -47,17 +47,16 @@
       "LAYOUT_ORDER_INVALID": 53,
       "MARKER_BOUNDARY_MISMATCH": 437,
       "LAYOUT_VERTICAL_OVERLAP": 1,
-      "MARKER_NOT_ON_HIGHLIGHT_LINE": 84,
-      "DUPLICATE_MARKER_AYAH": 5,
+      "MARKER_NOT_ON_HIGHLIGHT_LINE": 83,
+      "DUPLICATE_MARKER_AYAH": 2,
       "ORPHAN_HIGHLIGHT_NO_MARKER": 17,
       "LINE_COUNT_MISMATCH": 31,
-      "SAME_LINE_OVERLAP": 30,
+      "SAME_LINE_OVERLAP": 29,
       "MARKER_NO_HIGHLIGHT": 36,
       "SAME_LINE_GAP": 7,
-      "HIGHLIGHT_ORDER_OSCILLATION": 42,
-      "HIGHLIGHT_ORDER_REGRESSION": 29,
-      "HIGHLIGHT_ORDER_JUMP": 49,
-      "MARKER_ORDER_REGRESSION": 1,
+      "HIGHLIGHT_ORDER_OSCILLATION": 37,
+      "HIGHLIGHT_ORDER_REGRESSION": 24,
+      "HIGHLIGHT_ORDER_JUMP": 46,
       "HIGHLIGHT_AYAH_OUT_OF_RANGE": 31,
       "HIGHLIGHT_LINE_OUT_OF_RANGE": 25,
       "MARKER_LINE_OUT_OF_RANGE": 23,
@@ -79,10 +78,6 @@
       {
         "page": 471,
         "count": 23
-      },
-      {
-        "page": 282,
-        "count": 17
       },
       {
         "page": 3,
@@ -162,6 +157,10 @@
       },
       {
         "page": 468,
+        "count": 8
+      },
+      {
+        "page": 469,
         "count": 8
       }
     ]
@@ -386,32 +385,6 @@
       }
     },
     {
-      "page": 243,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 17,
-      "suraAyah": "18:85",
-      "code": "HIGHLIGHT_ORDER_OSCILLATION",
-      "message": "Ayah reappeared in reading order after transitioning to other ayahs",
-      "details": {
-        "current": "18:85",
-        "previous": "18:86"
-      }
-    },
-    {
-      "page": 243,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 17,
-      "suraAyah": "18:85",
-      "code": "HIGHLIGHT_ORDER_REGRESSION",
-      "message": "Ayah regression inside sura: from 18:86 back to 18:85",
-      "details": {
-        "prev": "18:86",
-        "curr": "18:85"
-      }
-    },
-    {
       "page": 244,
       "severity": "fatal",
       "category": "ordering",
@@ -448,123 +421,6 @@
       "details": {
         "current": "18:90",
         "previous": "18:89"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 7,
-      "suraAyah": "24:12",
-      "code": "HIGHLIGHT_ORDER_OSCILLATION",
-      "message": "Ayah reappeared in reading order after transitioning to other ayahs",
-      "details": {
-        "current": "24:12",
-        "previous": "24:14"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 7,
-      "suraAyah": "24:12",
-      "code": "HIGHLIGHT_ORDER_REGRESSION",
-      "message": "Ayah regression inside sura: from 24:14 back to 24:12",
-      "details": {
-        "prev": "24:14",
-        "curr": "24:12"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 11,
-      "suraAyah": "24:15",
-      "code": "HIGHLIGHT_ORDER_OSCILLATION",
-      "message": "Ayah reappeared in reading order after transitioning to other ayahs",
-      "details": {
-        "current": "24:15",
-        "previous": "24:16"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 11,
-      "suraAyah": "24:15",
-      "code": "HIGHLIGHT_ORDER_REGRESSION",
-      "message": "Ayah regression inside sura: from 24:16 back to 24:15",
-      "details": {
-        "prev": "24:16",
-        "curr": "24:15"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 11,
-      "suraAyah": "24:16",
-      "code": "HIGHLIGHT_ORDER_OSCILLATION",
-      "message": "Ayah reappeared in reading order after transitioning to other ayahs",
-      "details": {
-        "current": "24:16",
-        "previous": "24:17"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 11,
-      "suraAyah": "24:16",
-      "code": "HIGHLIGHT_ORDER_REGRESSION",
-      "message": "Ayah regression inside sura: from 24:17 back to 24:16",
-      "details": {
-        "prev": "24:17",
-        "curr": "24:16"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 15,
-      "suraAyah": "24:18",
-      "code": "HIGHLIGHT_ORDER_OSCILLATION",
-      "message": "Ayah reappeared in reading order after transitioning to other ayahs",
-      "details": {
-        "current": "24:18",
-        "previous": "24:20"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 15,
-      "suraAyah": "24:18",
-      "code": "HIGHLIGHT_ORDER_REGRESSION",
-      "message": "Ayah regression inside sura: from 24:20 back to 24:18",
-      "details": {
-        "prev": "24:20",
-        "curr": "24:18"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "fatal",
-      "category": "ordering",
-      "line": 15,
-      "suraAyah": "24:18",
-      "code": "MARKER_ORDER_REGRESSION",
-      "message": "Marker order regression: from 24:19 back to 24:18",
-      "details": {
-        "prev": "24:19",
-        "curr": "24:18"
       }
     },
     {
@@ -3624,44 +3480,6 @@
       }
     },
     {
-      "page": 243,
-      "severity": "warning",
-      "category": "ordering",
-      "line": 18,
-      "suraAyah": "18:85",
-      "code": "DUPLICATE_MARKER_AYAH",
-      "message": "Multiple markers (2 times) found on page for same ayah 18:85",
-      "details": {
-        "marker": {
-          "page": 243,
-          "sura": 18,
-          "ayah": 85,
-          "line": 18,
-          "center_x": 0.08000005496212943,
-          "center_y": 0.37890501440851254
-        }
-      }
-    },
-    {
-      "page": 244,
-      "severity": "warning",
-      "category": "ordering",
-      "line": 16,
-      "suraAyah": "18:100",
-      "code": "DUPLICATE_MARKER_AYAH",
-      "message": "Multiple markers (2 times) found on page for same ayah 18:100",
-      "details": {
-        "marker": {
-          "page": 244,
-          "sura": 18,
-          "ayah": 100,
-          "line": 16,
-          "center_x": 0.08148504039470836,
-          "center_y": 0.4585785028943016
-        }
-      }
-    },
-    {
       "page": 263,
       "severity": "warning",
       "category": "layout",
@@ -3685,25 +3503,6 @@
       "details": {
         "detected": 17,
         "bands": 15
-      }
-    },
-    {
-      "page": 282,
-      "severity": "warning",
-      "category": "ordering",
-      "line": 15,
-      "suraAyah": "24:18",
-      "code": "DUPLICATE_MARKER_AYAH",
-      "message": "Multiple markers (2 times) found on page for same ayah 24:18",
-      "details": {
-        "marker": {
-          "page": 282,
-          "sura": 24,
-          "ayah": 18,
-          "line": 15,
-          "center_x": 0.0720455359148971,
-          "center_y": 0.5210972761700202
-        }
       }
     },
     {
@@ -10189,87 +9988,6 @@
       "page": 282,
       "severity": "suspicious",
       "category": "geometry",
-      "line": 7,
-      "suraAyah": "24:14",
-      "code": "MARKER_NOT_ON_HIGHLIGHT_LINE",
-      "message": "Marker exists on line 7 for 24:14 but highlight is on different line(s)",
-      "details": {
-        "marker": {
-          "page": 282,
-          "sura": 24,
-          "ayah": 14,
-          "line": 7,
-          "center_x": 0.07054211557167353,
-          "center_y": 0.5689236228949969
-        },
-        "pageHighlightsLines": [
-          6
-        ]
-      }
-    },
-    {
-      "page": 282,
-      "severity": "suspicious",
-      "category": "ordering",
-      "line": 8,
-      "suraAyah": "24:15",
-      "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 24:12 to 24:15",
-      "details": {
-        "prev": "24:12",
-        "curr": "24:15"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "suspicious",
-      "category": "ordering",
-      "line": 11,
-      "suraAyah": "24:17",
-      "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 24:15 to 24:17",
-      "details": {
-        "prev": "24:15",
-        "curr": "24:17"
-      }
-    },
-    {
-      "page": 282,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "24:17 -> 24:16",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.8975",
-      "details": {
-        "prev": {
-          "page": 282,
-          "line": 11,
-          "sura": 24,
-          "ayah": 17,
-          "left": 0.03,
-          "right": 0.9275440184541881,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        },
-        "next": {
-          "page": 282,
-          "line": 11,
-          "sura": 24,
-          "ayah": 16,
-          "left": 0.9215440184541881,
-          "right": 0.9275440184541881,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        },
-        "boundaryDelta": -0.8975440184541881,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 282,
-      "severity": "suspicious",
-      "category": "geometry",
       "line": 11,
       "suraAyah": "24:17",
       "code": "MARKER_BOUNDARY_MISMATCH",
@@ -10293,23 +10011,10 @@
           "sura": 24,
           "ayah": 17,
           "left": 0.03,
-          "right": 0.9275440184541881,
+          "right": 0.927544,
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
-      }
-    },
-    {
-      "page": 282,
-      "severity": "suspicious",
-      "category": "ordering",
-      "line": 12,
-      "suraAyah": "24:18",
-      "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 24:16 to 24:18",
-      "details": {
-        "prev": "24:16",
-        "curr": "24:18"
       }
     },
     {
