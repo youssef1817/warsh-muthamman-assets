@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "timestamp": "2026-06-21T13:36:56.325Z",
+    "timestamp": "2026-06-21T13:42:41.476Z",
     "pagesChecked": 485,
     "numberingMode": "hafs_tolerant",
     "stats": {
-      "totalIssues": 448,
+      "totalIssues": 436,
       "fatal": 0,
-      "warning": 4,
-      "suspicious": 444,
+      "warning": 0,
+      "suspicious": 436,
       "fatalNoNumbering": 0,
       "fatalNumberingOnly": 0
     },
@@ -19,7 +19,7 @@
       },
       "numbering": {
         "fatal": 0,
-        "warning": 4,
+        "warning": 0,
         "suspicious": 0
       },
       "layout": {
@@ -30,12 +30,12 @@
       "geometry": {
         "fatal": 0,
         "warning": 0,
-        "suspicious": 442
+        "suspicious": 435
       },
       "ordering": {
         "fatal": 0,
         "warning": 0,
-        "suspicious": 1
+        "suspicious": 0
       },
       "other": {
         "fatal": 0,
@@ -44,21 +44,14 @@
       }
     },
     "statsByCode": {
-      "MARKER_BOUNDARY_MISMATCH": 425,
+      "MARKER_BOUNDARY_MISMATCH": 421,
       "LAYOUT_VERTICAL_OVERLAP": 1,
-      "SAME_LINE_OVERLAP": 17,
-      "HIGHLIGHT_AYAH_OUT_OF_RANGE": 3,
-      "HIGHLIGHT_ORDER_JUMP": 1,
-      "MARKER_AYAH_OUT_OF_RANGE": 1
+      "SAME_LINE_OVERLAP": 14
     },
     "topPages": [
       {
         "page": 68,
         "count": 16
-      },
-      {
-        "page": 483,
-        "count": 10
       },
       {
         "page": 475,
@@ -151,92 +144,14 @@
       {
         "page": 212,
         "count": 4
+      },
+      {
+        "page": 367,
+        "count": 4
       }
     ]
   },
   "issues": [
-    {
-      "page": 334,
-      "severity": "warning",
-      "category": "numbering",
-      "line": 14,
-      "suraAyah": "32:31",
-      "code": "HIGHLIGHT_AYAH_OUT_OF_RANGE",
-      "message": "Highlight ayah (31) is out of range for sura (max 30)",
-      "details": {
-        "highlight": {
-          "page": 334,
-          "line": 14,
-          "sura": 32,
-          "ayah": 31,
-          "left": 0.03,
-          "right": 0.09640991091444222,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 450,
-      "severity": "warning",
-      "category": "numbering",
-      "line": 13,
-      "suraAyah": "66:25",
-      "code": "HIGHLIGHT_AYAH_OUT_OF_RANGE",
-      "message": "Highlight ayah (25) is out of range for sura (max 12)",
-      "details": {
-        "highlight": {
-          "page": 450,
-          "line": 13,
-          "sura": 66,
-          "ayah": 25,
-          "left": 0.03,
-          "right": 0.2365728028754669,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 483,
-      "severity": "warning",
-      "category": "numbering",
-      "line": 9,
-      "suraAyah": "106:5",
-      "code": "HIGHLIGHT_AYAH_OUT_OF_RANGE",
-      "message": "Highlight ayah (5) is out of range for sura (max 4)",
-      "details": {
-        "highlight": {
-          "page": 483,
-          "line": 9,
-          "sura": 106,
-          "ayah": 5,
-          "left": 0.03,
-          "right": 0.367,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 483,
-      "severity": "warning",
-      "category": "numbering",
-      "line": 9,
-      "suraAyah": "106:5",
-      "code": "MARKER_AYAH_OUT_OF_RANGE",
-      "message": "Marker ayah (5) is out of range for sura (max 4)",
-      "details": {
-        "marker": {
-          "page": 483,
-          "sura": 106,
-          "ayah": 5,
-          "line": 9,
-          "center_x": 0.08,
-          "center_y": 0.5
-        }
-      }
-    },
     {
       "page": 1,
       "severity": "suspicious",
@@ -642,105 +557,6 @@
           "ayah": 241,
           "left": 0.03,
           "right": 0.9274583255611453,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 34,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 16,
-      "suraAyah": "2:251 -> 2:252",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 34,
-          "line": 16,
-          "sura": 2,
-          "ayah": 251,
-          "left": 0.14350000000000002,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        },
-        "next": {
-          "page": 34,
-          "line": 16,
-          "sura": 2,
-          "ayah": 252,
-          "left": 0.03,
-          "right": 0.2435,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        },
-        "boundaryDelta": -0.09999999999999998,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 34,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 16,
-      "suraAyah": "2:251",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.1959) is misaligned with highlight left (0.1435) by 0.0524",
-      "details": {
-        "expectedBoundary": 0.14350000000000002,
-        "actualBoundary": 0.1959,
-        "delta": 0.052399999999999974,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 34,
-          "sura": 2,
-          "ayah": 251,
-          "line": 16,
-          "center_x": 0.1959,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 34,
-          "line": 16,
-          "sura": 2,
-          "ayah": 251,
-          "left": 0.14350000000000002,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 34,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 16,
-      "suraAyah": "2:252",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.1959) is misaligned with next ayah right (0.2435) by 0.0476",
-      "details": {
-        "expectedBoundary": 0.2435,
-        "actualBoundary": 0.1959,
-        "delta": 0.0476,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 34,
-          "sura": 2,
-          "ayah": 251,
-          "line": 16,
-          "center_x": 0.1959,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 34,
-          "line": 16,
-          "sura": 2,
-          "ayah": 252,
-          "left": 0.03,
-          "right": 0.2435,
           "confidence": 0.95,
           "source": "visual_valley_renumbered"
         }
@@ -6159,6 +5975,39 @@
       }
     },
     {
+      "page": 334,
+      "severity": "suspicious",
+      "category": "geometry",
+      "line": 14,
+      "suraAyah": "32:30",
+      "code": "MARKER_BOUNDARY_MISMATCH",
+      "message": "Marker center (0.0874) is misaligned with highlight left (0.0300) by 0.0574",
+      "details": {
+        "expectedBoundary": 0.03,
+        "actualBoundary": 0.08738883825252101,
+        "delta": 0.057388838252521016,
+        "tolerance": 0.025,
+        "marker": {
+          "page": 334,
+          "sura": 32,
+          "ayah": 30,
+          "line": 14,
+          "center_x": 0.08738883825252101,
+          "center_y": 0.5742149335070148
+        },
+        "highlight": {
+          "page": 334,
+          "line": 14,
+          "sura": 32,
+          "ayah": 30,
+          "left": 0.03,
+          "right": 0.9061939142369173,
+          "confidence": 0.5,
+          "source": "manual_marker_sync"
+        }
+      }
+    },
+    {
       "page": 335,
       "severity": "suspicious",
       "category": "geometry",
@@ -7740,52 +7589,6 @@
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
-      }
-    },
-    {
-      "page": 368,
-      "severity": "suspicious",
-      "category": "ordering",
-      "line": 16,
-      "suraAyah": "39:10",
-      "code": "HIGHLIGHT_ORDER_JUMP",
-      "message": "Ayah forward jump: from 39:7 to 39:10",
-      "details": {
-        "prev": "39:7",
-        "curr": "39:10"
-      }
-    },
-    {
-      "page": 368,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 16,
-      "suraAyah": "39:7 -> 39:10",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.9400",
-      "details": {
-        "prev": {
-          "page": 368,
-          "line": 16,
-          "sura": 39,
-          "ayah": 7,
-          "left": 0.03,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        },
-        "next": {
-          "page": 368,
-          "line": 16,
-          "sura": 39,
-          "ayah": 10,
-          "left": 0.06213421554549299,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        },
-        "boundaryDelta": -0.94,
-        "tolerance": 0.01
       }
     },
     {
@@ -14317,138 +14120,6 @@
           "ayah": 5,
           "left": 0.03,
           "right": 0.6266157093523151,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 483,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "106:3 -> 106:4",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 483,
-          "line": 9,
-          "sura": 106,
-          "ayah": 3,
-          "left": 0.5720999999999999,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "next": {
-          "page": 483,
-          "line": 9,
-          "sura": 106,
-          "ayah": 4,
-          "left": 0.267,
-          "right": 0.6721,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "boundaryDelta": -0.10000000000000009,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 483,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "106:3",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.6238) is misaligned with highlight left (0.5721) by 0.0517",
-      "details": {
-        "expectedBoundary": 0.5720999999999999,
-        "actualBoundary": 0.6238,
-        "delta": 0.05170000000000008,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 483,
-          "sura": 106,
-          "ayah": 3,
-          "line": 9,
-          "center_x": 0.6238,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 483,
-          "line": 9,
-          "sura": 106,
-          "ayah": 3,
-          "left": 0.5720999999999999,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 483,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "106:4",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.6238) is misaligned with next ayah right (0.6721) by 0.0483",
-      "details": {
-        "expectedBoundary": 0.6721,
-        "actualBoundary": 0.6238,
-        "delta": 0.04830000000000001,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 483,
-          "sura": 106,
-          "ayah": 3,
-          "line": 9,
-          "center_x": 0.6238,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 483,
-          "line": 9,
-          "sura": 106,
-          "ayah": 4,
-          "left": 0.267,
-          "right": 0.6721,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 483,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 9,
-      "suraAyah": "106:4",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.3080) is misaligned with highlight left (0.2670) by 0.0410",
-      "details": {
-        "expectedBoundary": 0.267,
-        "actualBoundary": 0.308,
-        "delta": 0.04099999999999998,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 483,
-          "sura": 106,
-          "ayah": 4,
-          "line": 9,
-          "center_x": 0.308,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 483,
-          "line": 9,
-          "sura": 106,
-          "ayah": 4,
-          "left": 0.267,
-          "right": 0.6721,
           "confidence": 0.95,
           "source": "visual_valley"
         }
