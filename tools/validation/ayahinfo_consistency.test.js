@@ -4,7 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 // Configurations
-const NUMBERING_MODE = 'hafs_tolerant'; // 'warsh' or 'hafs_tolerant'
+// 'hafs_tolerant' (default app-facing mode) or 'warsh_diagnostic' (pure Warsh numbering test)
+const NUMBERING_MODE = process.env.NUMBERING_MODE || 'hafs_tolerant';
 
 // Constants
 const DEFAULT_LEFT_MARGIN = 0.03;
@@ -39,7 +40,7 @@ const hafs_counts = [
     8, 11, 11, 8, 3, 9, 5, 4, 7, 3, 6, 3, 5, 4, 5, 6
 ];
 
-const suraCounts = NUMBERING_MODE === 'warsh' ? warsh_counts : hafs_counts;
+const suraCounts = NUMBERING_MODE === 'warsh_diagnostic' ? warsh_counts : hafs_counts;
 
 // Setup directories
 const baseDir = path.resolve(__dirname, '../../databases/ayahinfo/warsh_muthamman');
@@ -697,7 +698,14 @@ test('Warsh Muthamman Ayahinfo Consistency Validation', () => {
     let mdContent = `# Quran Ayahinfo Validation Report (Warsh Muthamman)\n\n`;
     mdContent += `**Date:** ${new Date().toISOString()}  \n`;
     mdContent += `**Pages Checked:** ${pagesChecked} / 485  \n`;
-    mdContent += `**Numbering Mode:** \`${NUMBERING_MODE}\`  \n\n`;
+    mdContent += `**Numbering Mode:** \`${NUMBERING_MODE}\`  \n`;
+    if (NUMBERING_MODE === 'hafs_tolerant') {
+        mdContent += `> **Note:** Numbering validation is app-facing Hafs/Kufi tolerant.  \n\n`;
+    } else if (NUMBERING_MODE === 'warsh_diagnostic') {
+        mdContent += `> **Note:** Numbering validation is strict Warsh diagnostic and may report app-facing Hafs keys. The current app-facing ayah keys are validated with Hafs/Kufi counts by default; Warsh strict counts are available as diagnostics.  \n\n`;
+    } else {
+        mdContent += `\n`;
+    }
 
     mdContent += `## Summary Stats\n`;
     mdContent += `| Severity | Count |\n`;

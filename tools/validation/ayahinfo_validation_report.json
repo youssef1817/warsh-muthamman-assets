@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp": "2026-06-21T12:40:55.911Z",
+    "timestamp": "2026-06-21T13:24:06.375Z",
     "pagesChecked": 485,
     "numberingMode": "hafs_tolerant",
     "stats": {
@@ -4450,9 +4450,9 @@
       "code": "MARKER_BOUNDARY_MISMATCH",
       "message": "Marker center (0.0712) is misaligned with highlight left (0.0300) by 0.0412",
       "details": {
-        "expectedBoundary": 0.03,
+        "expectedBoundary": 0.030000000000000027,
         "actualBoundary": 0.0711585924246017,
-        "delta": 0.041158592424601695,
+        "delta": 0.04115859242460167,
         "tolerance": 0.025,
         "marker": {
           "page": 263,
@@ -4467,8 +4467,8 @@
           "line": 18,
           "sura": 21,
           "ayah": 71,
-          "left": 0.03,
-          "right": 0.9137498269978727,
+          "left": 0.030000000000000027,
+          "right": 0.936302506878738,
           "confidence": 0.95,
           "source": "visual_valley"
         }

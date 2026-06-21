@@ -1,8 +1,9 @@
 # Quran Ayahinfo Validation Report (Warsh Muthamman)
 
-**Date:** 2026-06-21T12:40:55.914Z  
+**Date:** 2026-06-21T13:24:06.378Z  
 **Pages Checked:** 485 / 485  
 **Numbering Mode:** `hafs_tolerant`  
+> **Note:** Numbering validation is app-facing Hafs/Kufi tolerant.  
 
 ## Summary Stats
 | Severity | Count |
