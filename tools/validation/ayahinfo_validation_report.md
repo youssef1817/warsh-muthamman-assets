@@ -1,50 +1,48 @@
 # Quran Ayahinfo Validation Report (Warsh Muthamman)
 
-**Date:** 2026-06-21T11:10:07.483Z  
+**Date:** 2026-06-21T11:37:01.743Z  
 **Pages Checked:** 485 / 485  
 **Numbering Mode:** `hafs_tolerant`  
 
 ## Summary Stats
 | Severity | Count |
 |---|---|
-| <span style="color:red">🔴 Fatal</span> | **158** |
+| <span style="color:red">🔴 Fatal</span> | **130** |
 | <span style="color:orange">🟡 Warning</span> | **85** |
-| <span style="color:blue">🔵 Suspicious</span> | **579** |
-| **Total Issues** | **822** |
+| <span style="color:blue">🔵 Suspicious</span> | **547** |
+| **Total Issues** | **762** |
 
 ### Stats by Category & Severity
 | Category | Fatal | Warning | Suspicious | Total |
 |---|---|---|---|---|
 | `structural` | 48 | 0 | 0 | **48** |
 | `numbering` | 0 | 32 | 0 | **32** |
-| `layout` | 50 | 34 | 1 | **85** |
-| `geometry` | 35 | 17 | 542 | **594** |
-| `ordering` | 25 | 2 | 36 | **63** |
+| `layout` | 49 | 34 | 1 | **84** |
+| `geometry` | 33 | 17 | 521 | **571** |
+| `ordering` | 0 | 2 | 25 | **27** |
 | `other` | 0 | 0 | 0 | **0** |
 
 ### Fatal Breakdown
-- Fatal Issues (Excluding Numbering): **158**  
+- Fatal Issues (Excluding Numbering): **130**  
 - Fatal Numbering Issues Only: **0**  
 
 ## Stats by Issue Code
 | Code | Category | Severity | Count |
 |---|---|---|---|
-| `LAYOUT_ORDER_INVALID` | `layout` | <span style="color:red">fatal</span> | 53 |
-| `MARKER_NO_HIGHLIGHT` | `geometry` | <span style="color:red">fatal</span> | 35 |
+| `LAYOUT_ORDER_INVALID` | `layout` | <span style="color:red">fatal</span> | 52 |
+| `MARKER_NO_HIGHLIGHT` | `geometry` | <span style="color:red">fatal</span> | 33 |
 | `HIGHLIGHT_LINE_OUT_OF_RANGE` | `structural` | <span style="color:red">fatal</span> | 25 |
 | `MARKER_LINE_OUT_OF_RANGE` | `structural` | <span style="color:red">fatal</span> | 23 |
-| `HIGHLIGHT_ORDER_OSCILLATION` | `ordering` | <span style="color:red">fatal</span> | 14 |
-| `HIGHLIGHT_ORDER_REGRESSION` | `ordering` | <span style="color:red">fatal</span> | 11 |
 | `LINE_COUNT_MISMATCH` | `layout` | <span style="color:orange">warning</span> | 31 |
 | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 31 |
 | `ORPHAN_HIGHLIGHT_NO_MARKER` | `geometry` | <span style="color:orange">warning</span> | 17 |
 | `DUPLICATE_MARKER_AYAH` | `ordering` | <span style="color:orange">warning</span> | 2 |
 | `MARKER_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 1 |
-| `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 433 |
-| `MARKER_NOT_ON_HIGHLIGHT_LINE` | `geometry` | <span style="color:blue">suspicious</span> | 78 |
-| `HIGHLIGHT_ORDER_JUMP` | `ordering` | <span style="color:blue">suspicious</span> | 36 |
-| `SAME_LINE_OVERLAP` | `geometry` | <span style="color:blue">suspicious</span> | 25 |
-| `SAME_LINE_GAP` | `geometry` | <span style="color:blue">suspicious</span> | 6 |
+| `MARKER_BOUNDARY_MISMATCH` | `geometry` | <span style="color:blue">suspicious</span> | 426 |
+| `MARKER_NOT_ON_HIGHLIGHT_LINE` | `geometry` | <span style="color:blue">suspicious</span> | 75 |
+| `HIGHLIGHT_ORDER_JUMP` | `ordering` | <span style="color:blue">suspicious</span> | 25 |
+| `SAME_LINE_OVERLAP` | `geometry` | <span style="color:blue">suspicious</span> | 18 |
+| `SAME_LINE_GAP` | `geometry` | <span style="color:blue">suspicious</span> | 2 |
 | `LAYOUT_VERTICAL_OVERLAP` | `layout` | <span style="color:blue">suspicious</span> | 1 |
 
 ## Top 25 Pages with Most Issues
@@ -59,22 +57,22 @@
 | Page 479 | 14 |
 | Page 483 | 14 |
 | Page 422 | 13 |
-| Page 430 | 13 |
 | Page 358 | 12 |
 | Page 452 | 12 |
-| Page 466 | 11 |
-| Page 472 | 11 |
 | Page 299 | 10 |
-| Page 431 | 10 |
 | Page 457 | 10 |
-| Page 467 | 10 |
 | Page 475 | 10 |
-| Page 474 | 9 |
 | Page 468 | 8 |
 | Page 469 | 8 |
-| Page 462 | 7 |
 | Page 463 | 7 |
 | Page 477 | 7 |
+| Page 484 | 7 |
+| Page 359 | 6 |
+| Page 420 | 6 |
+| Page 466 | 6 |
+| Page 1 | 5 |
+| Page 161 | 5 |
+| Page 211 | 5 |
 
 ## Major Root Causes (Deduplicated, Excluding Mismatch Geometry)
 | Page | Category | Code | Severity | Ayah | Line | Count | Description |
@@ -93,9 +91,6 @@
 | Page 226 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 16:128 | 14 | 1 | Marker exists for 16:128 but no highlight found on page |
 | Page 289 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 5 | 1 | Line vertical bounds invalid: center (550) is outside top-bottom (710-804) by 160px |
 | Page 299 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 26:130 | 10 | 1 | Marker exists for 26:130 but no highlight found on page |
-| Page 302 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 11 | 1 | Line vertical bounds invalid: center (1383) is outside top-bottom (1516-1627) by 133px |
-| Page 302 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 26:227 | 10 | 1 | Sura regression: from 27:1 back to 26:227 |
-| Page 302 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 27:1 | 11 | 1 | Ayah reappeared in reading order after transitioning to other ayahs |
 | Page 320 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (100) is outside top-bottom (109-243) by 9px |
 | Page 324 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 12 | 1 | Line vertical bounds invalid: center (1555) is outside top-bottom (1417-1517) by 38px |
 | Page 329 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (1094) is outside top-bottom (804-912) by 182px |
@@ -119,8 +114,6 @@
 | Page 393 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 7 | 1 | Line vertical bounds invalid: center (826) is outside top-bottom (971-1076) by 145px |
 | Page 398 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 43:89 | 4 | 1 | Marker exists for 43:89 but no highlight found on page |
 | Page 399 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 44:47 | 12 | 1 | Marker exists for 44:47 but no highlight found on page |
-| Page 401 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 45:16 | 4 | 2 | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 401 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 45:16 | 4 | 1 | Ayah regression inside sura: from 45:17 back to 45:16 |
 | Page 406 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 47:5 | 13 | 1 | Marker exists for 47:5 but no highlight found on page |
 | Page 408 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 47:32 | 17 | 1 | Marker exists for 47:32 but no highlight found on page |
 | Page 415 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 9 | 1 | Line vertical bounds invalid: center (1026) is outside top-bottom (1184-1291) by 158px |
@@ -130,15 +123,6 @@
 | Page 422 | `structural` | `MARKER_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 53:23 | 16 | 3 | Marker line (16) is outside layout bands (1..15) |
 | Page 424 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 7 | 1 | Line vertical bounds invalid: center (1032) is outside top-bottom (729-850) by 182px |
 | Page 429 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (371) is outside top-bottom (244-359) by 12px |
-| Page 430 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 56:55 | 3 | 1 | Ayah regression inside sura: from 56:58 back to 56:55 |
-| Page 430 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 56:57 | 4 | 2 | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 430 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 56:53 | 3 | 1 | Marker exists for 56:53 but no highlight found on page |
-| Page 431 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 57:4 | 14 | 2 | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 431 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 57:4 | 14 | 1 | Ayah regression inside sura: from 57:5 back to 57:4 |
-| Page 434 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 57:25 | 7 | 1 | Ayah regression inside sura: from 57:26 back to 57:25 |
-| Page 434 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 57:26 | 8 | 1 | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 435 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 58:5 | 9 | 1 | Ayah regression inside sura: from 58:6 back to 58:5 |
-| Page 435 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 58:6 | 10 | 1 | Ayah reappeared in reading order after transitioning to other ayahs |
 | Page 437 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 14 | 1 | Line vertical bounds invalid: center (1421) is outside top-bottom (1568-1659) by 147px |
 | Page 438 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (1044) is outside top-bottom (806-919) by 125px |
 | Page 445 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 6 | 1 | Line vertical bounds invalid: center (874) is outside top-bottom (904-1022) by 30px |
@@ -152,24 +136,13 @@
 | Page 457 | `structural` | `MARKER_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 71:12 | 16 | 3 | Marker line (16) is outside layout bands (1..15) |
 | Page 460 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 6 | 1 | Line vertical bounds invalid: center (647) is outside top-bottom (773-870) by 126px |
 | Page 461 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (833) is outside top-bottom (971-1078) by 138px |
-| Page 462 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 74:45 | 11 | 1 | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 462 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 74:45 | 11 | 1 | Ayah regression inside sura: from 74:47 back to 74:45 |
 | Page 463 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (380) is outside top-bottom (249-355) by 25px |
-| Page 466 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 77:22 | 4 | 1 | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 466 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 77:22 | 4 | 1 | Ayah regression inside sura: from 77:23 back to 77:22 |
-| Page 467 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 78:11 | 4 | 1 | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 467 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 78:11 | 4 | 1 | Ayah regression inside sura: from 78:12 back to 78:11 |
-| Page 467 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 78:5 | 2 | 1 | Marker exists for 78:5 but no highlight found on page |
 | Page 468 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (364) is outside top-bottom (263-353) by 11px |
 | Page 469 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 2 | 2 | Line vertical bounds invalid: center (483) is outside top-bottom (153-261) by 222px |
 | Page 471 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 2 | Line vertical bounds invalid: center (115) is outside top-bottom (277-378) by 162px |
 | Page 471 | `structural` | `HIGHLIGHT_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 83:7 | 14 | 9 | Highlight line (14) is outside layout bands (1..13) |
 | Page 471 | `structural` | `MARKER_LINE_OUT_OF_RANGE` | <span style="color:red">fatal</span> | 83:7 | 14 | 7 | Marker line (14) is outside layout bands (1..13) |
-| Page 472 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 83:21 | 4 | 1 | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 472 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 83:21 | 4 | 1 | Ayah regression inside sura: from 83:22 back to 83:21 |
 | Page 473 | `geometry` | `MARKER_NO_HIGHLIGHT` | <span style="color:red">fatal</span> | 84:24 | 4 | 1 | Marker exists for 84:24 but no highlight found on page |
-| Page 474 | `ordering` | `HIGHLIGHT_ORDER_OSCILLATION` | <span style="color:red">fatal</span> | 86:11 | 11 | 1 | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 474 | `ordering` | `HIGHLIGHT_ORDER_REGRESSION` | <span style="color:red">fatal</span> | 86:11 | 11 | 1 | Ayah regression inside sura: from 86:12 back to 86:11 |
 | Page 475 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 2 | Line vertical bounds invalid: center (1349) is outside top-bottom (1013-1121) by 228px |
 | Page 477 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (1124) is outside top-bottom (1304-1396) by 180px |
 | Page 479 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 4 | 2 | Line vertical bounds invalid: center (917) is outside top-bottom (945-1081) by 28px |
@@ -256,37 +229,16 @@
 | Page 387 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 42:5 | 15 | 1 | Ayah forward jump: from 42:3 to 42:5 |
 | Page 389 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 42:20 | 18 | 1 | Ayah forward jump: from 42:18 to 42:20 |
 | Page 399 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 44:48 | 12 | 1 | Ayah forward jump: from 44:46 to 44:48 |
-| Page 401 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 45:15 | 3 | 1 | Marker exists on line 3 for 45:15 but highlight is on different line(s) |
 | Page 406 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 47:6 | 13 | 1 | Ayah forward jump: from 47:4 to 47:6 |
 | Page 407 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 47:17 -> 47:18 | 13 | 1 | Horizontal overlap on same line by 0.1000 |
 | Page 408 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 47:33 | 16 | 1 | Ayah forward jump: from 47:31 to 47:33 |
 | Page 408 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 47:31 | 16 | 1 | Marker exists on line 16 for 47:31 but highlight is on different line(s) |
 | Page 416 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 50:14 | 6 | 1 | Marker exists on line 6 for 50:14 but highlight is on different line(s) |
 | Page 420 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 51:59 | 4 | 1 | Marker exists on line 4 for 51:59 but highlight is on different line(s) |
-| Page 430 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 56:54 | 3 | 2 | Ayah forward jump: from 56:52 to 56:54 |
-| Page 430 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 56:54 -> 56:57 | 3 | 2 | Horizontal overlap on same line by 0.7541 |
-| Page 431 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 57:3 | 13 | 1 | Marker exists on line 13 for 57:3 but highlight is on different line(s) |
-| Page 434 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 57:26 | 5 | 1 | Ayah forward jump: from 57:24 to 57:26 |
-| Page 435 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 58:6 | 7 | 1 | Ayah forward jump: from 58:4 to 58:6 |
-| Page 435 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 58:4 | 8 | 1 | Marker exists on line 8 for 58:4 but highlight is on different line(s) |
 | Page 452 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 67:23 | 4 | 1 | Ayah forward jump: from 67:21 to 67:23 |
 | Page 452 | `geometry` | `MARKER_NOT_ON_HIGHLIGHT_LINE` | <span style="color:blue">suspicious</span> | 67:23 | 5 | 2 | Marker exists on line 5 for 67:23 but highlight is on different line(s) |
 | Page 456 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 70:29 | 11 | 1 | Ayah forward jump: from 70:27 to 70:29 |
-| Page 462 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 74:47 | 11 | 2 | Ayah forward jump: from 74:45 to 74:47 |
-| Page 462 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 74:47 -> 74:45 | 11 | 1 | Horizontal overlap on same line by 0.9400 |
-| Page 466 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 77:24 | 4 | 1 | Ayah forward jump: from 77:22 to 77:24 |
-| Page 466 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 77:23 -> 77:22 | 4 | 1 | Horizontal overlap on same line by 0.5351 |
-| Page 466 | `geometry` | `SAME_LINE_GAP` | <span style="color:blue">suspicious</span> | 77:22 -> 77:24 | 4 | 1 | Horizontal gap on same line by 0.3933 |
-| Page 467 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 78:6 | 2 | 2 | Ayah forward jump: from 78:4 to 78:6 |
-| Page 467 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 78:12 -> 78:11 | 4 | 1 | Horizontal overlap on same line by 0.5132 |
-| Page 467 | `geometry` | `SAME_LINE_GAP` | <span style="color:blue">suspicious</span> | 78:11 -> 78:13 | 4 | 1 | Horizontal gap on same line by 0.3924 |
-| Page 472 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 83:23 | 4 | 1 | Ayah forward jump: from 83:21 to 83:23 |
-| Page 472 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 83:22 -> 83:21 | 4 | 1 | Horizontal overlap on same line by 0.3215 |
-| Page 472 | `geometry` | `SAME_LINE_GAP` | <span style="color:blue">suspicious</span> | 83:21 -> 83:23 | 4 | 1 | Horizontal gap on same line by 0.2895 |
 | Page 473 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 84:25 | 4 | 1 | Ayah forward jump: from 84:23 to 84:25 |
-| Page 474 | `ordering` | `HIGHLIGHT_ORDER_JUMP` | <span style="color:blue">suspicious</span> | 86:13 | 11 | 1 | Ayah forward jump: from 86:11 to 86:13 |
-| Page 474 | `geometry` | `SAME_LINE_OVERLAP` | <span style="color:blue">suspicious</span> | 86:12 -> 86:11 | 11 | 1 | Horizontal overlap on same line by 0.5807 |
-| Page 474 | `geometry` | `SAME_LINE_GAP` | <span style="color:blue">suspicious</span> | 86:11 -> 86:13 | 11 | 1 | Horizontal gap on same line by 0.5358 |
 
 ## Section 1: Structural Issues
 | Page | Line | Ayah | Severity | Code | Message |
@@ -392,7 +344,6 @@
 | Page 200 | 3 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (644) is outside top-bottom (307-439) by 205px |
 | Page 215 | 1 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (379) is outside top-bottom (257-365) by 14px |
 | Page 289 | 5 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (550) is outside top-bottom (710-804) by 160px |
-| Page 302 | 11 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1383) is outside top-bottom (1516-1627) by 133px |
 | Page 320 | 1 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (100) is outside top-bottom (109-243) by 9px |
 | Page 324 | 12 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1555) is outside top-bottom (1417-1517) by 38px |
 | Page 329 | 8 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1094) is outside top-bottom (804-912) by 182px |
@@ -468,31 +419,6 @@
 ## Section 4: Ordering Issues
 | Page | Line | Ayah | Severity | Code | Message |
 |---|---|---|---|---|---|
-| Page 302 | 10 | 26:227 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Sura regression: from 27:1 back to 26:227 |
-| Page 302 | 11 | 27:1 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 401 | 4 | 45:16 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 401 | 4 | 45:16 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 45:17 back to 45:16 |
-| Page 401 | 4 | 45:17 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 430 | 3 | 56:55 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 56:58 back to 56:55 |
-| Page 430 | 4 | 56:57 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 430 | 5 | 56:58 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 431 | 14 | 57:4 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 431 | 14 | 57:4 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 57:5 back to 57:4 |
-| Page 431 | 16 | 57:5 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 434 | 7 | 57:25 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 57:26 back to 57:25 |
-| Page 434 | 8 | 57:26 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 435 | 9 | 58:5 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 58:6 back to 58:5 |
-| Page 435 | 10 | 58:6 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 462 | 11 | 74:45 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 462 | 11 | 74:45 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 74:47 back to 74:45 |
-| Page 466 | 4 | 77:22 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 466 | 4 | 77:22 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 77:23 back to 77:22 |
-| Page 467 | 4 | 78:11 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 467 | 4 | 78:11 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 78:12 back to 78:11 |
-| Page 472 | 4 | 83:21 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 472 | 4 | 83:21 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 83:22 back to 83:21 |
-| Page 474 | 11 | 86:11 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_OSCILLATION` | Ayah reappeared in reading order after transitioning to other ayahs |
-| Page 474 | 11 | 86:11 | <span style="color:red">fatal</span> | `HIGHLIGHT_ORDER_REGRESSION` | Ayah regression inside sura: from 86:12 back to 86:11 |
 | Page 3 | 6 | 2:8 | <span style="color:orange">warning</span> | `DUPLICATE_MARKER_AYAH` | Multiple markers (2 times) found on page for same ayah 2:8 |
 | Page 4 | 3 | 2:18 | <span style="color:orange">warning</span> | `DUPLICATE_MARKER_AYAH` | Multiple markers (2 times) found on page for same ayah 2:18 |
 | Page 299 | 10 | 26:131 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 26:129 to 26:131 |
@@ -517,20 +443,9 @@
 | Page 399 | 12 | 44:48 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 44:46 to 44:48 |
 | Page 406 | 13 | 47:6 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 47:4 to 47:6 |
 | Page 408 | 16 | 47:33 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 47:31 to 47:33 |
-| Page 430 | 3 | 56:54 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 56:52 to 56:54 |
-| Page 430 | 3 | 56:57 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 56:54 to 56:57 |
-| Page 434 | 5 | 57:26 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 57:24 to 57:26 |
-| Page 435 | 7 | 58:6 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 58:4 to 58:6 |
 | Page 452 | 4 | 67:23 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 67:21 to 67:23 |
 | Page 456 | 11 | 70:29 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 70:27 to 70:29 |
-| Page 462 | 11 | 74:47 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 74:45 to 74:47 |
-| Page 462 | 12 | 74:48 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 74:46 to 74:48 |
-| Page 466 | 4 | 77:24 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 77:22 to 77:24 |
-| Page 467 | 2 | 78:6 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 78:4 to 78:6 |
-| Page 467 | 4 | 78:13 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 78:11 to 78:13 |
-| Page 472 | 4 | 83:23 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 83:21 to 83:23 |
 | Page 473 | 4 | 84:25 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 84:23 to 84:25 |
-| Page 474 | 11 | 86:13 | <span style="color:orange">suspicious</span> | `HIGHLIGHT_ORDER_JUMP` | Ayah forward jump: from 86:11 to 86:13 |
 
 ## Section 5: Geometry Issues & Diagnostics
 ### Same-Line Gaps, Overlaps and Bindings (Excluding Boundary Mismatch)
@@ -566,10 +481,8 @@
 | Page 399 | 12 | 44:47 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 44:47 but no highlight found on page |
 | Page 406 | 13 | 47:5 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 47:5 but no highlight found on page |
 | Page 408 | 17 | 47:32 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 47:32 but no highlight found on page |
-| Page 430 | 3 | 56:53 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 56:53 but no highlight found on page |
 | Page 452 | 4 | 67:22 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 67:22 but no highlight found on page |
 | Page 456 | 11 | 70:28 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 70:28 but no highlight found on page |
-| Page 467 | 2 | 78:5 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 78:5 but no highlight found on page |
 | Page 473 | 4 | 84:24 | <span style="color:red">fatal</span> | `MARKER_NO_HIGHLIGHT` | Marker exists for 84:24 but no highlight found on page |
 | Page 4 | 2 | 2:17 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.143) but no marker circle found on page |
 | Page 361 | 13 | 37:114 | <span style="color:orange">warning</span> | `ORPHAN_HIGHLIGHT_NO_MARKER` | Highlight ends before left margin (0.730) but no marker circle found on page |
@@ -677,26 +590,12 @@
 | Page 363 | 17 | 37:182 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 17 for 37:182 but highlight is on different line(s) |
 | Page 368 | 16 | 39:7 -> 39:10 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.9400 |
 | Page 382 | 9 | 40:85 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 9 for 40:85 but highlight is on different line(s) |
-| Page 401 | 3 | 45:15 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 3 for 45:15 but highlight is on different line(s) |
 | Page 407 | 13 | 47:17 -> 47:18 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.1000 |
 | Page 408 | 16 | 47:31 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 16 for 47:31 but highlight is on different line(s) |
 | Page 416 | 6 | 50:14 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 50:14 but highlight is on different line(s) |
 | Page 420 | 4 | 51:59 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 4 for 51:59 but highlight is on different line(s) |
-| Page 430 | 3 | 56:54 -> 56:57 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.7541 |
-| Page 430 | 3 | 56:58 -> 56:55 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.0105 |
-| Page 431 | 13 | 57:3 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 13 for 57:3 but highlight is on different line(s) |
-| Page 435 | 8 | 58:4 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 8 for 58:4 but highlight is on different line(s) |
 | Page 452 | 5 | 67:23 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 5 for 67:23 but highlight is on different line(s) |
 | Page 452 | 6 | 67:24 | <span style="color:blue">suspicious</span> | `MARKER_NOT_ON_HIGHLIGHT_LINE` | Marker exists on line 6 for 67:24 but highlight is on different line(s) |
-| Page 462 | 11 | 74:47 -> 74:45 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.9400 |
-| Page 466 | 4 | 77:23 -> 77:22 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.5351 |
-| Page 466 | 4 | 77:22 -> 77:24 | <span style="color:blue">suspicious</span> | `SAME_LINE_GAP` | Horizontal gap on same line by 0.3933 |
-| Page 467 | 4 | 78:12 -> 78:11 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.5132 |
-| Page 467 | 4 | 78:11 -> 78:13 | <span style="color:blue">suspicious</span> | `SAME_LINE_GAP` | Horizontal gap on same line by 0.3924 |
-| Page 472 | 4 | 83:22 -> 83:21 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.3215 |
-| Page 472 | 4 | 83:21 -> 83:23 | <span style="color:blue">suspicious</span> | `SAME_LINE_GAP` | Horizontal gap on same line by 0.2895 |
-| Page 474 | 11 | 86:12 -> 86:11 | <span style="color:blue">suspicious</span> | `SAME_LINE_OVERLAP` | Horizontal overlap on same line by 0.5807 |
-| Page 474 | 11 | 86:11 -> 86:13 | <span style="color:blue">suspicious</span> | `SAME_LINE_GAP` | Horizontal gap on same line by 0.5358 |
 
 ### Marker Boundary Diagnostics (Top 50 Worst Mismatches by Delta)
 | Page | Line | Ayah | Severity | Expected Boundary | Actual Marker X | Delta | Tolerance |
@@ -712,7 +611,6 @@
 | Page 3 | 11 | 2:13 | <span style="color:blue">suspicious</span> | 0.9724 | 0.2737 | **0.6987** | 0.0250 |
 | Page 3 | 7 | 2:10 | <span style="color:blue">suspicious</span> | 0.9700 | 0.2978 | **0.6722** | 0.0250 |
 | Page 358 | 14 | 37:20 | <span style="color:blue">suspicious</span> | 0.0300 | 0.6709 | **0.6409** | 0.0250 |
-| Page 462 | 11 | 74:47 | <span style="color:blue">suspicious</span> | 0.9700 | 0.3869 | **0.5831** | 0.0250 |
 | Page 452 | 6 | 67:25 | <span style="color:blue">suspicious</span> | 0.5839 | 0.0606 | **0.5233** | 0.0250 |
 | Page 3 | 13 | 2:14 | <span style="color:blue">suspicious</span> | 0.9700 | 0.4693 | **0.5007** | 0.0250 |
 | Page 3 | 14 | 2:15 | <span style="color:blue">suspicious</span> | 0.9700 | 0.5796 | **0.3904** | 0.0250 |
@@ -720,17 +618,13 @@
 | Page 361 | 8 | 37:100 | <span style="color:blue">suspicious</span> | 0.8292 | 0.4605 | **0.3687** | 0.0250 |
 | Page 3 | 6 | 2:9 | <span style="color:blue">suspicious</span> | 0.9700 | 0.7018 | **0.2682** | 0.0250 |
 | Page 1 | 7 | 1:7 | <span style="color:blue">suspicious</span> | 0.0300 | 0.2592 | **0.2292** | 0.0250 |
-| Page 401 | 3 | 45:16 | <span style="color:blue">suspicious</span> | 0.9700 | 0.7770 | **0.1930** | 0.0250 |
 | Page 299 | 11 | 26:132 | <span style="color:blue">suspicious</span> | 0.9700 | 0.8148 | **0.1552** | 0.0250 |
-| Page 466 | 4 | 77:23 | <span style="color:blue">suspicious</span> | 0.9700 | 0.8282 | **0.1418** | 0.0250 |
 | Page 361 | 8 | 37:100 | <span style="color:blue">suspicious</span> | 0.9700 | 0.8292 | **0.1408** | 0.0250 |
 | Page 68 | 3 | 4:29 | <span style="color:blue">suspicious</span> | 0.3966 | 0.5235 | **0.1269** | 0.0250 |
 | Page 304 | 16 | 27:26 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1539 | **0.1239** | 0.0250 |
-| Page 467 | 4 | 78:12 | <span style="color:blue">suspicious</span> | 0.9700 | 0.8492 | **0.1208** | 0.0250 |
 | Page 4 | 2 | 2:18 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1430 | **0.1130** | 0.0250 |
 | Page 268 | 17 | 22:18 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1412 | **0.1112** | 0.0250 |
 | Page 2 | 3 | 2:3 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1309 | **0.1009** | 0.0250 |
-| Page 431 | 13 | 57:4 | <span style="color:blue">suspicious</span> | 0.9700 | 0.8707 | **0.0993** | 0.0250 |
 | Page 218 | 17 | 16:50 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1293 | **0.0993** | 0.0250 |
 | Page 248 | 18 | 19:58 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1292 | **0.0992** | 0.0250 |
 | Page 2 | 6 | 2:5 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1276 | **0.0976** | 0.0250 |
@@ -751,3 +645,8 @@
 | Page 63 | 14 | 4:10 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1013 | **0.0713** | 0.0250 |
 | Page 225 | 17 | 16:119 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1007 | **0.0707** | 0.0250 |
 | Page 225 | 15 | 16:118 | <span style="color:blue">suspicious</span> | 0.0300 | 0.1005 | **0.0705** | 0.0250 |
+| Page 407 | 13 | 47:17 | <span style="color:blue">suspicious</span> | 0.5331 | 0.6023 | **0.0692** | 0.0250 |
+| Page 240 | 14 | 18:49 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0990 | **0.0690** | 0.0250 |
+| Page 326 | 16 | 30:29 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0990 | **0.0690** | 0.0250 |
+| Page 140 | 15 | 7:187 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0978 | **0.0678** | 0.0250 |
+| Page 337 | 12 | 33:22 | <span style="color:blue">suspicious</span> | 0.0300 | 0.0972 | **0.0672** | 0.0250 |
