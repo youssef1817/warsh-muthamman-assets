@@ -4925,6 +4925,82 @@ function updateValidationStatusUI() {
     btn.title = titleMsg;
 }
 
+function translateValidationItem(item) {
+    let codeAr = item.code;
+    let msgAr = item.message;
+
+    const codeTranslations = {
+        'MARKER_BOUNDARY_MISMATCH': 'عدم تطابق حدود العلامة',
+        'LAYOUT_VERTICAL_OVERLAP': 'تداخل رأسي في الأسطر',
+        'HEADER_PAGE_MISMATCH': 'خطأ في رقم صفحة الترويسة',
+        'HEADER_SURA_OUT_OF_RANGE': 'رقم سورة الترويسة خارج النطاق',
+        'HEADER_COORDS_OUT_OF_RANGE': 'إحداثيات الترويسة خارج النطاق',
+        'HIGHLIGHT_PAGE_MISMATCH': 'صفحة التظليل غير مطابقة',
+        'HIGHLIGHT_LINE_OUT_OF_RANGE': 'سطر التظليل خارج حدود الصفحة',
+        'HIGHLIGHT_SURA_OUT_OF_RANGE': 'سورة التظليل خارج النطاق',
+        'HIGHLIGHT_AYAH_OUT_OF_RANGE': 'آية التظليل خارج النطاق',
+        'HIGHLIGHT_COORDS_OUT_OF_RANGE': 'إحداثيات التظليل خارج النطاق',
+        'HIGHLIGHT_MARGIN_DEVIATION': 'انحراف التظليل عن الهامش',
+        'MARKER_PAGE_MISMATCH': 'صفحة العلامة غير مطابقة',
+        'MARKER_LINE_OUT_OF_RANGE': 'سطر العلامة خارج حدود الصفحة',
+        'MARKER_SURA_OUT_OF_RANGE': 'سورة العلامة خارج النطاق',
+        'MARKER_AYAH_OUT_OF_RANGE': 'آية العلامة خارج النطاق',
+        'MARKER_COORDS_OUT_OF_RANGE': 'إحداثيات العلامة خارج النطاق',
+        'MARKER_Y_OUT_OF_MARGINS': 'العلامة خارج الهوامش الرأسية',
+        'DUPLICATE_HIGHLIGHT': 'تظليل مكرر',
+        'DUPLICATE_MARKER': 'علامة مكررة',
+        'HIGHLIGHT_ORDER_OSCILLATION': 'تذبذب في ترتيب الآيات',
+        'HIGHLIGHT_ORDER_REGRESSION': 'تراجع في ترتيب الآيات',
+        'HIGHLIGHT_ORDER_JUMP': 'قفز في ترتيب الآيات',
+        'SAME_LINE_GAP': 'فجوة أفقية في نفس السطر',
+        'SAME_LINE_OVERLAP': 'تداخل أفقي في نفس السطر',
+        'MARKER_Y_CLOSE_TO_EDGE': 'العلامة قريبة جداً من حافة السطر',
+        'MARKER_NO_HIGHLIGHT': 'علامة بلا تظليل',
+        'MARKER_NOT_ON_HIGHLIGHT_LINE': 'العلامة والتظليل في أسطر مختلفة',
+        'DUPLICATE_MARKER_AYAH': 'علامات متعددة لنفس الآية',
+        'MARKER_ORDER_REGRESSION': 'تراجع في ترتيب العلامات',
+        'ORPHAN_HIGHLIGHT_NO_MARKER': 'تظليل بلا علامة نهاية الآية'
+    };
+
+    if (codeTranslations[item.code]) {
+        codeAr = codeTranslations[item.code];
+    }
+
+    if (item.code === 'MARKER_BOUNDARY_MISMATCH') {
+        const markerMatch = item.message.match(/Marker center \(([^)]+)\) differs from highlight left \(([^)]+)\) by ([0-9.-]+)\./);
+        const nextAyahMatch = item.message.match(/Marker center \(([^)]+)\) differs from next ayah right \(([^)]+)\) by ([0-9.-]+)\./);
+        
+        if (markerMatch) {
+            const [, markerVal, hlVal, diffVal] = markerMatch;
+            msgAr = `مركز الدائرة (${markerVal}) يختلف عن بداية التظليل (${hlVal}) بمقدار ${diffVal}. (هذا للتشخيص البصري فقط في الصفحة ${currentPage})`;
+        } else if (nextAyahMatch) {
+            const [, markerVal, hlVal, diffVal] = nextAyahMatch;
+            msgAr = `مركز الدائرة (${markerVal}) يختلف عن نهاية تظليل الآية التالية (${hlVal}) بمقدار ${diffVal}. (هذا للتشخيص البصري فقط في الصفحة ${currentPage})`;
+        } else {
+            msgAr = item.message.replace(/differs from highlight left/g, 'يختلف عن بداية التظليل')
+                                .replace(/differs from next ayah right/g, 'يختلف عن نهاية الآية التالية')
+                                .replace(/This is diagnostic only; do not auto-fix JSON from it\./g, `(هذا للتشخيص البصري فقط في الصفحة ${currentPage})`);
+        }
+    } else {
+        msgAr = item.message
+            .replace(/Marker exists for (.+?) but no highlight found on page/g, 'توجد علامة للآية $1 ولكن لا يوجد لها تظليل في الصفحة')
+            .replace(/Marker exists on line (.+?) for (.+?) but highlight is on different line/g, 'العلامة موجودة في السطر $1 للآية $2 ولكن التظليل في سطر آخر')
+            .replace(/Minor vertical overlap with previous line band by (.+?)px/g, 'تداخل رأسي طفيف مع السطر السابق بمقدار $1 بكسل')
+            .replace(/Highlight left boundary \((.+?)\) deviates from typical margin 0.03/g, 'حافة التظليل اليمنى ($1) منحرفة عن الهامش النموذجي 0.03')
+            .replace(/Highlight right boundary \((.+?)\) deviates from typical margin 0.97/g, 'حافة التظليل اليسرى ($1) منحرفة عن الهامش النموذجي 0.97')
+            .replace(/Horizontal gap on same line by (.+?)/g, 'فجوة أفقية في نفس السطر بمقدار $1')
+            .replace(/Horizontal overlap on same line by (.+?)/g, 'تداخل أفقي في نفس السطر بمقدار $1')
+            .replace(/Highlight page \((.+?)\) does not match actual page \((.+?)\)/g, 'صفحة التظليل ($1) لا تطابق الصفحة الحالية ($2)')
+            .replace(/Marker page \((.+?)\) does not match actual page \((.+?)\)/g, 'صفحة العلامة ($1) لا تطابق الصفحة الحالية ($2)');
+            
+        if (!msgAr.includes(String(currentPage))) {
+            msgAr += ` (صفحة ${currentPage})`;
+        }
+    }
+
+    return { code: codeAr, message: msgAr };
+}
+
 function updateValidationListUI() {
     const listEl = document.getElementById('validation-issues-list');
     if (!listEl) return;
@@ -4983,9 +5059,11 @@ function updateValidationListUI() {
         const header = document.createElement('div');
         header.className = 'validation-card-header';
         
+        const translated = translateValidationItem(item);
+
         const code = document.createElement('span');
         code.className = 'validation-card-code';
-        code.textContent = item.code;
+        code.textContent = translated.code;
 
         const target = document.createElement('span');
         target.className = 'validation-card-target';
@@ -4996,7 +5074,7 @@ function updateValidationListUI() {
 
         const msg = document.createElement('div');
         msg.className = 'validation-card-msg';
-        msg.textContent = item.message;
+        msg.textContent = translated.message;
 
         card.appendChild(header);
         card.appendChild(msg);
