@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "timestamp": "2026-06-21T13:42:41.476Z",
+    "timestamp": "2026-06-21T14:17:41.803Z",
     "pagesChecked": 485,
     "numberingMode": "hafs_tolerant",
     "stats": {
-      "totalIssues": 436,
+      "totalIssues": 402,
       "fatal": 0,
       "warning": 0,
-      "suspicious": 436,
+      "suspicious": 402,
       "fatalNoNumbering": 0,
       "fatalNumberingOnly": 0
     },
@@ -30,7 +30,7 @@
       "geometry": {
         "fatal": 0,
         "warning": 0,
-        "suspicious": 435
+        "suspicious": 401
       },
       "ordering": {
         "fatal": 0,
@@ -44,15 +44,10 @@
       }
     },
     "statsByCode": {
-      "MARKER_BOUNDARY_MISMATCH": 421,
-      "LAYOUT_VERTICAL_OVERLAP": 1,
-      "SAME_LINE_OVERLAP": 14
+      "MARKER_BOUNDARY_MISMATCH": 401,
+      "LAYOUT_VERTICAL_OVERLAP": 1
     },
     "topPages": [
-      {
-        "page": 68,
-        "count": 16
-      },
       {
         "page": 475,
         "count": 7
@@ -80,14 +75,6 @@
       {
         "page": 477,
         "count": 6
-      },
-      {
-        "page": 161,
-        "count": 5
-      },
-      {
-        "page": 211,
-        "count": 5
       },
       {
         "page": 358,
@@ -147,6 +134,18 @@
       },
       {
         "page": 367,
+        "count": 4
+      },
+      {
+        "page": 421,
+        "count": 4
+      },
+      {
+        "page": 424,
+        "count": 4
+      },
+      {
+        "page": 425,
         "count": 4
       }
     ]
@@ -302,55 +301,22 @@
       "page": 2,
       "severity": "suspicious",
       "category": "geometry",
-      "line": 3,
-      "suraAyah": "2:3",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.1309) is misaligned with highlight left (0.0300) by 0.1009",
-      "details": {
-        "expectedBoundary": 0.03,
-        "actualBoundary": 0.13089047786399832,
-        "delta": 0.10089047786399832,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 2,
-          "sura": 2,
-          "ayah": 3,
-          "line": 3,
-          "center_x": 0.13089047786399832,
-          "center_y": 0.424177794134157
-        },
-        "highlight": {
-          "page": 2,
-          "line": 3,
-          "sura": 2,
-          "ayah": 3,
-          "left": 0.03,
-          "right": 0.97,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 2,
-      "severity": "suspicious",
-      "category": "geometry",
       "line": 6,
       "suraAyah": "2:5",
       "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.1276) is misaligned with highlight left (0.0300) by 0.0976",
+      "message": "Marker center (0.1171) is misaligned with highlight left (0.0300) by 0.0871",
       "details": {
         "expectedBoundary": 0.03,
-        "actualBoundary": 0.12764532423121536,
-        "delta": 0.09764532423121536,
+        "actualBoundary": 0.11712069357542566,
+        "delta": 0.08712069357542566,
         "tolerance": 0.025,
         "marker": {
           "page": 2,
           "sura": 2,
           "ayah": 5,
           "line": 6,
-          "center_x": 0.12764532423121536,
-          "center_y": 0.4664766252348086
+          "center_x": 0.11712069357542566,
+          "center_y": 0.5075700508577888
         },
         "highlight": {
           "page": 2,
@@ -563,72 +529,6 @@
       }
     },
     {
-      "page": 43,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "3:15 -> 3:16",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 43,
-          "line": 3,
-          "sura": 3,
-          "ayah": 15,
-          "left": 0.11639999999999999,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "next": {
-          "page": 43,
-          "line": 3,
-          "sura": 3,
-          "ayah": 16,
-          "left": 0.03,
-          "right": 0.21639999999999998,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "boundaryDelta": -0.09999999999999999,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 43,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "3:15",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.0897) is misaligned with highlight left (0.1164) by 0.0267",
-      "details": {
-        "expectedBoundary": 0.11639999999999999,
-        "actualBoundary": 0.0897,
-        "delta": 0.026699999999999988,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 43,
-          "sura": 3,
-          "ayah": 15,
-          "line": 3,
-          "center_x": 0.0897,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 43,
-          "line": 3,
-          "sura": 3,
-          "ayah": 15,
-          "left": 0.11639999999999999,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
       "page": 46,
       "severity": "suspicious",
       "category": "geometry",
@@ -757,534 +657,6 @@
           "right": 0.9700000000000001,
           "confidence": 0.85,
           "source": "text_proportional"
-        }
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "4:29 -> 4:30",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 68,
-          "line": 3,
-          "sura": 4,
-          "ayah": 29,
-          "left": 0.3966,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "next": {
-          "page": 68,
-          "line": 3,
-          "sura": 4,
-          "ayah": 30,
-          "left": 0.03,
-          "right": 0.4966,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "boundaryDelta": -0.09999999999999998,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "4:29",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.5235) is misaligned with highlight left (0.3966) by 0.1269",
-      "details": {
-        "expectedBoundary": 0.3966,
-        "actualBoundary": 0.5235,
-        "delta": 0.12689999999999996,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 68,
-          "sura": 4,
-          "ayah": 29,
-          "line": 3,
-          "center_x": 0.5235,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 68,
-          "line": 3,
-          "sura": 4,
-          "ayah": 29,
-          "left": 0.3966,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "4:30",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.5235) is misaligned with next ayah right (0.4966) by 0.0269",
-      "details": {
-        "expectedBoundary": 0.4966,
-        "actualBoundary": 0.5235,
-        "delta": 0.02689999999999998,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 68,
-          "sura": 4,
-          "ayah": 29,
-          "line": 3,
-          "center_x": 0.5235,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 68,
-          "line": 3,
-          "sura": 4,
-          "ayah": 30,
-          "left": 0.03,
-          "right": 0.4966,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 4,
-      "suraAyah": "4:30 -> 4:31",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 68,
-          "line": 4,
-          "sura": 4,
-          "ayah": 30,
-          "left": 0.23310000000000003,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "next": {
-          "page": 68,
-          "line": 4,
-          "sura": 4,
-          "ayah": 31,
-          "left": 0.03,
-          "right": 0.3331,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "boundaryDelta": -0.09999999999999998,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 4,
-      "suraAyah": "4:31",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.2572) is misaligned with next ayah right (0.3331) by 0.0759",
-      "details": {
-        "expectedBoundary": 0.3331,
-        "actualBoundary": 0.2572,
-        "delta": 0.07590000000000002,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 68,
-          "sura": 4,
-          "ayah": 30,
-          "line": 4,
-          "center_x": 0.2572,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 68,
-          "line": 4,
-          "sura": 4,
-          "ayah": 31,
-          "left": 0.03,
-          "right": 0.3331,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 6,
-      "suraAyah": "4:31 -> 4:32",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 68,
-          "line": 6,
-          "sura": 4,
-          "ayah": 31,
-          "left": 0.7920999999999999,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "next": {
-          "page": 68,
-          "line": 6,
-          "sura": 4,
-          "ayah": 32,
-          "left": 0.03,
-          "right": 0.8921,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "boundaryDelta": -0.10000000000000009,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 6,
-      "suraAyah": "4:32",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.7969) is misaligned with next ayah right (0.8921) by 0.0952",
-      "details": {
-        "expectedBoundary": 0.8921,
-        "actualBoundary": 0.7969,
-        "delta": 0.09519999999999995,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 68,
-          "sura": 4,
-          "ayah": 31,
-          "line": 6,
-          "center_x": 0.7969,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 68,
-          "line": 6,
-          "sura": 4,
-          "ayah": 32,
-          "left": 0.03,
-          "right": 0.8921,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 8,
-      "suraAyah": "4:32 -> 4:33",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 68,
-          "line": 8,
-          "sura": 4,
-          "ayah": 32,
-          "left": 0.1526,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "next": {
-          "page": 68,
-          "line": 8,
-          "sura": 4,
-          "ayah": 33,
-          "left": 0.03,
-          "right": 0.2526,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "boundaryDelta": -0.09999999999999998,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 8,
-      "suraAyah": "4:32",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.1961) is misaligned with highlight left (0.1526) by 0.0435",
-      "details": {
-        "expectedBoundary": 0.1526,
-        "actualBoundary": 0.1961,
-        "delta": 0.04349999999999998,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 68,
-          "sura": 4,
-          "ayah": 32,
-          "line": 8,
-          "center_x": 0.1961,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 68,
-          "line": 8,
-          "sura": 4,
-          "ayah": 32,
-          "left": 0.1526,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 8,
-      "suraAyah": "4:33",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.1961) is misaligned with next ayah right (0.2526) by 0.0565",
-      "details": {
-        "expectedBoundary": 0.2526,
-        "actualBoundary": 0.1961,
-        "delta": 0.056499999999999995,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 68,
-          "sura": 4,
-          "ayah": 32,
-          "line": 8,
-          "center_x": 0.1961,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 68,
-          "line": 8,
-          "sura": 4,
-          "ayah": 33,
-          "left": 0.03,
-          "right": 0.2526,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "4:33 -> 4:34",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 68,
-          "line": 11,
-          "sura": 4,
-          "ayah": 33,
-          "left": 0.845,
-          "right": 0.9700000000000001,
-          "confidence": 0.85,
-          "source": "text_proportional"
-        },
-        "next": {
-          "page": 68,
-          "line": 11,
-          "sura": 4,
-          "ayah": 34,
-          "left": 0.03,
-          "right": 0.9450000000000001,
-          "confidence": 0.85,
-          "source": "text_proportional"
-        },
-        "boundaryDelta": -0.10000000000000009,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "4:33",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.8950) is misaligned with highlight left (0.8450) by 0.0500",
-      "details": {
-        "expectedBoundary": 0.845,
-        "actualBoundary": 0.895,
-        "delta": 0.050000000000000044,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 68,
-          "sura": 4,
-          "ayah": 33,
-          "line": 11,
-          "center_x": 0.895,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 68,
-          "line": 11,
-          "sura": 4,
-          "ayah": 33,
-          "left": 0.845,
-          "right": 0.9700000000000001,
-          "confidence": 0.85,
-          "source": "text_proportional"
-        }
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 11,
-      "suraAyah": "4:34",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.8950) is misaligned with next ayah right (0.9450) by 0.0500",
-      "details": {
-        "expectedBoundary": 0.9450000000000001,
-        "actualBoundary": 0.895,
-        "delta": 0.050000000000000044,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 68,
-          "sura": 4,
-          "ayah": 33,
-          "line": 11,
-          "center_x": 0.895,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 68,
-          "line": 11,
-          "sura": 4,
-          "ayah": 34,
-          "left": 0.03,
-          "right": 0.9450000000000001,
-          "confidence": 0.85,
-          "source": "text_proportional"
-        }
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "4:34 -> 4:35",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 68,
-          "line": 15,
-          "sura": 4,
-          "ayah": 34,
-          "left": 0.273,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "next": {
-          "page": 68,
-          "line": 15,
-          "sura": 4,
-          "ayah": 35,
-          "left": 0.03,
-          "right": 0.373,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "boundaryDelta": -0.09999999999999998,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "4:34",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.3233) is misaligned with highlight left (0.2730) by 0.0503",
-      "details": {
-        "expectedBoundary": 0.273,
-        "actualBoundary": 0.3233,
-        "delta": 0.050299999999999956,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 68,
-          "sura": 4,
-          "ayah": 34,
-          "line": 15,
-          "center_x": 0.3233,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 68,
-          "line": 15,
-          "sura": 4,
-          "ayah": 34,
-          "left": 0.273,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 68,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 15,
-      "suraAyah": "4:35",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.3233) is misaligned with next ayah right (0.3730) by 0.0497",
-      "details": {
-        "expectedBoundary": 0.373,
-        "actualBoundary": 0.3233,
-        "delta": 0.04970000000000002,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 68,
-          "sura": 4,
-          "ayah": 34,
-          "line": 15,
-          "center_x": 0.3233,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 68,
-          "line": 15,
-          "sura": 4,
-          "ayah": 35,
-          "left": 0.03,
-          "right": 0.373,
-          "confidence": 0.95,
-          "source": "visual_valley"
         }
       }
     },
@@ -1916,237 +1288,6 @@
       }
     },
     {
-      "page": 154,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 4,
-      "suraAyah": "9:28 -> 9:29",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 154,
-          "line": 4,
-          "sura": 9,
-          "ayah": 28,
-          "left": 0.6385,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "next": {
-          "page": 154,
-          "line": 4,
-          "sura": 9,
-          "ayah": 29,
-          "left": 0.03,
-          "right": 0.7385,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "boundaryDelta": -0.10000000000000009,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 154,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 4,
-      "suraAyah": "9:28",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.7288) is misaligned with highlight left (0.6385) by 0.0903",
-      "details": {
-        "expectedBoundary": 0.6385,
-        "actualBoundary": 0.7288,
-        "delta": 0.09030000000000005,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 154,
-          "sura": 9,
-          "ayah": 28,
-          "line": 4,
-          "center_x": 0.7288,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 154,
-          "line": 4,
-          "sura": 9,
-          "ayah": 28,
-          "left": 0.6385,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 161,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 4,
-      "suraAyah": "9:77 -> 9:78",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 161,
-          "line": 4,
-          "sura": 9,
-          "ayah": 77,
-          "left": 0.23060000000000003,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        },
-        "next": {
-          "page": 161,
-          "line": 4,
-          "sura": 9,
-          "ayah": 78,
-          "left": 0.03,
-          "right": 0.3306,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        },
-        "boundaryDelta": -0.09999999999999998,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 161,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 4,
-      "suraAyah": "9:77",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.2753) is misaligned with highlight left (0.2306) by 0.0447",
-      "details": {
-        "expectedBoundary": 0.23060000000000003,
-        "actualBoundary": 0.2753,
-        "delta": 0.04469999999999996,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 161,
-          "sura": 9,
-          "ayah": 77,
-          "line": 4,
-          "center_x": 0.2753,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 161,
-          "line": 4,
-          "sura": 9,
-          "ayah": 77,
-          "left": 0.23060000000000003,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 161,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 4,
-      "suraAyah": "9:78",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.2753) is misaligned with next ayah right (0.3306) by 0.0553",
-      "details": {
-        "expectedBoundary": 0.3306,
-        "actualBoundary": 0.2753,
-        "delta": 0.055300000000000016,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 161,
-          "sura": 9,
-          "ayah": 77,
-          "line": 4,
-          "center_x": 0.2753,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 161,
-          "line": 4,
-          "sura": 9,
-          "ayah": 78,
-          "left": 0.03,
-          "right": 0.3306,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 161,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 5,
-      "suraAyah": "9:78 -> 9:79",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 161,
-          "line": 5,
-          "sura": 9,
-          "ayah": 78,
-          "left": 0.15810000000000002,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        },
-        "next": {
-          "page": 161,
-          "line": 5,
-          "sura": 9,
-          "ayah": 79,
-          "left": 0.03,
-          "right": 0.2581,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        },
-        "boundaryDelta": -0.09999999999999998,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 161,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 5,
-      "suraAyah": "9:79",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.1609) is misaligned with next ayah right (0.2581) by 0.0972",
-      "details": {
-        "expectedBoundary": 0.2581,
-        "actualBoundary": 0.1609,
-        "delta": 0.09720000000000001,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 161,
-          "sura": 9,
-          "ayah": 78,
-          "line": 5,
-          "center_x": 0.1609,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 161,
-          "line": 5,
-          "sura": 9,
-          "ayah": 79,
-          "left": 0.03,
-          "right": 0.2581,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
       "page": 172,
       "severity": "suspicious",
       "category": "geometry",
@@ -2537,72 +1678,6 @@
           "ayah": 10,
           "left": 0.03,
           "right": 0.6285783695411108,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        }
-      }
-    },
-    {
-      "page": 211,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 12,
-      "suraAyah": "15:16 -> 15:17",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 211,
-          "line": 12,
-          "sura": 15,
-          "ayah": 16,
-          "left": 0.7281,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "next": {
-          "page": 211,
-          "line": 12,
-          "sura": 15,
-          "ayah": 17,
-          "left": 0.3214512982934263,
-          "right": 0.8281000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "boundaryDelta": -0.10000000000000009,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 211,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 12,
-      "suraAyah": "15:17",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.7321) is misaligned with next ayah right (0.8281) by 0.0960",
-      "details": {
-        "expectedBoundary": 0.8281000000000001,
-        "actualBoundary": 0.7321,
-        "delta": 0.09600000000000009,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 211,
-          "sura": 15,
-          "ayah": 16,
-          "line": 12,
-          "center_x": 0.7321,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 211,
-          "line": 12,
-          "sura": 15,
-          "ayah": 17,
-          "left": 0.3214512982934263,
-          "right": 0.8281000000000001,
           "confidence": 0.95,
           "source": "visual_valley"
         }
@@ -5252,39 +4327,6 @@
       "page": 300,
       "severity": "suspicious",
       "category": "geometry",
-      "line": 3,
-      "suraAyah": "26:151 -> 26:151",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.0786",
-      "details": {
-        "prev": {
-          "page": 300,
-          "line": 3,
-          "sura": 26,
-          "ayah": 151,
-          "left": 0.4412470525944613,
-          "right": 0.8124906572585914,
-          "confidence": 0.95,
-          "source": "visual_valley"
-        },
-        "next": {
-          "page": 300,
-          "line": 3,
-          "sura": 26,
-          "ayah": 151,
-          "left": 0.4412470525944613,
-          "right": 0.5198530810761057,
-          "confidence": 0.5,
-          "source": "manual_marker_sync"
-        },
-        "boundaryDelta": -0.07860602848164444,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 300,
-      "severity": "suspicious",
-      "category": "geometry",
       "line": 6,
       "suraAyah": "26:156",
       "code": "MARKER_BOUNDARY_MISMATCH",
@@ -6235,72 +5277,6 @@
           "right": 0.9294843193891396,
           "confidence": 0.5,
           "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 354,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "36:9 -> 36:10",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 354,
-          "line": 3,
-          "sura": 36,
-          "ayah": 9,
-          "left": 0.4037,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        },
-        "next": {
-          "page": 354,
-          "line": 3,
-          "sura": 36,
-          "ayah": 10,
-          "left": 0.03,
-          "right": 0.5037,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        },
-        "boundaryDelta": -0.10000000000000003,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 354,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 3,
-      "suraAyah": "36:10",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.4130) is misaligned with next ayah right (0.5037) by 0.0907",
-      "details": {
-        "expectedBoundary": 0.5037,
-        "actualBoundary": 0.413,
-        "delta": 0.09070000000000006,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 354,
-          "sura": 36,
-          "ayah": 9,
-          "line": 3,
-          "center_x": 0.413,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 354,
-          "line": 3,
-          "sura": 36,
-          "ayah": 10,
-          "left": 0.03,
-          "right": 0.5037,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
         }
       }
     },
@@ -8380,105 +7356,6 @@
           "right": 0.8242186563975614,
           "confidence": 0.5,
           "source": "manual_marker_sync"
-        }
-      }
-    },
-    {
-      "page": 407,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "47:17 -> 47:18",
-      "code": "SAME_LINE_OVERLAP",
-      "message": "Horizontal overlap on same line by 0.1000",
-      "details": {
-        "prev": {
-          "page": 407,
-          "line": 13,
-          "sura": 47,
-          "ayah": 17,
-          "left": 0.5330999999999999,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        },
-        "next": {
-          "page": 407,
-          "line": 13,
-          "sura": 47,
-          "ayah": 18,
-          "left": 0.03,
-          "right": 0.6331,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        },
-        "boundaryDelta": -0.10000000000000009,
-        "tolerance": 0.01
-      }
-    },
-    {
-      "page": 407,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "47:17",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.6023) is misaligned with highlight left (0.5331) by 0.0692",
-      "details": {
-        "expectedBoundary": 0.5330999999999999,
-        "actualBoundary": 0.6023,
-        "delta": 0.06920000000000004,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 407,
-          "sura": 47,
-          "ayah": 17,
-          "line": 13,
-          "center_x": 0.6023,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 407,
-          "line": 13,
-          "sura": 47,
-          "ayah": 17,
-          "left": 0.5330999999999999,
-          "right": 0.9700000000000001,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
-        }
-      }
-    },
-    {
-      "page": 407,
-      "severity": "suspicious",
-      "category": "geometry",
-      "line": 13,
-      "suraAyah": "47:18",
-      "code": "MARKER_BOUNDARY_MISMATCH",
-      "message": "Marker center (0.6023) is misaligned with next ayah right (0.6331) by 0.0308",
-      "details": {
-        "expectedBoundary": 0.6331,
-        "actualBoundary": 0.6023,
-        "delta": 0.03080000000000005,
-        "tolerance": 0.025,
-        "marker": {
-          "page": 407,
-          "sura": 47,
-          "ayah": 17,
-          "line": 13,
-          "center_x": 0.6023,
-          "center_y": 0.5
-        },
-        "highlight": {
-          "page": 407,
-          "line": 13,
-          "sura": 47,
-          "ayah": 18,
-          "left": 0.03,
-          "right": 0.6331,
-          "confidence": 0.95,
-          "source": "visual_valley_renumbered"
         }
       }
     },
