@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "timestamp": "2026-06-21T12:30:26.552Z",
+    "timestamp": "2026-06-21T12:36:55.662Z",
     "pagesChecked": 485,
     "numberingMode": "hafs_tolerant",
     "stats": {
-      "totalIssues": 543,
-      "fatal": 49,
-      "warning": 40,
+      "totalIssues": 491,
+      "fatal": 0,
+      "warning": 37,
       "suspicious": 454,
-      "fatalNoNumbering": 49,
+      "fatalNoNumbering": 0,
       "fatalNumberingOnly": 0
     },
     "statsByCategory": {
@@ -23,8 +23,8 @@
         "suspicious": 0
       },
       "layout": {
-        "fatal": 49,
-        "warning": 33,
+        "fatal": 0,
+        "warning": 30,
         "suspicious": 1
       },
       "geometry": {
@@ -44,7 +44,6 @@
       }
     },
     "statsByCode": {
-      "LAYOUT_ORDER_INVALID": 52,
       "MARKER_BOUNDARY_MISMATCH": 427,
       "LAYOUT_VERTICAL_OVERLAP": 1,
       "LINE_COUNT_MISMATCH": 30,
@@ -62,42 +61,14 @@
       },
       {
         "page": 483,
-        "count": 11
-      },
-      {
-        "page": 475,
         "count": 10
       },
       {
+        "page": 475,
+        "count": 8
+      },
+      {
         "page": 468,
-        "count": 8
-      },
-      {
-        "page": 469,
-        "count": 8
-      },
-      {
-        "page": 479,
-        "count": 8
-      },
-      {
-        "page": 358,
-        "count": 7
-      },
-      {
-        "page": 422,
-        "count": 7
-      },
-      {
-        "page": 463,
-        "count": 7
-      },
-      {
-        "page": 471,
-        "count": 7
-      },
-      {
-        "page": 477,
         "count": 7
       },
       {
@@ -109,11 +80,15 @@
         "count": 6
       },
       {
+        "page": 358,
+        "count": 6
+      },
+      {
         "page": 359,
         "count": 6
       },
       {
-        "page": 420,
+        "page": 422,
         "count": 6
       },
       {
@@ -121,12 +96,24 @@
         "count": 6
       },
       {
+        "page": 463,
+        "count": 6
+      },
+      {
         "page": 466,
         "count": 6
       },
       {
-        "page": 1,
-        "count": 5
+        "page": 469,
+        "count": 6
+      },
+      {
+        "page": 477,
+        "count": 6
+      },
+      {
+        "page": 479,
+        "count": 6
       },
       {
         "page": 161,
@@ -141,10 +128,6 @@
         "count": 5
       },
       {
-        "page": 353,
-        "count": 5
-      },
-      {
         "page": 362,
         "count": 5
       },
@@ -153,747 +136,28 @@
         "count": 5
       },
       {
-        "page": 424,
+        "page": 420,
+        "count": 5
+      },
+      {
+        "page": 428,
+        "count": 5
+      },
+      {
+        "page": 430,
+        "count": 5
+      },
+      {
+        "page": 431,
+        "count": 5
+      },
+      {
+        "page": 471,
         "count": 5
       }
     ]
   },
   "issues": [
-    {
-      "page": 1,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (511) is outside top-bottom (277-504) by 7px",
-      "details": {
-        "top": 277,
-        "center": 511,
-        "bottom": 504,
-        "errorAmount": 7
-      }
-    },
-    {
-      "page": 41,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 13,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1644) is outside top-bottom (1347-1455) by 189px",
-      "details": {
-        "top": 1347,
-        "center": 1644,
-        "bottom": 1455,
-        "errorAmount": 189
-      }
-    },
-    {
-      "page": 62,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 7,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (996) is outside top-bottom (656-761) by 235px",
-      "details": {
-        "top": 656,
-        "center": 996,
-        "bottom": 761,
-        "errorAmount": 235
-      }
-    },
-    {
-      "page": 62,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 8,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1132) is outside top-bottom (959-1070) by 62px",
-      "details": {
-        "top": 959,
-        "center": 1132,
-        "bottom": 1070,
-        "errorAmount": 62
-      }
-    },
-    {
-      "page": 86,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 8,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1088) is outside top-bottom (800-896) by 192px",
-      "details": {
-        "top": 800,
-        "center": 1088,
-        "bottom": 896,
-        "errorAmount": 192
-      }
-    },
-    {
-      "page": 122,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 14,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1533) is outside top-bottom (1654-1768) by 121px",
-      "details": {
-        "top": 1654,
-        "center": 1533,
-        "bottom": 1768,
-        "errorAmount": 121
-      }
-    },
-    {
-      "page": 142,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 10,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1147) is outside top-bottom (1308-1421) by 161px",
-      "details": {
-        "top": 1308,
-        "center": 1147,
-        "bottom": 1421,
-        "errorAmount": 161
-      }
-    },
-    {
-      "page": 150,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 10,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1301) is outside top-bottom (1010-1122) by 179px",
-      "details": {
-        "top": 1010,
-        "center": 1301,
-        "bottom": 1122,
-        "errorAmount": 179
-      }
-    },
-    {
-      "page": 150,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 11,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1399) is outside top-bottom (1236-1346) by 53px",
-      "details": {
-        "top": 1236,
-        "center": 1399,
-        "bottom": 1346,
-        "errorAmount": 53
-      }
-    },
-    {
-      "page": 156,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (104) is outside top-bottom (116-242) by 12px",
-      "details": {
-        "top": 116,
-        "center": 104,
-        "bottom": 242,
-        "errorAmount": 12
-      }
-    },
-    {
-      "page": 200,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 3,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (644) is outside top-bottom (307-439) by 205px",
-      "details": {
-        "top": 307,
-        "center": 644,
-        "bottom": 439,
-        "errorAmount": 205
-      }
-    },
-    {
-      "page": 215,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (379) is outside top-bottom (257-365) by 14px",
-      "details": {
-        "top": 257,
-        "center": 379,
-        "bottom": 365,
-        "errorAmount": 14
-      }
-    },
-    {
-      "page": 289,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 5,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (550) is outside top-bottom (710-804) by 160px",
-      "details": {
-        "top": 710,
-        "center": 550,
-        "bottom": 804,
-        "errorAmount": 160
-      }
-    },
-    {
-      "page": 320,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (100) is outside top-bottom (109-243) by 9px",
-      "details": {
-        "top": 109,
-        "center": 100,
-        "bottom": 243,
-        "errorAmount": 9
-      }
-    },
-    {
-      "page": 324,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 12,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1555) is outside top-bottom (1417-1517) by 38px",
-      "details": {
-        "top": 1417,
-        "center": 1555,
-        "bottom": 1517,
-        "errorAmount": 38
-      }
-    },
-    {
-      "page": 329,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 8,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1094) is outside top-bottom (804-912) by 182px",
-      "details": {
-        "top": 804,
-        "center": 1094,
-        "bottom": 912,
-        "errorAmount": 182
-      }
-    },
-    {
-      "page": 332,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 5,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (788) is outside top-bottom (472-587) by 201px",
-      "details": {
-        "top": 472,
-        "center": 788,
-        "bottom": 587,
-        "errorAmount": 201
-      }
-    },
-    {
-      "page": 335,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (376) is outside top-bottom (139-247) by 129px",
-      "details": {
-        "top": 139,
-        "center": 376,
-        "bottom": 247,
-        "errorAmount": 129
-      }
-    },
-    {
-      "page": 349,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 9,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1109) is outside top-bottom (1145-1250) by 36px",
-      "details": {
-        "top": 1145,
-        "center": 1109,
-        "bottom": 1250,
-        "errorAmount": 36
-      }
-    },
-    {
-      "page": 353,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 13,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1486) is outside top-bottom (1643-1772) by 157px",
-      "details": {
-        "top": 1643,
-        "center": 1486,
-        "bottom": 1772,
-        "errorAmount": 157
-      }
-    },
-    {
-      "page": 358,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 5,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (749) is outside top-bottom (781-901) by 32px",
-      "details": {
-        "top": 781,
-        "center": 749,
-        "bottom": 901,
-        "errorAmount": 32
-      }
-    },
-    {
-      "page": 382,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 10,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1087) is outside top-bottom (1246-1337) by 159px",
-      "details": {
-        "top": 1246,
-        "center": 1087,
-        "bottom": 1337,
-        "errorAmount": 159
-      }
-    },
-    {
-      "page": 387,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 14,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1597) is outside top-bottom (1737-1863) by 140px",
-      "details": {
-        "top": 1737,
-        "center": 1597,
-        "bottom": 1863,
-        "errorAmount": 140
-      }
-    },
-    {
-      "page": 393,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 7,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (826) is outside top-bottom (971-1076) by 145px",
-      "details": {
-        "top": 971,
-        "center": 826,
-        "bottom": 1076,
-        "errorAmount": 145
-      }
-    },
-    {
-      "page": 415,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 9,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1026) is outside top-bottom (1184-1291) by 158px",
-      "details": {
-        "top": 1184,
-        "center": 1026,
-        "bottom": 1291,
-        "errorAmount": 158
-      }
-    },
-    {
-      "page": 420,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 4,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (658) is outside top-bottom (381-483) by 175px",
-      "details": {
-        "top": 381,
-        "center": 658,
-        "bottom": 483,
-        "errorAmount": 175
-      }
-    },
-    {
-      "page": 422,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 6,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (810) is outside top-bottom (854-964) by 44px",
-      "details": {
-        "top": 854,
-        "center": 810,
-        "bottom": 964,
-        "errorAmount": 44
-      }
-    },
-    {
-      "page": 424,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 7,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1032) is outside top-bottom (729-850) by 182px",
-      "details": {
-        "top": 729,
-        "center": 1032,
-        "bottom": 850,
-        "errorAmount": 182
-      }
-    },
-    {
-      "page": 429,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (371) is outside top-bottom (244-359) by 12px",
-      "details": {
-        "top": 244,
-        "center": 371,
-        "bottom": 359,
-        "errorAmount": 12
-      }
-    },
-    {
-      "page": 437,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 14,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1421) is outside top-bottom (1568-1659) by 147px",
-      "details": {
-        "top": 1568,
-        "center": 1421,
-        "bottom": 1659,
-        "errorAmount": 147
-      }
-    },
-    {
-      "page": 438,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 8,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1044) is outside top-bottom (806-919) by 125px",
-      "details": {
-        "top": 806,
-        "center": 1044,
-        "bottom": 919,
-        "errorAmount": 125
-      }
-    },
-    {
-      "page": 445,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 6,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (874) is outside top-bottom (904-1022) by 30px",
-      "details": {
-        "top": 904,
-        "center": 874,
-        "bottom": 1022,
-        "errorAmount": 30
-      }
-    },
-    {
-      "page": 454,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 5,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (575) is outside top-bottom (705-818) by 130px",
-      "details": {
-        "top": 705,
-        "center": 575,
-        "bottom": 818,
-        "errorAmount": 130
-      }
-    },
-    {
-      "page": 457,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 5,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (714) is outside top-bottom (745-865) by 31px",
-      "details": {
-        "top": 745,
-        "center": 714,
-        "bottom": 865,
-        "errorAmount": 31
-      }
-    },
-    {
-      "page": 460,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 6,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (647) is outside top-bottom (773-870) by 126px",
-      "details": {
-        "top": 773,
-        "center": 647,
-        "bottom": 870,
-        "errorAmount": 126
-      }
-    },
-    {
-      "page": 461,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 8,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (833) is outside top-bottom (971-1078) by 138px",
-      "details": {
-        "top": 971,
-        "center": 833,
-        "bottom": 1078,
-        "errorAmount": 138
-      }
-    },
-    {
-      "page": 463,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (380) is outside top-bottom (249-355) by 25px",
-      "details": {
-        "top": 249,
-        "center": 380,
-        "bottom": 355,
-        "errorAmount": 25
-      }
-    },
-    {
-      "page": 468,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (364) is outside top-bottom (263-353) by 11px",
-      "details": {
-        "top": 263,
-        "center": 364,
-        "bottom": 353,
-        "errorAmount": 11
-      }
-    },
-    {
-      "page": 469,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 2,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (483) is outside top-bottom (153-261) by 222px",
-      "details": {
-        "top": 153,
-        "center": 483,
-        "bottom": 261,
-        "errorAmount": 222
-      }
-    },
-    {
-      "page": 469,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 3,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (621) is outside top-bottom (463-574) by 47px",
-      "details": {
-        "top": 463,
-        "center": 621,
-        "bottom": 574,
-        "errorAmount": 47
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (115) is outside top-bottom (277-378) by 162px",
-      "details": {
-        "top": 277,
-        "center": 115,
-        "bottom": 378,
-        "errorAmount": 162
-      }
-    },
-    {
-      "page": 471,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 8,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1120) is outside top-bottom (1311-1413) by 191px",
-      "details": {
-        "top": 1311,
-        "center": 1120,
-        "bottom": 1413,
-        "errorAmount": 191
-      }
-    },
-    {
-      "page": 475,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 8,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1349) is outside top-bottom (1013-1121) by 228px",
-      "details": {
-        "top": 1013,
-        "center": 1349,
-        "bottom": 1121,
-        "errorAmount": 228
-      }
-    },
-    {
-      "page": 475,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 9,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1491) is outside top-bottom (1330-1441) by 50px",
-      "details": {
-        "top": 1330,
-        "center": 1491,
-        "bottom": 1441,
-        "errorAmount": 50
-      }
-    },
-    {
-      "page": 477,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 8,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1124) is outside top-bottom (1304-1396) by 180px",
-      "details": {
-        "top": 1304,
-        "center": 1124,
-        "bottom": 1396,
-        "errorAmount": 180
-      }
-    },
-    {
-      "page": 479,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 4,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (917) is outside top-bottom (945-1081) by 28px",
-      "details": {
-        "top": 945,
-        "center": 917,
-        "bottom": 1081,
-        "errorAmount": 28
-      }
-    },
-    {
-      "page": 479,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 8,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1516) is outside top-bottom (1727-1829) by 211px",
-      "details": {
-        "top": 1727,
-        "center": 1516,
-        "bottom": 1829,
-        "errorAmount": 211
-      }
-    },
-    {
-      "page": 481,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 11,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (1396) is outside top-bottom (1556-1663) by 160px",
-      "details": {
-        "top": 1556,
-        "center": 1396,
-        "bottom": 1663,
-        "errorAmount": 160
-      }
-    },
-    {
-      "page": 483,
-      "severity": "fatal",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds invalid: center (341) is outside top-bottom (373-501) by 32px",
-      "details": {
-        "top": 373,
-        "center": 341,
-        "bottom": 501,
-        "errorAmount": 32
-      }
-    },
     {
       "page": 27,
       "severity": "warning",
@@ -1187,21 +451,6 @@
       }
     },
     {
-      "page": 403,
-      "severity": "warning",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds slightly off: center (270) is outside top-bottom (275-357) by 5px",
-      "details": {
-        "top": 275,
-        "center": 270,
-        "bottom": 357,
-        "errorAmount": 5
-      }
-    },
-    {
       "page": 422,
       "severity": "warning",
       "category": "layout",
@@ -1254,21 +503,6 @@
       }
     },
     {
-      "page": 443,
-      "severity": "warning",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds slightly off: center (276) is outside top-bottom (279-360) by 3px",
-      "details": {
-        "top": 279,
-        "center": 276,
-        "bottom": 360,
-        "errorAmount": 3
-      }
-    },
-    {
       "page": 445,
       "severity": "warning",
       "category": "layout",
@@ -1300,21 +534,6 @@
           "confidence": 0.5,
           "source": "manual_marker_sync"
         }
-      }
-    },
-    {
-      "page": 451,
-      "severity": "warning",
-      "category": "layout",
-      "line": 1,
-      "suraAyah": null,
-      "code": "LAYOUT_ORDER_INVALID",
-      "message": "Line vertical bounds slightly off: center (292) is outside top-bottom (295-399) by 3px",
-      "details": {
-        "top": 295,
-        "center": 292,
-        "bottom": 399,
-        "errorAmount": 3
       }
     },
     {

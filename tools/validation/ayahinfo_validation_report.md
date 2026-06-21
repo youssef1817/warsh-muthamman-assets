@@ -1,35 +1,34 @@
 # Quran Ayahinfo Validation Report (Warsh Muthamman)
 
-**Date:** 2026-06-21T12:30:26.555Z  
+**Date:** 2026-06-21T12:36:55.666Z  
 **Pages Checked:** 485 / 485  
 **Numbering Mode:** `hafs_tolerant`  
 
 ## Summary Stats
 | Severity | Count |
 |---|---|
-| <span style="color:red">🔴 Fatal</span> | **49** |
-| <span style="color:orange">🟡 Warning</span> | **40** |
+| <span style="color:red">🔴 Fatal</span> | **0** |
+| <span style="color:orange">🟡 Warning</span> | **37** |
 | <span style="color:blue">🔵 Suspicious</span> | **454** |
-| **Total Issues** | **543** |
+| **Total Issues** | **491** |
 
 ### Stats by Category & Severity
 | Category | Fatal | Warning | Suspicious | Total |
 |---|---|---|---|---|
 | `structural` | 0 | 0 | 0 | **0** |
 | `numbering` | 0 | 7 | 0 | **7** |
-| `layout` | 49 | 33 | 1 | **83** |
+| `layout` | 0 | 30 | 1 | **31** |
 | `geometry` | 0 | 0 | 452 | **452** |
 | `ordering` | 0 | 0 | 1 | **1** |
 | `other` | 0 | 0 | 0 | **0** |
 
 ### Fatal Breakdown
-- Fatal Issues (Excluding Numbering): **49**  
+- Fatal Issues (Excluding Numbering): **0**  
 - Fatal Numbering Issues Only: **0**  
 
 ## Stats by Issue Code
 | Code | Category | Severity | Count |
 |---|---|---|---|
-| `LAYOUT_ORDER_INVALID` | `layout` | <span style="color:red">fatal</span> | 52 |
 | `LINE_COUNT_MISMATCH` | `layout` | <span style="color:orange">warning</span> | 30 |
 | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 6 |
 | `MARKER_AYAH_OUT_OF_RANGE` | `numbering` | <span style="color:orange">warning</span> | 1 |
@@ -44,77 +43,34 @@
 | Page | Issues Count |
 |---|---|
 | Page 68 | 16 |
-| Page 483 | 11 |
-| Page 475 | 10 |
-| Page 468 | 8 |
-| Page 469 | 8 |
-| Page 479 | 8 |
-| Page 358 | 7 |
-| Page 422 | 7 |
-| Page 463 | 7 |
-| Page 471 | 7 |
-| Page 477 | 7 |
+| Page 483 | 10 |
+| Page 475 | 8 |
+| Page 468 | 7 |
 | Page 484 | 7 |
 | Page 299 | 6 |
+| Page 358 | 6 |
 | Page 359 | 6 |
-| Page 420 | 6 |
+| Page 422 | 6 |
 | Page 452 | 6 |
+| Page 463 | 6 |
 | Page 466 | 6 |
-| Page 1 | 5 |
+| Page 469 | 6 |
+| Page 477 | 6 |
+| Page 479 | 6 |
 | Page 161 | 5 |
 | Page 211 | 5 |
 | Page 214 | 5 |
-| Page 353 | 5 |
 | Page 362 | 5 |
 | Page 398 | 5 |
-| Page 424 | 5 |
+| Page 420 | 5 |
+| Page 428 | 5 |
+| Page 430 | 5 |
+| Page 431 | 5 |
+| Page 471 | 5 |
 
 ## Major Root Causes (Deduplicated, Excluding Mismatch Geometry)
 | Page | Category | Code | Severity | Ayah | Line | Count | Description |
 |---|---|---|---|---|---|---|---|
-| Page 1 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (511) is outside top-bottom (277-504) by 7px |
-| Page 41 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 13 | 1 | Line vertical bounds invalid: center (1644) is outside top-bottom (1347-1455) by 189px |
-| Page 62 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 7 | 2 | Line vertical bounds invalid: center (996) is outside top-bottom (656-761) by 235px |
-| Page 86 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (1088) is outside top-bottom (800-896) by 192px |
-| Page 122 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 14 | 1 | Line vertical bounds invalid: center (1533) is outside top-bottom (1654-1768) by 121px |
-| Page 142 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 10 | 1 | Line vertical bounds invalid: center (1147) is outside top-bottom (1308-1421) by 161px |
-| Page 150 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 10 | 2 | Line vertical bounds invalid: center (1301) is outside top-bottom (1010-1122) by 179px |
-| Page 156 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (104) is outside top-bottom (116-242) by 12px |
-| Page 200 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 3 | 1 | Line vertical bounds invalid: center (644) is outside top-bottom (307-439) by 205px |
-| Page 215 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (379) is outside top-bottom (257-365) by 14px |
-| Page 289 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 5 | 1 | Line vertical bounds invalid: center (550) is outside top-bottom (710-804) by 160px |
-| Page 320 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (100) is outside top-bottom (109-243) by 9px |
-| Page 324 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 12 | 1 | Line vertical bounds invalid: center (1555) is outside top-bottom (1417-1517) by 38px |
-| Page 329 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (1094) is outside top-bottom (804-912) by 182px |
-| Page 332 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 5 | 1 | Line vertical bounds invalid: center (788) is outside top-bottom (472-587) by 201px |
-| Page 335 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (376) is outside top-bottom (139-247) by 129px |
-| Page 349 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 9 | 1 | Line vertical bounds invalid: center (1109) is outside top-bottom (1145-1250) by 36px |
-| Page 353 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 13 | 1 | Line vertical bounds invalid: center (1486) is outside top-bottom (1643-1772) by 157px |
-| Page 358 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 5 | 1 | Line vertical bounds invalid: center (749) is outside top-bottom (781-901) by 32px |
-| Page 382 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 10 | 1 | Line vertical bounds invalid: center (1087) is outside top-bottom (1246-1337) by 159px |
-| Page 387 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 14 | 1 | Line vertical bounds invalid: center (1597) is outside top-bottom (1737-1863) by 140px |
-| Page 393 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 7 | 1 | Line vertical bounds invalid: center (826) is outside top-bottom (971-1076) by 145px |
-| Page 415 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 9 | 1 | Line vertical bounds invalid: center (1026) is outside top-bottom (1184-1291) by 158px |
-| Page 420 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 4 | 1 | Line vertical bounds invalid: center (658) is outside top-bottom (381-483) by 175px |
-| Page 422 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 6 | 1 | Line vertical bounds invalid: center (810) is outside top-bottom (854-964) by 44px |
-| Page 424 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 7 | 1 | Line vertical bounds invalid: center (1032) is outside top-bottom (729-850) by 182px |
-| Page 429 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (371) is outside top-bottom (244-359) by 12px |
-| Page 437 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 14 | 1 | Line vertical bounds invalid: center (1421) is outside top-bottom (1568-1659) by 147px |
-| Page 438 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (1044) is outside top-bottom (806-919) by 125px |
-| Page 445 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 6 | 1 | Line vertical bounds invalid: center (874) is outside top-bottom (904-1022) by 30px |
-| Page 454 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 5 | 1 | Line vertical bounds invalid: center (575) is outside top-bottom (705-818) by 130px |
-| Page 457 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 5 | 1 | Line vertical bounds invalid: center (714) is outside top-bottom (745-865) by 31px |
-| Page 460 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 6 | 1 | Line vertical bounds invalid: center (647) is outside top-bottom (773-870) by 126px |
-| Page 461 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (833) is outside top-bottom (971-1078) by 138px |
-| Page 463 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (380) is outside top-bottom (249-355) by 25px |
-| Page 468 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (364) is outside top-bottom (263-353) by 11px |
-| Page 469 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 2 | 2 | Line vertical bounds invalid: center (483) is outside top-bottom (153-261) by 222px |
-| Page 471 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 2 | Line vertical bounds invalid: center (115) is outside top-bottom (277-378) by 162px |
-| Page 475 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 2 | Line vertical bounds invalid: center (1349) is outside top-bottom (1013-1121) by 228px |
-| Page 477 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 8 | 1 | Line vertical bounds invalid: center (1124) is outside top-bottom (1304-1396) by 180px |
-| Page 479 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 4 | 2 | Line vertical bounds invalid: center (917) is outside top-bottom (945-1081) by 28px |
-| Page 481 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 11 | 1 | Line vertical bounds invalid: center (1396) is outside top-bottom (1556-1663) by 160px |
-| Page 483 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:red">fatal</span> | - | 1 | 1 | Line vertical bounds invalid: center (341) is outside top-bottom (373-501) by 32px |
 | Page 27 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (17) does not match lineBands count (18) |
 | Page 62 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (16) |
 | Page 150 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
@@ -134,15 +90,12 @@
 | Page 358 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (14) |
 | Page 368 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (16) |
 | Page 382 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 40:86 | 9 | 1 | Highlight ayah (86) is out of range for sura (max 85) |
-| Page 403 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:orange">warning</span> | - | 1 | 1 | Line vertical bounds slightly off: center (270) is outside top-bottom (275-357) by 5px |
 | Page 422 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (15) |
 | Page 429 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
 | Page 438 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (18) |
 | Page 440 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (16) |
-| Page 443 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:orange">warning</span> | - | 1 | 1 | Line vertical bounds slightly off: center (276) is outside top-bottom (279-360) by 3px |
 | Page 445 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (14) |
 | Page 450 | `numbering` | `HIGHLIGHT_AYAH_OUT_OF_RANGE` | <span style="color:orange">warning</span> | 66:25 | 13 | 1 | Highlight ayah (25) is out of range for sura (max 12) |
-| Page 451 | `layout` | `LAYOUT_ORDER_INVALID` | <span style="color:orange">warning</span> | - | 1 | 1 | Line vertical bounds slightly off: center (292) is outside top-bottom (295-399) by 3px |
 | Page 452 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (17) |
 | Page 457 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (16) does not match lineBands count (15) |
 | Page 463 | `layout` | `LINE_COUNT_MISMATCH` | <span style="color:orange">warning</span> | - | - | 1 | detectedLineCount (15) does not match lineBands count (16) |
@@ -194,55 +147,6 @@
 ## Section 3: Layout Issues
 | Page | Line | Ayah | Severity | Code | Message |
 |---|---|---|---|---|---|
-| Page 1 | 1 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (511) is outside top-bottom (277-504) by 7px |
-| Page 41 | 13 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1644) is outside top-bottom (1347-1455) by 189px |
-| Page 62 | 7 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (996) is outside top-bottom (656-761) by 235px |
-| Page 62 | 8 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1132) is outside top-bottom (959-1070) by 62px |
-| Page 86 | 8 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1088) is outside top-bottom (800-896) by 192px |
-| Page 122 | 14 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1533) is outside top-bottom (1654-1768) by 121px |
-| Page 142 | 10 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1147) is outside top-bottom (1308-1421) by 161px |
-| Page 150 | 10 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1301) is outside top-bottom (1010-1122) by 179px |
-| Page 150 | 11 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1399) is outside top-bottom (1236-1346) by 53px |
-| Page 156 | 1 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (104) is outside top-bottom (116-242) by 12px |
-| Page 200 | 3 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (644) is outside top-bottom (307-439) by 205px |
-| Page 215 | 1 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (379) is outside top-bottom (257-365) by 14px |
-| Page 289 | 5 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (550) is outside top-bottom (710-804) by 160px |
-| Page 320 | 1 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (100) is outside top-bottom (109-243) by 9px |
-| Page 324 | 12 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1555) is outside top-bottom (1417-1517) by 38px |
-| Page 329 | 8 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1094) is outside top-bottom (804-912) by 182px |
-| Page 332 | 5 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (788) is outside top-bottom (472-587) by 201px |
-| Page 335 | 1 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (376) is outside top-bottom (139-247) by 129px |
-| Page 349 | 9 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1109) is outside top-bottom (1145-1250) by 36px |
-| Page 353 | 13 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1486) is outside top-bottom (1643-1772) by 157px |
-| Page 358 | 5 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (749) is outside top-bottom (781-901) by 32px |
-| Page 382 | 10 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1087) is outside top-bottom (1246-1337) by 159px |
-| Page 387 | 14 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1597) is outside top-bottom (1737-1863) by 140px |
-| Page 393 | 7 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (826) is outside top-bottom (971-1076) by 145px |
-| Page 415 | 9 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1026) is outside top-bottom (1184-1291) by 158px |
-| Page 420 | 4 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (658) is outside top-bottom (381-483) by 175px |
-| Page 422 | 6 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (810) is outside top-bottom (854-964) by 44px |
-| Page 424 | 7 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1032) is outside top-bottom (729-850) by 182px |
-| Page 429 | 1 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (371) is outside top-bottom (244-359) by 12px |
-| Page 437 | 14 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1421) is outside top-bottom (1568-1659) by 147px |
-| Page 438 | 8 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1044) is outside top-bottom (806-919) by 125px |
-| Page 445 | 6 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (874) is outside top-bottom (904-1022) by 30px |
-| Page 454 | 5 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (575) is outside top-bottom (705-818) by 130px |
-| Page 457 | 5 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (714) is outside top-bottom (745-865) by 31px |
-| Page 460 | 6 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (647) is outside top-bottom (773-870) by 126px |
-| Page 461 | 8 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (833) is outside top-bottom (971-1078) by 138px |
-| Page 463 | 1 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (380) is outside top-bottom (249-355) by 25px |
-| Page 468 | 1 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (364) is outside top-bottom (263-353) by 11px |
-| Page 469 | 2 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (483) is outside top-bottom (153-261) by 222px |
-| Page 469 | 3 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (621) is outside top-bottom (463-574) by 47px |
-| Page 471 | 1 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (115) is outside top-bottom (277-378) by 162px |
-| Page 471 | 8 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1120) is outside top-bottom (1311-1413) by 191px |
-| Page 475 | 8 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1349) is outside top-bottom (1013-1121) by 228px |
-| Page 475 | 9 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1491) is outside top-bottom (1330-1441) by 50px |
-| Page 477 | 8 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1124) is outside top-bottom (1304-1396) by 180px |
-| Page 479 | 4 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (917) is outside top-bottom (945-1081) by 28px |
-| Page 479 | 8 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1516) is outside top-bottom (1727-1829) by 211px |
-| Page 481 | 11 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (1396) is outside top-bottom (1556-1663) by 160px |
-| Page 483 | 1 | - | <span style="color:red">fatal</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds invalid: center (341) is outside top-bottom (373-501) by 32px |
 | Page 27 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (17) does not match lineBands count (18) |
 | Page 62 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (16) |
 | Page 150 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (17) |
@@ -259,14 +163,11 @@
 | Page 349 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (17) does not match lineBands count (16) |
 | Page 358 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (14) |
 | Page 368 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (16) |
-| Page 403 | 1 | - | <span style="color:orange">warning</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds slightly off: center (270) is outside top-bottom (275-357) by 5px |
 | Page 422 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (15) |
 | Page 429 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (17) |
 | Page 438 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (18) |
 | Page 440 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (16) |
-| Page 443 | 1 | - | <span style="color:orange">warning</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds slightly off: center (276) is outside top-bottom (279-360) by 3px |
 | Page 445 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (14) |
-| Page 451 | 1 | - | <span style="color:orange">warning</span> | `LAYOUT_ORDER_INVALID` | Line vertical bounds slightly off: center (292) is outside top-bottom (295-399) by 3px |
 | Page 452 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (17) |
 | Page 457 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (16) does not match lineBands count (15) |
 | Page 463 | - | - | <span style="color:orange">warning</span> | `LINE_COUNT_MISMATCH` | detectedLineCount (15) does not match lineBands count (16) |
