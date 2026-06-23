@@ -13,7 +13,7 @@ const dbPath = path.join(workspaceRoot, 'scratch/quran.ar.warsh.db');
 const thumnPagesPath = path.join(assetsDir, 'data/thumn/warsh_muthamman_thumn_pages.json');
 
 const outputDir = path.join(assetsDir, 'databases/ayahinfo/warsh_muthamman');
-const outputDbPath = path.join(outputDir, 'quran.ar.warsh_muthamman.db');
+const outputDbPath = path.join(outputDir, 'ayahinfo.db');
 const jsonOutputDir = path.join(outputDir, 'pages_json');
 
 // Ensure output directories exist

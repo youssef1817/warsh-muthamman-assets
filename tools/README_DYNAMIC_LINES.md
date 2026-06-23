@@ -13,7 +13,7 @@
 ## أين تُحفظ Line Bands
 تُحفظ البيانات أولاً كملفات JSON لكل صفحة في المجلد:
 `databases/ayahinfo/warsh_muthamman/page_layout_json/`
-ثم يقوم المولدات (`05` و `06`) بدمج هذه الملفات وحفظها في قاعدة بيانات SQLite `quran.ar.warsh_muthamman.db` داخل جدول جديد يسمى `page_line_bands` الذي يحتوي الأعمدة: `page`, `line`, `top`, `bottom`, `center`.
+ثم يقوم المولدات (`05` و `06`) بدمج هذه الملفات وحفظها في قاعدة بيانات SQLite `ayahinfo.db` داخل جدول جديد يسمى `page_line_bands` الذي يحتوي الأعمدة: `page`, `line`, `top`, `bottom`, `center`.
 
 ## كيف يتم Regenerate
 لإعادة بناء البيانات بالكامل:

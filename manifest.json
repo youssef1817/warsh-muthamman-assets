@@ -32,7 +32,7 @@
   "ayahInfo": {
     "status": "initial_sqlite_ready",
     "directory": "databases/ayahinfo/warsh_muthamman/",
-    "database": "databases/ayahinfo/warsh_muthamman/quran.ar.warsh_muthamman.db",
+    "database": "databases/ayahinfo/warsh_muthamman/ayahinfo.db",
     "zip": "databases/ayahinfo/warsh_muthamman/ayahinfo_muthamman.zip",
     "note": "بيانات تحديد الآيات أولية وقابلة للتحسين لاحقا، لكنها صالحة للتكامل الأولي داخل التطبيق."
   },

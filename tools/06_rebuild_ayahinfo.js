@@ -7,7 +7,7 @@ const { DatabaseSync } = require('node:sqlite');
 const toolsDir = __dirname;
 const assetsDir = path.resolve(toolsDir, '..');
 const outputDir = path.join(assetsDir, 'databases/ayahinfo/warsh_muthamman');
-const outputDbPath = path.join(outputDir, 'quran.ar.warsh_muthamman.db');
+const outputDbPath = path.join(outputDir, 'ayahinfo.db');
 const jsonOutputDir = path.join(outputDir, 'pages_json');
 
 function main() {

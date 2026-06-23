@@ -39,7 +39,7 @@ node tools/06_rebuild_ayahinfo.js
 وهذا ينتج:
 
 - `databases/ayahinfo/warsh_muthamman/pages_json/`
-- `databases/ayahinfo/warsh_muthamman/quran.ar.warsh_muthamman.db`
+- `databases/ayahinfo/warsh_muthamman/ayahinfo.db`
 - `databases/ayahinfo/warsh_muthamman/ayahinfo_muthamman.zip`
 
 ## خط المزامنة المباشرة للتعديلات (Sync Scripts)

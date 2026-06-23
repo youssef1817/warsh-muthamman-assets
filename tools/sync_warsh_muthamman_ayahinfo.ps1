@@ -123,7 +123,7 @@ if ($All) {
 }
 $assetsRoot = Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')
 $dbDir = Join-Path $assetsRoot 'databases\ayahinfo\warsh_muthamman'
-$sourceDb = Join-Path $dbDir 'quran.ar.warsh_muthamman.db'
+$sourceDb = Join-Path $dbDir 'ayahinfo.db'
 $pagesJsonDir = Join-Path $dbDir 'pages_json'
 $layoutJsonDir = Join-Path $dbDir 'page_layout_json'
 $nodeHelper = Join-Path $PSScriptRoot 'sync_warsh_muthamman_ayahinfo_page.js'
@@ -163,16 +163,30 @@ if (-not $SkipAndroid) {
 
 Write-Info "Updating local ZIP archive databases\ayahinfo\warsh_muthamman\ayahinfo_muthamman.zip..."
 $zipPath = Join-Path $dbDir 'ayahinfo_muthamman.zip'
-$folderToZip = Join-Path $dbDir 'ayahinfo_muthamman'
+$tmpFolderForZip = Join-Path $dbDir 'ayahinfo_muthamman'
+$tmpDbForZip = Join-Path $tmpFolderForZip 'ayahinfo.db'
 try {
   if (Test-Path -LiteralPath $zipPath) {
     Remove-Item -LiteralPath $zipPath -Force
   }
-  # Compress the contents of the folder so the zip extracts directly
-  Compress-Archive -Path "$folderToZip\*" -DestinationPath $zipPath -Force
+  
+  # Create the temporary folder
+  New-Item -ItemType Directory -Path $tmpFolderForZip -Force | Out-Null
+  
+  # Copy the fresh database into the temporary folder with the correct name
+  Copy-Item -LiteralPath $sourceDb -Destination $tmpDbForZip -Force
+  
+  # Compress the folder so the ZIP extracts into an 'ayahinfo_muthamman' directory containing 'ayahinfo.db'
+  Compress-Archive -Path $tmpFolderForZip -DestinationPath $zipPath -Force
+  
   Write-Ok "Local ZIP archive updated successfully: $zipPath"
 } catch {
   Write-Warn "Failed to update local ZIP archive: $_"
+} finally {
+  # Clean up the temporary folder after zipping
+  if (Test-Path -LiteralPath $tmpFolderForZip) {
+    Remove-Item -Recurse -Force $tmpFolderForZip
+  }
 }
 
 Write-Host ''
