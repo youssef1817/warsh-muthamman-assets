@@ -163,17 +163,16 @@ if (-not $SkipAndroid) {
 
 Write-Info "Updating local ZIP archive databases\ayahinfo\warsh_muthamman\ayahinfo_muthamman.zip..."
 $zipPath = Join-Path $dbDir 'ayahinfo_muthamman.zip'
-$tmpDbForZip = Join-Path $dbDir 'ayahinfo.db'
+$folderToZip = Join-Path $dbDir 'ayahinfo_muthamman'
 try {
-  Copy-Item -LiteralPath $sourceDb -Destination $tmpDbForZip -Force
-  Compress-Archive -Path $tmpDbForZip -DestinationPath $zipPath -Force
+  if (Test-Path -LiteralPath $zipPath) {
+    Remove-Item -LiteralPath $zipPath -Force
+  }
+  # Compress the contents of the folder so the zip extracts directly
+  Compress-Archive -Path "$folderToZip\*" -DestinationPath $zipPath -Force
   Write-Ok "Local ZIP archive updated successfully: $zipPath"
 } catch {
   Write-Warn "Failed to update local ZIP archive: $_"
-} finally {
-  if (Test-Path -LiteralPath $tmpDbForZip) {
-    Remove-Item -LiteralPath $tmpDbForZip -Force
-  }
 }
 
 Write-Host ''
