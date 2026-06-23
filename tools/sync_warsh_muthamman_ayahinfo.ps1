@@ -161,5 +161,20 @@ if (-not $SkipAndroid) {
   Invoke-AdbSync $sourceDb
 }
 
+Write-Info "Updating local ZIP archive databases\ayahinfo\warsh_muthamman\ayahinfo_muthamman.zip..."
+$zipPath = Join-Path $dbDir 'ayahinfo_muthamman.zip'
+$tmpDbForZip = Join-Path $dbDir 'ayahinfo.db'
+try {
+  Copy-Item -LiteralPath $sourceDb -Destination $tmpDbForZip -Force
+  Compress-Archive -Path $tmpDbForZip -DestinationPath $zipPath -Force
+  Write-Ok "Local ZIP archive updated successfully: $zipPath"
+} catch {
+  Write-Warn "Failed to update local ZIP archive: $_"
+} finally {
+  if (Test-Path -LiteralPath $tmpDbForZip) {
+    Remove-Item -LiteralPath $tmpDbForZip -Force
+  }
+}
+
 Write-Host ''
 Write-Ok 'Done. Run Hot Reload/Restart as needed, then reopen the page to see the edit.'
