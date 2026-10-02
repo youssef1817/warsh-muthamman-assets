@@ -2,7 +2,7 @@
   "stage": "warsh_muthamman_png",
   "format": "png",
   "pageCount": 485,
-  "totalBytes": 163113145,
+  "totalBytes": 163133878,
   "generatedAt": 1781530556.257874,
   "pages": [
     {
@@ -1248,10 +1248,10 @@
     {
       "page": 156,
       "file": "warsh_muthamman_png\\page156.png",
-      "bytes": 169224,
+      "bytes": 189957,
       "width": 1188,
       "height": 1929,
-      "sha256": "A861101ED745654EE8C3CDE325CFDDF04D4EC6B37EBACD4823D306EC262BC251"
+      "sha256": "A766E9BD459A52A1243543CA5FE890FBA7B512660607D008CDDD0C5B0793F15C"
     },
     {
       "page": 157,

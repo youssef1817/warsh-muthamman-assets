@@ -10,7 +10,7 @@
     "sha256": "1F9DAD7377AFE1395F0DBC3CEBFD50DFD9A600989067E6BE0F689EDE9F1B204A"
   },
   "pages": {
-    "status": "indexed_128_optimized",
+    "status": "indexed_optimized",
     "primaryFormat": "png",
     "dpi": 300,
     "directory": "pages/warsh_muthamman_png/",
@@ -19,7 +19,7 @@
     "firstPage": 1,
     "lastPage": 485,
     "count": 485,
-    "totalBytes": 206595256,
+    "totalBytes": 163133878,
     "index": "pages/warsh_muthamman_png_index.json"
   },
   "thumnMapping": {
