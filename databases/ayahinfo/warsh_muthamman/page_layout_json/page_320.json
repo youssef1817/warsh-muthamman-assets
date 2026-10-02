@@ -1,110 +1,110 @@
 {
   "page": 320,
-  "imageWidth": 1265,
-  "imageHeight": 2021,
+  "imageWidth": 1188,
+  "imageHeight": 1929,
   "textRegion": {
-    "top": 101,
-    "bottom": 1940,
-    "left": 151,
-    "right": 1113
+    "top": 103,
+    "bottom": 1814,
+    "left": 30,
+    "right": 1158
   },
   "detectedLineCount": 15,
   "lineBands": [
     {
       "line": 1,
-      "top": 109,
-      "bottom": 243,
-      "center": 176
+      "top": 103,
+      "bottom": 171,
+      "center": 137
     },
     {
       "line": 2,
-      "top": 243,
-      "bottom": 368,
-      "center": 306
+      "top": 219,
+      "bottom": 288,
+      "center": 254
     },
     {
       "line": 3,
-      "top": 368,
-      "bottom": 501,
-      "center": 435
+      "top": 327,
+      "bottom": 409,
+      "center": 368
     },
     {
       "line": 4,
-      "top": 501,
-      "bottom": 633,
-      "center": 567
+      "top": 452,
+      "bottom": 535,
+      "center": 494
     },
     {
       "line": 5,
-      "top": 633,
-      "bottom": 757,
-      "center": 695
+      "top": 569,
+      "bottom": 640,
+      "center": 604
     },
     {
       "line": 6,
-      "top": 757,
-      "bottom": 883,
-      "center": 820
+      "top": 685,
+      "bottom": 756,
+      "center": 720
     },
     {
       "line": 7,
-      "top": 883,
-      "bottom": 1016,
-      "center": 950
+      "top": 799,
+      "bottom": 876,
+      "center": 838
     },
     {
       "line": 8,
-      "top": 1016,
-      "bottom": 1149,
-      "center": 1083
+      "top": 921,
+      "bottom": 998,
+      "center": 960
     },
     {
       "line": 9,
-      "top": 1149,
-      "bottom": 1274,
-      "center": 1212
+      "top": 1038,
+      "bottom": 1110,
+      "center": 1074
     },
     {
       "line": 10,
-      "top": 1274,
-      "bottom": 1405,
-      "center": 1340
+      "top": 1155,
+      "bottom": 1229,
+      "center": 1192
     },
     {
       "line": 11,
-      "top": 1405,
-      "bottom": 1530,
-      "center": 1468
+      "top": 1272,
+      "bottom": 1346,
+      "center": 1309
     },
     {
       "line": 12,
-      "top": 1530,
-      "bottom": 1658,
-      "center": 1594
+      "top": 1388,
+      "bottom": 1462,
+      "center": 1425
     },
     {
       "line": 13,
-      "top": 1658,
-      "bottom": 1788,
-      "center": 1723
+      "top": 1505,
+      "bottom": 1579,
+      "center": 1542
     },
     {
       "line": 14,
-      "top": 1788,
-      "bottom": 1918,
-      "center": 1853
+      "top": 1622,
+      "bottom": 1695,
+      "center": 1658
     },
     {
       "line": 15,
-      "top": 1918,
-      "bottom": 2048,
-      "center": 1983
+      "top": 1738,
+      "bottom": 1814,
+      "center": 1776
     }
   ],
   "nonAyahZones": [],
-  "confidence": 0.85,
-  "manualOverride": false,
-  "method": "peak_valley_v2",
+  "confidence": 1.0,
+  "manualOverride": true,
+  "method": "source_pdf_restored",
   "debug": {
     "rawBandCount": 15,
     "splitBands": 15,
