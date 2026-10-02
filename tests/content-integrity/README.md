@@ -7,11 +7,13 @@ continuing from the preceding page. The precise historical processing step
 that dropped the line has not been established.
 
 The repair restores the opening from the PDF's embedded image into the blank
-space above the remaining text. It retains the original pixels and positions
-of all 14 existing lines, adds a first highlight for 9:40, and shifts the
-coordinate line identifiers. The opening leaves space for the mobile reader's
-page-info header. The SQLite update changes only page 156, and its
-download archive is repackaged from that database.
+space above the remaining text. Before transparency and palette conversion,
+the restored line passes through the adopted balanced contrast, color, and
+sharpness settings and the stronger background-cleaning pass. It retains the
+original pixels and positions of all 14 existing lines, adds a first highlight
+for 9:40, and shifts the coordinate line identifiers. The opening leaves space
+for the mobile reader's page-info header. The SQLite update changes only page
+156, and its download archive is repackaged from that database.
 
 Run the source comparison and asset checks from this repository:
 

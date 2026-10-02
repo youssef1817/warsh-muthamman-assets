@@ -17,11 +17,34 @@ import zipfile
 
 import fitz
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageEnhance, ImageFilter
 
 
 ROOT = Path(__file__).resolve().parents[1]
 INFO = ROOT / "databases/ayahinfo/warsh_muthamman"
+
+
+def apply_approved_visual_enhancements(image):
+    """Apply the adopted balanced + stronger-background image profile."""
+    enhanced = ImageEnhance.Contrast(image).enhance(1.10)
+    enhanced = ImageEnhance.Color(enhanced).enhance(1.12)
+    enhanced = ImageEnhance.Sharpness(enhanced).enhance(1.07)
+    enhanced = enhanced.filter(ImageFilter.UnsharpMask(radius=0.8, percent=45, threshold=4))
+
+    pixels = np.asarray(enhanced.convert("RGB"), dtype=np.uint8).copy()
+    red, green, blue = (pixels[:, :, channel] for channel in range(3))
+    high = np.maximum(np.maximum(red, green), blue)
+    low = np.minimum(np.minimum(red, green), blue)
+    spread = high - low
+    background = (low >= 185) & (
+        ((high > 218) & (spread < 38))
+        | ((red > 205) & (green > 202) & (blue > 178) & (red - blue < 55) & (green - blue < 55))
+        | ((high > 230) & (low > 195) & (spread < 65))
+    )
+    pixels[background] = pixels[background] + (
+        (255 - pixels[background]) * 0.75
+    ).astype(np.uint8)
+    return Image.fromarray(pixels, "RGB")
 
 
 def read_json(path):
@@ -66,6 +89,7 @@ def restore_opening(image_path):
             # Trim the trailing blank pixels so the patch ends before the
             # existing second line. Leave room above it for the app header.
             opening = opening.crop((0, 0, 1120, 84))
+            opening = apply_approved_visual_enhancements(opening)
 
         # Use the existing transparency recipe only on the restored line.
         spec = importlib.util.spec_from_file_location(
